@@ -1,2 +1,2 @@
 # Fireworks-Engine
-A Lightweight OpenGL based game engine for simple tasks 
+A Lightweight Sandbox game engine using OpenGL for additional customisation and quick prototyping.
