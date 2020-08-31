@@ -15,6 +15,7 @@ namespace fireworks { namespace graphics {
 #define MAX_BUTTONS  32
 
 
+    // Forward declerations of friend functions
     static void glfw_initialisation_error(int error, const char* description);
     static void window_resize_callback(GLFWwindow* window, int widht, int height);
     static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
@@ -24,7 +25,6 @@ namespace fireworks { namespace graphics {
     class Window
     {
     private:
-        // friend struct GLFWwindow;
         // FIXME: probably use a custom string class later instead of std::string or char*'s
         const char *m_Title;
         int m_Width, m_Height;
