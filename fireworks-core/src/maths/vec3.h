@@ -21,10 +21,10 @@ namespace fireworks { namespace maths {
          * this pointer we dont want to pass in the this pointer to the function hence
          * we mark them as non-member friend and still give it access to the private members
          */
-        friend vec3& operator+(vec3& left, const vec3& right);
-        friend vec3& operator-(vec3& left, const vec3& right);
-        friend vec3& operator*(vec3& left, const vec3& right);
-        friend vec3& operator/(vec3& left, const vec3& right);
+        friend vec3 operator+(vec3 left, const vec3& right);
+        friend vec3 operator-(vec3 left, const vec3& right);
+        friend vec3 operator*(vec3 left, const vec3& right);
+        friend vec3 operator/(vec3 left, const vec3& right);
 
         bool operator==(const vec3& other);
         bool operator!=(const vec3& other);
