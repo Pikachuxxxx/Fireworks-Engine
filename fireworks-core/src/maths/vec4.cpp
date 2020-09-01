@@ -3,13 +3,13 @@
 
 namespace fireworks { namespace maths {
 
-    vec4::vec4()
-    {
-        x = 0.0f;
-        y = 0.0f;
-        z = 0.0f;
-        w = 0.0f;
-    }
+    // vec4::vec4()
+    // {
+    //     x = 0.0f;
+    //     y = 0.0f;
+    //     z = 0.0f;
+    //     w = 0.0f;
+    // }
 
     vec4::vec4(const float& x, const float& y, const float& z, const float& w)
     {
