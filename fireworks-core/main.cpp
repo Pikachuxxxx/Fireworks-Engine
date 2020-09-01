@@ -16,8 +16,14 @@ int main()
 
     maths::vec3 c;
     c = a + b;
+    std::cout << a << '\n';
 
-    std::cout << c << '\n';
+    maths::mat4 position = maths::mat4(2.0f);
+    maths::mat4 trans = maths::mat4::translation(a);
+    std::cout << trans << '\n';
+    trans *= position;
+    std::cout << trans << '\n';
+
 
     while(!window.closed())
     {
@@ -32,12 +38,14 @@ int main()
         double tx, ty;
         window.getMousePosition(tx, ty);
         // std::cout << "Mouse X pos is : " << tx << " and Y pos is : " << ty << '\n';
+
         // glBegin(GL_QUADS);
         // glVertex2f(-0.5f, -0.5f);
         // glVertex2f(-0.5f,  0.5f);
         // glVertex2f( 0.5f,  0.5f);
         // glVertex2f( 0.5f, -0.5f);
         // glEnd();
+
         window.update();
     }
 
