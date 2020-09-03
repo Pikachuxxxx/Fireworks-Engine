@@ -1,7 +1,7 @@
 <p align="center">
   <img width=200" src="https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/fireworks%20logo.png">
 </p>
-<h1 align="center"> Fireworks Engine
+<h1 align="center"> Fireworks Engine </h1>
 
 <p align="center">
 A Lightweight Sandbox game engine using OpenGL for additional customisation and quick prototyping.
