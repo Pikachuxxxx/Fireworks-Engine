@@ -1,7 +1,5 @@
 #include "mat4.h"
 
-
-
 namespace fireworks { namespace maths {
 
     mat4::mat4()
