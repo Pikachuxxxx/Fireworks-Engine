@@ -6,9 +6,11 @@ uniform vec2 light_pos;
 uniform vec4 colour;
 
 in vec4 pos;
+in vec4 colAttrib;
+
 
 void main()
 {
     float intensity = 1.0f / length(pos.xy - light_pos);
-    color = colour * intensity;
+    color = colAttrib * intensity * colour;
 }

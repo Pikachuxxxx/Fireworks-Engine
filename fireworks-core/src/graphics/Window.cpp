@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "window.h"
 
 namespace fireworks { namespace graphics {
 
@@ -91,6 +91,11 @@ namespace fireworks { namespace graphics {
 
     void Window::update() const
     {
+        GLenum error = glGetError();
+        if(error != GL_NO_ERROR)
+        {
+            std::cout << "ERROR::OpenGL::" << error << std::endl;
+        }
         glfwPollEvents();
         glfwSwapBuffers(m_Window);
     }
