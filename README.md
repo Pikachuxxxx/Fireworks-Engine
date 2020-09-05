@@ -1,5 +1,5 @@
 <p align="center">
-  <img width=200" src="https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/fireworks%20logo.png">
+  <img width=400" src="https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/fireworks%20logo.png">
 </p>
 <h1 align="center"> Fireworks Engine </h1>
 
