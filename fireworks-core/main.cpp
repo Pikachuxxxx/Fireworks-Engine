@@ -10,6 +10,7 @@
 #include "src/graphics/renderer2d.h"
 #include "src/graphics/simple2drenderer.h"
 
+#include <algorithm>
 
 int main()
 {
@@ -21,25 +22,10 @@ int main()
     Window window("fireworks !!!", 800, 600);
     // glClearColor(0.8, 0.2, 0.3, 1.0f);
 
-    GLfloat verticesA[] = {
-        4, 3, 0,
-        12, 5, 0,
-        4, 6, 0
-    };
-
-    GLfloat verticesB[] = {
-        4, 3, 0,
-        4, 6, 0,
-        12, 9, 0,
-        12, 3, 0
-    };
-
-
     mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
     Shader shader("fireworks-core/src/shaders/basic.vert", "fireworks-core/src/shaders/basic.frag");
     shader.enable();
     shader.setUniformMat4("projection", ortho);
-    // shader.setUniformMat4("model", mat4::rotation(45.0f, vec3(0.0f, 0.0f, 1.0f)));
     shader.setUniform2f("light_pos", vec2(4.0f, 3.0f));
     shader.setUniform4f("colour", vec4(0.9f, 0.3f, 0.4f, 1.0f));
 
@@ -51,10 +37,12 @@ int main()
     while(!window.closed())
     {
         window.clear();
+
         double x, y;
         window.getMousePosition(x, y);
-        std::cout << "X' is = " << (float)(x * 9.0f / 800.0f) << "and Y' is = " << (float)(4.0f - y * 12.0f / 600.0f) << '\n';
-        shader.setUniform2f("light_pos", vec2((float)(x * 9.0f / 800.0f), (float)(4.0f - y * 12.0f / 600.0f)));
+        float clampedX = clampFloat((float)x, -1.0f, 1.0f, 800.0f, 0.0f);
+        float clampedY = clampFloat((float)y, -1.0f, 1.0f, 600.0f, 0.0f);
+        shader.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
 
         renderer.submit(&sprite);
         renderer.submit(&sprite2);
