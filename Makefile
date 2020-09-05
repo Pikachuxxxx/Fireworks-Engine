@@ -1,6 +1,7 @@
 # Usage:
 # make        # compile all binary
-# make clean  # remove ALL binaries and objects
+# make run    # run the binary executable
+# make clean  # remove all objects 
 
 # Compiler settings
 CC     =  clang++
@@ -42,13 +43,12 @@ obj = $(cppsrc:.cpp=.o)
 
 .PHONY: clean run
 
-main_game: $(cppsrc) run
+main_game: $(cppsrc)
 	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) $^ -o $@;
 	mv $@ $(BIN_CORE)
 
 run:
-	cd $(BIN_CORE)
-	./main_game
+	$(BIN_CORE)/main_game
 
 clean :
 	rm -f *.o
