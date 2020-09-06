@@ -1,7 +1,7 @@
 # Usage:
 # make        # compile all binary
 # make run    # run the binary executable
-# make clean  # remove all objects 
+# make clean  # remove all objects
 
 # Compiler settings
 CC     =  clang++

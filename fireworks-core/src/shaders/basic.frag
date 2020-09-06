@@ -12,5 +12,5 @@ in vec4 colAttrib;
 void main()
 {
     float intensity = 1.0f / length(pos.xy - light_pos);
-    color = colAttrib * intensity * colour;
+    color = colAttrib * intensity * colour * 0.5f;
 }
