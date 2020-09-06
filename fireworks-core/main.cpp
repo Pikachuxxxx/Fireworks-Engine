@@ -31,6 +31,7 @@ int main()
 
     Renderable2D sprite(maths::vec3(2, 5, 0), maths::vec2(4, 4), maths::vec4(0.1 , 1.1, 0.1, 1.0), shader);
     Renderable2D sprite2(maths::vec3(7, 1, 0), maths::vec2(2, 3), maths::vec4(0.2 , 0.1, 1.1, 1.0), shader);
+    Renderable2D sprite3(maths::vec3(10, 1, 0), maths::vec2(2, 1), maths::vec4(0.9 , 0.1, 0.1, 1.0), shader);
 
     Simple2DRenderer renderer;
 
@@ -40,12 +41,13 @@ int main()
 
         double x, y;
         window.getMousePosition(x, y);
-        float clampedX = clampFloat((float)x, -1.0f, 1.0f, 800.0f, 0.0f);
-        float clampedY = clampFloat((float)y, -1.0f, 1.0f, 600.0f, 0.0f);
+        float clampedX = clamp((float)x, -1.0f, 1.0f, 800.0f, 0.0f);
+        float clampedY = clamp((float)y, -1.0f, 1.0f, 600.0f, 0.0f);
         shader.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
 
         renderer.submit(&sprite);
         renderer.submit(&sprite2);
+        renderer.submit(&sprite3);
         renderer.flush();
 
         window.update();
