@@ -7,13 +7,13 @@ namespace fireworks { namespace graphics {
     {
         m_Shader->enable();
         m_Shader->setUniformMat4("projection", m_ProjectionMatrix);
-        // m_Shader->disable();
+        m_Shader->disable();
     }
 
     Layer::~Layer()
     {
         // delete m_Shader;
-        // delete m_Renderer;
+        delete m_Renderer;
 
         for(int i = 0; i < m_Renderables.size(); i++)
         {
