@@ -12,8 +12,8 @@ namespace fireworks { namespace graphics {
     struct VertexData
     {
         maths::vec3 vertex;
-        // maths::vec4 color;
-        unsigned int color;
+        maths::vec4 color;
+        // unsigned int color;
     };
 
     class Renderable2D
