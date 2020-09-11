@@ -1,13 +1,15 @@
 #pragma once
 
+#include <vector>
 // GLEW
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include "../maths/maths.h"
-#include "renderable2d.h"
 
 
 namespace fireworks { namespace graphics {
+
+    class Renderable2D;    // Forward decleration
 
     class Renderer2D
     {
