@@ -32,7 +32,8 @@ namespace fireworks { namespace graphics {
         m_Renderer->begin();
         for(const Renderable2D* renderable : m_Renderables)
         {
-            m_Renderer->submit(renderable);
+            // TODO: apply the transformation from Transformation Stack recursively relative to the Renderer and Layer Sprites
+            renderable->submit(m_Renderer);
         }
         m_Renderer->end();
 
