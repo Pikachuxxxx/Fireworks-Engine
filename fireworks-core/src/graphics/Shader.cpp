@@ -67,6 +67,7 @@ namespace fireworks { namespace graphics {
 
     GLint Shader::getUniformLocation(const GLchar* name)
     {
+        Shader::enable();
         // TODO: Cache this!
         return glGetUniformLocation(m_ShaderID, name);
     }
