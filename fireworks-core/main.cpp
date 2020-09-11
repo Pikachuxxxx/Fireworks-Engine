@@ -27,12 +27,14 @@ int main()
 
     Window window("fireworks !!!", 800, 600);
 
-
+    /* Auto-enabling Shaders while setting Uniforms */
     Shader shader("fireworks-core/src/shaders/basic.vert", "fireworks-core/src/shaders/basic.frag");
+    Shader shader2("fireworks-core/src/shaders/basic.vert", "fireworks-core/src/shaders/basic.frag");
     shader.setUniform4f("colour", vec4(0.9f, 0.3f, 0.4f, 1.0f));
+    shader2.setUniform4f("colour", vec4(0.9f, 0.1f, 0.1f, 1.0f));
 
     // std::vector<Renderable2D*> sprites;
-    srand(time(NULL));
+    // srand(time(NULL));
     //
     // Sprite sprite(0, 0, 4, 5, maths::vec4(0.1 , 1.1, 0.1, 1.0));
     // Sprite sprite2(7, 1, 2, 2, maths::vec4(0.2 , 0.1, 1.1, 1.0));
@@ -57,6 +59,11 @@ int main()
 
         }
     }
+
+    TileLayer layer2(&shader2);
+    layer2.add(new Sprite(8.0f, 4.5f, 4, 4, maths::vec4(1.0f, 0.0f, 0.2f, 1.0f)));
+
+
     // layer.add(new Sprite(0, 0, 2, 2, maths::vec4(0.2f, 0.8f, 0.8f, 1.0f)));
     // layer.add(new Sprite(4, 4, 2, 2, maths::vec4(0.9f, 0.4f, 0.4f, 1.0f)));
 
@@ -70,9 +77,12 @@ int main()
         window.getMousePosition(x, y);
         float clampedX = clamp((float)x, -1.0f, 1.0f, 800.0f, 0.0f);
         float clampedY = clamp((float)y, -1.0f, 1.0f, 600.0f, 0.0f);
+
         shader.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
+        shader2.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
 
         layer.render();
+        layer2.render();
 
         // renderer.begin();
         // // renderer.submit(&sprite);
