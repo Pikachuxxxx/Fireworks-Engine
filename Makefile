@@ -22,6 +22,7 @@ CORE      =  fireworks-core
 CORE_SRC  =  $(CORE)/src
 GRAPHICS  =  $(CORE_SRC)/graphics
 BUFFERS   =  $(GRAPHICS)/buffers
+LAYERS    =  $(GRAPHICS)/layers
 INPUT     =  $(CORE_SRC)/input
 MATHS     =  $(CORE_SRC)/maths
 SHADERS   =  $(CORE_SRC)/shaders
@@ -34,21 +35,46 @@ BIN_CORE   =  $(BIN)/core
 # Directory search paths (searches automatically)
 VPATH = $(SOURCE_DIRS) $(BIN_DIRS)
 
-cppsrc = $(wildcard $(CORE)/*.cpp) \
-		$(wildcard $(GRAPHICS)/*.cpp) \
+cppsrc = $(wildcard $(GRAPHICS)/*.cpp) \
 		$(wildcard $(BUFFERS)/*.cpp) \
+		$(wildcard $(LAYERS)/*.cpp) \
 		$(wildcard $(MATHS)/*.cpp)
 
-obj = $(cppsrc:.cpp=.o)
+headersrc = $(wildcard $(GRAPHICS)/*.h) \
+		$(wildcard $(BUFFERS)/*.h) \
+		$(wildcard $(LAYERS)/*.h) \
+		$(wildcard $(MATHS)/*.h)
 
+obj = $(cppsrc:.cpp=.o)
+finalobjects = $(wildcard *.o)
 .PHONY: clean run
 
+# OG Command
 main_game: $(cppsrc)
-	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) $^ -o $@;
+	clear
+	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) $(CORE)/main.cpp $^ -o $@;
 	mv $@ $(BIN_CORE)
 
 run:
+	clear
 	$(BIN_CORE)/main_game
 
+# TODO: will have to generate a static and dynamic library later
+# the main executable binary
+
+# main_executable: main.o $(obj)
+# 	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) -o $@ main.o $(finalobjects)
+#
+# main.o : $(CORE)/main.cpp $(cppsrc) $(headersrc)
+# 	@ echo "The main file is : "$<
+# 	$(CC) $(CFLAGS) -c $<
+#
+# $(obj) : $(cppsrc) $(headersrc)
+#
+# %.o: %.cpp
+# 	$(CC) $(FLAGS) -c $<
+
+
 clean :
-	rm -f *.o
+	rm -f -R *.o
+	rm -f -R *.h.gch

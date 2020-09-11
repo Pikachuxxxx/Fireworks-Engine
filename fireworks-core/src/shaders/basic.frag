@@ -1,4 +1,4 @@
-#version 330 core
+#version 410 core
 
 out vec4 color;
 
@@ -13,4 +13,5 @@ void main()
 {
     float intensity = 1.0f / length(pos.xy - light_pos);
     color = colAttrib * intensity * colour * 0.5f;
+    // color = vec4(0.8f, 0.2f, 0.7f, 1.0f);
 }
