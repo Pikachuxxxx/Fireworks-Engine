@@ -4,7 +4,7 @@
 <h1 align="center"> Fireworks Engine </h1>
 
 <p align="center">
-A Lightweight Sandbox game engine using OpenGL for additional customisation and quick prototyping.
+<h3 align="center">A Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping.</h3>
 </p>
 
 ### About
