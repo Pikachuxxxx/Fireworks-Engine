@@ -8,17 +8,17 @@ CC     =  clang++
 CFLAGS =  -std=c++17
 
 # Frameworks and other flags and paths
-FRAMEWORKS = -framework OpenGL
+FRAMEWORKS = -framework OpenGL -framework CoreFoundation
 
 # Includes and paths
-INLCUDE_DIRS =
+INLCUDE_DIRS = -I Dependencies/SOIL/include/
 
 # Libraries and paths
-LIB_DIRS  =
-LIBS      =  -lglew -lglfw
+LIB_DIRS  = -L Dependencies/SOIL/lib/
+LIBS      =  -lglew -lglfw -lsoil
 
 # Source and main sub directories in fireworks-core
-CORE      =  fireworks-core
+CORE      =  Fireworks-core
 CORE_SRC  =  $(CORE)/src
 GRAPHICS  =  $(CORE_SRC)/graphics
 BUFFERS   =  $(GRAPHICS)/buffers
@@ -52,7 +52,7 @@ finalobjects = $(wildcard *.o)
 # OG Command
 main_game: $(cppsrc)
 	clear
-	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) $(CORE)/main.cpp $^ -o $@;
+	$(CC) $(CFLAGS) $(FRAMEWORKS) $(INLCUDE_DIRS) $(LIB_DIRS) $(LIBS) $(CORE)/main.cpp $^ -o $@;
 	mv $@ $(BIN_CORE)
 
 run:

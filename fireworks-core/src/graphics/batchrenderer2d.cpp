@@ -22,9 +22,11 @@ namespace fireworks { namespace graphics {
         glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
         glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
         glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
+        glEnableVertexAttribArray(SHADER_UV_INDEX);
         glEnableVertexAttribArray(SHADER_COLOR_INDEX);
         glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
-        glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
+        glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
+        glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat)));
         glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 
@@ -59,6 +61,7 @@ namespace fireworks { namespace graphics {
         const maths::vec3& position = renderable->getPosition();
         const maths::vec2& size = renderable->getSize();
         const maths::vec4& color = renderable->getColor();
+        const std::vector<maths::vec2>& uv = renderable->getUV();
 
         int r = color.x * 255.0f;
         int g = color.y * 255.0f;
@@ -69,18 +72,22 @@ namespace fireworks { namespace graphics {
 
 
         m_Buffer->vertex = *m_TransformationBack * position;
+        m_Buffer->uv = uv[0];
         m_Buffer->color = color;
         m_Buffer++;
 
         m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x, position.y + size.y, position.z);
+        m_Buffer->uv = uv[1];
         m_Buffer->color = color;
         m_Buffer++;
 
         m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
+        m_Buffer->uv = uv[2];
         m_Buffer->color = color;
         m_Buffer++;
 
         m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
+        m_Buffer->uv = uv[3];
         m_Buffer->color = color;
         m_Buffer++;
 
