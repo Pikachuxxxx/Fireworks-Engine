@@ -10,7 +10,7 @@ namespace fireworks { namespace graphics {
 
     Texture::~Texture()
     {
-
+        // TODO: Fix the memory leak for textures deallocation
     }
 
     GLuint Texture::load()

@@ -4,10 +4,9 @@
 #include "buffers/buffer.h"
 #include "buffers/indexbuffer.h"
 #include "buffers/vertexarray.h"
-
 #include "../maths/maths.h"
-
 #include "renderer2d.h"
+#include "texture.h"
 
 namespace fireworks { namespace graphics {
 
@@ -15,6 +14,7 @@ namespace fireworks { namespace graphics {
     {
         maths::vec3 vertex;
         maths::vec2 uv;
+        float tid;
         maths::vec4 color;
     };
 
@@ -25,11 +25,12 @@ namespace fireworks { namespace graphics {
         maths::vec2 m_Size;
         maths::vec4 m_Color;
         std::vector<maths::vec2> m_UV;
+        Texture* m_Texture;
     protected:
         Renderable2D() { setUVDefaults(); }
     public:
         Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color)
-            : m_Position(position), m_Size(size), m_Color(color)
+            : m_Position(position), m_Size(size), m_Color(color), m_Texture(nullptr)
         { setUVDefaults(); }
 
         virtual ~Renderable2D() { }
@@ -43,6 +44,7 @@ namespace fireworks { namespace graphics {
         inline const maths::vec2& getSize() const { return m_Size; }
         inline const maths::vec4& getColor() const { return m_Color; }
         inline const std::vector<maths::vec2>& getUV() const { return m_UV; }
+        inline const GLuint getTID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
     private:
         void setUVDefaults()
         {
