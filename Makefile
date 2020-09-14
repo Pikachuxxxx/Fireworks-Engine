@@ -15,7 +15,7 @@ INLCUDE_DIRS = -I Dependencies/SOIL/include/
 
 # Libraries and paths
 LIB_DIRS  = -L Dependencies/SOIL/lib/
-LIBS      =  -lglew -lglfw -lsoil
+LIBS      = -lglew -lglfw -lsoil
 
 # Source and main sub directories in fireworks-core
 CORE      =  Fireworks-core
@@ -36,14 +36,14 @@ BIN_CORE   =  $(BIN)/core
 VPATH = $(SOURCE_DIRS) $(BIN_DIRS)
 
 cppsrc = $(wildcard $(GRAPHICS)/*.cpp) \
-		$(wildcard $(BUFFERS)/*.cpp) \
-		$(wildcard $(LAYERS)/*.cpp) \
-		$(wildcard $(MATHS)/*.cpp)
+		 $(wildcard $(BUFFERS)/*.cpp) \
+		 $(wildcard $(LAYERS)/*.cpp) \
+		 $(wildcard $(MATHS)/*.cpp)
 
 headersrc = $(wildcard $(GRAPHICS)/*.h) \
-		$(wildcard $(BUFFERS)/*.h) \
-		$(wildcard $(LAYERS)/*.h) \
-		$(wildcard $(MATHS)/*.h)
+			$(wildcard $(BUFFERS)/*.h) \
+			$(wildcard $(LAYERS)/*.h) \
+			$(wildcard $(MATHS)/*.h)
 
 obj = $(cppsrc:.cpp=.o)
 finalobjects = $(wildcard *.o)

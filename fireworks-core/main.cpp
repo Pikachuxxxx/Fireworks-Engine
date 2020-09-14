@@ -11,18 +11,16 @@
 #include "src/maths/maths.h"
 #include "src/utils/fileutils.h"
 
-#include "src/graphics/static_sprite.h"
 #include "src/graphics/sprite.h"
+#include "src/graphics/static_sprite.h"
 #include "src/graphics/layers/tilelayer.h"
 #include "src/graphics/layers/group.h"
-
 #include "src/graphics/texture.h"
 
-#include <algorithm>
-#include <time.h>
+#define TEST_1M_SPRITES 0
+#define TEST_GROUPS     0
+#define TEST_TEXTURES   1
 
-#define TEST_1M_SPRITES 1
-#define TEST_GROUPS 0
 int main()
 {
     using namespace fireworks;
@@ -35,8 +33,8 @@ int main()
     /* Auto-enabling Shaders while setting Uniforms */
     Shader shader("fireworks-core/src/shaders/basic.vert", "fireworks-core/src/shaders/basic.frag");
     Shader shader2("fireworks-core/src/shaders/basic.vert", "fireworks-core/src/shaders/basic.frag");
-    shader.setUniform4f("colour", vec4(0.9f, 0.3f, 0.4f, 1.0f));
-    shader2.setUniform4f("colour", vec4(0.9f, 0.9f, 0.9f, 1.0f));
+    shader.setUniform4f("colour", vec4(1.0f, 1.0f, 1.0f, 1.0f));
+    shader2.setUniform4f("colour", vec4(1.0f, 1.0f, 1.0f, 1.0f));
 
 #if TEST_1M_SPRITES
     TileLayer layer(&shader);
@@ -45,7 +43,6 @@ int main()
         for (float y = 0; y < 9.0f; y++)
         {
             layer.add(new Sprite(x, y, 0.8f, 0.8f, maths::vec4(rand() % 1000 / 1000.0f, 0.0f, 1.0f, 1.0f)));
-
         }
     }
 #elif TEST_GROUPS
@@ -63,15 +60,32 @@ int main()
     group->add(subGroup);
 
     layer2.add(group);
-#endif
+#elif TEST_TEXTURES
+
+    Texture* textures[] =
+    {
+        new Texture("Resources/test.png"),
+        new Texture("Resources/test2.png"),
+        new Texture("Resources/test3.png")
+    };
 
     TileLayer textestLayer(&shader2);
-    textestLayer.add(new Sprite(6, 4, 4, 4, maths::vec4(1.0f, 0.4f, 1.0f, 1.0f)));
+    for (float x = 0; x < 16.0f; x++)
+    {
+        for (float y = 0; y < 9.0f; y++)
+        {
+            // textestLayer.add(new Sprite(x, y, 0.8f, 0.8f, maths::vec4(rand() % 1000 / 1000.0f, 0.0f, 1.0f, 1.0f)));
+            textestLayer.add(new Sprite(x, y, 0.8f, 0.8f, textures[rand() % 3]));
+        }
+    }
 
-    Texture texture("Resources/test.png");
-    texture.bind();
-    shader2.setUniform1i("tex", 0); // shader is auto-enabled
+    GLint texIDs[] =
+    {
+        0, 1, 2, 3, 4, 5, 6, 7
+    };
+    shader2.setUniform1iv("textures", texIDs, 8);
 
+#endif
 
     while(!window.closed())
     {
@@ -85,10 +99,18 @@ int main()
         shader.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
         shader2.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
 
-        // textestLayer.render();
+        #if TEST_1M_SPRITES
         layer.render();
+        #elif TEST_GROUPS
+        later2.render();
+        #elif TEST_TEXTURES
+        textestLayer.render();
+        #endif
+
 
         window.update();
     }
+    for(int i = 0; i < 3; i++)
+        delete textures[i];
     return 0;
 }

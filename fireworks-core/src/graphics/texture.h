@@ -27,6 +27,7 @@ namespace fireworks { namespace graphics {
 
         inline const unsigned int getWidth() const { return m_Width; }
         inline const unsigned int getHeight() const { return m_Height; }
+        inline const unsigned int getID() const { return m_TID; }
     private:
         GLuint load();
     };
