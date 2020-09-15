@@ -45,8 +45,7 @@ namespace fireworks { namespace graphics {
         }
         glfwMakeContextCurrent(m_Window);
         glfwSetWindowUserPointer(m_Window, this);
-
-        glfwSetWindowSizeCallback(m_Window, window_resize_callback);
+        glfwSetFramebufferSizeCallback(m_Window, window_resize_callback);
         glfwSetKeyCallback(m_Window, key_callback);
         glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
         glfwSetCursorPosCallback(m_Window, mouse_position_callback);
@@ -110,11 +109,6 @@ namespace fireworks { namespace graphics {
         std::cerr << "ERROR::GLFW::" << error << "::DESCRIPTION::" << description << std::endl;
     }
 
-    void window_resize_callback(GLFWwindow* window, int widht, int height)
-    {
-        glViewport(0, 0, widht, height);
-    }
-
     void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
     {
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
@@ -125,6 +119,14 @@ namespace fireworks { namespace graphics {
             std::cout << "Escape Key Pressed..." << "Quiting..." <<'\n';
             glfwSetWindowShouldClose(window, GLFW_TRUE);
         }
+    }
+
+    void window_resize_callback(GLFWwindow* window, int width, int height)
+    {
+        glViewport(0, 0, width, height);
+        Window* wind = (Window *) glfwGetWindowUserPointer(window);
+        wind->m_Width = width;
+        wind->m_Height = height;
     }
 
     void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -139,6 +141,5 @@ namespace fireworks { namespace graphics {
         wind->m_MouseX = xpos;
         wind->m_MouseY = ypos;
     }
-
 
 } }

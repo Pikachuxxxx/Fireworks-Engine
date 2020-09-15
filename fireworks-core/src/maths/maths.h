@@ -5,7 +5,6 @@
 #include "vec4.h"
 #include "mat4.h"
 
-
 namespace fireworks { namespace maths {
 
 	inline float toRadians(float degrees) {
