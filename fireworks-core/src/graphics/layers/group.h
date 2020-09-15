@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../renderable2d.h"
+#include "../renderables/renderable2d.h"
 
 namespace fireworks { namespace graphics {
 

@@ -1,12 +1,12 @@
 #pragma once
 
-#include "shader.h"
-#include "buffers/buffer.h"
-#include "buffers/indexbuffer.h"
-#include "buffers/vertexarray.h"
-#include "../maths/maths.h"
-#include "renderer2d.h"
-#include "texture.h"
+#include "../shader.h"
+#include "../buffers/buffer.h"
+#include "../buffers/indexbuffer.h"
+#include "../buffers/vertexarray.h"
+#include "../../maths/maths.h"
+#include "../renderer2d.h"
+#include "../texture.h"
 
 namespace fireworks { namespace graphics {
 
