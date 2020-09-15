@@ -1,8 +1,8 @@
 #pragma once
 
 #include <deque>
-#include "static_sprite.h"
-#include "renderable2d.h"
+#include "renderables/static_sprite.h"
+#include "renderables/renderable2d.h"
 
 namespace fireworks { namespace graphics {
 

@@ -12,15 +12,15 @@
 #include "src/utils/fileutils.h"
 #include "src/utils/timer.h"
 
-#include "src/graphics/sprite.h"
-#include "src/graphics/static_sprite.h"
+#include "src/graphics/renderables/sprite.h"
+#include "src/graphics/renderables/static_sprite.h"
 #include "src/graphics/layers/tilelayer.h"
 #include "src/graphics/layers/group.h"
 #include "src/graphics/texture.h"
 
-#define TEST_1M_SPRITES 0
-#define TEST_GROUPS     0
-#define TEST_TEXTURES   1
+#define TEST_1M_SPRITES     0
+#define TEST_GROUPS         0
+#define TEST_TEXTURES       1
 
 int main()
 {
