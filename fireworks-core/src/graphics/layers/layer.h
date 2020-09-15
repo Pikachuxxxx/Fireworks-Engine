@@ -18,6 +18,8 @@ namespace fireworks { namespace graphics {
         virtual ~Layer();
         virtual void add(Renderable2D* renderable);
         virtual void render();
+
+        inline const std::vector<Renderable2D*>&  getRenderables() { return m_Renderables; }
     };
 
 } }
