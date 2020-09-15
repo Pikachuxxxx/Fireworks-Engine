@@ -10,6 +10,7 @@
 
 #include "src/maths/maths.h"
 #include "src/utils/fileutils.h"
+#include "src/utils/timer.h"
 
 #include "src/graphics/sprite.h"
 #include "src/graphics/static_sprite.h"
@@ -37,6 +38,7 @@ int main()
     shader2.setUniform4f("colour", vec4(1.0f, 1.0f, 1.0f, 1.0f));
 
 #if TEST_1M_SPRITES
+
     TileLayer layer(&shader);
     for (float x = 0; x < 16.0f; x++)
     {
@@ -45,6 +47,7 @@ int main()
             layer.add(new Sprite(x, y, 0.8f, 0.8f, maths::vec4(rand() % 1000 / 1000.0f, 0.0f, 1.0f, 1.0f)));
         }
     }
+
 #elif TEST_GROUPS
 
     TileLayer layer2(&shader2);
@@ -60,6 +63,7 @@ int main()
     group->add(subGroup);
 
     layer2.add(group);
+
 #elif TEST_TEXTURES
 
     Texture* textures[] =
@@ -87,30 +91,40 @@ int main()
 
 #endif
 
+    Timer time;
+    float timer = 0.0f;
+    unsigned int frames = 0;
     while(!window.closed())
     {
         window.clear();
 
         double x, y;
         window.getMousePosition(x, y);
-        float clampedX = clamp((float)x, -1.0f, 1.0f, 800.0f, 0.0f);
-        float clampedY = clamp((float)y, -1.0f, 1.0f, 600.0f, 0.0f);
+        float clampedX = clamp((float)x, -1.0f, 1.0f, (float)window.getWidth(), 0.0f);
+        float clampedY = clamp((float)y, -1.0f, 1.0f, (float)window.getHeight(), 0.0f);
 
         shader.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
         shader2.setUniform2f("light_pos", vec2(clampedX, -1.0f * clampedY));
 
-        #if TEST_1M_SPRITES
+#if TEST_1M_SPRITES
         layer.render();
-        #elif TEST_GROUPS
-        later2.render();
-        #elif TEST_TEXTURES
+#elif TEST_GROUPS
+        layer.render();
+#elif TEST_TEXTURES
         textestLayer.render();
-        #endif
-
-
+#endif
         window.update();
+        frames++;
+        if(time.elapsed() - timer > 1.0f)
+        {
+            timer += 1.0f;
+            std::cout << "FPS : " << frames << '\n';
+            frames = 0;
+        }
     }
+#if TEST_TEXTURES
     for(int i = 0; i < 3; i++)
         delete textures[i];
+#endif
     return 0;
 }

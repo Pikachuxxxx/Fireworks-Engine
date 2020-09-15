@@ -17,8 +17,8 @@ namespace fireworks { namespace graphics {
 
     // Forward declerations of friend functions
     static void glfw_initialisation_error(int error, const char* description);
-    static void window_resize_callback(GLFWwindow* window, int widht, int height);
     static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+    static void window_resize_callback(GLFWwindow* window, int width, int height);
     static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
     static void mouse_position_callback(GLFWwindow* window, double xpos, double ypos);
 
@@ -51,6 +51,7 @@ namespace fireworks { namespace graphics {
     private :
         bool init();
         friend void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+        friend void window_resize_callback(GLFWwindow* window, int width, int height);
         friend void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
         friend void mouse_position_callback(GLFWwindow* window, double xpos, double ypos);
     };

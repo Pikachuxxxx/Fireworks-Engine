@@ -8,14 +8,16 @@ CC     =  clang++
 CFLAGS =  -std=c++17
 
 # Frameworks and other flags and paths
-FRAMEWORKS = -framework OpenGL -framework CoreFoundation
+FRAMEWORKS = -framework OpenGL 
 
 # Includes and paths
-INLCUDE_DIRS = -I Dependencies/SOIL/include/
+INLCUDE_DIRS =  -I Dependencies/SOIL/include/ \
+
 
 # Libraries and paths
-LIB_DIRS  = -L Dependencies/SOIL/lib/
-LIBS      = -lglew -lglfw -lsoil
+LIB_DIRS  = -L Dependencies/SOIL/lib/ \
+
+LIBS      = -lglew -lglfw -lsoil -lfreetype -lfreetype-gl
 
 # Source and main sub directories in fireworks-core
 CORE      =  Fireworks-core
