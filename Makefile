@@ -8,17 +8,19 @@ CC     =  clang++
 CFLAGS =  -std=c++17
 
 # Frameworks and other flags and paths
-FRAMEWORKS = -framework OpenGL
+FRAMEWORKS = -framework OpenGL 
 
 # Includes and paths
-INLCUDE_DIRS =
+INLCUDE_DIRS =  -I Dependencies/SOIL/include/ \
+
 
 # Libraries and paths
-LIB_DIRS  =
-LIBS      =  -lglew -lglfw
+LIB_DIRS  = -L Dependencies/SOIL/lib/ \
+
+LIBS      = -lglew -lglfw -lsoil -lfreetype -lfreetype-gl
 
 # Source and main sub directories in fireworks-core
-CORE      =  fireworks-core
+CORE      =  Fireworks-core
 CORE_SRC  =  $(CORE)/src
 GRAPHICS  =  $(CORE_SRC)/graphics
 BUFFERS   =  $(GRAPHICS)/buffers
@@ -36,14 +38,14 @@ BIN_CORE   =  $(BIN)/core
 VPATH = $(SOURCE_DIRS) $(BIN_DIRS)
 
 cppsrc = $(wildcard $(GRAPHICS)/*.cpp) \
-		$(wildcard $(BUFFERS)/*.cpp) \
-		$(wildcard $(LAYERS)/*.cpp) \
-		$(wildcard $(MATHS)/*.cpp)
+		 $(wildcard $(BUFFERS)/*.cpp) \
+		 $(wildcard $(LAYERS)/*.cpp) \
+		 $(wildcard $(MATHS)/*.cpp)
 
 headersrc = $(wildcard $(GRAPHICS)/*.h) \
-		$(wildcard $(BUFFERS)/*.h) \
-		$(wildcard $(LAYERS)/*.h) \
-		$(wildcard $(MATHS)/*.h)
+			$(wildcard $(BUFFERS)/*.h) \
+			$(wildcard $(LAYERS)/*.h) \
+			$(wildcard $(MATHS)/*.h)
 
 obj = $(cppsrc:.cpp=.o)
 finalobjects = $(wildcard *.o)
@@ -52,7 +54,7 @@ finalobjects = $(wildcard *.o)
 # OG Command
 main_game: $(cppsrc)
 	clear
-	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) $(CORE)/main.cpp $^ -o $@;
+	$(CC) $(CFLAGS) $(FRAMEWORKS) $(INLCUDE_DIRS) $(LIB_DIRS) $(LIBS) $(CORE)/main.cpp $^ -o $@;
 	mv $@ $(BIN_CORE)
 
 run:
