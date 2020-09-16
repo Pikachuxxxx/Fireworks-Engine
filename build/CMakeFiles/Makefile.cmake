@@ -7,30 +7,41 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeCInformation.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeCXXInformation.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeGenericSystem.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakePushCheckState.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/CheckSymbolExists.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Compiler/AppleClang-C.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Compiler/AppleClang-CXX.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Compiler/Clang.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Compiler/GNU.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/FindBZip2.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/FindOpenGL.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/FindPNG.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/FindPackageHandleStandardArgs.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/FindPackageMessage.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/FindZLIB.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Apple-AppleClang-C.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Apple-AppleClang-CXX.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Apple-Clang-C.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Apple-Clang-CXX.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Apple-Clang.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Darwin-Initialize.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/Darwin.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/Platform/UnixPaths.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.18/Modules/SelectLibraryConfigurations.cmake"
   "../CMakeLists.txt"
   "../Fireworks-core/src/helpers/RootDir.h.in"
+  "CMakeFiles/3.18.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.18.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.18.1/CMakeSystem.cmake"
   )
@@ -49,5 +60,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Fireworks.dir/DependInfo.cmake"
+  "CMakeFiles/fireworks.dir/DependInfo.cmake"
   )

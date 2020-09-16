@@ -19,6 +19,10 @@ namespace fireworks { namespace graphics {
             textures[i] = m_TextureSlots[i];
         }
         glDeleteTextures(textures_size, textures);
+
+        // Deleting text
+        // gltDeleteText(m_Text);
+
     }
 
     void BatchRenderer2D::init()
@@ -57,6 +61,12 @@ namespace fireworks { namespace graphics {
         m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
         glBindVertexArray(0);
+
+        // Initialize glText
+        gltInit();
+
+        // Creating text
+        m_Text = gltCreateText();
     }
 
     void BatchRenderer2D::begin()
@@ -102,10 +112,10 @@ namespace fireworks { namespace graphics {
         }
         else
         {
-            int r = color.x * 255.0f;
-            int g = color.y * 255.0f;
-            int b = color.z * 255.0f;
-            int a = color.w * 255.0f;
+            // int r = color.x * 255.0f;
+            // int g = color.y * 255.0f;
+            // int b = color.z * 255.0f;
+            // int a = color.w * 255.0f;
 
             // unsigned int c = a << 24 | b << 16 | g << 8 | r;
         }
@@ -137,6 +147,29 @@ namespace fireworks { namespace graphics {
         m_IndicesCount += 6;
     }
 
+    void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
+    {
+        // m_Font->FaceSize(72);
+        // m_Font->Render("text");
+
+        const char * c = text.c_str();
+
+
+        // std::cerr << "ERROR::FONT_RENDERING:: In Beta only single font is supported" << std::endl;
+
+        gltSetText(m_Text, c);
+
+        gltBeginDraw();
+
+        // Draw any amount of text between begin and end
+        gltColor(color.x, color.y, color.z, color.w);
+        gltDrawText2D(m_Text, position.x, position.y, 5);
+
+        // Finish drawing text
+        gltEndDraw();
+    }
+
+
     void BatchRenderer2D::end()
     {
         glUnmapBuffer(GL_ARRAY_BUFFER);
@@ -159,5 +192,6 @@ namespace fireworks { namespace graphics {
         glBindVertexArray(0);
 
         m_IndicesCount = 0;
+        m_TextureSlots.clear();
     }
 } }

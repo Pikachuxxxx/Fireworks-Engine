@@ -68,308 +68,276 @@ CMAKE_SOURCE_DIR = /Users/phanisrikar/Desktop/Fireworks-Engine
 CMAKE_BINARY_DIR = /Users/phanisrikar/Desktop/Fireworks-Engine/build
 
 # Include any dependencies generated for this target.
-include CMakeFiles/Fireworks.dir/depend.make
+include CMakeFiles/fireworks.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/Fireworks.dir/progress.make
+include CMakeFiles/fireworks.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/Fireworks.dir/flags.make
+include CMakeFiles/fireworks.dir/flags.make
 
-CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o: ../Fireworks-core/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/main.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o: ../Fireworks-core/src/graphics/batchrenderer2d.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/batchrenderer2d.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/main.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/batchrenderer2d.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/main.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/batchrenderer2d.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o: ../Fireworks-core/src/graphics/batchrenderer2d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/batchrenderer2d.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o: ../Fireworks-core/src/graphics/buffers/buffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/buffer.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/batchrenderer2d.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/buffer.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/batchrenderer2d.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/buffer.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o: ../Fireworks-core/src/graphics/buffers/buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/buffer.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o: ../Fireworks-core/src/graphics/buffers/indexbuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/indexbuffer.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/buffer.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/indexbuffer.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/buffer.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/indexbuffer.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o: ../Fireworks-core/src/graphics/buffers/indexbuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/indexbuffer.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o: ../Fireworks-core/src/graphics/buffers/vertexarray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/vertexarray.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/indexbuffer.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/vertexarray.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/indexbuffer.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/vertexarray.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o: ../Fireworks-core/src/graphics/buffers/vertexarray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/vertexarray.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o: ../Fireworks-core/src/graphics/layers/group.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/group.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/vertexarray.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/group.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/buffers/vertexarray.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/group.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o: ../Fireworks-core/src/graphics/layers/group.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/group.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o: ../Fireworks-core/src/graphics/layers/layer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/layer.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/group.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/layer.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/group.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/layer.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o: ../Fireworks-core/src/graphics/layers/layer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/layer.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o: ../Fireworks-core/src/graphics/renderables/label.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/label.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/layer.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/label.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/layer.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/label.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o: ../Fireworks-core/src/graphics/layers/tilelayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/tilelayer.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o: ../Fireworks-core/src/graphics/renderables/sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/sprite.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/tilelayer.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/sprite.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/layers/tilelayer.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/sprite.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o: ../Fireworks-core/src/graphics/renderables/sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/sprite.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o: ../Fireworks-core/src/graphics/renderables/static_sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/static_sprite.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/sprite.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/static_sprite.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/sprite.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/static_sprite.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o: ../Fireworks-core/src/graphics/renderables/static_sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/static_sprite.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o: ../Fireworks-core/src/graphics/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/shader.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/static_sprite.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/shader.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/renderables/static_sprite.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/shader.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o: ../Fireworks-core/src/graphics/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/shader.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o: ../Fireworks-core/src/graphics/texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/texture.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/shader.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/texture.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/shader.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/texture.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o: ../Fireworks-core/src/graphics/simple2drenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/simple2drenderer.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o: ../Fireworks-core/src/graphics/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/window.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/simple2drenderer.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/window.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/simple2drenderer.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/window.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o: ../Fireworks-core/src/graphics/texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/texture.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o: ../Fireworks-core/src/maths/mat4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/mat4.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/texture.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/mat4.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/texture.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/mat4.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o: ../Fireworks-core/src/graphics/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/window.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o: ../Fireworks-core/src/maths/vec2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec2.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/window.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec2.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/graphics/window.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec2.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o: ../Fireworks-core/src/maths/mat4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/mat4.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o: ../Fireworks-core/src/maths/vec3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec3.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/mat4.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec3.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/mat4.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec3.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o: ../Fireworks-core/src/maths/vec2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec2.cpp
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o: CMakeFiles/fireworks.dir/flags.make
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o: ../Fireworks-core/src/maths/vec4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec4.cpp
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec2.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec4.cpp > CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec2.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s
+CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec4.cpp -o CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o: ../Fireworks-core/src/maths/vec3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec3.cpp
+# Object files for target fireworks
+fireworks_OBJECTS = \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o" \
+"CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o"
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec3.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i
+# External object files for target fireworks
+fireworks_EXTERNAL_OBJECTS =
 
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec3.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s
-
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o: CMakeFiles/Fireworks.dir/flags.make
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o: ../Fireworks-core/src/maths/vec4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o -c /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec4.cpp
-
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec4.cpp > CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i
-
-CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks-core/src/maths/vec4.cpp -o CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s
-
-# Object files for target Fireworks
-Fireworks_OBJECTS = \
-"CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o" \
-"CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o"
-
-# External object files for target Fireworks
-Fireworks_EXTERNAL_OBJECTS =
-
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o
-Fireworks: CMakeFiles/Fireworks.dir/build.make
-Fireworks: ../Dependencies/SOIL/lib/libsoil.a
-Fireworks: ../Dependencies/GLEW/lib/libGLEW.a
-Fireworks: ../Dependencies/GLFW/lib/libglfw3.a
-Fireworks: CMakeFiles/Fireworks.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable Fireworks"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Fireworks.dir/link.txt --verbose=$(VERBOSE)
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o
+libfireworks.a: CMakeFiles/fireworks.dir/build.make
+libfireworks.a: CMakeFiles/fireworks.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libfireworks.a"
+	$(CMAKE_COMMAND) -P CMakeFiles/fireworks.dir/cmake_clean_target.cmake
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fireworks.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Fireworks.dir/build: Fireworks
+CMakeFiles/fireworks.dir/build: libfireworks.a
 
-.PHONY : CMakeFiles/Fireworks.dir/build
+.PHONY : CMakeFiles/fireworks.dir/build
 
-CMakeFiles/Fireworks.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/Fireworks.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/Fireworks.dir/clean
+CMakeFiles/fireworks.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/fireworks.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/fireworks.dir/clean
 
-CMakeFiles/Fireworks.dir/depend:
-	cd /Users/phanisrikar/Desktop/Fireworks-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/phanisrikar/Desktop/Fireworks-Engine /Users/phanisrikar/Desktop/Fireworks-Engine /Users/phanisrikar/Desktop/Fireworks-Engine/build /Users/phanisrikar/Desktop/Fireworks-Engine/build /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles/Fireworks.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/Fireworks.dir/depend
+CMakeFiles/fireworks.dir/depend:
+	cd /Users/phanisrikar/Desktop/Fireworks-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/phanisrikar/Desktop/Fireworks-Engine /Users/phanisrikar/Desktop/Fireworks-Engine /Users/phanisrikar/Desktop/Fireworks-Engine/build /Users/phanisrikar/Desktop/Fireworks-Engine/build /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles/fireworks.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/fireworks.dir/depend
 
