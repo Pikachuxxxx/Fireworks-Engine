@@ -20,5 +20,5 @@ void main()
         int tid = int(texID - 0.5);
         texColor = texture(textures[tid], uvCoords);
     }
-    color = texColor * intensity * 0.5f;
+    color = texColor;// * intensity * 0.5f;
 }
