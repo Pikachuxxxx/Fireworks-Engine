@@ -7,6 +7,12 @@ namespace fireworks { namespace graphics {
     {
         m_Shader->enable();
         m_Shader->setUniformMat4("projection", m_ProjectionMatrix);
+        GLint texIDs[] =
+        {
+            0, 1,  2,  3,  4,  5,  6,  7,
+            8, 9, 10, 11, 12, 13, 14, 15
+        };
+        m_Shader->setUniform1iv("textures", texIDs, 8);
         m_Shader->disable();
     }
 
@@ -35,8 +41,8 @@ namespace fireworks { namespace graphics {
             // TODO: apply the transformation from Transformation Stack recursively relative to the Renderer and Layer Sprites
             renderable->submit(m_Renderer);
         }
-        m_Renderer->end();
 
+        m_Renderer->end();
         m_Renderer->flush();
     }
 
