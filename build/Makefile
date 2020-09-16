@@ -130,44 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Fireworks
+# Target rules for targets named fireworks
 
 # Build rule for target.
-Fireworks: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Fireworks
-.PHONY : Fireworks
+fireworks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fireworks
+.PHONY : fireworks
 
 # fast build rule for target.
-Fireworks/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/build
-.PHONY : Fireworks/fast
-
-Fireworks-core/main.o: Fireworks-core/main.cpp.o
-
-.PHONY : Fireworks-core/main.o
-
-# target to build an object file
-Fireworks-core/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.o
-.PHONY : Fireworks-core/main.cpp.o
-
-Fireworks-core/main.i: Fireworks-core/main.cpp.i
-
-.PHONY : Fireworks-core/main.i
-
-# target to preprocess a source file
-Fireworks-core/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.i
-.PHONY : Fireworks-core/main.cpp.i
-
-Fireworks-core/main.s: Fireworks-core/main.cpp.s
-
-.PHONY : Fireworks-core/main.s
-
-# target to generate assembly for a file
-Fireworks-core/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/main.cpp.s
-.PHONY : Fireworks-core/main.cpp.s
+fireworks/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/build
+.PHONY : fireworks/fast
 
 Fireworks-core/src/graphics/batchrenderer2d.o: Fireworks-core/src/graphics/batchrenderer2d.cpp.o
 
@@ -175,7 +148,7 @@ Fireworks-core/src/graphics/batchrenderer2d.o: Fireworks-core/src/graphics/batch
 
 # target to build an object file
 Fireworks-core/src/graphics/batchrenderer2d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.o
 .PHONY : Fireworks-core/src/graphics/batchrenderer2d.cpp.o
 
 Fireworks-core/src/graphics/batchrenderer2d.i: Fireworks-core/src/graphics/batchrenderer2d.cpp.i
@@ -184,7 +157,7 @@ Fireworks-core/src/graphics/batchrenderer2d.i: Fireworks-core/src/graphics/batch
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/batchrenderer2d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.i
 .PHONY : Fireworks-core/src/graphics/batchrenderer2d.cpp.i
 
 Fireworks-core/src/graphics/batchrenderer2d.s: Fireworks-core/src/graphics/batchrenderer2d.cpp.s
@@ -193,7 +166,7 @@ Fireworks-core/src/graphics/batchrenderer2d.s: Fireworks-core/src/graphics/batch
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/batchrenderer2d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/batchrenderer2d.cpp.s
 .PHONY : Fireworks-core/src/graphics/batchrenderer2d.cpp.s
 
 Fireworks-core/src/graphics/buffers/buffer.o: Fireworks-core/src/graphics/buffers/buffer.cpp.o
@@ -202,7 +175,7 @@ Fireworks-core/src/graphics/buffers/buffer.o: Fireworks-core/src/graphics/buffer
 
 # target to build an object file
 Fireworks-core/src/graphics/buffers/buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.o
 .PHONY : Fireworks-core/src/graphics/buffers/buffer.cpp.o
 
 Fireworks-core/src/graphics/buffers/buffer.i: Fireworks-core/src/graphics/buffers/buffer.cpp.i
@@ -211,7 +184,7 @@ Fireworks-core/src/graphics/buffers/buffer.i: Fireworks-core/src/graphics/buffer
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/buffers/buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.i
 .PHONY : Fireworks-core/src/graphics/buffers/buffer.cpp.i
 
 Fireworks-core/src/graphics/buffers/buffer.s: Fireworks-core/src/graphics/buffers/buffer.cpp.s
@@ -220,7 +193,7 @@ Fireworks-core/src/graphics/buffers/buffer.s: Fireworks-core/src/graphics/buffer
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/buffers/buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/buffer.cpp.s
 .PHONY : Fireworks-core/src/graphics/buffers/buffer.cpp.s
 
 Fireworks-core/src/graphics/buffers/indexbuffer.o: Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o
@@ -229,7 +202,7 @@ Fireworks-core/src/graphics/buffers/indexbuffer.o: Fireworks-core/src/graphics/b
 
 # target to build an object file
 Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o
 .PHONY : Fireworks-core/src/graphics/buffers/indexbuffer.cpp.o
 
 Fireworks-core/src/graphics/buffers/indexbuffer.i: Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i
@@ -238,7 +211,7 @@ Fireworks-core/src/graphics/buffers/indexbuffer.i: Fireworks-core/src/graphics/b
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i
 .PHONY : Fireworks-core/src/graphics/buffers/indexbuffer.cpp.i
 
 Fireworks-core/src/graphics/buffers/indexbuffer.s: Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s
@@ -247,7 +220,7 @@ Fireworks-core/src/graphics/buffers/indexbuffer.s: Fireworks-core/src/graphics/b
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s
 .PHONY : Fireworks-core/src/graphics/buffers/indexbuffer.cpp.s
 
 Fireworks-core/src/graphics/buffers/vertexarray.o: Fireworks-core/src/graphics/buffers/vertexarray.cpp.o
@@ -256,7 +229,7 @@ Fireworks-core/src/graphics/buffers/vertexarray.o: Fireworks-core/src/graphics/b
 
 # target to build an object file
 Fireworks-core/src/graphics/buffers/vertexarray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.o
 .PHONY : Fireworks-core/src/graphics/buffers/vertexarray.cpp.o
 
 Fireworks-core/src/graphics/buffers/vertexarray.i: Fireworks-core/src/graphics/buffers/vertexarray.cpp.i
@@ -265,7 +238,7 @@ Fireworks-core/src/graphics/buffers/vertexarray.i: Fireworks-core/src/graphics/b
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/buffers/vertexarray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.i
 .PHONY : Fireworks-core/src/graphics/buffers/vertexarray.cpp.i
 
 Fireworks-core/src/graphics/buffers/vertexarray.s: Fireworks-core/src/graphics/buffers/vertexarray.cpp.s
@@ -274,7 +247,7 @@ Fireworks-core/src/graphics/buffers/vertexarray.s: Fireworks-core/src/graphics/b
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/buffers/vertexarray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/buffers/vertexarray.cpp.s
 .PHONY : Fireworks-core/src/graphics/buffers/vertexarray.cpp.s
 
 Fireworks-core/src/graphics/layers/group.o: Fireworks-core/src/graphics/layers/group.cpp.o
@@ -283,7 +256,7 @@ Fireworks-core/src/graphics/layers/group.o: Fireworks-core/src/graphics/layers/g
 
 # target to build an object file
 Fireworks-core/src/graphics/layers/group.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.o
 .PHONY : Fireworks-core/src/graphics/layers/group.cpp.o
 
 Fireworks-core/src/graphics/layers/group.i: Fireworks-core/src/graphics/layers/group.cpp.i
@@ -292,7 +265,7 @@ Fireworks-core/src/graphics/layers/group.i: Fireworks-core/src/graphics/layers/g
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/layers/group.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.i
 .PHONY : Fireworks-core/src/graphics/layers/group.cpp.i
 
 Fireworks-core/src/graphics/layers/group.s: Fireworks-core/src/graphics/layers/group.cpp.s
@@ -301,7 +274,7 @@ Fireworks-core/src/graphics/layers/group.s: Fireworks-core/src/graphics/layers/g
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/layers/group.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/group.cpp.s
 .PHONY : Fireworks-core/src/graphics/layers/group.cpp.s
 
 Fireworks-core/src/graphics/layers/layer.o: Fireworks-core/src/graphics/layers/layer.cpp.o
@@ -310,7 +283,7 @@ Fireworks-core/src/graphics/layers/layer.o: Fireworks-core/src/graphics/layers/l
 
 # target to build an object file
 Fireworks-core/src/graphics/layers/layer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.o
 .PHONY : Fireworks-core/src/graphics/layers/layer.cpp.o
 
 Fireworks-core/src/graphics/layers/layer.i: Fireworks-core/src/graphics/layers/layer.cpp.i
@@ -319,7 +292,7 @@ Fireworks-core/src/graphics/layers/layer.i: Fireworks-core/src/graphics/layers/l
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/layers/layer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.i
 .PHONY : Fireworks-core/src/graphics/layers/layer.cpp.i
 
 Fireworks-core/src/graphics/layers/layer.s: Fireworks-core/src/graphics/layers/layer.cpp.s
@@ -328,35 +301,35 @@ Fireworks-core/src/graphics/layers/layer.s: Fireworks-core/src/graphics/layers/l
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/layers/layer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/layers/layer.cpp.s
 .PHONY : Fireworks-core/src/graphics/layers/layer.cpp.s
 
-Fireworks-core/src/graphics/layers/tilelayer.o: Fireworks-core/src/graphics/layers/tilelayer.cpp.o
+Fireworks-core/src/graphics/renderables/label.o: Fireworks-core/src/graphics/renderables/label.cpp.o
 
-.PHONY : Fireworks-core/src/graphics/layers/tilelayer.o
+.PHONY : Fireworks-core/src/graphics/renderables/label.o
 
 # target to build an object file
-Fireworks-core/src/graphics/layers/tilelayer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.o
-.PHONY : Fireworks-core/src/graphics/layers/tilelayer.cpp.o
+Fireworks-core/src/graphics/renderables/label.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.o
+.PHONY : Fireworks-core/src/graphics/renderables/label.cpp.o
 
-Fireworks-core/src/graphics/layers/tilelayer.i: Fireworks-core/src/graphics/layers/tilelayer.cpp.i
+Fireworks-core/src/graphics/renderables/label.i: Fireworks-core/src/graphics/renderables/label.cpp.i
 
-.PHONY : Fireworks-core/src/graphics/layers/tilelayer.i
+.PHONY : Fireworks-core/src/graphics/renderables/label.i
 
 # target to preprocess a source file
-Fireworks-core/src/graphics/layers/tilelayer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.i
-.PHONY : Fireworks-core/src/graphics/layers/tilelayer.cpp.i
+Fireworks-core/src/graphics/renderables/label.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.i
+.PHONY : Fireworks-core/src/graphics/renderables/label.cpp.i
 
-Fireworks-core/src/graphics/layers/tilelayer.s: Fireworks-core/src/graphics/layers/tilelayer.cpp.s
+Fireworks-core/src/graphics/renderables/label.s: Fireworks-core/src/graphics/renderables/label.cpp.s
 
-.PHONY : Fireworks-core/src/graphics/layers/tilelayer.s
+.PHONY : Fireworks-core/src/graphics/renderables/label.s
 
 # target to generate assembly for a file
-Fireworks-core/src/graphics/layers/tilelayer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/layers/tilelayer.cpp.s
-.PHONY : Fireworks-core/src/graphics/layers/tilelayer.cpp.s
+Fireworks-core/src/graphics/renderables/label.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/label.cpp.s
+.PHONY : Fireworks-core/src/graphics/renderables/label.cpp.s
 
 Fireworks-core/src/graphics/renderables/sprite.o: Fireworks-core/src/graphics/renderables/sprite.cpp.o
 
@@ -364,7 +337,7 @@ Fireworks-core/src/graphics/renderables/sprite.o: Fireworks-core/src/graphics/re
 
 # target to build an object file
 Fireworks-core/src/graphics/renderables/sprite.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.o
 .PHONY : Fireworks-core/src/graphics/renderables/sprite.cpp.o
 
 Fireworks-core/src/graphics/renderables/sprite.i: Fireworks-core/src/graphics/renderables/sprite.cpp.i
@@ -373,7 +346,7 @@ Fireworks-core/src/graphics/renderables/sprite.i: Fireworks-core/src/graphics/re
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/renderables/sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.i
 .PHONY : Fireworks-core/src/graphics/renderables/sprite.cpp.i
 
 Fireworks-core/src/graphics/renderables/sprite.s: Fireworks-core/src/graphics/renderables/sprite.cpp.s
@@ -382,7 +355,7 @@ Fireworks-core/src/graphics/renderables/sprite.s: Fireworks-core/src/graphics/re
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/renderables/sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/sprite.cpp.s
 .PHONY : Fireworks-core/src/graphics/renderables/sprite.cpp.s
 
 Fireworks-core/src/graphics/renderables/static_sprite.o: Fireworks-core/src/graphics/renderables/static_sprite.cpp.o
@@ -391,7 +364,7 @@ Fireworks-core/src/graphics/renderables/static_sprite.o: Fireworks-core/src/grap
 
 # target to build an object file
 Fireworks-core/src/graphics/renderables/static_sprite.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.o
 .PHONY : Fireworks-core/src/graphics/renderables/static_sprite.cpp.o
 
 Fireworks-core/src/graphics/renderables/static_sprite.i: Fireworks-core/src/graphics/renderables/static_sprite.cpp.i
@@ -400,7 +373,7 @@ Fireworks-core/src/graphics/renderables/static_sprite.i: Fireworks-core/src/grap
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/renderables/static_sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.i
 .PHONY : Fireworks-core/src/graphics/renderables/static_sprite.cpp.i
 
 Fireworks-core/src/graphics/renderables/static_sprite.s: Fireworks-core/src/graphics/renderables/static_sprite.cpp.s
@@ -409,7 +382,7 @@ Fireworks-core/src/graphics/renderables/static_sprite.s: Fireworks-core/src/grap
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/renderables/static_sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/renderables/static_sprite.cpp.s
 .PHONY : Fireworks-core/src/graphics/renderables/static_sprite.cpp.s
 
 Fireworks-core/src/graphics/shader.o: Fireworks-core/src/graphics/shader.cpp.o
@@ -418,7 +391,7 @@ Fireworks-core/src/graphics/shader.o: Fireworks-core/src/graphics/shader.cpp.o
 
 # target to build an object file
 Fireworks-core/src/graphics/shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.o
 .PHONY : Fireworks-core/src/graphics/shader.cpp.o
 
 Fireworks-core/src/graphics/shader.i: Fireworks-core/src/graphics/shader.cpp.i
@@ -427,7 +400,7 @@ Fireworks-core/src/graphics/shader.i: Fireworks-core/src/graphics/shader.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.i
 .PHONY : Fireworks-core/src/graphics/shader.cpp.i
 
 Fireworks-core/src/graphics/shader.s: Fireworks-core/src/graphics/shader.cpp.s
@@ -436,35 +409,8 @@ Fireworks-core/src/graphics/shader.s: Fireworks-core/src/graphics/shader.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/shader.cpp.s
 .PHONY : Fireworks-core/src/graphics/shader.cpp.s
-
-Fireworks-core/src/graphics/simple2drenderer.o: Fireworks-core/src/graphics/simple2drenderer.cpp.o
-
-.PHONY : Fireworks-core/src/graphics/simple2drenderer.o
-
-# target to build an object file
-Fireworks-core/src/graphics/simple2drenderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.o
-.PHONY : Fireworks-core/src/graphics/simple2drenderer.cpp.o
-
-Fireworks-core/src/graphics/simple2drenderer.i: Fireworks-core/src/graphics/simple2drenderer.cpp.i
-
-.PHONY : Fireworks-core/src/graphics/simple2drenderer.i
-
-# target to preprocess a source file
-Fireworks-core/src/graphics/simple2drenderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.i
-.PHONY : Fireworks-core/src/graphics/simple2drenderer.cpp.i
-
-Fireworks-core/src/graphics/simple2drenderer.s: Fireworks-core/src/graphics/simple2drenderer.cpp.s
-
-.PHONY : Fireworks-core/src/graphics/simple2drenderer.s
-
-# target to generate assembly for a file
-Fireworks-core/src/graphics/simple2drenderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/simple2drenderer.cpp.s
-.PHONY : Fireworks-core/src/graphics/simple2drenderer.cpp.s
 
 Fireworks-core/src/graphics/texture.o: Fireworks-core/src/graphics/texture.cpp.o
 
@@ -472,7 +418,7 @@ Fireworks-core/src/graphics/texture.o: Fireworks-core/src/graphics/texture.cpp.o
 
 # target to build an object file
 Fireworks-core/src/graphics/texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.o
 .PHONY : Fireworks-core/src/graphics/texture.cpp.o
 
 Fireworks-core/src/graphics/texture.i: Fireworks-core/src/graphics/texture.cpp.i
@@ -481,7 +427,7 @@ Fireworks-core/src/graphics/texture.i: Fireworks-core/src/graphics/texture.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.i
 .PHONY : Fireworks-core/src/graphics/texture.cpp.i
 
 Fireworks-core/src/graphics/texture.s: Fireworks-core/src/graphics/texture.cpp.s
@@ -490,7 +436,7 @@ Fireworks-core/src/graphics/texture.s: Fireworks-core/src/graphics/texture.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/texture.cpp.s
 .PHONY : Fireworks-core/src/graphics/texture.cpp.s
 
 Fireworks-core/src/graphics/window.o: Fireworks-core/src/graphics/window.cpp.o
@@ -499,7 +445,7 @@ Fireworks-core/src/graphics/window.o: Fireworks-core/src/graphics/window.cpp.o
 
 # target to build an object file
 Fireworks-core/src/graphics/window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.o
 .PHONY : Fireworks-core/src/graphics/window.cpp.o
 
 Fireworks-core/src/graphics/window.i: Fireworks-core/src/graphics/window.cpp.i
@@ -508,7 +454,7 @@ Fireworks-core/src/graphics/window.i: Fireworks-core/src/graphics/window.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/graphics/window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.i
 .PHONY : Fireworks-core/src/graphics/window.cpp.i
 
 Fireworks-core/src/graphics/window.s: Fireworks-core/src/graphics/window.cpp.s
@@ -517,7 +463,7 @@ Fireworks-core/src/graphics/window.s: Fireworks-core/src/graphics/window.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/graphics/window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/graphics/window.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/graphics/window.cpp.s
 .PHONY : Fireworks-core/src/graphics/window.cpp.s
 
 Fireworks-core/src/maths/mat4.o: Fireworks-core/src/maths/mat4.cpp.o
@@ -526,7 +472,7 @@ Fireworks-core/src/maths/mat4.o: Fireworks-core/src/maths/mat4.cpp.o
 
 # target to build an object file
 Fireworks-core/src/maths/mat4.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.o
 .PHONY : Fireworks-core/src/maths/mat4.cpp.o
 
 Fireworks-core/src/maths/mat4.i: Fireworks-core/src/maths/mat4.cpp.i
@@ -535,7 +481,7 @@ Fireworks-core/src/maths/mat4.i: Fireworks-core/src/maths/mat4.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/maths/mat4.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.i
 .PHONY : Fireworks-core/src/maths/mat4.cpp.i
 
 Fireworks-core/src/maths/mat4.s: Fireworks-core/src/maths/mat4.cpp.s
@@ -544,7 +490,7 @@ Fireworks-core/src/maths/mat4.s: Fireworks-core/src/maths/mat4.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/maths/mat4.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/mat4.cpp.s
 .PHONY : Fireworks-core/src/maths/mat4.cpp.s
 
 Fireworks-core/src/maths/vec2.o: Fireworks-core/src/maths/vec2.cpp.o
@@ -553,7 +499,7 @@ Fireworks-core/src/maths/vec2.o: Fireworks-core/src/maths/vec2.cpp.o
 
 # target to build an object file
 Fireworks-core/src/maths/vec2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.o
 .PHONY : Fireworks-core/src/maths/vec2.cpp.o
 
 Fireworks-core/src/maths/vec2.i: Fireworks-core/src/maths/vec2.cpp.i
@@ -562,7 +508,7 @@ Fireworks-core/src/maths/vec2.i: Fireworks-core/src/maths/vec2.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/maths/vec2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.i
 .PHONY : Fireworks-core/src/maths/vec2.cpp.i
 
 Fireworks-core/src/maths/vec2.s: Fireworks-core/src/maths/vec2.cpp.s
@@ -571,7 +517,7 @@ Fireworks-core/src/maths/vec2.s: Fireworks-core/src/maths/vec2.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/maths/vec2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec2.cpp.s
 .PHONY : Fireworks-core/src/maths/vec2.cpp.s
 
 Fireworks-core/src/maths/vec3.o: Fireworks-core/src/maths/vec3.cpp.o
@@ -580,7 +526,7 @@ Fireworks-core/src/maths/vec3.o: Fireworks-core/src/maths/vec3.cpp.o
 
 # target to build an object file
 Fireworks-core/src/maths/vec3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.o
 .PHONY : Fireworks-core/src/maths/vec3.cpp.o
 
 Fireworks-core/src/maths/vec3.i: Fireworks-core/src/maths/vec3.cpp.i
@@ -589,7 +535,7 @@ Fireworks-core/src/maths/vec3.i: Fireworks-core/src/maths/vec3.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/maths/vec3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.i
 .PHONY : Fireworks-core/src/maths/vec3.cpp.i
 
 Fireworks-core/src/maths/vec3.s: Fireworks-core/src/maths/vec3.cpp.s
@@ -598,7 +544,7 @@ Fireworks-core/src/maths/vec3.s: Fireworks-core/src/maths/vec3.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/maths/vec3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec3.cpp.s
 .PHONY : Fireworks-core/src/maths/vec3.cpp.s
 
 Fireworks-core/src/maths/vec4.o: Fireworks-core/src/maths/vec4.cpp.o
@@ -607,7 +553,7 @@ Fireworks-core/src/maths/vec4.o: Fireworks-core/src/maths/vec4.cpp.o
 
 # target to build an object file
 Fireworks-core/src/maths/vec4.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.o
 .PHONY : Fireworks-core/src/maths/vec4.cpp.o
 
 Fireworks-core/src/maths/vec4.i: Fireworks-core/src/maths/vec4.cpp.i
@@ -616,7 +562,7 @@ Fireworks-core/src/maths/vec4.i: Fireworks-core/src/maths/vec4.cpp.i
 
 # target to preprocess a source file
 Fireworks-core/src/maths/vec4.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.i
 .PHONY : Fireworks-core/src/maths/vec4.cpp.i
 
 Fireworks-core/src/maths/vec4.s: Fireworks-core/src/maths/vec4.cpp.s
@@ -625,7 +571,7 @@ Fireworks-core/src/maths/vec4.s: Fireworks-core/src/maths/vec4.cpp.s
 
 # target to generate assembly for a file
 Fireworks-core/src/maths/vec4.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/Fireworks-core/src/maths/vec4.cpp.s
 .PHONY : Fireworks-core/src/maths/vec4.cpp.s
 
 # Help Target
@@ -636,10 +582,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Fireworks"
-	@echo "... Fireworks-core/main.o"
-	@echo "... Fireworks-core/main.i"
-	@echo "... Fireworks-core/main.s"
+	@echo "... fireworks"
 	@echo "... Fireworks-core/src/graphics/batchrenderer2d.o"
 	@echo "... Fireworks-core/src/graphics/batchrenderer2d.i"
 	@echo "... Fireworks-core/src/graphics/batchrenderer2d.s"
@@ -658,9 +601,9 @@ help:
 	@echo "... Fireworks-core/src/graphics/layers/layer.o"
 	@echo "... Fireworks-core/src/graphics/layers/layer.i"
 	@echo "... Fireworks-core/src/graphics/layers/layer.s"
-	@echo "... Fireworks-core/src/graphics/layers/tilelayer.o"
-	@echo "... Fireworks-core/src/graphics/layers/tilelayer.i"
-	@echo "... Fireworks-core/src/graphics/layers/tilelayer.s"
+	@echo "... Fireworks-core/src/graphics/renderables/label.o"
+	@echo "... Fireworks-core/src/graphics/renderables/label.i"
+	@echo "... Fireworks-core/src/graphics/renderables/label.s"
 	@echo "... Fireworks-core/src/graphics/renderables/sprite.o"
 	@echo "... Fireworks-core/src/graphics/renderables/sprite.i"
 	@echo "... Fireworks-core/src/graphics/renderables/sprite.s"
@@ -670,9 +613,6 @@ help:
 	@echo "... Fireworks-core/src/graphics/shader.o"
 	@echo "... Fireworks-core/src/graphics/shader.i"
 	@echo "... Fireworks-core/src/graphics/shader.s"
-	@echo "... Fireworks-core/src/graphics/simple2drenderer.o"
-	@echo "... Fireworks-core/src/graphics/simple2drenderer.i"
-	@echo "... Fireworks-core/src/graphics/simple2drenderer.s"
 	@echo "... Fireworks-core/src/graphics/texture.o"
 	@echo "... Fireworks-core/src/graphics/texture.i"
 	@echo "... Fireworks-core/src/graphics/texture.s"

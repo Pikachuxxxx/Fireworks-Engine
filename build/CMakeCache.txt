@@ -14,6 +14,15 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a file.
+BZIP2_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include
+
+//Path to a library.
+BZIP2_LIBRARY_DEBUG:FILEPATH=BZIP2_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+BZIP2_LIBRARY_RELEASE:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libbz2.tbd
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -44,6 +53,24 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//C compiler
+CMAKE_C_COMPILER:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+
+//Flags used by the C compiler during all build types.
+CMAKE_C_FLAGS:STRING=
+
+//Flags used by the C compiler during DEBUG builds.
+CMAKE_C_FLAGS_DEBUG:STRING=-g
+
+//Flags used by the C compiler during MINSIZEREL builds.
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the C compiler during RELEASE builds.
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+
+//Flags used by the C compiler during RELWITHDEBINFO builds.
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
@@ -122,7 +149,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 
 //Value Computed by CMake
-CMAKE_PROJECT_DESCRIPTION:STATIC=Sandvox Game Engine
+CMAKE_PROJECT_DESCRIPTION:STATIC=Sandbox Game Engine
 
 //Value Computed by CMake
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
@@ -131,13 +158,13 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=Fireworks
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=0.8
+CMAKE_PROJECT_VERSION:STATIC=1.0
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=8
+CMAKE_PROJECT_VERSION_MINOR:STATIC=0
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_PATCH:STATIC=
@@ -213,11 +240,20 @@ CURL_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/S
 //The directory containing a CMake configuration file for CoreFoundation.
 CoreFoundation_DIR:PATH=CoreFoundation_DIR-NOTFOUND
 
+//Path to a library.
+FTGL_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/FTGL/lib/libftgl.a
+
 //Value Computed by CMake
 Fireworks_BINARY_DIR:STATIC=/Users/phanisrikar/Desktop/Fireworks-Engine/build
 
 //Value Computed by CMake
 Fireworks_SOURCE_DIR:STATIC=/Users/phanisrikar/Desktop/Fireworks-Engine
+
+//Path to a library.
+FreeTypeGL_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/FreeTypeGL/lib/libfreetype-gl.a
+
+//Path to a library.
+FreeType_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/FreeType/lib/libfreetype.a
 
 //Path to a library.
 GLEW:FILEPATH=GLEW-NOTFOUND
@@ -237,6 +273,18 @@ GLFW_DIR:PATH=GLFW_DIR-NOTFOUND
 //Path to a library.
 GLFW_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/GLFW/lib/libglfw3.a
 
+//The directory containing a CMake configuration file for HARBUZZ.
+HARBUZZ_DIR:PATH=HARBUZZ_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for HARFBUZZ.
+HARFBUZZ_DIR:PATH=/usr/local/lib/cmake/harfbuzz
+
+//Path to a library.
+HARFBUZZ_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/HarfBuzz/lib/libharfbuzz.a
+
+//The directory containing a CMake configuration file for Harfbuzz.
+Harfbuzz_DIR:PATH=/usr/local/lib/cmake/harfbuzz
+
 //Include for OpenGL on OS X
 OPENGL_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework
 
@@ -247,19 +295,48 @@ OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/
 OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework
 
 //Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libpng.dylib
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=/Library/Frameworks/Mono.framework/Headers
+
+//Path to a library.
 SOILLIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/SOIL/lib/libsoil.a
 
 //Path to a library.
 SOIL_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/SOIL/lib/libsoil.a
 
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.tbd
+
 //The directory containing a CMake configuration file for glfw3.
 glfw3_DIR:PATH=/usr/local/lib/cmake/glfw3
+
+//The directory containing a CMake configuration file for harfbuzz.
+harfbuzz_DIR:PATH=/usr/local/lib/cmake/harfbuzz
 
 
 ########################
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: BZIP2_INCLUDE_DIR
+BZIP2_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BZIP2_LIBRARY_DEBUG
+BZIP2_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BZIP2_LIBRARY_RELEASE
+BZIP2_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Have symbol BZ2_bzCompressInit
+BZIP2_NEED_PREFIX:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -292,6 +369,18 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS
+CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
+CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_MINSIZEREL
+CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELEASE
+CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
+CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Path to cache edit program executable.
@@ -383,14 +472,32 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding BZip2
+FIND_PACKAGE_MESSAGE_DETAILS_BZip2:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libbz2.tbd][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include][v1.0.6()]
 //Details about finding GLEW
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/local/lib/cmake/glew/glew-config.cmake][v()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/local/lib/libpng.dylib][/Library/Frameworks/Mono.framework/Headers][v1.4.12()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.tbd][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include][v1.2.11()]
 //ADVANCED property for variable: OPENGL_INCLUDE_DIR
 OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_gl_LIBRARY
 OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 
