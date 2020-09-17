@@ -8,10 +8,10 @@
 </p>
 
 <p align="center">
-  <a href="#building">Building</a> |
   <a href="#features">Features</a> |
+  <a href="#building">Building</a> |
   <a href="#usage">Usage</a> |
-  <a href="">API/Docs</a> |
+  <a href="https://github.com/Pikachuxxxx/Fireworks-Engine/wiki">API/Docs</a> |
   <a href="#dependencies">Dependencies</a>
 <br/>
 </p>  
