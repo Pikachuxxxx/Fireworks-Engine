@@ -10,12 +10,17 @@
 <p align="center">
   <a href="#building">Building</a> |
   <a href="#features">Features</a> |
+  <a href="#usage">Usage</a> |
+  <a href="">API/Docs</a> |
   <a href="#dependencies">Dependencies</a>
 <br/>
+</p>  
+
+<p align="center">  
 <br/>
-<a href="https://actions-badge.atrox.dev/jmorton06/Lumos/goto"><img alt="Build" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fjmorton06%2FLumos%2Fbadge&style=flat-square&label=build&branch=master&event=push"/></a>
-<a href=""><img alt="platforms" src="https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20iOS-blue?style=flat-square"/></a>
-<a href="https://github.com/jmorton06/Lumos/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/github/license/jmorton06/Lumos?style=flat-square"/></a>
+<a href=""><img alt="platforms" src="https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS%20%7C-blue?style=flat-square"/></a>
+
+<a href="https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/github/license/Pikachuxxxx/fireworks-engine?style=flat-square"/></a>
 <br/>
 <a href="https://github.com/jmorton06/Lumos/issues"><img alt="Issues" src="https://img.shields.io/github/issues-raw/jmorton06/Lumos.svg?style=flat-square"/></a>
 <a href=""><img alt="size" src="https://img.shields.io/github/repo-size/jmorton06/Lumos?style=flat-square"/></a>
