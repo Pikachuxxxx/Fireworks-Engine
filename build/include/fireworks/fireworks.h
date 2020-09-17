@@ -18,11 +18,9 @@
 #include "src/graphics/renderables/static_sprite.h"
 #include "src/graphics/renderables/renderable2d.h"
 
-
 #include "src/maths/maths.h"
 #include "src/utils/fileutils.h"
 #include "src/utils/timer.h"
-
 
 namespace fireworks {
 
@@ -84,14 +82,13 @@ namespace fireworks {
             while(!m_Window->closed())
             {
                 m_Window->clear();
+                if(m_Timer->elapsed() - updateTimer > updateTick)
+                {
+                    update();
+                    updates++;
+                    updateTimer += updateTick;
 
-            if(m_Timer->elapsed() - updateTimer > updateTick)
-            {
-                update();
-                updates++;
-                updateTimer += updateTick;
-
-            }
+                }
                 frames++;
                 render();
                 m_Window->update();
