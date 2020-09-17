@@ -43,6 +43,7 @@ namespace fireworks { namespace graphics {
 
         inline int getWidth() const { return m_Width; }
         inline int getHeight() const { return m_Height; }
+        inline GLFWwindow* getGLFWwindow() const { return m_Window; }
 
         bool isKeyPressed(unsigned int keycode) const;
         bool isMouseButtonPressed(unsigned int button) const;
