@@ -128,5 +128,5 @@ int main()
 
 #
 ### Dependencies
-- SOIL, Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG 
+- [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG 
 
