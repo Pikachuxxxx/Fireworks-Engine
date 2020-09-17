@@ -8,9 +8,9 @@
 </p>
 
 <p align="center">
-  <a href="Building">Building</a> |
-  <a href="Features">Features</a> |
-  <a href="Dependencies">Dependencies</a>
+  <a href="#building">Building</a> |
+  <a href="#features">Features</a> |
+  <a href="#dependencies">Dependencies</a>
 <br/>
 <br/>
 <a href="https://actions-badge.atrox.dev/jmorton06/Lumos/goto"><img alt="Build" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fjmorton06%2FLumos%2Fbadge&style=flat-square&label=build&branch=master&event=push"/></a>
