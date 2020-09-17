@@ -18,7 +18,7 @@
 
 <p align="center">  
 <br/>
-<a href=""><img alt="platforms" src="https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS%20%7C-blue?style=flat-square"/>  </a>       
+<a href="https://github.com/Pikachuxxxx/Fireworks-Engine"><img alt="platforms" src="https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS%20%7C-blue?style=flat-square"/>  </a>       
 <a href="https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/github/license/Pikachuxxxx/fireworks-engine?style=flat-square"/>  </a>
 <br/>
 <a href="https://github.com/Pikachuxxxx/Fireworks-Engine/issues"><img alt="Issues" src="https://img.shields.io/github/issues/Pikachuxxxx/fireworks-engine?style=flat-square"/></a>
