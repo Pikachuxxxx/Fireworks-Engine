@@ -35,11 +35,7 @@ namespace fireworks {
         Timer* m_Timer;
         unsigned int m_FramesPerSecond, m_UpdatePerSecond;
     protected:
-        Fireworks()
-            : m_FramesPerSecond(0), m_UpdatePerSecond(0)
-        {
-
-        }
+        Fireworks() : m_FramesPerSecond(0), m_UpdatePerSecond(0) { }
 
         virtual ~Fireworks()
         {
@@ -87,7 +83,6 @@ namespace fireworks {
                     update();
                     updates++;
                     updateTimer += updateTick;
-
                 }
                 frames++;
                 render();
