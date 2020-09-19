@@ -115,16 +115,18 @@ int main()
 ```
 ### TODO
 - Camera 2D
-- Render textures and frame buffer textures
-- Physics2D component (box3d)
+- Render textures and Frame Buffer objects
+- Physics2D component (box2d physics engine integration)
 - Better and customisable font rendering 
 - Audio system
+- Materials and Lights (2D and 3D)
 - Event system
 - 3D rendering + BatchRenderer3D
 - Camera 3D
 - 2D + 3D primitive drawing utility function 
 - 3D Physics 
 - ECS - entity component system 
+- Occlusion Culling
 
 #
 ### Dependencies
