@@ -44,7 +44,8 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Basic font rendering (supports only a sinle font for now)
 - Easy to manage and customisable native scripting 
 - Simple API for faster development and customisation
-- Simple Window and Input management System and a lot more... on the way...
+- Simple Window and Input management System 
+- and a lot more on the way....
 
 #
 ### Building
