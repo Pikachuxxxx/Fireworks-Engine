@@ -41,7 +41,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - 2D rendering pipeline
 - Can render upto 60, 000 Sprites, textures using batch rendering
 - Simple and customisable math library
-- Basic font rendering (supports only a sinle font for now)
+- Basic font rendering (supports only a single font for now)
 - Easy to manage and customisable native scripting 
 - Simple API for faster development and customisation
 - Simple Window and Input management System 
