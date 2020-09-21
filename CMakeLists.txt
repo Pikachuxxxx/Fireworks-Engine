@@ -53,6 +53,10 @@ find_library(FTGL_LIBRARY
     NAMES ftgl
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/FTGL/lib"
     )
+find_library(FIREWORKS_LIBRARY
+    NAMES fireworks
+    HINTS "${CMAKE_SOURCE_DIR}/build"
+    )
 # Adding library include paths
 include_directories(
 	"${CMAKE_SOURCE_DIR}/Dependencies/SOIL/include"
@@ -60,9 +64,10 @@ include_directories(
     "${CMAKE_SOURCE_DIR}/Dependencies/GLFW/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/FreeType/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/FTGL/include"
+    "${CMAKE_SOURCE_DIR}/build/include"
 )
 
-set(LIBS ${SOILLIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY})
+set(LIBS ${SOILLIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FIREWORKS_LIBRARY})
 set(FRAMEWORKS ${OPENGL_LIBRARIES} ${FreeType_LIBRARY} ${FTGL_LIBRARY} ${PNG_LIBRARIES} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES})
-# target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework Cocoa -framework IOKit -framework CoreGraphics")
-add_library(fireworks STATIC ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
+target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework Cocoa -framework IOKit -framework CoreGraphics")
+# add_library(fireworks STATIC ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
