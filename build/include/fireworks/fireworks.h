@@ -87,7 +87,6 @@ namespace fireworks {
                     update();
                     updates++;
                     updateTimer += updateTick;
-
                 }
                 frames++;
                 render();
