@@ -49,15 +49,14 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 
 #
 ### Building
-**MacOS :**
+**MacOS/Windows/Linux :**
   change to the build folder and use the CMakeFile to generate the MakeFile and build the library using the Make command
 ```bash
+  mkdir build
   cd build 
   cmake ..
   make 
 ```
-**Windows/Linux :**
-CMakeFile to  be updated....
 
 ### Usage
 Here's a simple example to render a window.
@@ -131,5 +130,5 @@ int main()
 
 #
 ### Dependencies
-- [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG 
+- [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG, Zlib2 
 
