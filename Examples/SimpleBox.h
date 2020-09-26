@@ -26,7 +26,6 @@ public:
 
         Sprite* box = new Sprite(4.0f, 4.0f, 4.0f, 4.0f, vec4(1.0f, 1.0f, 0.0f, 1.0f));
         layer->add(box);
-
    }
 
    // Runs once per second
