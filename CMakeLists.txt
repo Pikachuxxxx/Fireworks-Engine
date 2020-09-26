@@ -29,34 +29,42 @@ configure_file(${CMAKE_SOURCE_DIR}/Fireworks-core/src/helpers/RootDir.h.in src/h
 
 # Adding Frameworks
 find_package(OpenGL REQUIRED)
-find_package(PNG REQUIRED)
-find_package(BZip2 REQUIRED)
 
 # Adding custom libraries
-find_library(SOILLIBRARY
-    NAMES soil
+find_library(SOIL_LIBRARY
+    NAMES soil libsoil
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/SOIL/lib"
     )
 find_library(GLEW_LIBRARY
-    NAMES glew
+    NAMES glew libglew glew32s
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/GLEW/lib"
     )
 find_library(GLFW_LIBRARY
-    NAMES glfw3
+    NAMES glfw3 libglfw3
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/GLFW/lib"
     )
+if(APPLE)
 find_library(FreeType_LIBRARY
-    NAMES freetype
+    NAMES freetype libfreetype
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/FreeType/lib"
     )
 find_library(FTGL_LIBRARY
-    NAMES ftgl
+    NAMES ftgl libftgl
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/FTGL/lib"
     )
-find_library(FIREWORKS_LIBRARY
-    NAMES fireworks
-    HINTS "${CMAKE_SOURCE_DIR}/build"
+endif(APPLE)
+find_library(PNG_LIBRARY
+    NAMES png libpng
+    HINTS "${CMAKE_SOURCE_DIR}/Dependencies/PNG/lib"
     )
+find_library(BZIP2_LIBRARY
+    NAMES bzip2
+    HINTS "${CMAKE_SOURCE_DIR}/Dependencies/BZIP2/lib"
+    )
+#find_library(FIREWORKS_LIBRARY
+#    NAMES fireworks
+#    HINTS "${CMAKE_SOURCE_DIR}/build"
+#    )
 # Adding library include paths
 include_directories(
 	"${CMAKE_SOURCE_DIR}/Dependencies/SOIL/include"
@@ -64,10 +72,24 @@ include_directories(
     "${CMAKE_SOURCE_DIR}/Dependencies/GLFW/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/FreeType/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/FTGL/include"
-    "${CMAKE_SOURCE_DIR}/build/include"
+    "${CMAKE_SOURCE_DIR}/Dependencies/PNG/include"
+    "${CMAKE_SOURCE_DIR}/Dependencies/BZIP2"
+#   "${CMAKE_SOURCE_DIR}/build/include"
 )
 
-set(LIBS ${SOILLIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FIREWORKS_LIBRARY})
-set(FRAMEWORKS ${OPENGL_LIBRARIES} ${FreeType_LIBRARY} ${FTGL_LIBRARY} ${PNG_LIBRARIES} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES})
-target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework Cocoa -framework IOKit -framework CoreGraphics")
-# add_library(fireworks STATIC ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
+if (WIN32)
+    set(LIBS ${SOIL_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${PNG_LIBRARY} ${BZIP2_LIBRARY})
+endif (WIN32)
+if (APPLE)
+    set(LIBS ${SOIL_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${FTGL_LIBRARY} ${PNG_LIBRARY} ${BZIP2_LIBRARY})
+endif (APPLE)
+
+set(FRAMEWORKS ${OPENGL_LIBRARIES})
+add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
+add_library(fireworks STATIC ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
+if (WIN32)
+    target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS})
+endif (WIN32)
+if (APPLE)
+    target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework Cocoa -framework IOKit -framework CoreGraphics")
+endif (APPLE)

@@ -12,13 +12,13 @@ namespace fireworks { namespace graphics {
         delete m_IBO;
         glDeleteBuffers(1, &m_VBO);
         // TODO: Delete all the textures here (IDK if this works)
-        int textures_size = m_TextureSlots.size();
+  /*      const int textures_size = m_TextureSlots.size();
         GLuint textures[textures_size];
         for(int i = 0; i < textures_size; i++)
         {
             textures[i] = m_TextureSlots[i];
         }
-        glDeleteTextures(textures_size, textures);
+        glDeleteTextures(textures_size, textures);*/
 
         // Deleting text
         // gltDeleteText(m_Text);
