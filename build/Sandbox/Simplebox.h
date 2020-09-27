@@ -1,4 +1,5 @@
 #include <fireworks/fireworks.h>
+#include <iostream>
 
 using namespace fireworks;
 
@@ -41,7 +42,7 @@ public:
     // Runs once per second
     void tick() override
     {
-
+        std::cout << "FPS : " << getFPS() << std::endl;
     }
 
     // Runs 60 times per second
