@@ -1,0 +1,5 @@
+﻿  TestGame.cpp
+C:\Dev\Fireworks-Engine\build\include\fireworks\src\maths\maths.h(11,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Dev\Fireworks-Engine\build\include\fireworks\ext\gltext.h(300,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Dev\Fireworks-Engine\build\Sandbox\Simplebox.h(50,92): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+  Sandbox.vcxproj -> C:\Dev\Fireworks-Engine\build\x64\Debug\Sandbox.exe

@@ -1,0 +1,2 @@
+C:\Dev\Fireworks-Engine\build\Debug\Fireworks.pdb
+C:\Dev\Fireworks-Engine\build\Fireworks.dir\Debug\Fireworks.pdb
