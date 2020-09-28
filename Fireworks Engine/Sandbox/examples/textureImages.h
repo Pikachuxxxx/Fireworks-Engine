@@ -1,3 +1,6 @@
+/*
+ * A simple example to draw a square sprite with cutom texture image
+ */
 #include <fireworks/fireworks.h>
 
 using namespace fireworks;
