@@ -45,6 +45,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Easy to manage and customisable native scripting 
 - Simple API for faster development and customisation
 - Simple Window and Input management System 
+- Huge custom Maths Library and a lot of utility functions
 - and a lot more on the way....
 
 #
