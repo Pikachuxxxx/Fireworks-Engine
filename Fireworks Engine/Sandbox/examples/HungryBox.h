@@ -2,7 +2,7 @@
 
 using namespace fireworks;
 
-class HungryBox : public Fireworks
+class LightSaber : public Fireworks
 {
 private:
     Window* window;
@@ -11,9 +11,9 @@ private:
     Sprite* food;
     float   speed;
 public:
-    HungryBox() : speed(10.0f) { }
+    LightSaber() : speed(10.0f) { }
 
-    ~HungryBox() { }
+    ~LightSaber() { }
 
     // Runs once per initialisation
     void init() override

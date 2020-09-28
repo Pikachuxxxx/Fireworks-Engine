@@ -16,7 +16,7 @@ namespace fireworks { namespace graphics {
     GLuint Texture::load()
     {
         // BYTE* pixels = utils::load_image(m_FileName.c_str(), &m_Width, &m_Height);
-        unsigned char* image = SOIL_load_image(m_FileName.c_str(), &m_Width, &m_Height, 0, SOIL_LOAD_RGB);
+        unsigned char* image = SOIL_load_image(m_FileName.c_str(), &m_Width, &m_Height, 0, SOIL_LOAD_RGBA);
 
         GLuint result;
         glGenTextures(1, &result);
@@ -27,7 +27,7 @@ namespace fireworks { namespace graphics {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, m_Width, m_Height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_Width, m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
         glGenerateMipmap(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
 
