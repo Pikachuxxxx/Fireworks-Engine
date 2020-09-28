@@ -29,5 +29,8 @@
     <ClInclude Include="examples\HungryBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="examples\LightSaber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

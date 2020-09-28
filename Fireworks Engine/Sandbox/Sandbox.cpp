@@ -1,9 +1,9 @@
 #include <iostream>
-#include "examples\HungryBox.h"
+#include "examples\LightSaber.h"
 
 int main()
 {
-    HungryBox game;
+    LightSaber game;
     game.start();
     return 0;
 }
