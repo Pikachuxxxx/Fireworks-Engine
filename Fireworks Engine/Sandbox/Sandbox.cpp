@@ -1,9 +1,9 @@
 #include <iostream>
-#include "examples\SimpleBox.h"
+#include "examples\HungryBox.h"
 
 int main()
 {
-    SimpleBox game;
+    HungryBox game;
     game.start();
     return 0;
 }

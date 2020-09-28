@@ -23,5 +23,11 @@
     <ClInclude Include="examples\SimpleBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="examples\textureImages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\HungryBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
