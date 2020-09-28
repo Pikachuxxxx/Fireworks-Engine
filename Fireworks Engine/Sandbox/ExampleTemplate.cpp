@@ -20,7 +20,7 @@ public:
     // Runs once per initialisation
     void init() override
     {
-        window = createWindow("Example Template", 800, 600);
+        window = createWindow("Groups Example", 800, 600);
     }
 
     // Runs once per second
