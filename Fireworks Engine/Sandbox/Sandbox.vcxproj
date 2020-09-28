@@ -148,6 +148,7 @@
     <ClCompile Include="Sandbox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="examples\groupsdemo.h" />
     <ClInclude Include="examples\HungryBox.h" />
     <ClInclude Include="examples\LightSaber.h" />
     <ClInclude Include="examples\SimpleBox.h" />
