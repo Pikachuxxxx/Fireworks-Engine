@@ -1,3 +1,8 @@
+/*
+ * A simple example to control a simple sprite using keyboard input
+ * Use the Arrow keys to move the hungry player and feed him the food 
+ * every time you cathc a food block you change into the collected food item colour
+ */
 #include <fireworks/fireworks.h>
 
 using namespace fireworks;
