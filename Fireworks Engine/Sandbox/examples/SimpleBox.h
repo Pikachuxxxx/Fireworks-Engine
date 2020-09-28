@@ -2,15 +2,15 @@
 
 using namespace fireworks;
 
-class SimpleBox : public Fireworks
+class TextImage : public Fireworks
 {
 private:
     Window* window;
     Layer* layer;
 public:
-    SimpleBox() { }
+    TextImage() { }
 
-    ~SimpleBox()
+    ~TextImage()
     {
         delete layer;
     }
@@ -18,10 +18,10 @@ public:
     // Runs once per initialisation
     void init() override
     {
-        window = createWindow("Test Game Example : Fireworks Engine", 800, 600);
+        window = createWindow("Simple Box Example : Fireworks Engine", 800, 600);
         layer = new Layer(new BatchRenderer2D(),
-                new Shader("C:\\Dev\\Fireworks-Engine\\Fireworks Engine\\Fireworks Core\\src\\shaders\\basic.vert",
-                           "C:\\Dev\\Fireworks-Engine\\Fireworks Engine\\Fireworks Core\\src\\shaders\\basic.frag"),
+                new Shader(".\\shaders\\basic.vert",
+                           ".\\shaders\\basic.frag"),
                 mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f));
 
         Sprite* box = new Sprite(4.0f, 4.0f, 4.0f, 4.0f, vec4(1.0f, 1.0f, 0.0f, 1.0f));

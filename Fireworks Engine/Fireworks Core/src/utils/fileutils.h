@@ -15,7 +15,7 @@ namespace fireworks { namespace utils {
             {
                 // Log this!
                 std::cerr << "ERROR::FILE::Cannot read the file - Please check the file path or permissions " << '\n';
-                return NULL;
+                return 0;
             }
             fseek(file, 0, SEEK_END);
             unsigned long length = ftell(file);
