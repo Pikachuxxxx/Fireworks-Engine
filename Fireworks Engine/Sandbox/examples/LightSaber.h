@@ -1,4 +1,4 @@
-/*
+﻿/*
  * A simple example to control a simple light source (not a real one, a simple trick using the fragment shader) using mouse input
  * Use the Mouse to move around to locate the lost diamond and click the LMB to capture the diamonds lost (infinite diamonds to be found) 
  */
@@ -23,6 +23,11 @@ public:
     // Runs once per initialisation
     void init() override
     {
+        const GLubyte* vendor   = glGetString(GL_VENDOR);
+        const GLubyte* renderer = glGetString(GL_RENDERER);
+
+        std::cout << "Vendor is : " << vendor << " and renderer is : " << renderer << std::endl;
+
         window = createWindow("Light Saber : Mouse Input Example", 800, 600);
 
         layer = new Layer(
