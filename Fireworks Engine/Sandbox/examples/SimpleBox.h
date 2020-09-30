@@ -1,24 +1,24 @@
 /* 
- * A simple example to draw a square sprite with cutom colour
+ * A simple example to draw a square sprite with custom color
  */
-#include <fireworks/fireworks.h>
+#include <fireworks.h>
 
 using namespace fireworks;
 
-class TextImage : public Fireworks
+class SimpleBox : public Fireworks
 {
 private:
     Window* window;
-    Layer* layer;
+    Layer*  layer;
 public:
-    TextImage() { }
+    SimpleBox() { }
 
-    ~TextImage()
+    ~SimpleBox()
     {
         delete layer;
     }
 
-    // Runs once per initialisation
+    // Runs once per initialization
     void init() override
     {
         window = createWindow("Simple Box Example : Fireworks Engine", 800, 600);

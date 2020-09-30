@@ -8,6 +8,7 @@ namespace fireworks { namespace graphics {
     {
     public:
         maths::vec3& position;
+        maths::vec4& color;
     public:
         Sprite(float x, float y, float width, float height, maths::vec4 color);
         Sprite(float x, float y, float width, float height, Texture* texture);

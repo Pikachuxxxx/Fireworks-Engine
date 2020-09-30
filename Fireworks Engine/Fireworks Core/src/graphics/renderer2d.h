@@ -9,7 +9,7 @@
 
 namespace fireworks { namespace graphics {
 
-    class Renderable2D;    // Forward decleration
+    class Renderable2D;    // Forward declaration
 
     class Renderer2D
     {
@@ -17,6 +17,8 @@ namespace fireworks { namespace graphics {
         std::vector<maths::mat4> m_TransformationStack;
         const maths::mat4* m_TransformationBack;
         // GLuint m_FontTexture;
+    public:
+        unsigned int rendererDrawCalls;
     protected:
         Renderer2D()
         {
@@ -35,7 +37,7 @@ namespace fireworks { namespace graphics {
         }
         void pop()
         {
-            // TODO: Add to loggins system
+            // TODO: Add to logging system
             if(m_TransformationStack.size() > 1)
                 m_TransformationStack.pop_back();
 

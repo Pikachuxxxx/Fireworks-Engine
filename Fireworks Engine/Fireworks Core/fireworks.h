@@ -9,6 +9,7 @@
 #include "src/graphics/buffers/buffer.h"
 #include "src/graphics/buffers/indexbuffer.h"
 #include "src/graphics/buffers/vertexarray.h"
+#include "src/graphics/buffers/framebuffer.h"
 
 #include "src/graphics/layers/layer.h"
 #include "src/graphics/layers/group.h"
@@ -59,7 +60,7 @@ namespace fireworks {
             run();
         }
     protected:
-        // Runs once per initialisation
+        // Runs once per initialization
         virtual void init() = 0;
         // Runs once per second
         virtual void tick() { };

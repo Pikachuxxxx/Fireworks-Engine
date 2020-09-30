@@ -10,7 +10,7 @@ class LightSaber : public Fireworks
 {
 private:
     Window* window;
-    Layer* layer;
+    Layer*  layer;
     Sprite* diamond;
 
     double mouseX;
@@ -20,14 +20,9 @@ public:
 
     ~LightSaber() { }
 
-    // Runs once per initialisation
+    // Runs once per initialization
     void init() override
     {
-        const GLubyte* vendor   = glGetString(GL_VENDOR);
-        const GLubyte* renderer = glGetString(GL_RENDERER);
-
-        std::cout << "Vendor is : " << vendor << " and renderer is : " << renderer << std::endl;
-
         window = createWindow("Light Saber : Mouse Input Example", 800, 600);
 
         layer = new Layer(
