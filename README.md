@@ -31,7 +31,8 @@ Basically a HelloWorld but this time it's for an entire game engine.
 
 **Updates :**
 
-Currently working on Camera2D. Done with render textuers and ImGui integration usage
+Currently working on Camera2D
+Done with render textuers and ImGui integration usage
 
 Find the latest features list and updates about the engine at : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
 
