@@ -46,7 +46,8 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Simple API for faster development and customisation
 - Simple Window and Input management System 
 - Huge custom Maths Library and a lot of utility functions
-- and a lot more on the way....
+- Render textures and Frame Buffer objects
+- Many more on the way...
 
 #
 ### Building
@@ -117,7 +118,7 @@ int main()
 ```
 ### TODO
 - Camera 2D
-- Render textures and Frame Buffer objects
+- [x] Render textures and Frame Buffer objects
 - Physics2D component (box2d physics engine integration)
 - Better and customisable font rendering 
 - Audio system
