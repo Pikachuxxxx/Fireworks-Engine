@@ -1,4 +1,0 @@
-C:/Dev/Fireworks-Engine/build/CMakeFiles/fireworks.dir
-C:/Dev/Fireworks-Engine/build/CMakeFiles/Fireworks.dir
-C:/Dev/Fireworks-Engine/build/CMakeFiles/ALL_BUILD.dir
-C:/Dev/Fireworks-Engine/build/CMakeFiles/ZERO_CHECK.dir
