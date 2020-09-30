@@ -1,7 +1,7 @@
 /*
  * A simple example to control a simple sprite using keyboard input
  * Use the Arrow keys to move the hungry player and feed him the food 
- * every time you cathc a food block you change into the collected food item colour
+ * every time you catch a food block you change into the collected food item color
  */
 #include <fireworks/fireworks.h>
 
@@ -20,7 +20,7 @@ public:
 
     ~LightSaber() { }
 
-    // Runs once per initialisation
+    // Runs once per initialization
     void init() override
     {
         window = createWindow("Hungry Box : Keyboard Input Example", 800, 600);
