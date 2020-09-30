@@ -31,7 +31,7 @@ Basically a HelloWorld but this time it's for an entire game engine.
 
 **Updates :**
 
-Currently working on Camera2D and adding Render and Frame buffers (FBO, RBO for textures mapping) to the Renderer2D.
+Currently working on Camera2D. Done with render textuers and ImGui integration usage
 
 Find the latest features list and updates about the engine at : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
 
@@ -130,6 +130,7 @@ int main()
 - 3D Physics 
 - ECS - entity component system 
 - Occlusion Culling
+- Editor UI using ImGui
 
 #
 ### Dependencies
