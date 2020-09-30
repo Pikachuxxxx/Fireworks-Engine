@@ -186,7 +186,9 @@ namespace fireworks { namespace graphics {
         glBindVertexArray(m_VAO);
         m_IBO->bind();
 
+        rendererDrawCalls = 0;
         glDrawElements(GL_TRIANGLES, m_IndicesCount, GL_UNSIGNED_SHORT, NULL);
+        rendererDrawCalls++;
 
         m_IBO->unbind();
         glBindVertexArray(0);

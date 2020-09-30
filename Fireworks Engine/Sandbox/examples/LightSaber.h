@@ -1,4 +1,4 @@
-/*
+﻿/*
  * A simple example to control a simple light source (not a real one, a simple trick using the fragment shader) using mouse input
  * Use the Mouse to move around to locate the lost diamond and click the LMB to capture the diamonds lost (infinite diamonds to be found) 
  */
@@ -10,7 +10,7 @@ class LightSaber : public Fireworks
 {
 private:
     Window* window;
-    Layer* layer;
+    Layer*  layer;
     Sprite* diamond;
 
     double mouseX;
@@ -20,7 +20,7 @@ public:
 
     ~LightSaber() { }
 
-    // Runs once per initialisation
+    // Runs once per initialization
     void init() override
     {
         window = createWindow("Light Saber : Mouse Input Example", 800, 600);
