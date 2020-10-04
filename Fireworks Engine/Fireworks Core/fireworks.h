@@ -18,6 +18,7 @@
 #include "src/graphics/renderables/sprite.h"
 #include "src/graphics/renderables/static_sprite.h"
 #include "src/graphics/renderables/renderable2d.h"
+//#include "src/graphics/renderables/spritesheet.h"
 
 #include "src/maths/maths.h"
 #include "src/utils/fileutils.h"

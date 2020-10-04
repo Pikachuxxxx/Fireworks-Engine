@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fireworks Core", "Fireworks
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{C101837D-F19E-4057-936D-43A202A0BED1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LD47", "LD47\LD47.vcxproj", "{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{C101837D-F19E-4057-936D-43A202A0BED1}.Release|x64.Build.0 = Release|x64
 		{C101837D-F19E-4057-936D-43A202A0BED1}.Release|x86.ActiveCfg = Release|Win32
 		{C101837D-F19E-4057-936D-43A202A0BED1}.Release|x86.Build.0 = Release|Win32
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Debug|x64.ActiveCfg = Debug|x64
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Debug|x64.Build.0 = Debug|x64
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Debug|x86.ActiveCfg = Debug|Win32
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Debug|x86.Build.0 = Debug|Win32
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Release|x64.ActiveCfg = Release|x64
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Release|x64.Build.0 = Release|x64
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Release|x86.ActiveCfg = Release|Win32
+		{F537C5C7-75BA-4F1E-8858-A86ACE25EE39}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
