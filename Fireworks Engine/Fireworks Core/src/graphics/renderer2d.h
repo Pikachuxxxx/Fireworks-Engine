@@ -46,7 +46,7 @@ namespace fireworks { namespace graphics {
         virtual ~Renderer2D() { }
         virtual void begin() {}
         virtual void submit(const Renderable2D* renderable) = 0;
-        virtual void drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color) { }
+        virtual void drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color, int fontSize) { }
         virtual void end() {}
         virtual void flush() = 0;
     };

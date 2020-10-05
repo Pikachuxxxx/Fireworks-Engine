@@ -22,6 +22,7 @@ namespace fireworks { namespace graphics {
         glGenTextures(1, &result);
         glBindTexture(GL_TEXTURE_2D, result);
 
+        // TODO: Fix the Wrap state from repeat GL_REPEAT to GL_LINEAR
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);

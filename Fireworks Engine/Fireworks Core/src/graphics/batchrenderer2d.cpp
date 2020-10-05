@@ -147,7 +147,7 @@ namespace fireworks { namespace graphics {
         m_IndicesCount += 6;
     }
 
-    void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
+    void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color, int fontSize)
     {
         // m_Font->FaceSize(72);
         // m_Font->Render("text");
@@ -163,7 +163,7 @@ namespace fireworks { namespace graphics {
 
         // Draw any amount of text between begin and end
         gltColor(color.x, color.y, color.z, color.w);
-        gltDrawText2D(m_Text, position.x, position.y, 5);
+        gltDrawText2D(m_Text, position.x, position.y, fontSize);
 
         // Finish drawing text
         gltEndDraw();

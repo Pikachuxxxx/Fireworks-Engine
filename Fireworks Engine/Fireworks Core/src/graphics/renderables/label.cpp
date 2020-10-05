@@ -11,7 +11,7 @@ namespace fireworks { namespace graphics {
 
     void Label::submit(Renderer2D* renderer) const
     {
-        renderer->drawString(m_Text, m_Position, m_Color);
+        //renderer->drawString(m_Text, m_Position, m_Color);
     }
 
 } }
