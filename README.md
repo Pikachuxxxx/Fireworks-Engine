@@ -6,7 +6,6 @@
 <p align="center">
 <h3 align="center">A Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping.</h3>
 </p>
-
 <p align="center">
   <a href="#features">Features</a> |
   <a href="#building">Building</a> |
@@ -29,10 +28,12 @@
 ### About
 Basically a HelloWorld but this time it's for an entire game engine.
 
-**Updates :**
+### Ludum Dare 47
+- Checkout branch [LD47](https://github.com/Pikachuxxxx/Fireworks-Engine/tree/LD47/Fireworks%20Engine/LD47) for my [ludum dare submissoin](https://ldjam.com/events/ludum-dare/47/one-for-an-era) using fireworks engine, a lot of experimental features were added during the jam that will soon be integrated into the engine.
 
-Currently working on Camera2D
-Done with render textuers and ImGui integration usage
+### Updates
+
+Currently working on Camera2D and Event system and adding more diversity to the existing API.
 
 Find the latest features list and updates about the engine at : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
 
