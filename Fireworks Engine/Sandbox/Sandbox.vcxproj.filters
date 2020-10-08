@@ -83,5 +83,8 @@
     <ClInclude Include="test\testGUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\animatedSpritesTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

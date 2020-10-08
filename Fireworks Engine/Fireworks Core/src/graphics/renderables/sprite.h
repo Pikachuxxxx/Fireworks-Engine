@@ -9,8 +9,10 @@ namespace fireworks { namespace graphics {
     public:
         maths::vec3& position;
         maths::vec4& color;
+        uint32_t& frame;
     public:
-        Sprite(float x, float y, float width, float height, maths::vec4 color);
-        Sprite(float x, float y, float width, float height, Texture* texture);
+		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color);
+		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture);
+		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension);
     };
 } }

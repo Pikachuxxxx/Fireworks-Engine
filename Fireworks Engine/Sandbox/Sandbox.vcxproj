@@ -167,6 +167,7 @@
     <ClInclude Include="Test Dependencies\imgui-docking\imstb_rectpack.h" />
     <ClInclude Include="Test Dependencies\imgui-docking\imstb_textedit.h" />
     <ClInclude Include="Test Dependencies\imgui-docking\imstb_truetype.h" />
+    <ClInclude Include="test\animatedSpritesTest.h" />
     <ClInclude Include="test\testFBO.h" />
     <ClInclude Include="test\testGUI.h" />
   </ItemGroup>
