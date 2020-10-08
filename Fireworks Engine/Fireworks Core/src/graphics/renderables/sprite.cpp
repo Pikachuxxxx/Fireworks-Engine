@@ -2,16 +2,23 @@
 
 namespace fireworks { namespace graphics {
 
-    Sprite::Sprite(float x, float y, float width, float height, maths::vec4 color)
-        : Renderable2D(maths::vec3(x, y, 0), maths::vec2(width, height), color), position(m_Position), color(m_Color)
+	Sprite::Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color)
+        : Renderable2D(position, size, color), position(m_Position), color(m_Color), frame(m_Frame)
     {
 
     }
 
-    Sprite::Sprite(float x, float y, float width, float height, Texture* texture)
-        : Renderable2D(maths::vec3(x, y, 0), maths::vec2(width, height), maths::vec4(1, 0, 1, 1)), position(m_Position), color(m_Color)
+    Sprite::Sprite(maths::vec3 position, maths::vec2 size, Texture* texture)
+        : Renderable2D(position, size, maths::vec4(1, 0, 1, 1)), position(m_Position), color(m_Color), frame(m_Frame)
     {
         m_Texture = texture;
     }
+
+	Sprite::Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension)
+        : Renderable2D(position, size, maths::vec4(1, 0, 1, 1)), position(m_Position), color(m_Color), frame(m_Frame)
+	{
+		m_Texture = texture;
+	    m_SpriteSheetDimension = sheetDimension;
+	}
 
 } }
