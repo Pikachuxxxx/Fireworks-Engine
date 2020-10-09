@@ -7,10 +7,14 @@ class AnimSprites : public Fireworks
 private:
 	Window*		window;
 	Layer*		defaultLayer;
-	Texture*	piggySpriteSheet;
+	Texture*	piggySpriteSheet; 
 	Sprite*		piggy;
+	Timer       timer;
+	double		currentTime;
+	double		targetTime;
 public:
 	AnimSprites()
+		:currentTime(0.0), targetTime(4.0)
 	{
 		window = createWindow("Animated Sprites Test", 800, 600);
 		defaultLayer =	new Layer(new BatchRenderer2D(), 
@@ -36,15 +40,19 @@ public:
 	// Runs once per second
 	void tick() override 
 	{
-		piggy->frame += 1;
 	}
 
 	// Runs 60 times per second
-	void update() override { }
+	void update() override 
+	{
+
+	}
 
 	// Runs as fast as possible
 	void render() override
 	{
+		piggy->animateSprite(8, graphics::SpriteAnimationType::PING_PONG);
+
 		defaultLayer->render();
 	}
 };
