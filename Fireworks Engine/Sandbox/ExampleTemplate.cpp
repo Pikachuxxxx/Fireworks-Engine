@@ -17,7 +17,7 @@ public:
 
     }
 
-    // Runs once per initialisation
+    // Runs once per initialization
     void init() override
     {
         window = createWindow("Groups Example", 800, 600);

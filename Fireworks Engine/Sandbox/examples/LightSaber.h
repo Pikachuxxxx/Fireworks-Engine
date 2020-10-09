@@ -2,19 +2,19 @@
  * A simple example to control a simple light source (not a real one, a simple trick using the fragment shader) using mouse input
  * Use the Mouse to move around to locate the lost diamond and click the LMB to capture the diamonds lost (infinite diamonds to be found) 
  */
-#include <fireworks/fireworks.h>
+#include <fireworks.h>
 
 using namespace fireworks;
 
 class LightSaber : public Fireworks
 {
 private:
-    Window* window;
-    Layer*  layer;
-    Sprite* diamond;
+    Window*     window;
+    Layer*      layer;
+    Sprite*     diamond;
 
-    double mouseX;
-    double mouseY;
+    double      mouseX;
+    double      mouseY;
 public:
     LightSaber() { }
 
