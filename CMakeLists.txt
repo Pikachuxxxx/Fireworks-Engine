@@ -2,33 +2,31 @@ cmake_minimum_required(VERSION 3.1)
 
 # Project Description
 project(Fireworks   VERSION 1.0
-                    DESCRIPTION "Sandbox Game Engine"
+                    DESCRIPTION "Fireworks Engine"
                     )
-
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 # set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add source files
 file(GLOB_RECURSE SOURCE_FILES
-	${CMAKE_SOURCE_DIR}/Fireworks-core/*.c
-	${CMAKE_SOURCE_DIR}/Fireworks-core/*.cpp)
+	${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/*.c
+    ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/*.cpp)
 
 # Add source header files
 file(GLOB_RECURSE HEADER_FILES
-	${CMAKE_SOURCE_DIR}/Fireworks-core/*.h
-	${CMAKE_SOURCE_DIR}/Fireworks-core/*.hpp)
+	${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/*.h
+    ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/*.hpp)
 
 # Add external header files
 file(GLOB_RECURSE EXT_HEADER_FILES
-	${CMAKE_SOURCE_DIR}/Fireworks-core/ext/*.h
-	${CMAKE_SOURCE_DIR}/Fireworks-core/*.hpp)
-
-# Configure assets header file
-configure_file(${CMAKE_SOURCE_DIR}/Fireworks-core/src/helpers/RootDir.h.in src/helpers/RootDir.h)
+	${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/ext/*.h
+    ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/*.hpp)
 
 # Adding Frameworks
 find_package(OpenGL REQUIRED)
+find_package(PNG REQUIRED)
+find_package(BZIP2 REQUIRED)
 
 # Adding custom libraries
 find_library(SOIL_LIBRARY
@@ -81,15 +79,15 @@ if (WIN32)
     set(LIBS ${SOIL_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${PNG_LIBRARY} ${BZIP2_LIBRARY})
 endif (WIN32)
 if (APPLE)
-    set(LIBS ${SOIL_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${FTGL_LIBRARY} ${PNG_LIBRARY} ${BZIP2_LIBRARY})
+    set(LIBS ${SOIL_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${FTGL_LIBRARY})
 endif (APPLE)
 
-set(FRAMEWORKS ${OPENGL_LIBRARIES})
-add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
+set(FRAMEWORKS ${OPENGL_LIBRARIES} ${PNG_LIBRARIES} ${BZIP2_LIBRARIES})
 add_library(fireworks STATIC ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
+# add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} ${EXT_SOURCE_FILES} ${EXT_HEADER_FILES})
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS})
 endif (WIN32)
 if (APPLE)
-    target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework Cocoa -framework IOKit -framework CoreGraphics")
+    # target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework Cocoa -framework IOKit -framework CoreGraphics")
 endif (APPLE)
