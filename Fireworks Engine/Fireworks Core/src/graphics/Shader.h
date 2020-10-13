@@ -6,6 +6,10 @@
 #include <GL/glew.h>
 #include "../utils/fileutils.h"
 #include "../maths/maths.h"
+// GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace fireworks { namespace graphics {
 
@@ -27,6 +31,7 @@ namespace fireworks { namespace graphics {
         void setUniform3f(const GLchar* name, const maths::vec3& vector);
         void setUniform4f(const GLchar* name, const maths::vec4& vector);
         void setUniformMat4(const GLchar* name, const maths::mat4& matrix);
+		void setUniformglmMat4(const GLchar* name, const glm::mat4& matrix);
 
         void enable();
         void disable();

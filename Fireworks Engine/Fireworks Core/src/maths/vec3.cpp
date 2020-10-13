@@ -17,7 +17,20 @@ namespace fireworks { namespace maths {
         this->z = z;
     }
 
-    vec3& vec3::add(const vec3& other)
+	vec3 vec3::crossProduct(const vec3& a, const vec3& b)
+	{
+        return vec3(a.y * b.z - a.z * b.y,
+			        a.x * b.z - a.z * b.x,
+			        a.x * b.y - a.y * b.x);
+	}
+
+	vec3 vec3::normalize(const vec3& v)
+	{
+		float length_of_v = sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z));
+		return vec3(v.x / length_of_v, v.y / length_of_v, v.z / length_of_v);
+	}
+
+	vec3& vec3::add(const vec3& other)
     {
         x += other.x;
         y += other.y;

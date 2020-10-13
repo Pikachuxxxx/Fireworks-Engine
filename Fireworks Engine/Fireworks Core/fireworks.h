@@ -1,18 +1,19 @@
 #pragma once
 
-#include "src/graphics/window.h"
+#include "src/graphics/batchrenderer2d.h"
+#include "src/graphics/camera2d.h"
+#include "src/graphics/renderer2d.h"
 #include "src/graphics/shader.h"
 #include "src/graphics/texture.h"
-#include "src/graphics/renderer2d.h"
-#include "src/graphics/batchrenderer2d.h"
+#include "src/graphics/window.h"
 
 #include "src/graphics/buffers/buffer.h"
+#include "src/graphics/buffers/framebuffer.h"
 #include "src/graphics/buffers/indexbuffer.h"
 #include "src/graphics/buffers/vertexarray.h"
-#include "src/graphics/buffers/framebuffer.h"
 
-#include "src/graphics/layers/layer.h"
 #include "src/graphics/layers/group.h"
+#include "src/graphics/layers/layer.h"
 
 #include "src/graphics/renderables/label.h"
 #include "src/graphics/renderables/sprite.h"
@@ -35,9 +36,12 @@ namespace fireworks {
         graphics::Window* m_Window;
         Timer* m_Timer;
         unsigned int m_FramesPerSecond, m_UpdatePerSecond;
+        double m_CurrentFrame, m_LastFrame;
+    protected:    
+        double deltaTime;
     protected:
         Fireworks()
-            : m_FramesPerSecond(0), m_UpdatePerSecond(0)
+            : m_FramesPerSecond(0), m_UpdatePerSecond(0), m_CurrentFrame(0.0), m_LastFrame(0.0)
         {
 
         }
@@ -82,17 +86,20 @@ namespace fireworks {
             unsigned int updates = 0;
             while(!m_Window->closed())
             {
+                m_CurrentFrame = glfwGetTime();
                 m_Window->clear();
 
-            if(m_Timer->elapsed() - updateTimer > updateTick)
-            {
-                update();
-                updates++;
-                updateTimer += updateTick;
+				if (m_Timer->elapsed() - updateTimer > updateTick)
+				{
+					update();
+					updates++;
+					updateTimer += updateTick;
 
-            }
+				}
                 frames++;
                 render();
+                deltaTime = m_CurrentFrame - m_LastFrame;
+                m_LastFrame = m_CurrentFrame;
                 m_Window->update();
                 if(m_Timer->elapsed() - timer > 1.0f)
                 {
