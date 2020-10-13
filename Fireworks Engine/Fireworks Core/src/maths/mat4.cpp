@@ -294,7 +294,20 @@ namespace fireworks { namespace maths {
         return result;
     }
 
-    std::ostream& operator<<(std::ostream& stream, const mat4& matrix)
+	mat4 mat4::LookAt(const vec3& eye, const vec3& target, const vec3& worldUp)
+	{
+		//vec3 forward    = vec3::normalize(from - to);
+		//vec3 right      = vec3::crossProduct(vec3::normalize(worldUp), forward);
+		//vec3 up         = vec3::crossProduct(forward, right);
+
+        mat4 camToWorld(1.0f);
+
+    
+
+        return camToWorld;
+	}
+
+	std::ostream& operator<<(std::ostream& stream, const mat4& matrix)
     {
         stream << "mat4: \n";
         for(int r = 0; r < 4; r++)

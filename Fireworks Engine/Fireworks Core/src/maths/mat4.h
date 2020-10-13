@@ -25,11 +25,11 @@ namespace fireworks { namespace maths {
         friend mat4 operator*(mat4 left, const mat4& right);
         mat4& operator*=(const mat4& other);
 
-        // Mat4 and Vec3 multiplicaiton
+        // Mat4 and Vec3 multiplication
         vec3 multiply(const vec3& other) const;
         friend vec3 operator*(const mat4& left, const vec3& right);
 
-        // Mat4 and Vec4 multiplicaiton
+        // Mat4 and Vec4 multiplication
         vec4 multiply(const vec4& other) const;
         friend vec4 operator*(const mat4& left, const vec4& right);
 
@@ -46,6 +46,9 @@ namespace fireworks { namespace maths {
         static mat4 translation(const vec3& translation);
         static mat4 rotation(float angle, const vec3& axis);
         static mat4 scale(const vec3& scale);
+
+        // LookAt Matrix
+        static mat4 LookAt(const vec3& eye, const vec3& target, const vec3& worldUp = vec3(0, 1, 0));
 
         // Right Shift operator overload to print the matrix to the (character output : cout) or any output stream
         friend std::ostream& operator<<(std::ostream& stream, const mat4& matrix);

@@ -51,7 +51,7 @@ public:
 	// Runs as fast as possible
 	void render() override
 	{
-		piggy->animateSprite(8, graphics::SpriteAnimationType::PING_PONG);
+		piggy->animateSprite(8, SpriteAnimationType::PING_PONG);
 
 		defaultLayer->render();
 	}
