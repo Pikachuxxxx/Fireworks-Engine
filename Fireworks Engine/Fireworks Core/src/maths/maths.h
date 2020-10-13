@@ -17,5 +17,11 @@ namespace fireworks { namespace maths {
         return (max - min) * ((number - minX) / (maxX - minX)) + min;
     }
 
+    template <class T>
+    T getRandomValue(T min, T max)
+    {
+        return (min + (std::rand() % (max - min + 1)));
+    }
+
 
 } }

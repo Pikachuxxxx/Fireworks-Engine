@@ -113,7 +113,12 @@ namespace fireworks { namespace graphics {
         glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
     }
 
-    void Shader::enable()
+	void Shader::setUniformglmMat4(const GLchar* name, const glm::mat4& matrix)
+	{
+        glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, glm::value_ptr(matrix));
+	}
+
+	void Shader::enable()
     {
         glUseProgram(m_ShaderID);
     }

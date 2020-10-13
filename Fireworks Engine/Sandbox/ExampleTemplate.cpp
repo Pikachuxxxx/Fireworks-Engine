@@ -1,4 +1,4 @@
-#include <fireworks/fireworks.h>
+#include <fireworks.h>
 
 using namespace fireworks;
 
@@ -9,7 +9,7 @@ private:
 public:
     ExampleTemplate()
     {
-
+        window = createWindow(" Example", 800, 600);
     }
 
     ~ExampleTemplate()
@@ -20,7 +20,7 @@ public:
     // Runs once per initialization
     void init() override
     {
-        window = createWindow("Groups Example", 800, 600);
+
     }
 
     // Runs once per second
