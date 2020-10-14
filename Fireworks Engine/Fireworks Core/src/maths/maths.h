@@ -17,10 +17,11 @@ namespace fireworks { namespace maths {
         return (max - min) * ((number - minX) / (maxX - minX)) + min;
     }
 
+    // FIXME: Only works for non-floating types
     template <class T>
-    T getRandomValue(T min, T max)
+    T inline getRandomValue(T min, T max)
     {
-        return (min + (std::rand() % (max - min + 1)));
+        return (T(min) + (std::rand() % (max - min + 1)));
     }
 
 

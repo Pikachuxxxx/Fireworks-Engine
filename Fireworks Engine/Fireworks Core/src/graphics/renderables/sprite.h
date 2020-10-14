@@ -23,6 +23,11 @@ namespace fireworks { namespace graphics {
 		utils::Timer*       m_AnimTimer;
         double              m_CurrentFrameRate;
     public:
+        // To use with BatchRenderer
+        Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color);
+		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture);
+
+        // To use with a SimpleRenderer
 		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader);
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture);
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension);

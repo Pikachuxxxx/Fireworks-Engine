@@ -31,6 +31,12 @@ namespace fireworks { namespace graphics {
 mutable std::vector<maths::vec2>            m_UV;
 		Texture*                            m_Texture;
     public:
+		Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color)
+			: m_Position(position), m_Size(size), m_Color(color), m_Shader(nullptr), m_Texture(nullptr)
+		{
+			setUVDefaults();
+		}
+
         Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader)
             : m_Position(position), m_Size(size), m_Color(color), m_Shader(shader), m_Texture(nullptr)
         { 

@@ -14,7 +14,7 @@ namespace fireworks { namespace graphics {
 		maths::mat4			m_ViewMatrix;
 		maths::mat4			m_ViewProjectionMatrix;
 	public:
-		Camera2D(maths::vec2 viewXBounds, maths::vec2 viewYBounds);
+		Camera2D(maths::mat4 projection);
 
 		void update();
 

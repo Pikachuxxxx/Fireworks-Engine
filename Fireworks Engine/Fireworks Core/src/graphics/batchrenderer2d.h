@@ -25,6 +25,8 @@ namespace fireworks { namespace graphics {
 
     class BatchRenderer2D : public Renderer2D
     {
+    public:
+        Shader*                 m_Shader;
     private:
         GLuint                  m_VAO;
         GLuint                  m_VBO;
@@ -33,7 +35,6 @@ namespace fireworks { namespace graphics {
         GLsizei                 m_IndicesCount;
         std::vector<GLuint>     m_TextureSlots;
 
-        Shader*                 m_Shader;
         GLTtext*                m_Text;
     public:
         BatchRenderer2D(Camera2D* camera2D, Shader* shader);
