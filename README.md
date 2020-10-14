@@ -33,7 +33,7 @@ Basically a HelloWorld but this time it's for an entire game engine.
 
 ### Updates
 
-Currently working on Camera2D and Event system and adding more diversity to the existing API.
+Currently Event system and adding more diversity to the existing API.
 
 Find the latest features list and updates about the engine at : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
 
@@ -50,7 +50,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Simple Window and Input management System 
 - Huge custom Maths Library and a lot of utility functions
 - Render textures and Frame Buffer objects
-- Many more on the way...
+- 2D orthographic camera 
 
 #
 ### Building
@@ -129,7 +129,7 @@ int main()
 }
 ```
 ### TODO
-- Camera 2D
+- [x] Camera 2D
 - [x] Render textures and Frame Buffer objects
 - [x] Sprite Sheet Animations
 - Physics2D component (box2d physics engine integration)
