@@ -181,7 +181,6 @@
     <ClInclude Include="src\graphics\renderables\label.h" />
     <ClInclude Include="src\graphics\renderables\renderable2d.h" />
     <ClInclude Include="src\graphics\renderables\sprite.h" />
-    <ClInclude Include="src\graphics\renderables\static_sprite.h" />
     <ClInclude Include="src\graphics\renderer2d.h" />
     <ClInclude Include="src\graphics\Shader.h" />
     <ClInclude Include="src\graphics\texture.h" />
@@ -207,7 +206,6 @@
     <ClCompile Include="src\graphics\layers\layer.cpp" />
     <ClCompile Include="src\graphics\renderables\label.cpp" />
     <ClCompile Include="src\graphics\renderables\sprite.cpp" />
-    <ClCompile Include="src\graphics\renderables\static_sprite.cpp" />
     <ClCompile Include="src\graphics\Shader.cpp" />
     <ClCompile Include="src\graphics\texture.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />

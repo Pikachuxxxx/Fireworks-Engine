@@ -2,9 +2,11 @@
 
 namespace fireworks { namespace graphics {
 
-    BatchRenderer2D::BatchRenderer2D()
+    BatchRenderer2D::BatchRenderer2D(Camera2D* camera2D, Shader* shader)
+        :Renderer2D(camera2D), m_Shader(shader)
     {
         init();
+        m_Shader->setUniformMat4("projection", m_Camera2D->getProjectionMatrix());
     }
 
     BatchRenderer2D::~BatchRenderer2D()
@@ -178,6 +180,8 @@ namespace fireworks { namespace graphics {
 
     void BatchRenderer2D::flush()
     {
+        m_Shader->enable();
+        m_Shader->setUniformMat4("view", m_Camera2D->getViewMatrix());
         for(int i = 0; i < m_TextureSlots.size(); i++)
         {
             glActiveTexture(GL_TEXTURE0 + i);
@@ -186,14 +190,13 @@ namespace fireworks { namespace graphics {
         glBindVertexArray(m_VAO);
         m_IBO->bind();
 
-        rendererDrawCalls = 0;
         glDrawElements(GL_TRIANGLES, m_IndicesCount, GL_UNSIGNED_SHORT, NULL);
-        rendererDrawCalls++;
 
         m_IBO->unbind();
         glBindVertexArray(0);
 
         m_IndicesCount = 0;
         m_TextureSlots.clear();
+        m_Shader->disable();
     }
 } }
