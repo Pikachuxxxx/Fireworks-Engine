@@ -6,6 +6,7 @@ class AnimSprites : public Fireworks
 {
 private:
 	Window*		window;
+	Camera2D*	camera;
 	Layer*		defaultLayer;
 	Texture*	piggySpriteSheet; 
 	Sprite*		piggy;
@@ -17,13 +18,15 @@ public:
 		:currentTime(0.0), targetTime(4.0)
 	{
 		window = createWindow("Animated Sprites Test", 800, 600);
-		defaultLayer =	new Layer(new BatchRenderer2D(), 
-						new Shader(	".\\shaders\\basic.vert", 
-									".\\shaders\\basic.frag"),
-						mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f));
+		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
+
+		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
+		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
+
+		defaultLayer = new Layer(batchRenderer);
 
 		piggySpriteSheet = new Texture(".\\resources\\piggy_spritesheet.png");
-		piggy = new Sprite(vec3(8.0f, 4.0f, 0.0f), vec2(2.0f, 2.0f), piggySpriteSheet, vec2(12, 1));
+		piggy = new Sprite(vec3(0.0f, 0.0f, 0.0f), vec2(2.0f, 2.0f), piggySpriteSheet, vec2(12, 1));
 	}
 
 	~AnimSprites()
@@ -51,7 +54,7 @@ public:
 	// Runs as fast as possible
 	void render() override
 	{
-		piggy->animateSprite(8, SpriteAnimationType::PING_PONG);
+		piggy->animateSprite(12, SpriteAnimationType::PING_PONG);
 
 		defaultLayer->render();
 	}

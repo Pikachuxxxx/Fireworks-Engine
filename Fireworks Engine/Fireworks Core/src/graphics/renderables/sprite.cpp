@@ -15,6 +15,12 @@ namespace fireworks { namespace graphics {
 		m_Texture = texture;
 	}
 
+	Sprite::Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension)
+		: Renderable2D(position, size, maths::vec4(1, 0, 1, 1)), position(m_Position), color(m_Color), m_SpriteSheetDimension(sheetDimension), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(new utils::Timer())
+	{
+		m_Texture = texture;
+	}
+
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader)
         : Renderable2D(position, size, color, shader), position(m_Position), color(m_Color), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
     {

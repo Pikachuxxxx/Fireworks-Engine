@@ -13,9 +13,12 @@ using namespace fireworks;
 class TestFBOGUI : public Fireworks
 {
 private:
-    Window* window;
-    Layer* layer;
-    FrameBuffer* frameBuffer;
+    Window*         window;
+    Camera2D*       camera;
+    Layer*          layer;
+    FrameBuffer*    frameBuffer;
+
+	Shader*         basicShader;
 public:
     TestFBOGUI() { }
 
@@ -32,14 +35,16 @@ public:
     {
         window = createWindow("Simple Box Example : Fireworks Engine", 1200, 800);
         frameBuffer = new FrameBuffer(window->getWidth(), window->getHeight());
-        layer = new Layer(new BatchRenderer2D(),
-                new Shader(".\\shaders\\basic.vert",
-                           ".\\shaders\\basic.frag"),
-                mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f));
+		camera = new Camera2D(mat4::orthographic(-16.0f, 16.0f, -12.0f, 12.0f, -1.0f, 1.0f));
+
+		basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
+		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
+
+        layer = new Layer(batchRenderer);
 
         glClearColor(0.5f, 0.1f, 0.2f, 1.0f);
 
-        Sprite* box = new Sprite(4.0f, 4.0f, 4.0f, 4.0f, vec4(1.0f, 1.0f, 0.0f, 1.0f));
+        Sprite* box = new Sprite(vec3(4.0f, 4.0f, 0.0f), vec2(4.0f, 4.0f), vec4(1.0f, 1.0f, 0.0f, 1.0f));
         layer->add(box);
 
 
@@ -63,7 +68,7 @@ public:
     // Runs 60 times per second
     void update() override
     {
-        layer->m_Shader->setUniformMat4("model", mat4::translation(vec3(sin(glfwGetTime()) * 2, 2.0f, 0.0f)));
+        basicShader->setUniformMat4("model", mat4::translation(vec3(sin(glfwGetTime()) * 2, 2.0f, 0.0f)));
     }
 
     // Runs as fast as possible
