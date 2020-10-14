@@ -152,7 +152,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
