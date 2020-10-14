@@ -1,19 +1,11 @@
 #include "layer.h"
 
 namespace fireworks { namespace graphics {
-
-    Layer::Layer(Renderer2D* renderer, Shader* shader, maths::mat4 projectionMatrix)
-        : m_Renderer(renderer), m_Shader(shader), m_ProjectionMatrix(projectionMatrix)
+    // TODO: fix the implementations according to the renderer being used
+    Layer::Layer(Renderer2D* renderer)
+        : m_Renderer(renderer)
     {
-        m_Shader->enable();
-        m_Shader->setUniformMat4("projection", m_ProjectionMatrix);
-        GLint texIDs[] =
-        {
-            0, 1,  2,  3,  4,  5,  6,  7,
-            8, 9, 10, 11, 12, 13, 14, 15
-        };
-        m_Shader->setUniform1iv("textures", texIDs, 8);
-        m_Shader->disable();
+		
     }
 
     Layer::~Layer()
@@ -33,12 +25,9 @@ namespace fireworks { namespace graphics {
 
     void Layer::render()
     {
-        m_Shader->enable();
-
         m_Renderer->begin();
         for(const Renderable2D* renderable : m_Renderables)
         {
-            // TODO: apply the transformation from Transformation Stack recursively relative to the Renderer and Layer Sprites
             renderable->submit(m_Renderer);
         }
 

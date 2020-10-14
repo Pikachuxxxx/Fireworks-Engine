@@ -17,7 +17,6 @@
 
 #include "src/graphics/renderables/label.h"
 #include "src/graphics/renderables/sprite.h"
-#include "src/graphics/renderables/static_sprite.h"
 #include "src/graphics/renderables/renderable2d.h"
 
 #include "src/maths/maths.h"

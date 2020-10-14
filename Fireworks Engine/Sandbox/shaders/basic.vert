@@ -14,11 +14,17 @@ uniform mat4 projection;
 uniform mat4 view = mat4(1.0f);
 uniform mat4 model = mat4(1.0f);
 
+uniform bool flipX = false;
+uniform bool flipY = false;
+
 void main()
 {
     pos = projection * view * model * position;
     gl_Position = pos;
-    uvCoords = vec2(uv.x, 1.0f - uv.y);
+
+    float uvX = !flipX ? uv.x : 1.0f - uv.x;
+    float uvY = !flipY ? 1.0f - uv.y : uv.y;
+    uvCoords = vec2(uvX, uvY);
     texID = tid;
     colAttrib = col;
 }

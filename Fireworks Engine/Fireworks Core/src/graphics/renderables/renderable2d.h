@@ -20,16 +20,29 @@ namespace fireworks { namespace graphics {
 
     class Renderable2D
     {
+    public:
+        Shader*                             m_Shader;
+		bool                                flippedX;
+		bool                                flippedY;
     protected:
 		maths::vec2                         m_Size;
 		maths::vec3                         m_Position;
 		maths::vec4                         m_Color;
-        mutable std::vector<maths::vec2>    m_UV;
+mutable std::vector<maths::vec2>            m_UV;
 		Texture*                            m_Texture;
     public:
-        Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color)
-            : m_Position(position), m_Size(size), m_Color(color), m_Texture(nullptr)
+        Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader)
+            : m_Position(position), m_Size(size), m_Color(color), m_Shader(shader), m_Texture(nullptr)
         { 
+			m_Shader->enable();
+			GLint texIDs[] =
+			{
+				0, 1,  2,  3,  4,  5,  6,  7,
+				8, 9, 10, 11, 12, 13, 14, 15
+			};
+			m_Shader->setUniform1iv("textures", texIDs, 8);
+			m_Shader->disable();
+
             setUVDefaults();
         }
 
@@ -45,6 +58,14 @@ namespace fireworks { namespace graphics {
         inline const maths::vec4& getColor() const { return m_Color; }
         inline const std::vector<maths::vec2>& getUV() const { return m_UV; }
         inline const GLuint getTID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
+        
+        // Custom Methods
+        void flipX() { flippedX = true; }
+        void unflipX() { flippedX = false; }
+
+        void flipY() { flippedY = true; }
+        void unflipY() { flippedY = false; }
+
 	protected:
 		Renderable2D() : m_Texture(nullptr) { setUVDefaults(); }
 	private:
@@ -55,6 +76,8 @@ namespace fireworks { namespace graphics {
             m_UV.push_back(maths::vec2(1, 1));  // Top Right
             m_UV.push_back(maths::vec2(1, 0));  // Bottom Right
         }
+
+
     };
 
 } }

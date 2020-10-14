@@ -8,6 +8,7 @@ namespace fireworks { namespace graphics {
     enum class SpriteAnimationType
     {
         LOOP,
+        REVERSE,
         PING_PONG
     };
     class Sprite : public Renderable2D
@@ -22,9 +23,9 @@ namespace fireworks { namespace graphics {
 		utils::Timer*       m_AnimTimer;
         double              m_CurrentFrameRate;
     public:
-		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color);
-		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture);
-		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension);
+		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader);
+		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture);
+		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension);
 
         void animateSprite(uint32_t frameRate, SpriteAnimationType animType);
 
