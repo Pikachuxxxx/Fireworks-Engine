@@ -2,6 +2,19 @@
 
 namespace fireworks { namespace graphics {
 
+
+	Sprite::Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color)
+		: Renderable2D(position, size, color), position(m_Position), color(m_Color), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+	{
+
+	}
+
+	Sprite::Sprite(maths::vec3 position, maths::vec2 size, Texture* texture)
+		: Renderable2D(position, size, maths::vec4(1, 0, 1, 1)), position(m_Position), color(m_Color), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+	{
+		m_Texture = texture;
+	}
+
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader)
         : Renderable2D(position, size, color, shader), position(m_Position), color(m_Color), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
     {
@@ -19,6 +32,7 @@ namespace fireworks { namespace graphics {
 	{
 		m_Texture = texture;
 	}
+
 
 	// TODO: Animate sprites in the actual Engine's time loop automatically
 	void Sprite::animateSprite(uint32_t frameRate, SpriteAnimationType animType)

@@ -3,36 +3,38 @@
  * Use the Arrow keys to move the hungry player and feed him the food 
  * every time you catch a food block you change into the collected food item color
  */
-#include <fireworks/fireworks.h>
+#include <fireworks.h>
 
 using namespace fireworks;
 
-class LightSaber : public Fireworks
+class HungryBox : public Fireworks
 {
 private:
-    Window* window;
-    Layer*  layer;
-    Sprite* playerBox;
-    Sprite* food;
-    float   speed;
+    Window*     window;
+    Camera2D*   camera;
+    Layer*      layer;
+    Sprite*     playerBox;
+    Sprite*     food;
+    float       speed;
+    vec4        prevColor;
 public:
-    LightSaber() : speed(10.0f) { }
+    HungryBox() : speed(5.0f), prevColor(vec4(1, 0, 0, 1)) { }
 
-    ~LightSaber() { }
+    ~HungryBox() { }
 
     // Runs once per initialization
     void init() override
     {
         window = createWindow("Hungry Box : Keyboard Input Example", 800, 600);
+		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
 
-        layer = new Layer(
-            new BatchRenderer2D(),
-            new Shader(".\\shaders\\basic.vert",
-                       ".\\shaders\\basic.frag"),
-            mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f));
+		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
+		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
 
-        playerBox = new Sprite(8.0f, 4.5f, 0.7f, 0.5f, vec4(1.0f, 1.0f, 0.0f, 1.0f));
-        food = new Sprite(4.0f, 2.5f, 0.25f, 0.25f, vec4(1.0f, 0.0f, 0.0f, 1.0f));
+		layer = new Layer(batchRenderer);
+
+        playerBox = new Sprite(vec3(0.0f, 0.0f, 0.0f), vec2(1.0f, 1.0f), vec4(1.0f, 1.0f, 0.0f, 1.0f));
+        food = new Sprite(vec3(4.0f, 2.5f, 0.0f), vec2(0.5f, 0.5f), vec4(1.0f, 0.0f, 0.0f, 1.0f));
         layer->add(playerBox);
         layer->add(food);
 
@@ -66,10 +68,14 @@ public:
                                     pow(playerBox->position.y - food->position.y, 2) +
                                     pow(playerBox->position.z - food->position.z, 2));
 
-        if (squaredDistance <= 0.2f)
+        if (squaredDistance <= 0.6f)
         {
-            vec3 randPos = vec3(rand() % 16, rand() % 9, 0.0f);
+            vec3 randPos = vec3(getRandomValue(-7, 7), getRandomValue(-5, 5), 0.0f);
+            vec4 randColor = vec4(getRandomValue(0, 255) / 255.0f, getRandomValue(0, 255) / 255.0f, getRandomValue(0, 255) / 255.0f, 1.0f);
             food->position = randPos;
+            food->color = randColor;
+            playerBox->color = prevColor;
+            prevColor = randColor;
         }
     }
 

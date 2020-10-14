@@ -21,7 +21,7 @@ public:
 
 	{
 		window = createWindow(" Example", 800, 600);
-		cam = new Camera2D(vec2(-16.0f, 16.0f), vec2(-12.0f, 12.0f));
+		cam = new Camera2D(mat4::orthographic(-16.0f, 16.0f, -12.0f, 12.0f, -1.0f, 1.0f));
 		basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 		defaultLayer =	new Layer(new BatchRenderer2D(cam, basicShader));
 
