@@ -8,7 +8,7 @@ in vec4 colAttrib;
 out vec4 color;
 
 uniform vec2 light_pos;
-uniform vec4 colour;
+uniform vec4 colour = vec4(1, 0, 1, 1);
 uniform sampler2D textures[16];
 
 void main()

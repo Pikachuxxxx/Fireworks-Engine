@@ -10,10 +10,8 @@ namespace fireworks { namespace graphics {
     public:
         Renderer2D* m_Renderer;
         std::vector<Renderable2D*> m_Renderables;
-        Shader* m_Shader;
-        maths::mat4 m_ProjectionMatrix;
     public:
-        Layer(Renderer2D* renderer, Shader* shader, maths::mat4 projectionMatrix);
+        Layer(Renderer2D* renderer);
         virtual ~Layer();
         virtual void add(Renderable2D* renderable);
         virtual void render();

@@ -4,8 +4,10 @@
 // GLEW
 #define GLEW_STATIC
 #include <GL/glew.h>
-#include "../maths/maths.h"
 
+#include "camera2d.h"
+#include "Shader.h"
+#include "../maths/maths.h"
 
 namespace fireworks { namespace graphics {
 
@@ -14,13 +16,13 @@ namespace fireworks { namespace graphics {
     class Renderer2D
     {
     protected:
-        std::vector<maths::mat4> m_TransformationStack;
-        const maths::mat4* m_TransformationBack;
-        // GLuint m_FontTexture;
-    public:
-        unsigned int rendererDrawCalls;
+        std::vector<maths::mat4>    m_TransformationStack;
+  const maths::mat4*                m_TransformationBack;
+        Camera2D*                   m_Camera2D;
+        // GLuint                   m_FontTexture;
     protected:
-        Renderer2D()
+        Renderer2D(Camera2D* camera2D)
+            : m_Camera2D(camera2D)
         {
             m_TransformationStack.push_back(maths::mat4::identity());
             m_TransformationBack = &m_TransformationStack.back();

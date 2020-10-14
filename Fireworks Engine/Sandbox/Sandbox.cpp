@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "test\camImplementation.h"
+#include "examples/BunnysJourney.h"
 
 int main()
 {
-    TestCam game;
+    BunnysJourney game;
     game.start();
     return 0;
 }
