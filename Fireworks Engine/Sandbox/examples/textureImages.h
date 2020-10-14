@@ -1,15 +1,16 @@
 /*
- * A simple example to draw a square sprite with cutom texture image
+ * A simple example to draw a square sprite with custom texture image
  */
-#include <fireworks/fireworks.h>
+#include <fireworks.h>
 
 using namespace fireworks;
 
 class TextImage : public Fireworks
 {
 private:
-    Window* window;
-    Layer* layer;
+    Window*     window;
+    Camera2D*   camera;
+    Layer*      layer;
 public:
     TextImage() { }
 
@@ -18,18 +19,19 @@ public:
         delete layer;
     }
 
-    // Runs once per initialisation
+    // Runs once per initialization
     void init() override
     {
         window = createWindow("Textures Example : Fireworks Engine", 800, 600);
-        layer = new Layer(new BatchRenderer2D(),
-            new Shader(".\\shaders\\basic.vert",
-                       ".\\shaders\\basic.frag"),
-            mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f));
+		camera = new Camera2D(mat4::orthographic(-16.0f, 16.0f, -12.0f, 12.0f, -1.0f, 1.0f));
 
+		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
+		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
 
-        Texture* testTex = new Texture(".\\resources\\test.png");
-        Sprite* box = new Sprite(4.0f, 4.0f, 4.0f, 4.0f, testTex);
+		layer = new Layer(batchRenderer);
+
+		Texture* testTex = new Texture(".\\resources\\test.png");
+        Sprite* box = new Sprite(vec3(4.0f, 4.0f, 0.0f), vec2(4.0f, 4.0f), testTex);
         layer->add(box);
     }
 

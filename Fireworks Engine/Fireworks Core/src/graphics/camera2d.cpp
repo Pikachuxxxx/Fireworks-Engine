@@ -2,8 +2,8 @@
 
 namespace fireworks { namespace graphics {
 	
-	Camera2D::Camera2D(maths::vec2 viewXBounds, maths::vec2 viewYBounds)
-		: m_ProjectionMatrix(maths::mat4::orthographic(viewXBounds.x, viewXBounds.y, viewYBounds.x, viewYBounds.y, -1.0f, 1.0f))
+	Camera2D::Camera2D(maths::mat4 projection)
+		: m_ProjectionMatrix(projection), m_ViewMatrix(maths::mat4(1.0f))
 	{
 
 	}
