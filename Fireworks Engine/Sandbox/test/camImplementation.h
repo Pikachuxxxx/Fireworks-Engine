@@ -25,12 +25,12 @@ public:
 	{
 		window = createWindow("Test Cam", 800, 600);
 		cam = new Camera2D(vec2(-16.0f, 16.0f), vec2(-12.0f, 12.0f));
-		defaultLayer = new Layer(	new BatchRenderer2D,
-									new Shader(	".\\shaders\\basic.vert",
-												".\\shaders\\basic.frag"),
-									cam->getProjectionMatrix());
+		Shader* basicShader = new Shader(	".\\shaders\\basic.vert",
+											".\\shaders\\basic.frag");
+		defaultLayer = new Layer(new BatchRenderer2D,
+								cam->getProjectionMatrix());
 
-		box = new Sprite(vec3(0, 0, 0.1), vec2(5, 5), vec4(1, 1, 0, 1));
+		box = new Sprite(vec3(0, 0, 0.1), vec2(5, 5), vec4(1, 1, 0, 1), basicShader);
 
 	}
 
@@ -44,23 +44,23 @@ public:
 	{
 		float spacing = 0.0f;
 
-		for (int i = 0; i < BUILDINGS; i ++)
-		{
-			int randWidth = getRandomValue(1, 3);
-			int randHeight = getRandomValue(4, 8);   
+		//for (int i = 0; i < BUILDINGS; i ++)
+		//{
+		//	int randWidth = getRandomValue(1, 3);
+		//	int randHeight = getRandomValue(4, 8);   
 
-			vec4 randColor = vec4(	getRandomValue(200, 255) / 255.0f,
-									getRandomValue(200, 255) / 255.0f,
-									getRandomValue(200, 255) / 255.0f,
-									1.0f);
+		//	vec4 randColor = vec4(	getRandomValue(200, 255) / 255.0f,
+		//							getRandomValue(200, 255) / 255.0f,
+		//							getRandomValue(200, 255) / 255.0f,
+		//							1.0f);
 
-			buildings[i] = new Sprite(vec3(-10 + spacing, -12.0f + randHeight, 0.0f), vec2(randWidth, randHeight), randColor);
-			spacing += randWidth;
+		//	buildings[i] = new Sprite(vec3(-10 + spacing, -12.0f + randHeight, 0.0f), vec2(randWidth, randHeight), randColor);
+		//	spacing += randWidth;
 
-			defaultLayer->add(buildings[i]);
-		}
+		//	defaultLayer->add(buildings[i]);
+		//}
 
-		std::cout << "Some random building color is : " << buildings[3]->color << std::endl;
+		//std::cout << "Some random building color is : " << buildings[3]->color << std::endl;
 
 		cam->setPosition(vec3(-2, 0, 0));
 		//cam->setRotaion(30);
@@ -100,7 +100,7 @@ public:
 	// Runs as fast as possible
 	void render() override
 	{
-		defaultLayer->m_Shader->setUniformMat4("view", cam->getViewMatrix());
+		box->m_Shader->setUniformMat4("view", cam->getViewMatrix());
 		defaultLayer->render();
 	}
 };

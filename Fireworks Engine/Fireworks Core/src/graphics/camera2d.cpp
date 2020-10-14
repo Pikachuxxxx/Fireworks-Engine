@@ -21,7 +21,7 @@ namespace fireworks { namespace graphics {
 
 		m_ViewMatrix = transform.invert();
 
-		m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
+		//m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
 	}
 
 } }

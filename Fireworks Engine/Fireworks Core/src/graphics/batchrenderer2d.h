@@ -26,16 +26,17 @@ namespace fireworks { namespace graphics {
     class BatchRenderer2D : public Renderer2D
     {
     private:
-        GLuint m_VAO;
-        GLuint m_VBO;
-        VertexData* m_Buffer;
-        IndexBuffer* m_IBO;
-        GLsizei m_IndicesCount;
+        GLuint                  m_VAO;
+        GLuint                  m_VBO;
+        VertexData*             m_Buffer;
+        IndexBuffer*            m_IBO;
+        GLsizei                 m_IndicesCount;
+        std::vector<GLuint>     m_TextureSlots;
 
-        std::vector<GLuint> m_TextureSlots;
-        GLTtext* m_Text;
+        Shader*                 m_Shader;
+        GLTtext*                m_Text;
     public:
-        BatchRenderer2D();
+        BatchRenderer2D(Camera2D* camera2D, Shader* shader);
         ~BatchRenderer2D();
         void begin() override;
         void submit(const Renderable2D* renderable) override;
