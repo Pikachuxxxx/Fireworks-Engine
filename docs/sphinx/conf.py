@@ -5,3 +5,4 @@ if read_the_docs_build:
     subprocess.call('cd .. ; doxygen', shell=True)
 
 html_extra_path = ['../build/html']
+master_doc = 'index'
