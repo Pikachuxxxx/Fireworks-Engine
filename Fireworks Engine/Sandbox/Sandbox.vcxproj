@@ -453,6 +453,7 @@
     <ClInclude Include="Test Dependencies\imgui-docking\imstb_truetype.h" />
     <ClInclude Include="test\animatedSpritesTest.h" />
     <ClInclude Include="test\camImplementation.h" />
+    <ClInclude Include="test\instantspritedraw.h" />
     <ClInclude Include="test\testFBO.h" />
     <ClInclude Include="test\testGUI.h" />
   </ItemGroup>

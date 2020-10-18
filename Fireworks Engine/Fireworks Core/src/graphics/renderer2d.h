@@ -11,14 +11,20 @@
 
 namespace fireworks { namespace graphics {
 
+#define SHADER_VERTEX_INDEX  0
+#define SHADER_UV_INDEX      1
+#define SHADER_TID_INDEX     2
+#define SHADER_COLOR_INDEX   3
+
     class Renderable2D;    // Forward declaration
 
     class Renderer2D
     {
+    public:
+        Camera2D*                   m_Camera2D; 
     protected:
         std::vector<maths::mat4>    m_TransformationStack;
   const maths::mat4*                m_TransformationBack;
-        Camera2D*                   m_Camera2D;
         // GLuint                   m_FontTexture;
     protected:
         Renderer2D(Camera2D* camera2D)

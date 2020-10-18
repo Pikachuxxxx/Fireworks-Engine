@@ -176,6 +176,7 @@
     <ClInclude Include="src\graphics\buffers\renderbuffer.h" />
     <ClInclude Include="src\graphics\buffers\vertexarray.h" />
     <ClInclude Include="src\graphics\camera2d.h" />
+    <ClInclude Include="src\graphics\instancerenderer2d.h" />
     <ClInclude Include="src\graphics\layers\group.h" />
     <ClInclude Include="src\graphics\layers\layer.h" />
     <ClInclude Include="src\graphics\renderables\label.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="src\graphics\buffers\renderbuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexarray.cpp" />
     <ClCompile Include="src\graphics\camera2d.cpp" />
+    <ClCompile Include="src\graphics\instancerenderer2d.cpp" />
     <ClCompile Include="src\graphics\layers\group.cpp" />
     <ClCompile Include="src\graphics\layers\layer.cpp" />
     <ClCompile Include="src\graphics\renderables\label.cpp" />

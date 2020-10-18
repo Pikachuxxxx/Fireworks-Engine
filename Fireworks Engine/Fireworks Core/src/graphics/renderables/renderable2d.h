@@ -63,6 +63,7 @@ mutable std::vector<maths::vec2>            m_UV;
         inline const maths::vec3& getPosition() const { return m_Position; }
         inline const maths::vec4& getColor() const { return m_Color; }
         inline const std::vector<maths::vec2>& getUV() const { return m_UV; }
+        inline const Texture* getTexture() const { return m_Texture; }
         inline const GLuint getTID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
         
         // Custom Methods
