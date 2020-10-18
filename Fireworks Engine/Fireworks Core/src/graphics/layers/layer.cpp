@@ -20,7 +20,10 @@ namespace fireworks { namespace graphics {
 
     void Layer::add(Renderable2D* renderable)
     {
-        renderable->m_Shader->setUniformMat4("projection", m_Renderer->m_Camera2D->getProjectionMatrix());
+        if (dynamic_cast<InstanceRenderer2D*>(m_Renderer))
+        {
+            renderable->m_Shader->setUniformMat4("projection", m_Renderer->m_Camera2D->getProjectionMatrix());
+        }
         m_Renderables.push_back(renderable);
     }
 
@@ -31,9 +34,6 @@ namespace fireworks { namespace graphics {
 		    m_Renderer->begin();
 		    for (const Renderable2D* renderable : m_Renderables)
 		    {
-                renderable->m_Shader->enable();
-                renderable->m_Shader->setUniformMat4("view", m_Renderer->m_Camera2D->getViewMatrix());
-
 			    renderable->submit(m_Renderer);
 		    }
 		    m_Renderer->end();
