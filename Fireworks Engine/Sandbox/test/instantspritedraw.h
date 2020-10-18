@@ -35,14 +35,16 @@ public:
 		b_layer = new Layer(batchRenderer);
 
 		playerBox = new Sprite(vec3(0.0f, 0.0f, 0.0f), vec2(1.0f, 1.0f), vec4(1.0f, 1.0f, 0.0f, 1.0f), basicShader);
-		Sprite* blueBox = new Sprite(vec3(2.0f, 2.0f, 0.0f), vec2(1.0f, 1.0f), vec4(0.0f, 0.0f, 1.0f, 1.0f), basicShader);
 		Sprite* redBox = new Sprite(vec3(-2.0f, 2.0f, 0.0f), vec2(1.0f, 1.0f), vec4(1.0f, 0.0f, 0.0f, 1.0f), basicShader);
+		Sprite* blueBox = new Sprite(vec3(2.0f, 2.0f, 0.0f), vec2(1.0f, 1.0f), vec4(0.0f, 0.0f, 1.0f, 1.0f));
+		Sprite* lightBlueBox = new Sprite(vec3(2.0f, 4.0f, 0.0f), vec2(1.0f, 1.0f), vec4(0.1f, 0.4f, 0.6f, 1.0f));
 
 
 		layer->add(playerBox);
 		layer->add(redBox);
 
 		b_layer->add(blueBox);
+		b_layer->add(lightBlueBox);
 	}
 
 	// Runs once per second
