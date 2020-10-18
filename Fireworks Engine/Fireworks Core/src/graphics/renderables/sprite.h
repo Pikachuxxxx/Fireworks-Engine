@@ -28,7 +28,7 @@ mutable uint32_t            frame;
 		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture);
 		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension);
 
-        // To use with a SimpleRenderer
+        // To use with a SimpleRenderer aka Instance Renderer
 		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader);
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture);
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension);
