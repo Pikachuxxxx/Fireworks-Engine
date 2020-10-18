@@ -20,19 +20,41 @@ namespace fireworks { namespace graphics {
 
     void Layer::add(Renderable2D* renderable)
     {
+        renderable->m_Shader->setUniformMat4("projection", m_Renderer->m_Camera2D->getProjectionMatrix());
         m_Renderables.push_back(renderable);
     }
 
     void Layer::render()
     {
-        m_Renderer->begin();
-        for(const Renderable2D* renderable : m_Renderables)
+        if (dynamic_cast<BatchRenderer2D*>(m_Renderer))
         {
-            renderable->submit(m_Renderer);
+		    m_Renderer->begin();
+		    for (const Renderable2D* renderable : m_Renderables)
+		    {
+                renderable->m_Shader->enable();
+                renderable->m_Shader->setUniformMat4("view", m_Renderer->m_Camera2D->getViewMatrix());
+
+			    renderable->submit(m_Renderer);
+		    }
+		    m_Renderer->end();
+		    m_Renderer->flush();
+        }
+        else if(dynamic_cast<InstanceRenderer2D*>(m_Renderer))
+        {
+			for (const Renderable2D* renderable : m_Renderables)
+			{
+				m_Renderer->begin();
+				renderable->m_Shader->enable();
+				renderable->m_Shader->setUniformMat4("view", m_Renderer->m_Camera2D->getViewMatrix());
+
+				renderable->submit(m_Renderer);
+				m_Renderer->end();
+				m_Renderer->flush();
+			}
         }
 
-        m_Renderer->end();
-        m_Renderer->flush();
     }
 
 } }
+
+

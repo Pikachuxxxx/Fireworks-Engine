@@ -2,6 +2,7 @@
 
 #include "src/graphics/batchrenderer2d.h"
 #include "src/graphics/camera2d.h"
+#include "src/graphics/instancerenderer2d.h"
 #include "src/graphics/renderer2d.h"
 #include "src/graphics/shader.h"
 #include "src/graphics/texture.h"
@@ -29,6 +30,9 @@ namespace fireworks {
     using namespace maths;
     using namespace utils;
 
+    /// The Game class to use the fireworks engine
+    /// 
+    /// It is the main class from which the game class must be derived from to use the fireworks engine
     class Fireworks
     {
     private:
@@ -36,7 +40,8 @@ namespace fireworks {
         Timer* m_Timer;
         unsigned int m_FramesPerSecond, m_UpdatePerSecond;
         double m_CurrentFrame, m_LastFrame;
-    protected:    
+    protected:  
+        /// The completion time in seconds since the last frame 
         double deltaTime;
     protected:
         Fireworks()
@@ -50,7 +55,12 @@ namespace fireworks {
             delete m_Window;
             delete m_Timer;
         }
-
+        /// A function to create the Main Window
+        /// 
+        /// @param name The name of the window
+        /// @param width The width of the window
+        /// @param height The height of the window
+        /// @returns An object of type Window
         graphics::Window* createWindow(const char* name, int width, int height)
         {
             m_Window = new graphics::Window(name, width, height);
@@ -61,19 +71,19 @@ namespace fireworks {
         {
             init();
             run();
-        }
+         }
     protected:
-        // Runs once per initialization
+        /// Runs once per initialization
         virtual void init() = 0;
-        // Runs once per second
+        /// Runs once per second
         virtual void tick() { };
-        // Runs 60 times per second
+        /// Runs 60 times per second
         virtual void update() { };
-        // Runs as fast as possible
+        /// Runs as fast as possible
         virtual void render() = 0;
 
-        const unsigned int getFPS() { return m_FramesPerSecond; }
-        const unsigned int getUPS() { return m_UpdatePerSecond; }
+		inline const unsigned int getFPS() { return m_FramesPerSecond; }
+		inline const unsigned int getUPS() { return m_UpdatePerSecond; }
     private:
         void run()
         {

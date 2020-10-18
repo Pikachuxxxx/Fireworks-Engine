@@ -941,6 +941,9 @@
     <ClInclude Include="examples\BunnysJourney.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\instantspritedraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Test Dependencies\glm\detail\func_common.inl">
