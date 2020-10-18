@@ -10,7 +10,7 @@
   <a href="#features">Features</a> |
   <a href="#building">Building</a> |
   <a href="#usage">Usage</a> |
-  <a href="https://github.com/Pikachuxxxx/Fireworks-Engine/wiki">API/Docs</a> |
+  <a href="https://fireworks-engine.readthedocs.io/en/latest/">API/Docs</a> |
   <a href="#dependencies">Dependencies</a>
 <br/>
 </p>  
@@ -62,7 +62,8 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
   cmake ..
   make 
 ```
-
+### Documentation
+Find the comlpete documentation, API reference and examples usage [here](https://fireworks-engine.readthedocs.io/en/latest/)
 ### Usage
 ### Find more Examples in the Sandbox project [here](https://github.com/Pikachuxxxx/Fireworks-Engine/tree/master/Fireworks%20Engine/Sandbox/examples)
 
