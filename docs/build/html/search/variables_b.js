@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_482',['y',['../structfireworks_1_1maths_1_1vec2.html#a4be47a4869160ce1d16ce784acd44bb1',1,'fireworks::maths::vec2::y()'],['../structfireworks_1_1maths_1_1vec3.html#aab43d30c0522a05d157602e2cf2fd178',1,'fireworks::maths::vec3::y()'],['../structfireworks_1_1maths_1_1vec4.html#a51a61c7d36f212ced9c61d806c474504',1,'fireworks::maths::vec4::y()']]]
+  ['z_481',['z',['../structfireworks_1_1maths_1_1vec3.html#a62e3713df38445bbfb19d77f00676f33',1,'fireworks::maths::vec3::z()'],['../structfireworks_1_1maths_1_1vec4.html#a41c6c45b6384a3b9f4f8a723ece31a39',1,'fireworks::maths::vec4::z()']]]
 ];

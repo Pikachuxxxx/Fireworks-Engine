@@ -124,118 +124,111 @@ $(document).ready(function(){initNavTree('fireworks_8h_source.html',''); initRes
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classfireworks_1_1graphics_1_1_window.html">graphics::Window</a>* m_Window;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classfireworks_1_1utils_1_1_timer.html">Timer</a>* m_Timer;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_FramesPerSecond, m_UpdatePerSecond;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">double</span> m_CurrentFrame, m_LastFrame;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">protected</span>:  </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a5e3210faa862ce9650b8672ff91dc7a8">   45</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classfireworks_1_1_fireworks.html#a5e3210faa862ce9650b8672ff91dc7a8">deltaTime</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#adc52dbb32efc022ddb56ca56f442977a">   47</a></span>&#160;        <a class="code" href="classfireworks_1_1_fireworks.html#adc52dbb32efc022ddb56ca56f442977a">Fireworks</a>()</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            : m_FramesPerSecond(0), m_UpdatePerSecond(0), m_CurrentFrame(0.0), m_LastFrame(0.0)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a8cf0dedbcd2288c749be5a041243c987">   53</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classfireworks_1_1_fireworks.html#a8cf0dedbcd2288c749be5a041243c987">~Fireworks</a>()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">delete</span> m_Window;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">delete</span> m_Timer;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a479bb19d50e268dbd8f614ec78a1d406">   64</a></span>&#160;        <a class="code" href="classfireworks_1_1graphics_1_1_window.html">graphics::Window</a>* <a class="code" href="classfireworks_1_1_fireworks.html#a479bb19d50e268dbd8f614ec78a1d406">createWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            m_Window = <span class="keyword">new</span> <a class="code" href="classfireworks_1_1graphics_1_1_window.html">graphics::Window</a>(name, width, height);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> m_Window;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">   70</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">start</a>()</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            init();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            run();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a1b8f26f19f03b4094ef515bbab71f3d9">   77</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a1b8f26f19f03b4094ef515bbab71f3d9">init</a>() = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a4bc21c09e8ccf19bcf07db84a6d69710">   79</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a4bc21c09e8ccf19bcf07db84a6d69710">tick</a>() { };</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a6a5154804300375411b063cd17da348e">   81</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a6a5154804300375411b063cd17da348e">update</a>() { };</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a3c23d2acc9b6e486caca0d597a98e4ef">   83</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a3c23d2acc9b6e486caca0d597a98e4ef">render</a>() = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a227d01c18695957b422db755f83fa0f5">   85</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classfireworks_1_1_fireworks.html#a227d01c18695957b422db755f83fa0f5">getFPS</a>() { <span class="keywordflow">return</span> m_FramesPerSecond; }</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a846354fc43a94aee0e0bedb6dbfb6734">   86</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classfireworks_1_1_fireworks.html#a846354fc43a94aee0e0bedb6dbfb6734">getUPS</a>() { <span class="keywordflow">return</span> m_UpdatePerSecond; }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> run()</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            m_Timer = <span class="keyword">new</span> <a class="code" href="classfireworks_1_1utils_1_1_timer.html">Timer</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">float</span> timer = 0.0f;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">float</span> updateTick = 1.0f / 60.0f;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">float</span> updateTimer = 0.0f;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frames = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> updates = 0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">while</span>(!m_Window-&gt;<a class="code" href="classfireworks_1_1graphics_1_1_window.html#aa5340ea7c89a95ea74a07d732a02d97c">closed</a>())</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                m_CurrentFrame = glfwGetTime();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                m_Window-&gt;<a class="code" href="classfireworks_1_1graphics_1_1_window.html#a08eb6c85e8aa902257dfc1e4855adef6">clear</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">if</span> (m_Timer-&gt;<a class="code" href="classfireworks_1_1utils_1_1_timer.html#a69ecfad0058f516a087bebb339bccb98">elapsed</a>() - updateTimer &gt; updateTick)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    update();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    updates++;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    updateTimer += updateTick;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                frames++;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                render();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                deltaTime = m_CurrentFrame - m_LastFrame;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                m_LastFrame = m_CurrentFrame;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                m_Window-&gt;<a class="code" href="classfireworks_1_1graphics_1_1_window.html#a12c278059412250515d54ced2bee17f0">update</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">if</span>(m_Timer-&gt;<a class="code" href="classfireworks_1_1utils_1_1_timer.html#a69ecfad0058f516a087bebb339bccb98">elapsed</a>() - timer &gt; 1.0f)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    timer += 1.0f;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    m_FramesPerSecond = frames;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    m_UpdatePerSecond = updates;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    frames = 0;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    updates = 0;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    tick();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    };</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_FramesPerSecond, m_UpdatePerSecond;        </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#adc52dbb32efc022ddb56ca56f442977a">   43</a></span>&#160;        <a class="code" href="classfireworks_1_1_fireworks.html#adc52dbb32efc022ddb56ca56f442977a">Fireworks</a>()</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            : m_FramesPerSecond(0), m_UpdatePerSecond(0)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a8cf0dedbcd2288c749be5a041243c987">   49</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classfireworks_1_1_fireworks.html#a8cf0dedbcd2288c749be5a041243c987">~Fireworks</a>()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">delete</span> m_Window;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">delete</span> m_Timer;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a479bb19d50e268dbd8f614ec78a1d406">   62</a></span>&#160;        <a class="code" href="classfireworks_1_1graphics_1_1_window.html">graphics::Window</a>* <a class="code" href="classfireworks_1_1_fireworks.html#a479bb19d50e268dbd8f614ec78a1d406">createWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            m_Window = <span class="keyword">new</span> <a class="code" href="classfireworks_1_1graphics_1_1_window.html">graphics::Window</a>(name, width, height);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span> m_Window;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">   71</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">start</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            init();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            run();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a1b8f26f19f03b4094ef515bbab71f3d9">   78</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a1b8f26f19f03b4094ef515bbab71f3d9">init</a>() = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a4bc21c09e8ccf19bcf07db84a6d69710">   80</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a4bc21c09e8ccf19bcf07db84a6d69710">tick</a>() { };</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a6a5154804300375411b063cd17da348e">   82</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a6a5154804300375411b063cd17da348e">update</a>() { };</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a3c23d2acc9b6e486caca0d597a98e4ef">   84</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfireworks_1_1_fireworks.html#a3c23d2acc9b6e486caca0d597a98e4ef">render</a>() = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a227d01c18695957b422db755f83fa0f5">   89</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classfireworks_1_1_fireworks.html#a227d01c18695957b422db755f83fa0f5">getFPS</a>() { <span class="keywordflow">return</span> m_FramesPerSecond; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classfireworks_1_1_fireworks.html#a846354fc43a94aee0e0bedb6dbfb6734">   95</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classfireworks_1_1_fireworks.html#a846354fc43a94aee0e0bedb6dbfb6734">getUPS</a>() { <span class="keywordflow">return</span> m_UpdatePerSecond; }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> run()</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            m_Timer = <span class="keyword">new</span> <a class="code" href="classfireworks_1_1utils_1_1_timer.html">Timer</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordtype">float</span> timer = 0.0f;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">float</span> updateTick = 1.0f / 60.0f;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordtype">float</span> updateTimer = 0.0f;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frames = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> updates = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">while</span>(!m_Window-&gt;<a class="code" href="classfireworks_1_1graphics_1_1_window.html#aa5340ea7c89a95ea74a07d732a02d97c">closed</a>())</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                m_Window-&gt;<a class="code" href="classfireworks_1_1graphics_1_1_window.html#a08eb6c85e8aa902257dfc1e4855adef6">clear</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (m_Timer-&gt;<a class="code" href="classfireworks_1_1utils_1_1_timer.html#a7f6f4240775e8a6f46741c1f7e6c5b2e">deltaTime</a>() - updateTimer &gt; updateTick)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    update();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    updates++;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    updateTimer += updateTick;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                frames++;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                render();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                m_Window-&gt;<a class="code" href="classfireworks_1_1graphics_1_1_window.html#a12c278059412250515d54ced2bee17f0">update</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">if</span>(m_Timer-&gt;<a class="code" href="classfireworks_1_1utils_1_1_timer.html#a7f6f4240775e8a6f46741c1f7e6c5b2e">deltaTime</a>() - timer &gt; 1.0f)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    timer += 1.0f;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    m_FramesPerSecond = frames;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    m_UpdatePerSecond = updates;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    frames = 0;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    updates = 0;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    tick();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    };</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a6a5154804300375411b063cd17da348e"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a6a5154804300375411b063cd17da348e">fireworks::Fireworks::update</a></div><div class="ttdeci">virtual void update()</div><div class="ttdoc">Runs 60 times per second.</div><div class="ttdef"><b>Definition:</b> fireworks.h:81</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a6a5154804300375411b063cd17da348e"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a6a5154804300375411b063cd17da348e">fireworks::Fireworks::update</a></div><div class="ttdeci">virtual void update()</div><div class="ttdoc">Runs 60 times per second.</div><div class="ttdef"><b>Definition:</b> fireworks.h:82</div></div>
 <div class="ttc" id="asprite_8h_html"><div class="ttname"><a href="sprite_8h.html">sprite.h</a></div></div>
 <div class="ttc" id="aindexbuffer_8h_html"><div class="ttname"><a href="indexbuffer_8h.html">indexbuffer.h</a></div></div>
 <div class="ttc" id="aclassfireworks_1_1_fireworks_html_a1b8f26f19f03b4094ef515bbab71f3d9"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a1b8f26f19f03b4094ef515bbab71f3d9">fireworks::Fireworks::init</a></div><div class="ttdeci">virtual void init()=0</div><div class="ttdoc">Runs once per initialization.</div></div>
 <div class="ttc" id="agroup_8h_html"><div class="ttname"><a href="group_8h.html">group.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1utils_1_1_timer_html_a69ecfad0058f516a087bebb339bccb98"><div class="ttname"><a href="classfireworks_1_1utils_1_1_timer.html#a69ecfad0058f516a087bebb339bccb98">fireworks::utils::Timer::elapsed</a></div><div class="ttdeci">float elapsed()</div><div class="ttdef"><b>Definition:</b> timer.h:24</div></div>
 <div class="ttc" id="aclassfireworks_1_1_fireworks_html_a3c23d2acc9b6e486caca0d597a98e4ef"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a3c23d2acc9b6e486caca0d597a98e4ef">fireworks::Fireworks::render</a></div><div class="ttdeci">virtual void render()=0</div><div class="ttdoc">Runs as fast as possible.</div></div>
 <div class="ttc" id="amaths_8h_html"><div class="ttname"><a href="maths_8h.html">maths.h</a></div></div>
 <div class="ttc" id="alayer_8h_html"><div class="ttname"><a href="layer_8h.html">layer.h</a></div></div>
 <div class="ttc" id="afileutils_8h_html"><div class="ttname"><a href="fileutils_8h.html">fileutils.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a227d01c18695957b422db755f83fa0f5"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a227d01c18695957b422db755f83fa0f5">fireworks::Fireworks::getFPS</a></div><div class="ttdeci">const unsigned int getFPS()</div><div class="ttdef"><b>Definition:</b> fireworks.h:85</div></div>
-<div class="ttc" id="aclassfireworks_1_1utils_1_1_timer_html"><div class="ttname"><a href="classfireworks_1_1utils_1_1_timer.html">fireworks::utils::Timer</a></div><div class="ttdef"><b>Definition:</b> timer.h:8</div></div>
-<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html_a12c278059412250515d54ced2bee17f0"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html#a12c278059412250515d54ced2bee17f0">fireworks::graphics::Window::update</a></div><div class="ttdeci">void update() const</div><div class="ttdef"><b>Definition:</b> Window.cpp:94</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a227d01c18695957b422db755f83fa0f5"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a227d01c18695957b422db755f83fa0f5">fireworks::Fireworks::getFPS</a></div><div class="ttdeci">const unsigned int getFPS()</div><div class="ttdoc">A function to get the current FPS : Frames per second .</div><div class="ttdef"><b>Definition:</b> fireworks.h:89</div></div>
+<div class="ttc" id="aclassfireworks_1_1utils_1_1_timer_html"><div class="ttname"><a href="classfireworks_1_1utils_1_1_timer.html">fireworks::utils::Timer</a></div><div class="ttdoc">Timer class to keep track of the time.</div><div class="ttdef"><b>Definition:</b> timer.h:9</div></div>
+<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html_a12c278059412250515d54ced2bee17f0"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html#a12c278059412250515d54ced2bee17f0">fireworks::graphics::Window::update</a></div><div class="ttdeci">void update() const</div><div class="ttdoc">Updates the window.</div><div class="ttdef"><b>Definition:</b> Window.cpp:97</div></div>
 <div class="ttc" id="avertexarray_8h_html"><div class="ttname"><a href="vertexarray_8h.html">vertexarray.h</a></div></div>
 <div class="ttc" id="atimer_8h_html"><div class="ttname"><a href="timer_8h.html">timer.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a5e3210faa862ce9650b8672ff91dc7a8"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a5e3210faa862ce9650b8672ff91dc7a8">fireworks::Fireworks::deltaTime</a></div><div class="ttdeci">double deltaTime</div><div class="ttdoc">The completion time in seconds since the last frame.</div><div class="ttdef"><b>Definition:</b> fireworks.h:45</div></div>
 <div class="ttc" id="acamera2d_8h_html"><div class="ttname"><a href="camera2d_8h.html">camera2d.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a846354fc43a94aee0e0bedb6dbfb6734"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a846354fc43a94aee0e0bedb6dbfb6734">fireworks::Fireworks::getUPS</a></div><div class="ttdeci">const unsigned int getUPS()</div><div class="ttdef"><b>Definition:</b> fireworks.h:86</div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a8cf0dedbcd2288c749be5a041243c987"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a8cf0dedbcd2288c749be5a041243c987">fireworks::Fireworks::~Fireworks</a></div><div class="ttdeci">virtual ~Fireworks()</div><div class="ttdef"><b>Definition:</b> fireworks.h:53</div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a4bc21c09e8ccf19bcf07db84a6d69710"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a4bc21c09e8ccf19bcf07db84a6d69710">fireworks::Fireworks::tick</a></div><div class="ttdeci">virtual void tick()</div><div class="ttdoc">Runs once per second.</div><div class="ttdef"><b>Definition:</b> fireworks.h:79</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a846354fc43a94aee0e0bedb6dbfb6734"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a846354fc43a94aee0e0bedb6dbfb6734">fireworks::Fireworks::getUPS</a></div><div class="ttdeci">const unsigned int getUPS()</div><div class="ttdoc">A function to get the current UPS : Updates per second .</div><div class="ttdef"><b>Definition:</b> fireworks.h:95</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a8cf0dedbcd2288c749be5a041243c987"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a8cf0dedbcd2288c749be5a041243c987">fireworks::Fireworks::~Fireworks</a></div><div class="ttdeci">virtual ~Fireworks()</div><div class="ttdef"><b>Definition:</b> fireworks.h:49</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a4bc21c09e8ccf19bcf07db84a6d69710"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a4bc21c09e8ccf19bcf07db84a6d69710">fireworks::Fireworks::tick</a></div><div class="ttdeci">virtual void tick()</div><div class="ttdoc">Runs once per second.</div><div class="ttdef"><b>Definition:</b> fireworks.h:80</div></div>
 <div class="ttc" id="abuffer_8h_html"><div class="ttname"><a href="buffer_8h.html">buffer.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a83534f499f882e391b40bb6ec0137fd1"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">fireworks::Fireworks::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> fireworks.h:70</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a83534f499f882e391b40bb6ec0137fd1"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">fireworks::Fireworks::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">A function that starts the main game loop.</div><div class="ttdef"><b>Definition:</b> fireworks.h:71</div></div>
 <div class="ttc" id="arenderable2d_8h_html"><div class="ttname"><a href="renderable2d_8h.html">renderable2d.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html_a08eb6c85e8aa902257dfc1e4855adef6"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html#a08eb6c85e8aa902257dfc1e4855adef6">fireworks::graphics::Window::clear</a></div><div class="ttdeci">void clear() const</div><div class="ttdef"><b>Definition:</b> Window.cpp:89</div></div>
+<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html_a08eb6c85e8aa902257dfc1e4855adef6"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html#a08eb6c85e8aa902257dfc1e4855adef6">fireworks::graphics::Window::clear</a></div><div class="ttdeci">void clear() const</div><div class="ttdoc">Clears the window screen blank.</div><div class="ttdef"><b>Definition:</b> Window.cpp:92</div></div>
 <div class="ttc" id="alabel_8h_html"><div class="ttname"><a href="label_8h.html">label.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a479bb19d50e268dbd8f614ec78a1d406"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a479bb19d50e268dbd8f614ec78a1d406">fireworks::Fireworks::createWindow</a></div><div class="ttdeci">graphics::Window * createWindow(const char *name, int width, int height)</div><div class="ttdoc">A function to create the Main Window.</div><div class="ttdef"><b>Definition:</b> fireworks.h:64</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_a479bb19d50e268dbd8f614ec78a1d406"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#a479bb19d50e268dbd8f614ec78a1d406">fireworks::Fireworks::createWindow</a></div><div class="ttdeci">graphics::Window * createWindow(const char *name, int width, int height)</div><div class="ttdoc">A function to create the Main Window.</div><div class="ttdef"><b>Definition:</b> fireworks.h:62</div></div>
 <div class="ttc" id="abatchrenderer2d_8h_html"><div class="ttname"><a href="batchrenderer2d_8h.html">batchrenderer2d.h</a></div></div>
 <div class="ttc" id="arenderer2d_8h_html"><div class="ttname"><a href="renderer2d_8h.html">renderer2d.h</a></div></div>
 <div class="ttc" id="atexture_8h_html"><div class="ttname"><a href="texture_8h.html">texture.h</a></div></div>
 <div class="ttc" id="ainstancerenderer2d_8h_html"><div class="ttname"><a href="instancerenderer2d_8h.html">instancerenderer2d.h</a></div></div>
 <div class="ttc" id="aframebuffer_8h_html"><div class="ttname"><a href="framebuffer_8h.html">framebuffer.h</a></div></div>
-<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html">fireworks::graphics::Window</a></div><div class="ttdef"><b>Definition:</b> Window.h:26</div></div>
+<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html">fireworks::graphics::Window</a></div><div class="ttdoc">The class responsible for Window Creation.</div><div class="ttdef"><b>Definition:</b> Window.h:30</div></div>
 <div class="ttc" id="anamespacefireworks_html"><div class="ttname"><a href="namespacefireworks.html">fireworks</a></div><div class="ttdef"><b>Definition:</b> batchrenderer2d.cpp:3</div></div>
-<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html_aa5340ea7c89a95ea74a07d732a02d97c"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html#aa5340ea7c89a95ea74a07d732a02d97c">fireworks::graphics::Window::closed</a></div><div class="ttdeci">bool closed() const</div><div class="ttdef"><b>Definition:</b> Window.cpp:105</div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html"><div class="ttname"><a href="classfireworks_1_1_fireworks.html">fireworks::Fireworks</a></div><div class="ttdoc">The Game class to use the fireworks engine.</div><div class="ttdef"><b>Definition:</b> fireworks.h:37</div></div>
-<div class="ttc" id="aclassfireworks_1_1_fireworks_html_adc52dbb32efc022ddb56ca56f442977a"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#adc52dbb32efc022ddb56ca56f442977a">fireworks::Fireworks::Fireworks</a></div><div class="ttdeci">Fireworks()</div><div class="ttdef"><b>Definition:</b> fireworks.h:47</div></div>
+<div class="ttc" id="aclassfireworks_1_1utils_1_1_timer_html_a7f6f4240775e8a6f46741c1f7e6c5b2e"><div class="ttname"><a href="classfireworks_1_1utils_1_1_timer.html#a7f6f4240775e8a6f46741c1f7e6c5b2e">fireworks::utils::Timer::deltaTime</a></div><div class="ttdeci">float deltaTime()</div><div class="ttdoc">The completion time in milli seconds since the last frame was renderer.</div><div class="ttdef"><b>Definition:</b> timer.h:30</div></div>
+<div class="ttc" id="aclassfireworks_1_1graphics_1_1_window_html_aa5340ea7c89a95ea74a07d732a02d97c"><div class="ttname"><a href="classfireworks_1_1graphics_1_1_window.html#aa5340ea7c89a95ea74a07d732a02d97c">fireworks::graphics::Window::closed</a></div><div class="ttdeci">bool closed() const</div><div class="ttdoc">Indicates the current state of the Window.</div><div class="ttdef"><b>Definition:</b> Window.cpp:108</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html"><div class="ttname"><a href="classfireworks_1_1_fireworks.html">fireworks::Fireworks</a></div><div class="ttdoc">The Game class to use the Fireworks Engine.</div><div class="ttdef"><b>Definition:</b> fireworks.h:37</div></div>
+<div class="ttc" id="aclassfireworks_1_1_fireworks_html_adc52dbb32efc022ddb56ca56f442977a"><div class="ttname"><a href="classfireworks_1_1_fireworks.html#adc52dbb32efc022ddb56ca56f442977a">fireworks::Fireworks::Fireworks</a></div><div class="ttdeci">Fireworks()</div><div class="ttdef"><b>Definition:</b> fireworks.h:43</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
