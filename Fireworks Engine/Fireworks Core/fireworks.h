@@ -30,7 +30,7 @@ namespace fireworks {
     using namespace maths;
     using namespace utils;
 
-    /// The Game class to use the fireworks engine
+    /// The Game class to use the Fireworks Engine.
     /// 
     /// It is the main class from which the game class must be derived from to use the fireworks engine
     class Fireworks
@@ -38,14 +38,10 @@ namespace fireworks {
     private:
         graphics::Window* m_Window;
         Timer* m_Timer;
-        unsigned int m_FramesPerSecond, m_UpdatePerSecond;
-        double m_CurrentFrame, m_LastFrame;
-    protected:  
-        /// The completion time in seconds since the last frame 
-        double deltaTime;
+        unsigned int m_FramesPerSecond, m_UpdatePerSecond;        
     protected:
         Fireworks()
-            : m_FramesPerSecond(0), m_UpdatePerSecond(0), m_CurrentFrame(0.0), m_LastFrame(0.0)
+            : m_FramesPerSecond(0), m_UpdatePerSecond(0)
         {
 
         }
@@ -60,13 +56,18 @@ namespace fireworks {
         /// @param name The name of the window
         /// @param width The width of the window
         /// @param height The height of the window
-        /// @returns An object of type Window
+        /// @returns An pointer object to the currently created of type graphics::Window
+        /// Use this object to set properties of the window and control the input
+        /// @see graphics::Window for more details on using/seeting the window properties
         graphics::Window* createWindow(const char* name, int width, int height)
         {
             m_Window = new graphics::Window(name, width, height);
             return m_Window;
         }
     public:
+        /// A function that starts the main game loop.
+        /// 
+        /// @attention The main class the derives from fireworks::Fireworks must use this method (in main.cpp) to start the game
         void start()
         {
             init();
@@ -82,7 +83,15 @@ namespace fireworks {
         /// Runs as fast as possible
         virtual void render() = 0;
 
+		/// A function to get the current FPS : Frames per second .
+		/// 
+		/// @returns Returns the current FPS of type unsigned int 
 		inline const unsigned int getFPS() { return m_FramesPerSecond; }
+
+		/// A function to get the current UPS : Updates per second .
+        /// 
+        /// We usually want the number of updates to be around 60 per second
+        /// @returns Returns the current UPS of type unsigned int 
 		inline const unsigned int getUPS() { return m_UpdatePerSecond; }
     private:
         void run()
@@ -95,22 +104,18 @@ namespace fireworks {
             unsigned int updates = 0;
             while(!m_Window->closed())
             {
-                m_CurrentFrame = glfwGetTime();
                 m_Window->clear();
 
-				if (m_Timer->elapsed() - updateTimer > updateTick)
+				if (m_Timer->deltaTime() - updateTimer > updateTick)
 				{
 					update();
 					updates++;
 					updateTimer += updateTick;
-
 				}
                 frames++;
-                render();
-                deltaTime = m_CurrentFrame - m_LastFrame;
-                m_LastFrame = m_CurrentFrame;
+				render();
                 m_Window->update();
-                if(m_Timer->elapsed() - timer > 1.0f)
+                if(m_Timer->deltaTime() - timer > 1.0f)
                 {
                     timer += 1.0f;
                     m_FramesPerSecond = frames;

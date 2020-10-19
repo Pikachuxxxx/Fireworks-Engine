@@ -9,7 +9,6 @@ private:
 	Camera2D* camera;
 	Layer* layer;
 	Layer* b_layer;
-
 	Sprite* playerBox;
 public:
 	IR2DTest()
@@ -45,6 +44,7 @@ public:
 
 		b_layer->add(blueBox);
 		b_layer->add(lightBlueBox);
+
 	}
 
 	// Runs once per second
