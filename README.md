@@ -22,6 +22,9 @@
 <br/>
 <a href="https://github.com/Pikachuxxxx/Fireworks-Engine/issues"><img alt="Issues" src="https://img.shields.io/github/issues/Pikachuxxxx/fireworks-engine?style=flat-square"/></a>
 <a href=""><img alt="size" src="https://img.shields.io/github/repo-size/Pikachuxxxx/fireworks-engine?color=FFA500&style=flat-square"/></a>
+<a href='https://fireworks-engine.readthedocs.io/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/fireworks-engine/badge/?version=latest' alt='Documentation Status' />
+</a>
+
 <br/>
 </p>
 
