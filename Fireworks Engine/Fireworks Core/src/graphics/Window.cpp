@@ -44,7 +44,10 @@ namespace fireworks { namespace graphics {
             return false;
         }
         glfwMakeContextCurrent(m_Window);
+
         glfwSetWindowUserPointer(m_Window, this);
+
+        // Window Callback Functions 
         glfwSetFramebufferSizeCallback(m_Window, window_resize_callback);
         glfwSetKeyCallback(m_Window, key_callback);
         glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
