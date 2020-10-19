@@ -91,18 +91,26 @@ $(document).ready(function(){initNavTree('classfireworks_1_1utils_1_1_timer.html
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="classfireworks_1_1utils_1_1_timer.html" title="Timer class to keep track of the time.">Timer</a> class to keep track of the time.  
+ <a href="classfireworks_1_1utils_1_1_timer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="timer_8h_source.html">timer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a34f9fba7229a6b5820ce2f3dfb15b440"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1utils_1_1_timer.html#a34f9fba7229a6b5820ce2f3dfb15b440">Timer</a> ()</td></tr>
+<tr class="memdesc:a34f9fba7229a6b5820ce2f3dfb15b440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple Initializer of the timer object that.  <a href="classfireworks_1_1utils_1_1_timer.html#a34f9fba7229a6b5820ce2f3dfb15b440">More...</a><br /></td></tr>
 <tr class="separator:a34f9fba7229a6b5820ce2f3dfb15b440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5635cc480b5752bc663acb48e21f3665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1utils_1_1_timer.html#a5635cc480b5752bc663acb48e21f3665">reset</a> ()</td></tr>
+<tr class="memdesc:a5635cc480b5752bc663acb48e21f3665"><td class="mdescLeft">&#160;</td><td class="mdescRight">resets the timer to current time  <a href="classfireworks_1_1utils_1_1_timer.html#a5635cc480b5752bc663acb48e21f3665">More...</a><br /></td></tr>
 <tr class="separator:a5635cc480b5752bc663acb48e21f3665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ecfad0058f516a087bebb339bccb98"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1utils_1_1_timer.html#a69ecfad0058f516a087bebb339bccb98">elapsed</a> ()</td></tr>
-<tr class="separator:a69ecfad0058f516a087bebb339bccb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f6f4240775e8a6f46741c1f7e6c5b2e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1utils_1_1_timer.html#a7f6f4240775e8a6f46741c1f7e6c5b2e">deltaTime</a> ()</td></tr>
+<tr class="memdesc:a7f6f4240775e8a6f46741c1f7e6c5b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The completion time in milli seconds since the last frame was renderer.  <a href="classfireworks_1_1utils_1_1_timer.html#a7f6f4240775e8a6f46741c1f7e6c5b2e">More...</a><br /></td></tr>
+<tr class="separator:a7f6f4240775e8a6f46741c1f7e6c5b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classfireworks_1_1utils_1_1_timer.html" title="Timer class to keep track of the time.">Timer</a> class to keep track of the time. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a34f9fba7229a6b5820ce2f3dfb15b440"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34f9fba7229a6b5820ce2f3dfb15b440">&#9670;&nbsp;</a></span>Timer()</h2>
 
@@ -126,11 +134,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Simple Initializer of the timer object that. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a69ecfad0058f516a087bebb339bccb98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69ecfad0058f516a087bebb339bccb98">&#9670;&nbsp;</a></span>elapsed()</h2>
+<a id="a7f6f4240775e8a6f46741c1f7e6c5b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f6f4240775e8a6f46741c1f7e6c5b2e">&#9670;&nbsp;</a></span>deltaTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +149,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float fireworks::utils::Timer::elapsed </td>
+          <td class="memname">float fireworks::utils::Timer::deltaTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -151,6 +161,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The completion time in milli seconds since the last frame was renderer. </p>
+<p>Basically gives the time taken in between rendering two frames in milliseconds </p>
 
 </div>
 </div>
@@ -176,6 +189,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>resets the timer to current time </p>
 
 </div>
 </div>
