@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "test/instantspritedraw.h"
+#include "test/fontTest.h"
 
 int main()
 {
-    IR2DTest game;
+    FontTest game;
     game.start();
     return 0;
 }

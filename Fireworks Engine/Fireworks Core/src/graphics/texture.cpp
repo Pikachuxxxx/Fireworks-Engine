@@ -18,7 +18,13 @@ namespace fireworks { namespace graphics {
         // BYTE* pixels = utils::load_image(m_FileName.c_str(), &m_Width, &m_Height);
         unsigned char* image = SOIL_load_image(m_FileName.c_str(), &m_Width, &m_Height, 0, SOIL_LOAD_RGBA);
 
-        GLuint result;
+        if (!image)
+        {
+            std::cout << "ERROR::TEXTURE::Failed loading Image" << std::endl;
+            return NULL;
+        }
+
+        GLuint result = 0;
         glGenTextures(1, &result);
         glBindTexture(GL_TEXTURE_2D, result);
 

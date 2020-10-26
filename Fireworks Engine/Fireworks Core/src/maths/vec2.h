@@ -18,7 +18,7 @@ namespace fireworks { namespace maths {
 
         /*
          * friend because we are passing the left and right explicitly and not using
-         * this pointer we dont want to pass in the this pointer to the function hence
+         * this pointer we don't want to pass in the this pointer to the function hence
          * we mark them as non-member friend and still give it access to the private members
          */
         friend vec2 operator+(vec2 left, const vec2& right);

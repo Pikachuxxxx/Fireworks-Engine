@@ -3,14 +3,14 @@
  */
 #include <fireworks.h>
 
- // ImGUI
+ // ImGui
 #include "../Test Dependencies/imgui-docking/imgui.h"
 #include "../Test Dependencies/imgui-docking/imgui_impl_glfw.h"
 #include "../Test Dependencies/imgui-docking/imgui_impl_opengl3.h"
 
 using namespace fireworks;
 
-enum CamerType
+enum CameraType
 {
     Orthographic = 0,
     Perspective = 1
@@ -35,7 +35,7 @@ private:
 	vec2            sprite_Size;
 	float           speed;
     bool            enableDocking;
-    CamerType       cameraType;
+    CameraType      cameraType;
     float           nearPlaneNDCRange;
     float           farPlaneNDCRange;
     float           orthoPlaneXmin;
@@ -47,7 +47,7 @@ private:
     friend void ImGuiEnableDocking(bool* p_open);
 public:
     TestGUI() 
-		: speed(10.0f), enableDocking(true), cameraType(CamerType::Orthographic)
+		: speed(10.0f), enableDocking(true), cameraType(CameraType::Orthographic)
     { 
         window      = createWindow("Simple Box Example : Fireworks Engine", 1200, 800);
         frameBuffer = new FrameBuffer(window->getWidth(), window->getHeight());
@@ -193,7 +193,7 @@ public:
         {
             const char* cam_type = cameraType ? "Perspective" : "Orthographic";
             ImGui::Text("Camera Type : %s", cam_type);
-            if (cameraType == CamerType::Orthographic)
+            if (cameraType == CameraType::Orthographic)
             {
                 if(ImGui::CollapsingHeader("Orthographic Properties"))
                 {

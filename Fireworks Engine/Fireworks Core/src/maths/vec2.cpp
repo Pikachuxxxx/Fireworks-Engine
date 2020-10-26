@@ -15,7 +15,7 @@ namespace fireworks { namespace maths {
         this->y = y;
     }
 
-    vec2& vec2::add(const vec2& other)
+	vec2& vec2::add(const vec2& other)
     {
         x += other.x;
         y += other.y;
