@@ -47,7 +47,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Can render upto 60, 000 Sprites, textures using batch rendering
 - Sprite Sheet Animations (can change frame or frame rate manually, supports 2 types of in-built animation modes [LOOP, PING_PONG])
 - Simple and customisable math library
-- Basic font rendering (supports only a single font for now)
+- TrueType Font Rendering (currently only supports (.TTF) UTF-8 characters)
 - Easy to manage and customisable native scripting 
 - Simple API for faster development and customisation
 - Simple Window and Input management System 
@@ -136,6 +136,7 @@ int main()
 - [x] Camera 2D
 - [x] Render textures and Frame Buffer objects
 - [x] Sprite Sheet Animations
+- [x] TTF Font Rendering and font properties(position, color etc.)
 - Physics2D component (box2d physics engine integration)
 - Better and customisable font rendering 
 - Audio system
