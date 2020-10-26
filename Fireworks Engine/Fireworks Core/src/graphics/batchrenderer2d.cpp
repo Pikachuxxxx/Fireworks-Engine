@@ -24,7 +24,6 @@ namespace fireworks { namespace graphics {
 
         // Deleting text
         // gltDeleteText(m_Text);
-
     }
 
     void BatchRenderer2D::init()
@@ -45,22 +44,33 @@ namespace fireworks { namespace graphics {
         glVertexAttribPointer(SHADER_COLOR_INDEX,   4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat)));
         glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-        GLushort indices[RENDERER_INDICES_SIZE];
+
 
         int offset = 0;
         for(int i = 0; i < RENDERER_INDICES_SIZE; i += 6)
         {
-            indices[  i  ] = offset + 0;
-            indices[i + 1] = offset + 1;
-            indices[i + 2] = offset + 2;
+            quad_indices[  i  ] = offset + 0;
+            quad_indices[i + 1] = offset + 1;
+            quad_indices[i + 2] = offset + 2;
 
-            indices[i + 3] = offset + 2;
-            indices[i + 4] = offset + 3;
-            indices[i + 5] = offset + 0;
+            quad_indices[i + 3] = offset + 2;
+            quad_indices[i + 4] = offset + 3;
+            quad_indices[i + 5] = offset + 0;
 
             offset += 4; // because each sprite has 4 indices and 6 vertices
         }
-        m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
+
+		//for (int i = 0; i < RENDERER_INDICES_SIZE; i += 3)
+		//{
+		//	tris_indices[i] = offset + 0;
+		//	tris_indices[i + 1] = offset + 1;
+		//	tris_indices[i + 2] = offset + 2;
+
+		//	offset += 3; // because each tris has 3 indices and 3 vertices
+		//}
+
+        m_IBO = new IndexBuffer(quad_indices, RENDERER_INDICES_SIZE);
+		//m_TIBO = new IndexBuffer(tris_indices, RENDERER_INDICES_SIZE);
 
         glBindVertexArray(0);
 
@@ -83,6 +93,7 @@ namespace fireworks { namespace graphics {
         const maths::vec3& position = renderable->getPosition();
         const maths::vec2& size = renderable->getSize();
         const maths::vec4& color = renderable->getColor();
+		const Primitive2D primitive = renderable->getPrimitive();
         const std::vector<maths::vec2>& uv = renderable->getUV();
         const GLuint tid = renderable->getTID();
 
@@ -121,56 +132,82 @@ namespace fireworks { namespace graphics {
 
             // unsigned int c = a << 24 | b << 16 | g << 8 | r;
         }
+        
+        if (primitive == Primitive2D::Quad)
+        {
+            m_Buffer->vertex = *m_TransformationBack * position;
+            m_Buffer->uv = uv[0];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
 
-        m_Buffer->vertex = *m_TransformationBack * position;
-        m_Buffer->uv = uv[0];
-        m_Buffer->tid = ts;
-        m_Buffer->color = color;
-        m_Buffer++;
+            m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x, position.y + size.y, position.z);
+            m_Buffer->uv = uv[1];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
 
-        m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x, position.y + size.y, position.z);
-        m_Buffer->uv = uv[1];
-        m_Buffer->tid = ts;
-        m_Buffer->color = color;
-        m_Buffer++;
+            m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
+            m_Buffer->uv = uv[2];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
 
-        m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
-        m_Buffer->uv = uv[2];
-        m_Buffer->tid = ts;
-        m_Buffer->color = color;
-        m_Buffer++;
+            m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
+            m_Buffer->uv = uv[3];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
 
-        m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
-        m_Buffer->uv = uv[3];
-        m_Buffer->tid = ts;
-        m_Buffer->color = color;
-        m_Buffer++;
+            m_IndicesCount += 6;
+        }
+		else if (primitive == Primitive2D::Triangle)
+		{
+            std::cerr << "ERROR::BATCH_RENDERER_2D::Batch Renderer 2D does not support triangle primitive" << std::endl;
 
-        m_IndicesCount += 6;
+			//m_Buffer->vertex = *m_TransformationBack * position;
+			//m_Buffer->uv = uv[0];
+			//m_Buffer->tid = ts;
+			//m_Buffer->color = color;
+			//m_Buffer++;
+
+			//m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + (size.x / 2.0f), position.y + size.y, position.z);
+			//m_Buffer->uv = uv[1];
+			//m_Buffer->tid = ts;
+			//m_Buffer->color = color;
+			//m_Buffer++;
+
+			//m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
+			//m_Buffer->uv = uv[2];
+			//m_Buffer->tid = ts;
+			//m_Buffer->color = color;
+			//m_Buffer++;
+
+			//m_IndicesCount += 3;
+		}
     }
 
-    void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
-    {
-        // m_Font->FaceSize(72);
-        // m_Font->Render("text");
+    //void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
+    //{
+    //    // m_Font->FaceSize(72);
+    //    // m_Font->Render("text");
 
-        const char * c = text.c_str();
+    //    const char * c = text.c_str();
 
 
-        // std::cerr << "ERROR::FONT_RENDERING:: In Beta only single font is supported" << std::endl;
+    //    // std::cerr << "ERROR::FONT_RENDERING:: In Beta only single font is supported" << std::endl;
 
-        gltSetText(m_Text, c);
+    //    gltSetText(m_Text, c);
 
-        gltBeginDraw();
+    //    gltBeginDraw();
 
-        // Draw any amount of text between begin and end
-        gltColor(color.x, color.y, color.z, color.w);
-        gltDrawText2D(m_Text, position.x, position.y, 5);
+    //    // Draw any amount of text between begin and end
+    //    gltColor(color.x, color.y, color.z, color.w);
+    //    gltDrawText2D(m_Text, position.x, position.y, 5);
 
-        // Finish drawing text
-        gltEndDraw();
-    }
-
+    //    // Finish drawing text
+    //    gltEndDraw();
+    //}
 
     void BatchRenderer2D::end()
     {

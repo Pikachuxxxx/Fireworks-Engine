@@ -25,9 +25,13 @@ namespace fireworks { namespace graphics {
         GLuint                  m_VAO;
         GLuint                  m_VBO;
         VertexData*             m_Buffer;
-        IndexBuffer*            m_IBO;
+		IndexBuffer*            m_IBO;
+		//IndexBuffer* m_TIBO;
         GLsizei                 m_IndicesCount;
         std::vector<GLuint>     m_TextureSlots;
+
+		GLushort quad_indices[RENDERER_INDICES_SIZE];
+		//GLushort tris_indices[RENDERER_INDICES_SIZE];
 
         GLTtext*                m_Text;
     public:
@@ -35,7 +39,6 @@ namespace fireworks { namespace graphics {
         ~BatchRenderer2D();
         void begin() override;
         void submit(const Renderable2D* renderable) override;
-        void drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color) override;
         void end() override;
         void flush() override;
     private:

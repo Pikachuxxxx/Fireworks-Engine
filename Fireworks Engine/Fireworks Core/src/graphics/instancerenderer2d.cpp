@@ -63,38 +63,65 @@ namespace fireworks { namespace graphics {
 		const maths::vec3& position = renderable->getPosition();
 		const maths::vec2& size = renderable->getSize();
 		const maths::vec4& color = renderable->getColor();
+		const Primitive2D primitive = renderable->getPrimitive();
 		const std::vector<maths::vec2>& uv = renderable->getUV();
 		const GLuint tid = renderable->getTID();
 
-		m_Texture = renderable->getTID(); // Redundant
-		float ts = tid;
+		m_Texture = renderable->getTID(); // Redundant (IDK if the renderer should cache the current texture as well)
+		float ts = 0;
+		if (tid > 0)
+			ts = 1.0f;
 
-		m_Buffer->vertex = *m_TransformationBack * position;
-		m_Buffer->uv = uv[0];
-		m_Buffer->tid = ts;
-		m_Buffer->color = color;
-		m_Buffer++;
+		if (primitive == Primitive2D::Quad)
+		{
+			m_Buffer->vertex = *m_TransformationBack * position;
+			m_Buffer->uv = uv[0];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-		m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x, position.y + size.y, position.z);
-		m_Buffer->uv = uv[1];
-		m_Buffer->tid = ts;
-		m_Buffer->color = color;
-		m_Buffer++;
+			m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x, position.y + size.y, position.z);
+			m_Buffer->uv = uv[1];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-		m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
-		m_Buffer->uv = uv[2];
-		m_Buffer->tid = ts;
-		m_Buffer->color = color;
-		m_Buffer++;
+			m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
+			m_Buffer->uv = uv[2];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
+			m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->uv = uv[3];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-		m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
-		m_Buffer->uv = uv[3];
-		m_Buffer->tid = ts;
-		m_Buffer->color = color;
-		m_Buffer++;
+			m_IndicesCount += 6;
+		}
+		else if (primitive == Primitive2D::Triangle)
+		{
+			m_Buffer->vertex = *m_TransformationBack * position;
+			m_Buffer->uv = uv[0];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-		m_IndicesCount += 6;
+			m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + (size.x / 2.0f), position.y + size.y, position.z);
+			m_Buffer->uv = uv[1];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->uv = uv[2];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			m_IndicesCount += 3;
+		}
 	}
 
 	void InstanceRenderer2D::end()

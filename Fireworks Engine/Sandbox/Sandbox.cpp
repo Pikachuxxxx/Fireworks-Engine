@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "test/instantspritedraw.h"
+#include "examples/TextGuru.h"
 
 int main()
 {
-    IR2DTest game;
+    TextGuru game;
     game.start();
     return 0;
 }
