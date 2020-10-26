@@ -20,8 +20,7 @@
 #define FTCACHE_H_
 
 
-#include <ft2build.h>
-#include FT_GLYPH_H
+#include <freetype/ftglyph.h>
 
 
 FT_BEGIN_HEADER
@@ -393,7 +392,7 @@ FT_BEGIN_HEADER
    *   the lookup and force incremental flushes of the cache until enough
    *   memory is released for the lookup to succeed.
    *
-   *   If a lookup fails with `FT_Err_Out_Of_Memory;` the cache has already
+   *   If a lookup fails with `FT_Err_Out_Of_Memory` the cache has already
    *   been completely flushed, and still no memory was available for the
    *   operation.
    */
@@ -497,7 +496,7 @@ FT_BEGIN_HEADER
    *   the lookup and force incremental flushes of the cache until enough
    *   memory is released for the lookup to succeed.
    *
-   *   If a lookup fails with `FT_Err_Out_Of_Memory;` the cache has already
+   *   If a lookup fails with `FT_Err_Out_Of_Memory` the cache has already
    *   been completely flushed, and still no memory is available for the
    *   operation.
    */

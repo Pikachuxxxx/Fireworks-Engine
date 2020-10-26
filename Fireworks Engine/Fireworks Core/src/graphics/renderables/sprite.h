@@ -24,14 +24,14 @@ mutable uint32_t            frame;
         double              m_CurrentFrameRate;
     public:
         // To use with BatchRenderer
-        Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color);
-		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture);
-		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension);
+        Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
 
         // To use with a SimpleRenderer aka Instance Renderer
-		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader);
-		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture);
-		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension);
+		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
 
         void animateSprite(uint32_t frameRate, SpriteAnimationType animType);
 
