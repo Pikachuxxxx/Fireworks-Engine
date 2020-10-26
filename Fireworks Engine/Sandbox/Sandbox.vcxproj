@@ -160,6 +160,7 @@
     <ClInclude Include="examples\LightSaber.h" />
     <ClInclude Include="examples\BunnysJourney.h" />
     <ClInclude Include="examples\SimpleBox.h" />
+    <ClInclude Include="examples\TextGuru.h" />
     <ClInclude Include="examples\textureImages.h" />
     <ClInclude Include="Test Dependencies\glm\common.hpp" />
     <ClInclude Include="Test Dependencies\glm\detail\compute_common.hpp" />
