@@ -5,8 +5,6 @@
 // GLEW
 #define GLEW_STATIC
 #include <GL/glew.h>
-// SOIL - Simple openGL Image Loading Library
-#include <SOIL.h>
 
 namespace fireworks { namespace graphics {
 
@@ -17,7 +15,7 @@ namespace fireworks { namespace graphics {
         GLuint m_TID; // OpenGL Texture ID
         GLsizei m_Width;
         GLsizei m_Height;
-
+        GLsizei m_BPP;
     public:
         Texture(const std::string& path);
         ~Texture();

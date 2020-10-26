@@ -96,6 +96,9 @@
     <ClInclude Include="src\graphics\instancerenderer2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\graphics\buffers\buffer.cpp">

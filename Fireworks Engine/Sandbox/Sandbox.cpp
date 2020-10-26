@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "examples/TextGuru.h"
+#include "examples/LightSaber.h"
 
 int main()
 {
-    TextGuru game;
+    LightSaber game;
     game.start();
     return 0;
 }
