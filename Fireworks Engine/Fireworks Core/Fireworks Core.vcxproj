@@ -132,7 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/;$(PROJECT_DIR)vendor/stb_image</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -194,6 +194,7 @@
     <ClInclude Include="src\utils\fileutils.h" />
     <ClInclude Include="src\utils\imageloader.h" />
     <ClInclude Include="src\utils\timer.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\graphics\batchrenderer2d.cpp" />

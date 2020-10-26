@@ -23,7 +23,7 @@ void main()
     gl_Position = pos;
 
     float uvX = !flipX ? uv.x : 1.0f - uv.x;
-    float uvY = !flipY ? 1.0f - uv.y : uv.y;
+    float uvY = !flipY ? uv.y : 1.0f - uv.y;
     uvCoords = vec2(uvX, uvY);
     texID = tid;
     colAttrib = col;
