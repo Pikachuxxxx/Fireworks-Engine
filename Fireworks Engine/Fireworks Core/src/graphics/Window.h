@@ -28,6 +28,11 @@ namespace fireworks { namespace graphics {
     /// Use this to create a new winnow of type GLFWwindow and manage input from the user and set various properties of the window
     class Window
     {
+    public:
+        /// The background color of the Window.
+        /// 
+        /// @note This sets the color in the GL_COLOR_BUFFER_BIT
+        maths::vec4 backgroundColor;
     private:
         // FIXME: probably use a custom string class later instead of std::string or char*(character pointer)'s
         const char *m_Title;
