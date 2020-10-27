@@ -12,11 +12,11 @@ namespace fireworks { namespace graphics {
 
         for(int i = 0; i < MAX_KEYS ; i++)
         {
-            m_Keys[i] = false;
+            m_HeldKeys[i] = false;
         }
         for(int i = 0; i < MAX_BUTTONS ; i++)
         {
-            m_MouseButtons[i] = false;
+            m_HeldMouseButtons[i] = false;
         }
     }
 
@@ -65,25 +65,47 @@ namespace fireworks { namespace graphics {
         return true;
     }
 
-    bool Window::isKeyPressed(unsigned int keycode) const
+    bool Window::isKeyPressed(unsigned int keycode)
     {
-        // TODO: Log this
-        if(keycode >= MAX_KEYS)
-            return false;
+		if (keycode >= MAX_KEYS)
+			return false;
 
-        return m_Keys[keycode];
+        bool result = m_PressedKeys[keycode];
+        m_PressedKeys[keycode] = false;
+
+        return result;
     }
 
-    bool Window::isMouseButtonPressed(unsigned int button) const
-    {
-        // TODO: Log this
-        if(button >= MAX_BUTTONS)
-            return false;
+	bool Window::isKeyHeld(unsigned int keycode) const
+	{
+		// TODO: Log this
+		if (keycode >= MAX_KEYS)
+			return false;
 
-        return m_MouseButtons[button];
+		return m_HeldKeys[keycode];
+	}
+
+	bool Window::isMouseButtonPressed(unsigned int button)
+    {
+		if (button >= MAX_BUTTONS)
+			return false;
+
+		bool result = m_PressedMouseButtons[button];
+        m_PressedMouseButtons[button] = false;
+
+		return result;
     }
 
-    void Window::getMousePosition(double& x, double& y) const
+	bool Window::isMouseButtonHeld(unsigned int button) const
+	{
+		// TODO: Log this
+		if (button >= MAX_BUTTONS)
+			return false;
+
+		return m_HeldMouseButtons[button];
+	}
+
+	void Window::getMousePosition(double& x, double& y) const
     {
         x = m_MouseX;
         y = m_MouseY;
@@ -118,8 +140,12 @@ namespace fireworks { namespace graphics {
     void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
     {
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
-        wind->m_Keys[key] = action != GLFW_RELEASE;
-
+        wind->m_HeldKeys[key] = action != GLFW_RELEASE;
+        if(!wind->m_PressedKeys[key])
+            wind->m_PressedKeys[key] = (action == GLFW_PRESS);
+        
+        
+        // Window closing
         if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         {
             std::cout << "Escape Key Pressed..." << "Quiting..." <<'\n';
@@ -138,7 +164,9 @@ namespace fireworks { namespace graphics {
     void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
     {
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
-        wind->m_MouseButtons[button] = action != GLFW_RELEASE;
+        wind->m_HeldMouseButtons[button] = action != GLFW_RELEASE;
+		if (!wind->m_PressedMouseButtons[button])
+		    wind->m_PressedMouseButtons[button] = action == GLFW_PRESS;
     }
 
     void mouse_position_callback(GLFWwindow* window, double xpos, double ypos)

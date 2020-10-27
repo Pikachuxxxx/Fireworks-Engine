@@ -45,8 +45,10 @@ namespace fireworks { namespace audio {
 		void Stop();
 		/// Rewind a Source (set playback position to beginning) 
 		void Replay();
-		/// Play the Source only Once in any loop
+		/// Play the Source Once in any loop
 		void PlayOnce();
+		/// Play the Source only Once in any loop
+		void PlayOnceOnly();
 		/// Play the Source in Looping mode in any loop
 		void Loop();
 

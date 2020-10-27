@@ -47,9 +47,9 @@ public:
 	{
 		glClearColor((float)243 / 255, (float)146 / 255, (float)51 / 255, 1.0f);
 
-		zapclip->PlayOnce();
+		zapclip->Loop();
 
-		clipState->text = "State : " + std::string ((zapclip->isPlaying() ? "playing only once" : "Not playing"));
+		clipState->text = "State : " + std::string ((zapclip->isLooping() ? "looping" : "Not playing"));
 
 		clipState->renderText();
 	}
