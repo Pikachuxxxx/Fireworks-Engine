@@ -13,7 +13,6 @@ namespace fireworks { namespace graphics {
 
 	class InstanceRenderer2D : public Renderer2D
 	{
-	public:
 	private:
 		GLuint          m_VAO;
 		GLuint          m_VBO;
