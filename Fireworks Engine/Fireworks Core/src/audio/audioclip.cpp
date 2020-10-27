@@ -46,6 +46,12 @@ namespace fireworks { namespace audio {
 
 	void AudioClip::PlayOnce()
 	{
+		if (!this->isPlaying())
+			this->Play();
+	}
+
+	void AudioClip::PlayOnceOnly()
+	{
 		if (!this->isPlaying() && !this->didPlayonce())
 			this->Play();
 	}
@@ -53,7 +59,7 @@ namespace fireworks { namespace audio {
 	void AudioClip::Loop()
 	{
 		this->enableLooping = true;
-		if (this->enableLooping && !this->isPlaying())
+		if (!this->isPlaying())
 			this->Play();
 	}
 
