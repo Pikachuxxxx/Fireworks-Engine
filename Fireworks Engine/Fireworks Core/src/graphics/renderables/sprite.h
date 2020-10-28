@@ -14,15 +14,17 @@ namespace fireworks { namespace graphics {
     class Sprite : public Renderable2D
     {
     public:
-mutable uint32_t            frame;
-        uint32_t            frameRate;
+mutable std::uint32_t       frame;
+        std::uint32_t       frameRate;
 		maths::vec3&        position;
 		maths::vec4&        color;
+        maths::vec2&        size;
 	private:
 		maths::vec2         m_SpriteSheetDimension;
 		utils::Timer*       m_AnimTimer;
         double              m_CurrentFrameRate;
     public:
+        Sprite();
         // To use with BatchRenderer
         Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Primitive2D primitive2d = Primitive2D::Quad);
 		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);

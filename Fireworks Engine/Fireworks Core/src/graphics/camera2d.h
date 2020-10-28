@@ -18,11 +18,11 @@ namespace fireworks { namespace graphics {
 
 		void update();
 
-		const maths::vec3& getPosition() const { return m_Position; }
 		void setPosition(const maths::vec3& pos) { m_Position = pos; updateViewMatrix(); }
-
-		const float getRotation() const { return m_Rotation; }
 		void setRotaion(float rot) { m_Rotation = rot; updateViewMatrix(); }
+
+		const maths::vec3& getPosition() const { return m_Position; }
+		const float getRotation() const { return m_Rotation; }
 
 		const maths::mat4& getProjectionMatrix() const { return m_ProjectionMatrix; }
 		const maths::mat4& getViewMatrix()	const { return m_ViewMatrix; }

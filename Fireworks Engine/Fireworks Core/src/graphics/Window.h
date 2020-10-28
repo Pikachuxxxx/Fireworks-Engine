@@ -8,6 +8,7 @@
 #include <GL/glew.h>
 // GLFW
 #include <GLFW/glfw3.h>
+#include "../maths/maths.h"
 
 namespace fireworks { namespace graphics {
 
