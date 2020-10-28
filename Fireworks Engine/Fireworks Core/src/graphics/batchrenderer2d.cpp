@@ -2,6 +2,8 @@
 
 namespace fireworks { namespace graphics {
 
+	std::uint32_t Renderable2D::m_UniqueID = 0;
+
     BatchRenderer2D::BatchRenderer2D(Camera2D* camera2D, Shader* shader)
         :Renderer2D(camera2D), m_Shader(shader)
     {

@@ -24,10 +24,10 @@ namespace fireworks { namespace graphics {
         Triangle,
         Quad
     };
-
     class Renderable2D
     {
     public:
+        std::uint32_t                       objectID;
         Shader*                             shader;
 		bool                                flippedX;
 		bool                                flippedY;
@@ -38,16 +38,20 @@ namespace fireworks { namespace graphics {
         Primitive2D                         m_Primitive2D;
 mutable std::vector<maths::vec2>            m_UV;
 		Texture*                            m_Texture;
+    private:
+ static std::uint32_t                       m_UniqueID;
     public:
 		Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color, Primitive2D primitive2d)
 			: m_Position(position), m_Size(size), m_Color(color), m_Primitive2D(primitive2d), shader(nullptr), m_Texture(nullptr)
 		{
+            objectID = ++m_UniqueID;
 			setUVDefaults();
 		}
 
         Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color, Primitive2D primitive2d, Shader* shader)
             : m_Position(position), m_Size(size), m_Color(color), m_Primitive2D(primitive2d), shader(shader), m_Texture(nullptr)
         { 
+			objectID = ++m_UniqueID;
 			shader->enable();
 			GLint texIDs[] =
 			{
@@ -83,7 +87,11 @@ mutable std::vector<maths::vec2>            m_UV;
         void unflipY() { flippedY = false; }
 
 	protected:
-		Renderable2D() : m_Texture(nullptr) { setUVDefaults(); }
+		Renderable2D() : m_Texture(nullptr)
+        {
+			objectID = ++m_UniqueID;
+			setUVDefaults();
+		}
 	private:
 		void setUVDefaults()
 		{
@@ -102,8 +110,6 @@ mutable std::vector<maths::vec2>            m_UV;
 				m_UV.push_back(maths::vec2(1, 0));      // Bottom Right
             }
         }
-
-
     };
 
 } }

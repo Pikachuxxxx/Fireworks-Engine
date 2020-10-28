@@ -2,7 +2,7 @@
 
 namespace fireworks { namespace graphics {
 
-    Window::Window(const char *title, int width, int height) : backgroundColor(vec4(0, 0, 0, 1))
+    Window::Window(const char *title, int width, int height) : backgroundColor(maths::vec4(0, 0, 0, 1))
     {
         m_Title = title;
         m_Width = width;
@@ -114,6 +114,7 @@ namespace fireworks { namespace graphics {
     void Window::clear() const
     {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClearColor(backgroundColor.x, backgroundColor.y, backgroundColor.z, backgroundColor.w);
     }
 
     void Window::update() const

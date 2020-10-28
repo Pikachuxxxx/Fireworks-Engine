@@ -2,9 +2,9 @@
 
 namespace fireworks { namespace audio {
 
-	ALboolean AudioClip::m_g_bEAX;
-	ALCdevice* AudioClip::m_Device;
-	ALCcontext* AudioClip::m_Context;
+	ALboolean AudioClip::m_g_bEAX = alIsExtensionPresent("EAX2.0");
+	ALCdevice* AudioClip::m_Device = alcOpenDevice(NULL);
+	ALCcontext* AudioClip::m_Context = alcCreateContext(m_Device, NULL);
 
 	AudioClip::AudioClip(const std::string& filePath)
 		: enableLooping(false), gain(0), pitch(0), m_FilePath(filePath), m_DidPlayOnce(false)
@@ -29,6 +29,10 @@ namespace fireworks { namespace audio {
 			alSourcei(m_Source, AL_LOOPING, AL_TRUE);
 		else
 			alSourcei(m_Source, AL_LOOPING, AL_FALSE);
+
+		ALenum error = alGetError();
+		if (error != AL_NO_ERROR)
+			std::cerr << "ERROR::OPEANAL:: " << error << std::endl;
 
 		alSourcePlay(m_Source);
 		m_DidPlayOnce = true;
@@ -70,11 +74,8 @@ namespace fireworks { namespace audio {
 
 	void AudioClip::init()
 	{
-		m_Device = alcOpenDevice(NULL);
-
 		if (m_Device)
 		{
-			m_Context = alcCreateContext(m_Device, NULL);
 			alcMakeContextCurrent(m_Context);
 		}
 		else
@@ -82,7 +83,6 @@ namespace fireworks { namespace audio {
 			std::cerr << "ERROR::OPEANAL:: Cannot create device and context" << std::endl;
 			return;
 		}
-		m_g_bEAX = alIsExtensionPresent("EAX2.0");
 
 		alGenBuffers(1, &m_BufferID);
 		alGenSources(1, &m_Source);

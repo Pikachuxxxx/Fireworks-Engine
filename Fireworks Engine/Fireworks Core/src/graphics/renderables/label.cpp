@@ -7,7 +7,7 @@ namespace fireworks { namespace graphics {
 		m_FontShader = new Shader(".\\shaders\\font.vert", ".\\shaders\\font.frag");
 		load();
 		m_FontShader->enable();
-		maths::mat4 projection = maths::mat4::orthographic(0.0f, 800.0f, 0.0f, 600.0f, -1.0f, 1.0f);
+		maths::mat4 projection = maths::mat4::orthographic(0.0f, 400.0f, 0.0f, 600.0f, -1.0f, 1.0f);
 		glUniformMatrix4fv(glGetUniformLocation(m_FontShader->getShaderProgram(), "projection"), 1, GL_FALSE, projection.elements);
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
