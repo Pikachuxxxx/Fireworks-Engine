@@ -54,7 +54,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Huge custom Maths Library and a lot of utility functions
 - Render textures and Frame Buffer objects
 - 2D orthographic camera 
-- Suppports Audio with an extensive customisable  API (OpenAL backend)
+- Suppports 2D and 3D Audio with an extensive API (OpenAL backend) (currenlty only reads .wav files)
 
 #
 ### Building
@@ -140,6 +140,7 @@ int main()
 - [x] Render textures and Frame Buffer objects
 - [x] Sprite Sheet Animations
 - [x] TTF Font Rendering and font properties(position, color etc.)
+- [x] 2D Audio (OpenAL backend)
 - Physics2D component (box2d physics engine integration)
 - Better and customisable font rendering 
 - Audio system
