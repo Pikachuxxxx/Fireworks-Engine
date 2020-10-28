@@ -54,6 +54,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Huge custom Maths Library and a lot of utility functions
 - Render textures and Frame Buffer objects
 - 2D orthographic camera 
+- Suppports Audio with an extensive customisable  API (OpenAL backend)
 
 #
 ### Building
@@ -69,6 +70,8 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 Find the comlpete documentation, API reference and examples usage [here](https://fireworks-engine.readthedocs.io/en/latest/)
 ### Usage
 ### Find more Examples in the Sandbox project [here](https://github.com/Pikachuxxxx/Fireworks-Engine/tree/master/Fireworks%20Engine/Sandbox/examples)
+
+Checkout the example of Space Shooter game to get an understanding of the capabilites of the engine. [Zapper.h](https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/Fireworks%20Engine/Sandbox/examples/Zapper.h)
 
 Here's an example to render a simple coloured square. [simplebox.h](https://github.com/Pikachuxxxx/Fireworks-Engine/blob/master/Examples/SimpleBox.h)
 ```cpp
@@ -152,5 +155,5 @@ int main()
 
 #
 ### Dependencies
-- [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG, Zlib2 
+- [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG, Zlib2, stb_image, OpenAL
 
