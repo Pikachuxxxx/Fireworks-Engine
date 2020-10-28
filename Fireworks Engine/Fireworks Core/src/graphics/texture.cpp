@@ -1,9 +1,12 @@
 #include "texture.h"
+// stb_image
+#define STB_IMAGE_IMPLEMENTATION
+#include "../../vendor/stb_image/stb_image.h"
 
 namespace fireworks { namespace graphics {
 
     Texture::Texture(const std::string& filename)
-        : m_FileName(filename)
+        : m_FileName(filename), m_TID(0), m_Width(0), m_Height(0), m_BPP(0)
     {
         m_TID = load();
     }
@@ -15,9 +18,10 @@ namespace fireworks { namespace graphics {
 
     GLuint Texture::load()
     {
-        // BYTE* pixels = utils::load_image(m_FileName.c_str(), &m_Width, &m_Height);
-        unsigned char* image = SOIL_load_image(m_FileName.c_str(), &m_Width, &m_Height, 0, SOIL_LOAD_RGBA);
 
+        stbi_set_flip_vertically_on_load(1);
+        unsigned char* image = stbi_load(m_FileName.c_str(), &m_Width, &m_Height, &m_BPP, 4);
+      
         if (!image)
         {
             std::cout << "ERROR::TEXTURE::Failed loading Image" << std::endl;
@@ -33,11 +37,11 @@ namespace fireworks { namespace graphics {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_Width, m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, m_Width, m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
         glGenerateMipmap(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
 
-        SOIL_free_image_data(image);
+		stbi_image_free(image);
 
         return result;
     }

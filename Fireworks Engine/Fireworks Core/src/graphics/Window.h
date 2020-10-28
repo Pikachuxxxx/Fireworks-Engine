@@ -8,6 +8,7 @@
 #include <GL/glew.h>
 // GLFW
 #include <GLFW/glfw3.h>
+#include "../maths/maths.h"
 
 namespace fireworks { namespace graphics {
 
@@ -28,6 +29,11 @@ namespace fireworks { namespace graphics {
     /// Use this to create a new winnow of type GLFWwindow and manage input from the user and set various properties of the window
     class Window
     {
+    public:
+        /// The background color of the Window.
+        /// 
+        /// @note This sets the color in the GL_COLOR_BUFFER_BIT
+        maths::vec4 backgroundColor;
     private:
         // FIXME: probably use a custom string class later instead of std::string or char*(character pointer)'s
         const char *m_Title;
@@ -35,8 +41,10 @@ namespace fireworks { namespace graphics {
         GLFWwindow *m_Window;
         bool m_Closed;
 
-        bool m_Keys[MAX_KEYS];
-        bool m_MouseButtons[MAX_BUTTONS];
+        bool m_HeldKeys[MAX_KEYS];
+		bool m_PressedKeys[MAX_KEYS];
+        bool m_HeldMouseButtons[MAX_BUTTONS];
+		bool m_PressedMouseButtons[MAX_BUTTONS];
         double m_MouseX, m_MouseY;
     public:
         /// Creates a Window by initializing GLFW.
@@ -44,15 +52,19 @@ namespace fireworks { namespace graphics {
 		/// @param width The width of the window
 		/// @param height The height of the window
         Window(const char *title, int width, int height);
+
         ~Window();
+
         /// Clears the window screen blank.
         /// 
         /// Uses the data from the color, depth and stencil buffer bits to clear the window according the clearing rules
         void clear() const;
+
 		/// Updates the window.
 		/// 
 		/// Checks for OpenGL errors and swaps the buffers after poling for input events
         void update() const;
+
         /// Indicates the current state of the Window.
         /// @returns A bool indicating whether the window is closed or not
         bool closed() const;
@@ -60,25 +72,41 @@ namespace fireworks { namespace graphics {
         /// Gets the current width of the window.
         /// @returns An int denoting the current width of the graphics::Window
         inline int getWidth() const { return m_Width; }
+
 		/// Gets the current height of the window.
 		/// @returns An int denoting the current height of the graphics::Window
         inline int getHeight() const { return m_Height; }
+
 		/// Gets the current window's pointer to it's native object.
 	    /// @returns A a pointer variable to the windows GLFWwindow object
         inline GLFWwindow* getGLFWwindow() const { return m_Window; }
 
 		/// Tells if a particular key on the keyboard was pressed or not.
         /// 
-        /// @note returns true for the entire duration of the key press
         /// @param keycode The GLFW enum key code of the key to check it's status
 		/// @returns A bool indicating whether the key was pressed or not
-        bool isKeyPressed(unsigned int keycode) const;
+        bool isKeyPressed(unsigned int keycode);
+
+		/// Tells if a particular key on the keyboard is being held or not.
+        /// 
+		/// @note returns true for the entire duration of the key press
+        /// @param keycode The GLFW enum key code of the key to check it's status
+        /// @returns A bool indicating whether the key was being held or not
+		bool isKeyHeld(unsigned int keycode) const;
+
 		/// Tells if a particular key on the Mouse button was pressed or not.
+		/// 
+		/// @param keycode The GLFW enum button code of the key to check it's status
+		/// @returns A bool indicating whether the button was pressed or not
+        bool isMouseButtonPressed(unsigned int button);
+
+		/// Tells if a particular key on the Mouse button is being held or not.
 		/// 
 		/// @note returns true for the entire duration of the button press
 		/// @param keycode The GLFW enum button code of the key to check it's status
-		/// @returns A bool indicating whether the button was pressed or not
-        bool isMouseButtonPressed(unsigned int button) const;
+		/// @returns A bool indicating whether the button was being held or not
+		bool isMouseButtonHeld(unsigned int button) const;
+
         // TODO: Make the function return a Vec2 once the engine specific vector math API is added to the namespace
         /// Gets the current position of the mouse in Screen Space Coordinates.
         ///  
@@ -88,6 +116,7 @@ namespace fireworks { namespace graphics {
     private :
         bool init();
         // TODO: Add reference to the GLFW keycode Enums list for the key parameter and also for the mods param(add the reference to the bit fields)
+
 		/// A callback function called when the windows registers a key press from the Keyboard.
 		/// 
 		/// 
@@ -97,6 +126,7 @@ namespace fireworks { namespace graphics {
 		/// @param action GLFW_PRESS, GLFW_RELEASE or GLFW_REPEAT
 		/// @param mods Bit field describing which modifier keys were held down
         friend void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
 		/// A callback function called when the windows resizes
 		/// 
 		/// 
@@ -104,6 +134,7 @@ namespace fireworks { namespace graphics {
 		/// @param width The new width of the window
         /// @param height The new height of the window
         friend void window_resize_callback(GLFWwindow* window, int width, int height);
+
 		// TODO: Add reference to the GLFW mouse_button Enums list for the button parameter and also for the mods param(add the reference to the bit fields)
 		/// A callback function called when the windows registers a button press from the Mouse.
         /// 
@@ -113,6 +144,7 @@ namespace fireworks { namespace graphics {
         /// @param action GLFW_PRESS, GLFW_RELEASE or GLFW_REPEAT
         /// @param mods Bit field describing which modifier keys were held down
         friend void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+
 		///  A callback function called when the windows registers a change in the mouse position.
 	    ///  
         /// @param window The window that received the event

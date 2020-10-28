@@ -18,7 +18,7 @@ void main()
 {
     pos = projection * view * model * position;
     gl_Position = pos;
-    uvCoords = vec2(uv.x, 1.0f - uv.y);
+    uvCoords = vec2(uv.x, uv.y);
     texID = tid;
     colAttrib = col;
 }

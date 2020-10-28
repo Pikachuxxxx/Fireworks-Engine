@@ -2,11 +2,21 @@
 
 namespace fireworks { namespace graphics {
 
+	std::uint32_t Renderable2D::m_UniqueID = 0;
+
     BatchRenderer2D::BatchRenderer2D(Camera2D* camera2D, Shader* shader)
         :Renderer2D(camera2D), m_Shader(shader)
     {
         init();
         m_Shader->setUniformMat4("projection", m_Camera2D->getProjectionMatrix());
+        m_Shader->enable();
+		GLint texIDs[] =
+		{
+			0, 1,  2,  3,  4,  5,  6,  7,
+			8, 9, 10, 11, 12, 13, 14, 15
+		};
+        m_Shader->setUniform1iv("textures", texIDs, 8);
+        m_Shader->disable();
     }
 
     BatchRenderer2D::~BatchRenderer2D()
@@ -43,8 +53,6 @@ namespace fireworks { namespace graphics {
         glVertexAttribPointer(SHADER_TID_INDEX,     1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat)));
         glVertexAttribPointer(SHADER_COLOR_INDEX,   4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat)));
         glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-
 
         int offset = 0;
         for(int i = 0; i < RENDERER_INDICES_SIZE; i += 6)
@@ -186,28 +194,6 @@ namespace fireworks { namespace graphics {
 			//m_IndicesCount += 3;
 		}
     }
-
-    //void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
-    //{
-    //    // m_Font->FaceSize(72);
-    //    // m_Font->Render("text");
-
-    //    const char * c = text.c_str();
-
-
-    //    // std::cerr << "ERROR::FONT_RENDERING:: In Beta only single font is supported" << std::endl;
-
-    //    gltSetText(m_Text, c);
-
-    //    gltBeginDraw();
-
-    //    // Draw any amount of text between begin and end
-    //    gltColor(color.x, color.y, color.z, color.w);
-    //    gltDrawText2D(m_Text, position.x, position.y, 5);
-
-    //    // Finish drawing text
-    //    gltEndDraw();
-    //}
 
     void BatchRenderer2D::end()
     {

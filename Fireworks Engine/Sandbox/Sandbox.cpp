@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "examples/TextGuru.h"
+#include "examples/Zapper.h"
 
 int main()
 {
-    TextGuru game;
+    Zapper game;
     game.start();
     return 0;
 }

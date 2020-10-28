@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/audio/audioclip.h"
+
 #include "src/graphics/batchrenderer2d.h"
 #include "src/graphics/camera2d.h"
 #include "src/graphics/instancerenderer2d.h"
@@ -23,9 +25,11 @@
 #include "src/maths/maths.h"
 #include "src/utils/fileutils.h"
 #include "src/utils/timer.h"
+#include "src/utils/wavloader.h"
 
 namespace fireworks {
 
+	using namespace audio;
     using namespace graphics;
     using namespace maths;
     using namespace utils;

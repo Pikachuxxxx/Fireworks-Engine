@@ -950,6 +950,12 @@
     <ClInclude Include="examples\TextGuru.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\audiotest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\Zapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Test Dependencies\glm\detail\func_common.inl">

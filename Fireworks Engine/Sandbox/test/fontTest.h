@@ -42,7 +42,6 @@ public:
 	void update() override
 	{
 		fpsLabel->text = "FPS : " + std::to_string(getFPS());
-		
 	}
 
 	// Runs as fast as possible
