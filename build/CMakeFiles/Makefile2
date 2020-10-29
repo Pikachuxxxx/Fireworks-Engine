@@ -72,7 +72,7 @@ CMAKE_BINARY_DIR = /Users/phanisrikar/Desktop/Fireworks-Engine/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/fireworks.dir/all
+all: CMakeFiles/Fireworks.dir/all
 
 .PHONY : all
 
@@ -82,36 +82,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/fireworks.dir/clean
+clean: CMakeFiles/Fireworks.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/fireworks.dir
+# Target rules for target CMakeFiles/Fireworks.dir
 
 # All Build rule for target.
-CMakeFiles/fireworks.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Built target fireworks"
-.PHONY : CMakeFiles/fireworks.dir/all
+CMakeFiles/Fireworks.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=1,2 "Built target Fireworks"
+.PHONY : CMakeFiles/Fireworks.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/fireworks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles 21
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fireworks.dir/all
+CMakeFiles/Fireworks.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Fireworks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles 0
-.PHONY : CMakeFiles/fireworks.dir/rule
+.PHONY : CMakeFiles/Fireworks.dir/rule
 
 # Convenience name for target.
-fireworks: CMakeFiles/fireworks.dir/rule
+Fireworks: CMakeFiles/Fireworks.dir/rule
 
-.PHONY : fireworks
+.PHONY : Fireworks
 
 # clean rule for target.
-CMakeFiles/fireworks.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireworks.dir/build.make CMakeFiles/fireworks.dir/clean
-.PHONY : CMakeFiles/fireworks.dir/clean
+CMakeFiles/Fireworks.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/clean
+.PHONY : CMakeFiles/Fireworks.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
