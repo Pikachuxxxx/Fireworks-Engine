@@ -1,0 +1,3 @@
+/Users/phanisrikar/Desktop/Fireworks-Engine/build/bin/CMakeFiles/rebuild_cache.dir
+/Users/phanisrikar/Desktop/Fireworks-Engine/build/bin/CMakeFiles/edit_cache.dir
+/Users/phanisrikar/Desktop/Fireworks-Engine/build/bin/CMakeFiles/Fireworks.dir

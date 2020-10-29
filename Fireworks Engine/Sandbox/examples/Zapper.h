@@ -39,10 +39,9 @@ public:
 		window = createWindow("Zapper", 600, 900);
 		window->backgroundColor = vec4((float)243 / 255, (float)146 / 255, (float)51 / 255, 1.0f);
 		camera = new Camera2D(mat4::orthographic(-12.0f, 12.0f, -18.0f, 18.0f, -1.0f, 1.0f));
+#if(_WIN32)
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
-		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
-		defaultLayer = new Layer(batchRenderer);
-		
+
 		bgm			= new AudioClip(".\\resources\\sounds\\bgm.wav");
 		shipshoot	= new AudioClip(".\\resources\\sounds\\laser8.wav");
 		shipmove	= new AudioClip(".\\resources\\sounds\\shipmove.wav");
@@ -56,6 +55,26 @@ public:
 		Texture* shipTex	= new Texture(".\\resources\\spaceship.png");
 		bulletTex			= new Texture(".\\resources\\test3.png");
 		rocksTex			= new Texture(".\\resources\\asteroid.png");
+#elif(__APPLE__)
+        Shader* basicShader = new Shader("shaders/basic.vert", "shaders/basic.frag");
+
+		bgm			= new AudioClip("resources/sounds/bgm.wav");
+		shipshoot	= new AudioClip("resources/sounds/laser8.wav");
+		shipmove	= new AudioClip("resources/sounds/shipmove.wav");
+		shiphit		= new AudioClip("resources/sounds/shiphit.wav");
+		rockDestroy = new AudioClip("resources/sounds/rockdestroy.wav");
+
+		Font fontBig("resources/fonts/SpaceQuest.ttf", 40);
+		Font font("resources/fonts/SpaceQuest.ttf", 20);
+		Font fontSmall("resources/fonts/SpaceQuest.ttf", 12);
+
+		Texture* shipTex	= new Texture("resources/spaceship.png");
+		bulletTex			= new Texture("resources/test3.png");
+		rocksTex			= new Texture("resources/asteroid.png");
+#endif
+
+        BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
+        defaultLayer = new Layer(batchRenderer);
 
 		spaceShip = new Sprite(vec3(-2, -10, 0), vec2(4, 4), shipTex);
 
@@ -85,7 +104,7 @@ public:
 	{
 		if (isGamePaused || isGameOver)
 			return;
-		spawnRocks();	
+		spawnRocks();
 	}
 
 	// Runs 60 times per second
@@ -139,10 +158,8 @@ public:
 		}
 
 		cameraShake();
-
-		std::cout << "shoot clip state : " << shipshoot->isPlaying() << std::endl;
 	}
-	
+
 	void spaceShipMovement()
 	{
 		// clamp the spaceship's position
@@ -248,7 +265,7 @@ public:
 							defaultLayer->m_Renderables.erase(defaultLayer->m_Renderables.begin() + j);
 						}
 					}
-					
+
 					bullets.erase(bullets.begin() + b);
 					rocks.erase(rocks.begin() + r);
 
