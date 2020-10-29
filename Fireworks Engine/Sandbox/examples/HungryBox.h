@@ -1,6 +1,6 @@
 /*
  * A simple example to control a simple sprite using keyboard input
- * Use the Arrow keys to move the hungry player and feed him the food 
+ * Use the Arrow keys to move the hungry player and feed him the food
  * every time you catch a food block you change into the collected food item color
  */
 #include <fireworks.h>
@@ -17,6 +17,7 @@ private:
     Sprite*     food;
     float       speed;
     vec4        prevColor;
+    Shader*     basicShader;
 public:
     HungryBox() : speed(5.0f), prevColor(vec4(1, 0, 0, 1)) { }
 
@@ -28,7 +29,11 @@ public:
         window = createWindow("Hungry Box : Keyboard Input Example", 800, 600);
 		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
 
-		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
+        #if(_WIN32)
+		    basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
+        #elif(__APPLE__)
+            basicShader = new Shader("shaders/basic.vert", "shaders/basic.frag");
+        #endif
 		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
 
 		layer = new Layer(batchRenderer);
@@ -47,19 +52,19 @@ public:
     // Runs 60 times per second
     void update() override
     {
-        if (window->isKeyPressed(GLFW_KEY_UP))
+        if (window->isKeyHeld(GLFW_KEY_UP))
         {
             playerBox->position.y += 0.02f * speed;
         }
-        else if (window->isKeyPressed(GLFW_KEY_DOWN))
+        else if (window->isKeyHeld(GLFW_KEY_DOWN))
         {
             playerBox->position.y -= 0.02f * speed;
         }
-        if (window->isKeyPressed(GLFW_KEY_RIGHT))
+        if (window->isKeyHeld(GLFW_KEY_RIGHT))
         {
             playerBox->position.x += 0.02f * speed;
         }
-        else if (window->isKeyPressed(GLFW_KEY_LEFT))
+        else if (window->isKeyHeld(GLFW_KEY_LEFT))
         {
             playerBox->position.x -= 0.02f * speed;
         }

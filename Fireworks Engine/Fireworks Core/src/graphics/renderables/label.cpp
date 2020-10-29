@@ -4,7 +4,11 @@ namespace fireworks { namespace graphics {
 
 	Label::Label(const char* text, maths::vec3 position, maths::vec3 color, Font& font) : text(text), position(position), color(color), font(font)
 	{
-		m_FontShader = new Shader(".\\shaders\\font.vert", ".\\shaders\\font.frag");
+        #if(_WIN32)
+		    m_FontShader = new Shader(".\\shaders\\font.vert", ".\\shaders\\font.frag");
+        #elif(__APPLE__)
+            m_FontShader = new Shader("shaders/font.vert", "shaders/font.frag");
+        #endif
 		load();
 		m_FontShader->enable();
 		maths::mat4 projection = maths::mat4::orthographic(0.0f, 400.0f, 0.0f, 600.0f, -1.0f, 1.0f);
@@ -99,7 +103,7 @@ namespace fireworks { namespace graphics {
 				font_texture,
 				maths::vec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
 				maths::vec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
-				face->glyph->advance.x
+				static_cast<unsigned int>(face->glyph->advance.x)
 			};
 
 			m_Characters.insert(std::pair<char, Character>(c, character));

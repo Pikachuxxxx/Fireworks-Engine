@@ -1,0 +1,29 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/phanisrikar/Desktop/Fireworks-Engine/Fireworks Engine/Sandbox/Sandbox.cpp" "/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles/Fireworks.dir/Fireworks_Engine/Sandbox/Sandbox.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../Dependencies/SOIL/include"
+  "../Dependencies/GLEW/include"
+  "../Dependencies/GLFW/include"
+  "../Dependencies/FreeType/include"
+  "../Dependencies/PNG/include"
+  "../Dependencies/BZIP2"
+  "../Dependencies/OpenAL/include"
+  "../Fireworks Engine/Sandbox/Test Dependencies"
+  "../Fireworks Engine/Fireworks Core"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
