@@ -62,7 +62,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - **Use the Visual Studio Solution to build the engine and work with the Sandbox.**
 
 **MacOS/Linux :**
-  change to the build folder and use the CMakeFile to generate the MakeFile and build the library using the Make command
+  change to the build folder and use the CMakeFile to generate the MakeFile and build the library using the Make command. (Make sure your resources and shaders folders are in the same direcotry as that of the executable)
 ```bash
   mkdir build
   cd build 
