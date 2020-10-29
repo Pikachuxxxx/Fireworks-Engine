@@ -58,13 +58,23 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 
 #
 ### Building
-**MacOS/Windows/Linux :**
+**Windows :**
+- **Use the Visual Studio Solution to build the engine and work with the Sandbox.**
+
+**MacOS/Linux :**
   change to the build folder and use the CMakeFile to generate the MakeFile and build the library using the Make command
 ```bash
   mkdir build
   cd build 
-  cmake ..
+  #use this to build the library
+  cmake .. -DBUILD_STATIC_LIBRARY=true
   make 
+  #now remove the CMakeChache to generate the sandbox executable
+  rm -rf CMakeCache.txt
+  cmake .. -DBUILD_SANDBOX_EXEC=true
+  make
+  #Now run the exectubale (Just include the example file or your custom game headers in the SandBox.cpp)
+  ./SandBox
 ```
 ### Documentation
 Find the comlpete documentation, API reference and examples usage [here](https://fireworks-engine.readthedocs.io/en/latest/)
