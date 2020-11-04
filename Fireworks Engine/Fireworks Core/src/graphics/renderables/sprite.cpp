@@ -44,6 +44,24 @@ namespace fireworks { namespace graphics {
 		m_Texture = texture;
 	}
 
+	// TODO: Make this a private friend function and protect it from outside interaction [Priority : !!!]
+	void Sprite::addedRigidBody2D()
+ 	{
+		// Send the the sprite position and size to the RigidBody and initialize the body
+		for (int i = 0; i < components.size(); i++)
+		{
+			if (physics::RigidBody2D* rb = (dynamic_cast<physics::RigidBody2D*>(components[i])))
+			{
+				// FIXME: fix these redundant methods and protect them from outside misuse
+				rb->SetPosition(position);
+				rb->SetSize(size);
+				// Initialize the RigidBody here and set the initial position and size and the World
+				rb->GenerateRigidBody(position, size);
+			}
+			// Log the failure and unnecessary usage of this function in the public!
+		}
+	}
+
 	// TODO: Animate sprites in the actual Engine's time loop automatically
 	void Sprite::animateSprite(uint32_t frameRate, SpriteAnimationType animType)
 	{
@@ -132,15 +150,15 @@ namespace fireworks { namespace graphics {
 		float frameHeight = m_Texture->getHeight() / m_SpriteSheetDimension.y;
 		if (m_Primitive2D == Primitive2D::Quad)
 		{
-			m_UV.push_back(maths::vec2((x * frameWidth) / m_Texture->getWidth(), (y * frameHeight) / m_Texture->getHeight()));				// Bottom Left
-			m_UV.push_back(maths::vec2((x * frameWidth) / m_Texture->getWidth(), ((y + 1) * frameHeight) / m_Texture->getHeight()));		// Top Left
-			m_UV.push_back(maths::vec2(((x + 1) * frameWidth) / m_Texture->getWidth(), ((y + 1) * frameHeight) / m_Texture->getHeight()));	// Top Right
-			m_UV.push_back(maths::vec2(((x + 1) * frameWidth) / m_Texture->getWidth(), (y * frameHeight) / m_Texture->getHeight()));		// Bottom Right
+			m_UV.push_back(maths::vec2(( x		* frameWidth) / m_Texture->getWidth()	, (	y		* frameHeight) / m_Texture->getHeight()));		// Bottom Left
+			m_UV.push_back(maths::vec2(( x		* frameWidth) / m_Texture->getWidth()	, ((y + 1)	* frameHeight) / m_Texture->getHeight()));		// Top Left
+			m_UV.push_back(maths::vec2(((x + 1) * frameWidth) / m_Texture->getWidth()	, ((y + 1)	* frameHeight) / m_Texture->getHeight()));		// Top Right
+			m_UV.push_back(maths::vec2(((x + 1) * frameWidth) / m_Texture->getWidth()	, (	y		* frameHeight) / m_Texture->getHeight()));		// Bottom Right
 		}
 		else if (m_Primitive2D == Primitive2D::Triangle)
 		{
 			// TODO: Log this!
-			//std::cerr << "ATTENTION::SPRITE:: Triangle primitive does not support spritesheet animation" << std::endl;
+			std::cerr << "ATTENTION::SPRITE:: Triangle primitive does not support spritesheet animation" << std::endl;
 			m_UV.push_back(maths::vec2(0, 0));      // Bottom Left
 			m_UV.push_back(maths::vec2(0.5, 1));    // Top Middle
 			m_UV.push_back(maths::vec2(1, 0));      // Bottom Right

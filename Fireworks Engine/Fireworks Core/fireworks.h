@@ -2,6 +2,8 @@
 
 #include "src/audio/audioclip.h"
 
+#include "src/components/component.h"
+
 #include "src/graphics/batchrenderer2d.h"
 #include "src/graphics/camera2d.h"
 #include "src/graphics/instancerenderer2d.h"
@@ -22,7 +24,12 @@
 #include "src/graphics/renderables/sprite.h"
 #include "src/graphics/renderables/renderable2d.h"
 
+#include "src/managers/physicsmanager.h"
+
 #include "src/maths/maths.h"
+
+#include "src/physics/rigidbody2d.h"
+
 #include "src/utils/fileutils.h"
 #include "src/utils/timer.h"
 #include "src/utils/wavloader.h"
@@ -33,6 +40,9 @@ namespace fireworks {
     using namespace graphics;
     using namespace maths;
     using namespace utils;
+
+	using namespace components;
+	using namespace physics;
 
     /// The Game class to use the Fireworks Engine.
     /// 
@@ -104,11 +114,15 @@ namespace fireworks {
             float timer = 0.0f;
             float updateTick = 1.0f / 60.0f;
             float updateTimer = 0.0f;
+			float physicsTick = 1.0f / 60.0f;
+			int velocityIterations = 6;
+			int positionIterations = 2;
             unsigned int frames = 0;
             unsigned int updates = 0;
             while(!m_Window->closed())
             {
                 m_Window->clear();
+                World.Step(physicsTick, velocityIterations, positionIterations);
 
 				if (m_Timer->deltaTime() - updateTimer > updateTick)
 				{

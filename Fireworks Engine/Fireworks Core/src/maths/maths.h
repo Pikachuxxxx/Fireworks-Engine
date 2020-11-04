@@ -11,6 +11,10 @@ namespace fireworks { namespace maths {
 		return degrees * M_PI / 180.0f;
 	}
 
+	inline float toDegrees(float radians) {
+		return (float)radians * 180.0f / M_PI;
+	}
+
     template <class T>
     T inline clamp(T number, T min, T max, T maxX, T minX)
     {

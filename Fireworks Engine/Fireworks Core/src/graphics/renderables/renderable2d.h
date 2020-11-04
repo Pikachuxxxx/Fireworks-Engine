@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include <iostream>
+
 #include "../shader.h"
 #include "../buffers/buffer.h"
 #include "../buffers/indexbuffer.h"
@@ -7,6 +10,7 @@
 #include "../../maths/maths.h"
 #include "../renderer2d.h"
 #include "../texture.h"
+#include "../../physics/rigidbody2d.h"
 
 namespace fireworks { namespace graphics {
 
@@ -24,6 +28,7 @@ namespace fireworks { namespace graphics {
         Triangle,
         Quad
     };
+
     class Renderable2D
     {
     public:
@@ -31,6 +36,7 @@ namespace fireworks { namespace graphics {
         Shader*                             shader;
 		bool                                flippedX;
 		bool                                flippedY;
+        std::vector<components::Component*> components;
     protected:
 		maths::vec2                         m_Size;
 		maths::vec3                         m_Position;
@@ -71,6 +77,25 @@ mutable std::vector<maths::vec2>            m_UV;
             renderer->submit(this);
         }
 
+		template <typename T>
+		void AddComponent(components::Component* component)
+		{
+			components.push_back(component);
+
+			if ((dynamic_cast<physics::RigidBody2D*>(component)))
+				std::cout << "Added a rigibody2d component" << std::endl;
+		}
+
+		template <>
+		void AddComponent<physics::RigidBody2D>(components::Component* component)
+		{
+			components.push_back(component);
+			//if ((dynamic_cast<physics::RigidBody2D*>(component)))
+				std::cout << "Added a rigibody2d component in the rigidBody overload" << std::endl;
+
+			this->addedRigidBody2D();
+		}
+
         inline const maths::vec2& getSize() const { return m_Size; }
         inline const maths::vec3& getPosition() const { return m_Position; }
         inline const maths::vec4& getColor() const { return m_Color; }
@@ -92,6 +117,9 @@ mutable std::vector<maths::vec2>            m_UV;
 			objectID = ++m_UniqueID;
 			setUVDefaults();
 		}
+
+        /// Component callback functions
+        virtual void addedRigidBody2D() { }
 	private:
 		void setUVDefaults()
 		{
