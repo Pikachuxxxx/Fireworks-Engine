@@ -105,6 +105,18 @@
     <ClInclude Include="src\audio\audioclip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\components\component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\physics\rigidbody2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\components.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\managers\physicsmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\graphics\buffers\buffer.cpp">
@@ -165,6 +177,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\audio\audioclip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\physics\rigidbody2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

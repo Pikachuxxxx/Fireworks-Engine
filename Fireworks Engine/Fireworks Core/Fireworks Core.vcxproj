@@ -132,15 +132,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/;$(PROJECT_DIR)vendor/stb_image</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/Box2D/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/;$(PROJECT_DIR)vendor/stb_image</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;freetype.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../../Dependencies/FreeType/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;freetype.lib;OpenAL32.lib;box2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../../Dependencies/Box2D/lib;$(PROJECT_DIR)../../Dependencies/FreeType/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)fireworks$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
@@ -170,6 +170,8 @@
     <ClInclude Include="ext\gltext.h" />
     <ClInclude Include="fireworks.h" />
     <ClInclude Include="src\audio\audioclip.h" />
+    <ClInclude Include="src\components\component.h" />
+    <ClInclude Include="src\components\components.h" />
     <ClInclude Include="src\graphics\batchrenderer2d.h" />
     <ClInclude Include="src\graphics\buffers\buffer.h" />
     <ClInclude Include="src\graphics\buffers\framebuffer.h" />
@@ -187,11 +189,13 @@
     <ClInclude Include="src\graphics\Shader.h" />
     <ClInclude Include="src\graphics\texture.h" />
     <ClInclude Include="src\graphics\Window.h" />
+    <ClInclude Include="src\managers\physicsmanager.h" />
     <ClInclude Include="src\maths\mat4.h" />
     <ClInclude Include="src\maths\maths.h" />
     <ClInclude Include="src\maths\vec2.h" />
     <ClInclude Include="src\maths\vec3.h" />
     <ClInclude Include="src\maths\vec4.h" />
+    <ClInclude Include="src\physics\rigidbody2d.h" />
     <ClInclude Include="src\utils\fileutils.h" />
     <ClInclude Include="src\utils\imageloader.h" />
     <ClInclude Include="src\utils\timer.h" />
@@ -200,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\audio\audioclip.cpp" />
+    <ClCompile Include="src\components\component.cpp" />
     <ClCompile Include="src\graphics\batchrenderer2d.cpp" />
     <ClCompile Include="src\graphics\buffers\buffer.cpp" />
     <ClCompile Include="src\graphics\buffers\framebuffer.cpp" />
@@ -219,6 +224,7 @@
     <ClCompile Include="src\maths\vec2.cpp" />
     <ClCompile Include="src\maths\vec3.cpp" />
     <ClCompile Include="src\maths\vec4.cpp" />
+    <ClCompile Include="src\physics\rigidbody2d.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
