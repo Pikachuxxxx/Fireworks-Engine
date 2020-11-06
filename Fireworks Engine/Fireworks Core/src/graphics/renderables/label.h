@@ -30,7 +30,7 @@ namespace fireworks { namespace graphics {
 		}
 	};
 
-	class Label //: public Renderable2D
+	class Label
 	{
 	public:
 		std::string							text;
