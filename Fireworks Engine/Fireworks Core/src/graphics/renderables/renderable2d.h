@@ -18,7 +18,7 @@ namespace fireworks { namespace graphics {
     {
         maths::vec3 vertex;
         maths::vec2 uv;
-        float tid;
+        float       tid;
         maths::vec4 color;
     };
 

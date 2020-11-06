@@ -14,14 +14,23 @@ namespace fireworks { namespace physics {
 	const double M2PX = 16.0, M2PY = 12.0;
 	const double P2MX = (double)1.0 / M2PX, P2MY = (double)1.0 / M2PY;
 
+	enum RigidBodyType
+	{
+		Static = b2_staticBody,
+		Dynamic = b2_dynamicBody,
+		Kinematic = b2_kinematicBody
+	};
 	
 	class RigidBody2D : public components::Component
 	{
 	public:
 		/// Denotes whether the RigidBody2D is dynamic, static or kinematic.
-		bool								isDynamic;
+		RigidBodyType						bodyType;
 		float								density;
 		float								friction;
+		float								resitution;
+		float								gravityScale;
+		bool								fixedRotation;
 	private:
 		b2World&							m_World;
 		b2BodyDef							m_BodyDef;
@@ -31,7 +40,7 @@ namespace fireworks { namespace physics {
 
 		bool								m_DidGenerateRB;
 	public:
-		RigidBody2D(float density, float friction, bool dynamic, b2World& world = World);
+		RigidBody2D(float density, float friction, RigidBodyType bodytype, b2World& world = World);
 		~RigidBody2D();
 
 		maths::vec3 GetPositionInMeters();
@@ -42,6 +51,8 @@ namespace fireworks { namespace physics {
 		void SetPosition(const maths::vec3& position);
 		void SetSize(maths::vec2& size);
 		void GenerateRigidBody(maths::vec3 pos, maths::vec2 dim);
+
+		inline b2Body* GetBody() { return  m_Body; }
 	private:
 	};
 

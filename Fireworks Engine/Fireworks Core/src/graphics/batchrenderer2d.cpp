@@ -98,7 +98,7 @@ namespace fireworks { namespace graphics {
     void BatchRenderer2D::submit(const Renderable2D* renderable)
     {
 
-        const maths::vec3& position = renderable->getPosition();
+        maths::vec3 position = renderable->getPosition();
         const maths::vec2& size = renderable->getSize();
         const maths::vec4& color = renderable->getColor();
 		const Primitive2D primitive = renderable->getPrimitive();
@@ -115,6 +115,7 @@ namespace fireworks { namespace graphics {
 			{
 				RBPosition = rb->GetPositionInPixels();
 				RBRotation = rb->GetRotation();
+				position = maths::vec3(0, 0, position.z);
 			}
 		}
 		maths::mat4 model(1.0f);
@@ -159,25 +160,25 @@ namespace fireworks { namespace graphics {
         
         if (primitive == Primitive2D::Quad)
         {
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(0 - (size.x / 2), 0 - (size.y / 2), 0);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2), position.y - (size.y / 2), position.z);
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(0 - (size.x / 2), -(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2), position.y -(size.y / 2) + size.y, position.z);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, -(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x -(size.x / 2) + size.x, position.y -(size.y / 2) + size.y, position.z);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, 0 - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x -(size.x / 2) + size.x, position.y - (size.y / 2), position.z);
 			m_Buffer->uv = uv[3];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;

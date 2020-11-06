@@ -1,7 +1,7 @@
 #include "rigidbody2d.h"
 
-fireworks::physics::RigidBody2D::RigidBody2D(float density, float friction, bool dynamic, b2World& world) : components::Component("RigidBody2D", components::Components::RB2D), isDynamic(dynamic), density(1.0f), friction(0.3f), m_World(world), m_DidGenerateRB(false), m_Body(nullptr)
-{
+fireworks::physics::RigidBody2D::RigidBody2D(float density, float friction, RigidBodyType bodytype, b2World& world) : components::Component("RigidBody2D", components::Components::RB2D), bodyType(bodytype), density(1.0f), friction(0.3f), gravityScale(1), fixedRotation(false), resitution(0), m_World(world), m_DidGenerateRB(false), m_Body(nullptr)
+{											
 
 }
 
@@ -48,7 +48,7 @@ void fireworks::physics::RigidBody2D::SetSize(maths::vec2& size)
 {
 	m_Shape.SetAsBox(size.x * P2MX / 2, size.y * P2MY / 2);
 }
-   
+
 // FIXME: Though this is safe from outside tampering this method should not be exposed
 void fireworks::physics::RigidBody2D::GenerateRigidBody(maths::vec3 pos, maths::vec2 dim)
 {
@@ -56,14 +56,16 @@ void fireworks::physics::RigidBody2D::GenerateRigidBody(maths::vec3 pos, maths::
 		return;
 
 	m_World.SetContinuousPhysics(true);
-	if (isDynamic)
-		m_BodyDef.type = b2_dynamicBody;
+	m_BodyDef.type = (b2BodyType)bodyType;
 	m_BodyDef.position.Set(pos.x * P2MX, pos.y * P2MY);
 	m_Body = m_World.CreateBody(&m_BodyDef);
+	m_Body->SetGravityScale(gravityScale);
+	m_Body->SetFixedRotation(fixedRotation);
 	m_Shape.SetAsBox(dim.x * P2MX / 2, dim.y * P2MY / 2);
 	m_Fixture.shape = &m_Shape;
 	m_Fixture.density = density;
 	m_Fixture.friction = friction;
+	m_Fixture.restitution = resitution;
 	m_Body->CreateFixture(&m_Fixture);
 
 	m_DidGenerateRB = true;

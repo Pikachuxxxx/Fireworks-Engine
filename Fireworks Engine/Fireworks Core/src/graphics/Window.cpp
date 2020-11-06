@@ -13,6 +13,8 @@ namespace fireworks { namespace graphics {
         for(int i = 0; i < MAX_KEYS ; i++)
         {
             m_HeldKeys[i] = false;
+			m_PressedKeys[i] = false;
+			m_ReleasedKeys[i] = false;
         }
         for(int i = 0; i < MAX_BUTTONS ; i++)
         {
@@ -76,6 +78,17 @@ namespace fireworks { namespace graphics {
         return result;
     }
 
+	bool Window::isKeyReleased(unsigned int keycode)
+	{
+		if (keycode >= MAX_KEYS)
+			return false;
+
+		bool result = m_ReleasedKeys[keycode];
+        m_ReleasedKeys[keycode] = false;
+
+        return result;
+	}
+
 	bool Window::isKeyHeld(unsigned int keycode) const
 	{
 		// TODO: Log this
@@ -95,6 +108,17 @@ namespace fireworks { namespace graphics {
 
 		return result;
     }
+
+	bool Window::isMouseButtonReleased(unsigned int button)
+	{
+		if (button >= MAX_BUTTONS)
+			return false;
+
+		bool result = m_ReleasedMouseButtons[button];
+        m_ReleasedMouseButtons[button] = false;
+
+		return result;
+	}
 
 	bool Window::isMouseButtonHeld(unsigned int button) const
 	{
@@ -141,6 +165,7 @@ namespace fireworks { namespace graphics {
     void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
     {
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
+		wind->m_ReleasedKeys[key] = ((action == GLFW_RELEASE) && wind->m_HeldKeys[key]);
         wind->m_HeldKeys[key] = action != GLFW_RELEASE;
         if(!wind->m_PressedKeys[key])
             wind->m_PressedKeys[key] = (action == GLFW_PRESS);
@@ -165,6 +190,7 @@ namespace fireworks { namespace graphics {
     void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
     {
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
+		wind->m_ReleasedMouseButtons[button] = ((action == GLFW_RELEASE) && wind->m_ReleasedMouseButtons[button]);
         wind->m_HeldMouseButtons[button] = action != GLFW_RELEASE;
 		if (!wind->m_PressedMouseButtons[button])
 		    wind->m_PressedMouseButtons[button] = action == GLFW_PRESS;

@@ -55,6 +55,7 @@ public:
 		Texture* shipTex	= new Texture(".\\resources\\spaceship.png");
 		bulletTex			= new Texture(".\\resources\\test3.png");
 		rocksTex			= new Texture(".\\resources\\asteroid.png");
+
 #elif(__APPLE__)
         Shader* basicShader = new Shader("shaders/basic.vert", "shaders/basic.frag");
 
@@ -119,7 +120,6 @@ public:
 		spaceShipMovement();
 		spaceShipShoot();
 		moveRocks();
-
 	}
 
 	// Runs as fast as possible

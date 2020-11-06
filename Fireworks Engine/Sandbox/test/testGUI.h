@@ -145,14 +145,14 @@ public:
         ImGui::ShowDemoWindow();
 
         ImGui::SetNextWindowSize(ImVec2(600, 400), ImGuiCond_Once);
-        ImGui::Begin("Scene View");
-        {
-            ImGui::BeginChild("Game Render");
-            ImVec2 window_size = ImGui::GetWindowSize();
-            ImGui::Image((ImTextureID)(size_t)frameBuffer->getRenderTexture(), ImVec2(window_size.x, window_size.y), ImVec2(0, 1), ImVec2(1, 0));
-            ImGui::EndChild();
-        }
-        ImGui::End();
+		ImGui::Begin("Scene View");
+		{
+			ImGui::BeginChild("Game Render");
+			ImVec2 window_size = ImGui::GetWindowSize();
+			ImGui::Image((ImTextureID)(size_t)frameBuffer->getRenderTexture(), ImVec2(window_size.x, window_size.y), ImVec2(0, 1), ImVec2(1, 0));
+			ImGui::EndChild();
+		}
+		ImGui::End();
 
 		ImGui::SetNextWindowSize(ImVec2(400, 400), ImGuiCond_Once);
         ImGui::Begin("Stats");

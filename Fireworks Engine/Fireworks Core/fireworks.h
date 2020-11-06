@@ -40,7 +40,6 @@ namespace fireworks {
     using namespace graphics;
     using namespace maths;
     using namespace utils;
-
 	using namespace components;
 	using namespace physics;
 
