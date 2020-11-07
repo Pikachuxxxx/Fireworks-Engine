@@ -4,6 +4,7 @@ using namespace fireworks;
 
 #include "../test/EditorGUI.h"
 
+#define MAX_PLATFORMS 20
 // Forward Declarations
 void ImGuiEnableDocking(bool* p_open);
 
@@ -18,7 +19,8 @@ private:
 
 	Label*			fpsLabel;
 	RigidBody2D*	rockyRB;
-	RigidBody2D*	platformRB;
+	RigidBody2D*	platformRBs[MAX_PLATFORMS];
+    Sprite*         platforms[MAX_PLATFORMS];
 	Sprite*			rocky;
 
 	float			playerVelocity;
@@ -93,12 +95,35 @@ public:
         rocky->AddComponent<RigidBody2D>(rockyRB);
 
 
+        vec3 platformsPositions[MAX_PLATFORMS] = {
+                vec3( -30, -60, 0),
+                vec3(  40, -40, 0),
+                vec3( 120, -20, 0),
+                vec3( 180, -30, 0),
+                vec3( 220,   0, 0),
+                vec3( 260,  20, 0),
+                vec3( 300,  40, 0),
+                vec3( 350, -20, 0),
+                vec3( 410,   0, 0),
+                vec3( 440,  20, 0)
+
+        };
         Texture* platformTexture = new Texture("./resources/rockydocky/Design 2r.png");
-        Sprite* platform = new Sprite(vec3(-30, -60, 0), vec2(80, 10), platformTexture);
-        platformRB = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
-        platformRB->gravityScale = 0;
-        platformRB->fixedRotation = true;
-        platform->AddComponent<RigidBody2D>(platformRB);
+        // Sprite* platform = new Sprite(vec3(-30, -60, 0), vec2(80, 10), platformTexture);
+        // platformRB = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
+        // platformRB->gravityScale = 0;
+        // platformRB->fixedRotation = true;
+        // platform->AddComponent<RigidBody2D>(platformRB);
+        for(int i = 0; i < MAX_PLATFORMS / 2; i++)
+        {
+            platforms[i] = new Sprite(platformsPositions[i], vec2(80, 10), platformTexture);
+            platformRBs[i] = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
+            platformRBs[i]->gravityScale = 0;
+            platformRBs[i]->fixedRotation = true;
+            platforms[i]->AddComponent<RigidBody2D>(platformRBs[i]);
+            platformLayer->add(platforms[i]);
+        }
+
 
         Font* font = new Font("./resources/fonts/SpaceQuest.ttf", 24);
         fpsLabel = new Label(" ", vec3(20, 550, 0.5), vec3(1, 1, 1), *font);
@@ -108,7 +133,7 @@ public:
 
 		defaultLayer->add(bg);
 		playerLayer->add(rocky);
-		platformLayer->add(platform);
+		// platformLayer->add(platform);
 
 		timer = new Timer();
 	}
@@ -142,7 +167,6 @@ public:
 	// Runs as fast as possible
 	void render() override
 	{
-
 		camera->setPosition(vec3(-2.0f, 0.0f, 0.0f));
 		fpsLabel->renderText();
 		fpsLabel->text = "FPS : " + std::to_string(getFPS());
@@ -181,8 +205,9 @@ public:
 
 	void jump()
 	{
-		std::cout << "Current Jump Time is : " << currentJumpTime << " [Player Velocity is : " << vec2(rockyRB->GetBody()->GetLinearVelocity().x, rockyRB->GetBody()->GetLinearVelocity().y) << std::endl;
-		if (window->isKeyHeld(Keys::SPACE) && currentJumpTime < jumpTime)
+		// std::cout << "Current Jump Time is : " << currentJumpTime << " [Player Velocity is : " << vec2(rockyRB->GetBody()->GetLinearVelocity().x, rockyRB->GetBody()->GetLinearVelocity().y) << std::endl;
+
+        if (window->isKeyHeld(Keys::SPACE) && currentJumpTime < jumpTime)
 		{
 			rockyRB->SetVelocity(maths::vec2(0, jumpImpulse * currentJumpTime * 0.02));
 			currentJumpTime += timer->deltaTime() * 0.5;
