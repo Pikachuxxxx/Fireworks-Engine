@@ -31,16 +31,36 @@ private:
 private:
 	friend void ImGuiEnableDocking(bool* p_open);
 public:
-	RockyDocky() : playerVelocity(3.4f), jumpImpulse(30.0f), jumpTime(50.0f), currentJumpTime(0.0f), EditorGUI()
+	RockyDocky() : playerVelocity(0.4f), jumpImpulse(3.0f), jumpTime(15.0f), currentJumpTime(0.0f), EditorGUI()
 	{
 		window = createWindow(" Example", 800, 600);
+		window->backgroundColor = vec4(0.2, 0.2, 0.2, 1.0);
 		camera = new Camera2D(mat4::orthographic(-160.0f, 160.0f, -120.0f, 120.0f, -1.0f, 1.0f));
 		InitGUI(window);
+
 #if(_WIN32)
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 		Shader* playerShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 		Shader* sickShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\sick.frag");
+		Texture* bgTex = new Texture(".\\resources\\rockydocky\\bg.png");
 
+		Texture* idleTex = new Texture(".\\resources\\rockydocky\\idle.png");
+		Texture* jumpTex = new Texture(".\\resources\\rockydocky\\jump.png");
+		Texture* platformTexture = new Texture(".\\resources\\rockydocky\\Design 2r.png");
+
+		Font* font = new Font(".\\resources\\fonts\\SpaceQuest.ttf", 24);
+#elif(__APPLE__)
+        Shader* basicShader = new Shader("./shaders/basic.vert", "./shaders/basic.frag");
+        Shader* playerShader = new Shader("./shaders/basic.vert", "./shaders/basic.frag");
+        Shader* sickShader = new Shader("./shaders/basic.vert", "./shaders/sick.frag");
+
+        Texture* bgTex = new Texture("./resources/rockydocky/bg.png");
+		Texture* idleTex = new Texture("./resources/rockydocky/idle.png");
+		Texture* jumpTex = new Texture("./resources/rockydocky/jump.png");
+		Texture* platformTexture = new Texture("./resources/rockydocky/Design 2r.png");
+
+		Font* font = new Font("./resources/fonts/SpaceQuest.ttf", 24);
+#endif
 
 		InstanceRenderer2D* instancer = new InstanceRenderer2D(camera);
 		BatchRenderer2D* batcher = new BatchRenderer2D(camera, basicShader);
@@ -50,91 +70,42 @@ public:
 		platformLayer = new Layer(platform_batcher);
 		playerLayer = new Layer(instancer);
 
-		Texture* bgTex = new Texture(".\\resources\\rockydocky\\bg.png");
-		Sprite* bg = new Sprite(vec3(0, 0, 0), vec2(400, 260), bgTex);
-
-		Texture* idleTex = new Texture(".\\resources\\rockydocky\\idle.png");
-		Texture* jumpTex= new Texture(".\\resources\\rockydocky\\jump.png");
+		Sprite* bg = new Sprite(vec3(0, 0, 0), vec2(600, 260), bgTex);
 		rocky = new Sprite(vec3(-20, 40, 0), vec2(20, 20), playerShader, idleTex, vec2(2, 1));
 		rockyRB = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Dynamic);
-		rockyRB->gravityScale = 1.0f;
+		rockyRB->gravityScale = 0.1f;
+		rockyRB->fixedRotation = true;
 		rocky->AddComponent<RigidBody2D>(rockyRB);
 
-
-		Texture* platformTexture = new Texture(".\\resources\\rockydocky\\Design 2r.png");
-		Sprite* platform = new Sprite(vec3(-30, -60, 0), vec2(80, 10), platformTexture);
-		platformRB = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
-		platformRB->gravityScale = 0;
-		platformRB->fixedRotation = true;
-		platform->AddComponent<RigidBody2D>(platformRB);
-
-		Font* font = new Font(".\\resources\\fonts\\SpaceQuest.ttf", 24);
-		fpsLabel = new Label(" ", vec3(20, 550, 0.5), vec3(1, 1, 1), *font);
-#elif(__APPLE__)
-        Shader* basicShader = new Shader("./shaders/basic.vert", "./shaders/basic.frag");
-        Shader* playerShader = new Shader("./shaders/basic.vert", "./shaders/basic.frag");
-        Shader* sickShader = new Shader("./shaders/basic.vert", "./shaders/sick.frag");
+		vec3 platformsPositions[MAX_PLATFORMS] = {
+			   vec3(-30, -60, 0),
+			   vec3(50,  -40, 0),
+			   vec3(120, -20, 0),
+			   vec3(200, -50, 0),
+			   vec3(250, -20, 0),
+			   vec3(320,  20, 0),
+			   vec3(380, -10, 0),
 
 
-        InstanceRenderer2D* instancer = new InstanceRenderer2D(camera);
-        BatchRenderer2D* batcher = new BatchRenderer2D(camera, basicShader);
-        BatchRenderer2D* platform_batcher = new BatchRenderer2D(camera, sickShader);
+			   vec3(550, -20, 0),
+			   vec3(510,   0, 0),
+			   vec3(540,  20, 0)
+		};
 
-        defaultLayer = new Layer(batcher);
-        platformLayer = new Layer(platform_batcher);
-        playerLayer = new Layer(instancer);
-
-        Texture* bgTex = new Texture("./resources/rockydocky/bg.png");
-        Sprite* bg = new Sprite(vec3(0, 0, 0), vec2(400, 260), bgTex);
-
-        Texture* idleTex = new Texture("./resources/rockydocky/idle.png");
-        Texture* jumpTex= new Texture("./resources/rockydocky/jump.png");
-        rocky = new Sprite(vec3(-20, 40, 0), vec2(20, 20), playerShader, idleTex, vec2(2, 1));
-        rockyRB = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Dynamic);
-        rockyRB->gravityScale = 1.0f;
-        rocky->AddComponent<RigidBody2D>(rockyRB);
-
-
-        vec3 platformsPositions[MAX_PLATFORMS] = {
-                vec3( -30, -60, 0),
-                vec3(  40, -40, 0),
-                vec3( 120, -20, 0),
-                vec3( 180, -30, 0),
-                vec3( 220,   0, 0),
-                vec3( 260,  20, 0),
-                vec3( 300,  40, 0),
-                vec3( 350, -20, 0),
-                vec3( 410,   0, 0),
-                vec3( 440,  20, 0)
-
-        };
-        Texture* platformTexture = new Texture("./resources/rockydocky/Design 2r.png");
-        // Sprite* platform = new Sprite(vec3(-30, -60, 0), vec2(80, 10), platformTexture);
-        // platformRB = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
-        // platformRB->gravityScale = 0;
-        // platformRB->fixedRotation = true;
-        // platform->AddComponent<RigidBody2D>(platformRB);
-        for(int i = 0; i < MAX_PLATFORMS / 2; i++)
-        {
-            platforms[i] = new Sprite(platformsPositions[i], vec2(80, 10), platformTexture);
-            platformRBs[i] = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
-            platformRBs[i]->gravityScale = 0;
-            platformRBs[i]->fixedRotation = true;
-            platforms[i]->AddComponent<RigidBody2D>(platformRBs[i]);
-            platformLayer->add(platforms[i]);
-        }
-
-
-        Font* font = new Font("./resources/fonts/SpaceQuest.ttf", 24);
-        fpsLabel = new Label(" ", vec3(20, 550, 0.5), vec3(1, 1, 1), *font);
-
-#endif
-
+		for (int i = 0; i < MAX_PLATFORMS / 2; i++)
+		{
+			platforms[i] = new Sprite(platformsPositions[i], vec2(80, 10), platformTexture);
+			platformRBs[i] = new RigidBody2D(1.0f, 0.2f, RigidBodyType::Static);
+			platformRBs[i]->gravityScale = 0;
+			platformRBs[i]->fixedRotation = true;
+			platforms[i]->AddComponent<RigidBody2D>(platformRBs[i]);
+			platformLayer->add(platforms[i]);
+		}
 
 		defaultLayer->add(bg);
 		playerLayer->add(rocky);
-		// platformLayer->add(platform);
 
+		fpsLabel = new Label(" ", vec3(20, 550, 0.5), vec3(1, 1, 1), *font);
 		timer = new Timer();
 	}
 
@@ -167,7 +138,8 @@ public:
 	// Runs as fast as possible
 	void render() override
 	{
-		camera->setPosition(vec3(-2.0f, 0.0f, 0.0f));
+		camera->setPosition(vec3(rockyRB->GetPositionInPixels().x, 0, 0) + vec3(-2.0f, 0.0f, 0.0f));
+
 		fpsLabel->renderText();
 		fpsLabel->text = "FPS : " + std::to_string(getFPS());
 		rocky->animateSprite(6, SpriteAnimationType::LOOP);
@@ -184,7 +156,10 @@ public:
 	{
 		ImGui::Begin("Inspector");
 		{
-
+			ImGui::DragFloat("Jump Velocity", &jumpImpulse);
+			ImGui::DragFloat("Jump time", &jumpTime);
+			ImGui::DragFloat("Player Speed", &playerVelocity);
+			ImGui::Text("Player velocity (Y) : %4.2f", &rockyRB->GetBody()->GetLinearVelocity().y);
 		}
 		ImGui::End();
 	}
@@ -205,11 +180,9 @@ public:
 
 	void jump()
 	{
-		// std::cout << "Current Jump Time is : " << currentJumpTime << " [Player Velocity is : " << vec2(rockyRB->GetBody()->GetLinearVelocity().x, rockyRB->GetBody()->GetLinearVelocity().y) << std::endl;
-
         if (window->isKeyHeld(Keys::SPACE) && currentJumpTime < jumpTime)
 		{
-			rockyRB->SetVelocity(maths::vec2(0, jumpImpulse * currentJumpTime * 0.02));
+			rockyRB->SetVelocity(maths::vec2(0, jumpImpulse));
 			currentJumpTime += timer->deltaTime() * 0.5;
 		}
 		if (rockyRB->GetBody()->GetLinearVelocity().y == 0 && window->isKeyReleased(Keys::SPACE))
