@@ -20,6 +20,11 @@ file(GLOB_RECURSE HEADER_FILES
     ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Sandbox/examples/*.h
     ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/*.hpp)
 
+# External sandbox dependency Files
+file(GLOB_RECURSE EXT_SANDBOX_SOURCE_FILES
+	${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Sandbox/Test\ Dependencies/*.c
+${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Sandbox/Test\ Dependencies/*.cpp)
+
 # Add external header files
 file(GLOB_RECURSE EXT_HEADER_FILES
 	${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Fireworks\ Core/ext/*.h
@@ -60,6 +65,10 @@ find_library(FIREWORKS_LIBRARY
    NAMES fireworks
    HINTS "${CMAKE_SOURCE_DIR}/build"
    )
+find_library(BOX2D_LIBRARY
+   NAMES box2d
+   HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
+   )
 # Adding library include paths
 include_directories(
 	"${CMAKE_SOURCE_DIR}/Dependencies/SOIL/include"
@@ -68,6 +77,7 @@ include_directories(
     "${CMAKE_SOURCE_DIR}/Dependencies/FreeType/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/PNG/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/BZIP2"
+    "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/OpenAL/include"
     "${CMAKE_SOURCE_DIR}/Fireworks Engine/Sandbox/Test Dependencies"
     "${CMAKE_SOURCE_DIR}/Fireworks Engine/Fireworks Core/"
@@ -77,7 +87,7 @@ if (APPLE)
 
 # use this for building sandbox
 if(BUILD_SANDBOX_EXEC)
-set(LIBS ${FIREWORKS_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY})
+set(LIBS ${FIREWORKS_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${BOX2D_LIBRARY})
 endif()
 
 set(FRAMEWORKS ${OPENGL_LIBRARIES} ${PNG_LIBRARIES} ${BZIP2_LIBRARIES})
@@ -89,8 +99,8 @@ endif()
 
 # use hese last 2 commands to run the sandbox
 if(BUILD_SANDBOX_EXEC)
-add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Sandbox/Sandbox.cpp)
-target_link_libraries(${PROJECT_NAME} ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework CoreAudio -framework OpenAL -framework Cocoa -framework IOKit -framework CoreGraphics")
+add_executable(SandBox ${CMAKE_SOURCE_DIR}/Fireworks\ Engine/Sandbox/Sandbox.cpp ${EXT_SANDBOX_SOURCE_FILES})
+target_link_libraries(SandBox ${FRAMEWORKS} ${LIBS} "-framework CoreFoundation -framework CoreAudio -framework OpenAL -framework Cocoa -framework IOKit -framework CoreGraphics")
 endif()
 
 endif (APPLE)
