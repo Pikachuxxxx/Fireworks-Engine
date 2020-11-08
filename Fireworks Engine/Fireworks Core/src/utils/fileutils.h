@@ -5,9 +5,13 @@
 
 namespace fireworks { namespace utils {
 
+    /// A utility class to load various types of files
     class FileUtils
     {
     public:
+        /// Reads the contents of the file and converts into stream of bytes
+        /// 
+        /// @param filepath The path of the file to read the data from
         static std::string read_file(const char* filepath)
         {
             FILE* file = fopen(filepath, "r");

@@ -15,6 +15,7 @@ namespace fireworks { namespace graphics {
 #define MAX_KEYS     1024
 #define MAX_BUTTONS  32
 
+	/// All Input Buttons mapped to a more understandable mappinng from GLFW
     enum Keys
     {
 		UNKNOWN = GLFW_KEY_UNKNOWN,

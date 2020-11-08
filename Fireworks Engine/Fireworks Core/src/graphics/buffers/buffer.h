@@ -6,18 +6,27 @@
 
 namespace fireworks { namespace graphics {
 
-        class Buffer
-        {
-        private:
-            GLuint m_BufferID;
-            GLuint m_ComponentCount;
-        public:
-            Buffer(GLfloat* data, GLsizei count, GLuint componentCount);
-            ~Buffer();
-            
-            void bind() const;
-            void unbind() const;
+	/// Creates Vertex Buffers.
+	class Buffer
+	{
+	private:
+		GLuint m_BufferID;
+		GLuint m_ComponentCount;
+	public:
+		/// Create and generate VertexBuffer.
+		/// 
+		/// @param data The vertex data of the geometry
+		/// @param count The count of the number of variants of vertex data 
+		/// @param componentCount The count of different variations of vertex data
+		Buffer(GLfloat* data, GLsizei count, GLuint componentCount);
+		~Buffer();
 
-            inline GLuint getComponentCount() const { return m_ComponentCount; }
-        };
+		/// Bind the buffer
+		void bind() const;
+		/// Unbind the buffer
+		void unbind() const;
+
+		/// Gets the types of componets in the vertex data.
+		inline GLuint getComponentCount() const { return m_ComponentCount; }
+	};
 } }

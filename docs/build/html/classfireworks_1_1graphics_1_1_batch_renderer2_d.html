@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('classfireworks_1_1graphics_1_1_batch_r
 </div><!--header-->
 <div class="contents">
 
+<p>Renders the renderables in a single draw call using batching.  
+ <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="batchrenderer2d_8h_source.html">batchrenderer2d.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for fireworks::graphics::BatchRenderer2D:</div>
@@ -99,30 +102,35 @@ Inheritance diagram for fireworks::graphics::BatchRenderer2D:</div>
  <div class="center">
   <img src="classfireworks_1_1graphics_1_1_batch_renderer2_d.png" usemap="#fireworks::graphics::BatchRenderer2D_map" alt=""/>
   <map id="fireworks::graphics::BatchRenderer2D_map" name="fireworks::graphics::BatchRenderer2D_map">
-<area href="classfireworks_1_1graphics_1_1_renderer2_d.html" alt="fireworks::graphics::Renderer2D" shape="rect" coords="0,0,226,24"/>
+<area href="classfireworks_1_1graphics_1_1_renderer2_d.html" title="Forward declaration of the graphics::Renderable2D." alt="fireworks::graphics::Renderer2D" shape="rect" coords="0,0,226,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a00efe557a5b7bd2e5165348ac93b627d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a00efe557a5b7bd2e5165348ac93b627d">BatchRenderer2D</a> (<a class="el" href="classfireworks_1_1graphics_1_1_camera2_d.html">Camera2D</a> *camera2D, <a class="el" href="classfireworks_1_1graphics_1_1_shader.html">Shader</a> *shader)</td></tr>
+<tr class="memdesc:a00efe557a5b7bd2e5165348ac93b627d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the batch renderer.  <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a00efe557a5b7bd2e5165348ac93b627d">More...</a><br /></td></tr>
 <tr class="separator:a00efe557a5b7bd2e5165348ac93b627d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23df33300e9dfb740efb26fd8e52d58f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a23df33300e9dfb740efb26fd8e52d58f">~BatchRenderer2D</a> ()</td></tr>
 <tr class="separator:a23df33300e9dfb740efb26fd8e52d58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a27e7e2ccc2c50175cf2c1589238b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a82a27e7e2ccc2c50175cf2c1589238b6">begin</a> () override</td></tr>
+<tr class="memdesc:a82a27e7e2ccc2c50175cf2c1589238b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the rendering process.  <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a82a27e7e2ccc2c50175cf2c1589238b6">More...</a><br /></td></tr>
 <tr class="separator:a82a27e7e2ccc2c50175cf2c1589238b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8907f05d90f9d4f7e9825bb687aee71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#ac8907f05d90f9d4f7e9825bb687aee71">submit</a> (const <a class="el" href="classfireworks_1_1graphics_1_1_renderable2_d.html">Renderable2D</a> *renderable) override</td></tr>
+<tr class="memdesc:ac8907f05d90f9d4f7e9825bb687aee71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins to submit the renderables to render queue.  <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#ac8907f05d90f9d4f7e9825bb687aee71">More...</a><br /></td></tr>
 <tr class="separator:ac8907f05d90f9d4f7e9825bb687aee71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa61c582ccbcec2a32fd37565b9ca4efc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#aa61c582ccbcec2a32fd37565b9ca4efc">drawString</a> (const std::string &amp;text, const <a class="el" href="structfireworks_1_1maths_1_1vec3.html">maths::vec3</a> &amp;position, const <a class="el" href="structfireworks_1_1maths_1_1vec4.html">maths::vec4</a> &amp;color) override</td></tr>
-<tr class="separator:aa61c582ccbcec2a32fd37565b9ca4efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8dc4f28eb403e79ccb3056788d50b8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#ab8dc4f28eb403e79ccb3056788d50b8d">end</a> () override</td></tr>
+<tr class="memdesc:ab8dc4f28eb403e79ccb3056788d50b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the submission and prepares the renderer to start drawing.  <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#ab8dc4f28eb403e79ccb3056788d50b8d">More...</a><br /></td></tr>
 <tr class="separator:ab8dc4f28eb403e79ccb3056788d50b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a502f9a708bb84f4e51db8835a4ec95a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a502f9a708bb84f4e51db8835a4ec95a1">flush</a> () override</td></tr>
+<tr class="memdesc:a502f9a708bb84f4e51db8835a4ec95a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the data processed onto the screen.  <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a502f9a708bb84f4e51db8835a4ec95a1">More...</a><br /></td></tr>
 <tr class="separator:a502f9a708bb84f4e51db8835a4ec95a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfireworks_1_1graphics_1_1_renderer2_d')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html">fireworks::graphics::Renderer2D</a></td></tr>
 <tr class="memitem:ac2f23b4a407fbfbcba71b7c2570bb8ef inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#ac2f23b4a407fbfbcba71b7c2570bb8ef">push</a> (const <a class="el" href="structfireworks_1_1maths_1_1mat4.html">maths::mat4</a> &amp;matrix, bool override=false)</td></tr>
+<tr class="memdesc:ac2f23b4a407fbfbcba71b7c2570bb8ef inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes the transformation matrix to transform the renderables if using groups.  <a href="classfireworks_1_1graphics_1_1_renderer2_d.html#ac2f23b4a407fbfbcba71b7c2570bb8ef">More...</a><br /></td></tr>
 <tr class="separator:ac2f23b4a407fbfbcba71b7c2570bb8ef inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3102889e452bb575b91aef7b10a7332f inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a3102889e452bb575b91aef7b10a7332f">pop</a> ()</td></tr>
+<tr class="memdesc:a3102889e452bb575b91aef7b10a7332f inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops the transformation matrix to transform the renderables if using groups.  <a href="classfireworks_1_1graphics_1_1_renderer2_d.html#a3102889e452bb575b91aef7b10a7332f">More...</a><br /></td></tr>
 <tr class="separator:a3102889e452bb575b91aef7b10a7332f inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91f67f4d61e409971e7ab39e73a29e69 inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a91f67f4d61e409971e7ab39e73a29e69">~Renderer2D</a> ()</td></tr>
 <tr class="separator:a91f67f4d61e409971e7ab39e73a29e69 inherit pub_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,23 +138,30 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a628ef95783b599c3ae1fcd8b29b3fb7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfireworks_1_1graphics_1_1_shader.html">Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a628ef95783b599c3ae1fcd8b29b3fb7e">m_Shader</a></td></tr>
+<tr class="memdesc:a628ef95783b599c3ae1fcd8b29b3fb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shader with which the batch will be rendered with.  <a href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#a628ef95783b599c3ae1fcd8b29b3fb7e">More...</a><br /></td></tr>
 <tr class="separator:a628ef95783b599c3ae1fcd8b29b3fb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfireworks_1_1graphics_1_1_renderer2_d')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html">fireworks::graphics::Renderer2D</a></td></tr>
 <tr class="memitem:a1133980b6260d16bfbbf29a095fd2a74 inherit pub_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfireworks_1_1graphics_1_1_camera2_d.html">Camera2D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a1133980b6260d16bfbbf29a095fd2a74">m_Camera2D</a></td></tr>
+<tr class="memdesc:a1133980b6260d16bfbbf29a095fd2a74 inherit pub_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The camera to which the renderers out will be displayed to.  <a href="classfireworks_1_1graphics_1_1_renderer2_d.html#a1133980b6260d16bfbbf29a095fd2a74">More...</a><br /></td></tr>
 <tr class="separator:a1133980b6260d16bfbbf29a095fd2a74 inherit pub_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classfireworks_1_1graphics_1_1_renderer2_d')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html">fireworks::graphics::Renderer2D</a></td></tr>
 <tr class="memitem:acbe8a8af27cdf1325664bc74bab20ebe inherit pro_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#acbe8a8af27cdf1325664bc74bab20ebe">Renderer2D</a> (<a class="el" href="classfireworks_1_1graphics_1_1_camera2_d.html">Camera2D</a> *camera2D)</td></tr>
+<tr class="memdesc:acbe8a8af27cdf1325664bc74bab20ebe inherit pro_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the renderer using the camera.  <a href="classfireworks_1_1graphics_1_1_renderer2_d.html#acbe8a8af27cdf1325664bc74bab20ebe">More...</a><br /></td></tr>
 <tr class="separator:acbe8a8af27cdf1325664bc74bab20ebe inherit pro_methods_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html">fireworks::graphics::Renderer2D</a></td></tr>
 <tr class="memitem:a3e5e0282dfbb97b4c7993ac576a89e2b inherit pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfireworks_1_1maths_1_1mat4.html">maths::mat4</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a3e5e0282dfbb97b4c7993ac576a89e2b">m_TransformationStack</a></td></tr>
+<tr class="memdesc:a3e5e0282dfbb97b4c7993ac576a89e2b inherit pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transformation matrix stack that keeps track of relative transformation matrix of the groups.  <a href="classfireworks_1_1graphics_1_1_renderer2_d.html#a3e5e0282dfbb97b4c7993ac576a89e2b">More...</a><br /></td></tr>
 <tr class="separator:a3e5e0282dfbb97b4c7993ac576a89e2b inherit pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4061cb1be61b29c04c011466011e48b8 inherit pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfireworks_1_1maths_1_1mat4.html">maths::mat4</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a4061cb1be61b29c04c011466011e48b8">m_TransformationBack</a></td></tr>
+<tr class="memdesc:a4061cb1be61b29c04c011466011e48b8 inherit pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transformation matrix to renders stuff relative to one another aka if using groups.  <a href="classfireworks_1_1graphics_1_1_renderer2_d.html#a4061cb1be61b29c04c011466011e48b8">More...</a><br /></td></tr>
 <tr class="separator:a4061cb1be61b29c04c011466011e48b8 inherit pro_attribs_classfireworks_1_1graphics_1_1_renderer2_d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Renders the renderables in a single draw call using batching. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a00efe557a5b7bd2e5165348ac93b627d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00efe557a5b7bd2e5165348ac93b627d">&#9670;&nbsp;</a></span>BatchRenderer2D()</h2>
 
@@ -172,6 +187,18 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates the batch renderer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera2D</td><td>The <a class="el" href="classfireworks_1_1graphics_1_1_camera2_d.html" title="The eye of the 2D world.">graphics::Camera2D</a> to which the rendered view will be relayed to </td></tr>
+    <tr><td class="paramname">shader</td><td>The shader with which the batch will be rendered with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfireworks_1_1graphics_1_1_camera2_d.html" title="The eye of the 2D world.">graphics::Camera2D</a> for more information on creating the camera </dd>
+<dd>
+graphics::shader for more informatoin of creating shaders </dd></dl>
 
 </div>
 </div>
@@ -216,51 +243,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Begins the rendering process. </p>
+
 <p>Reimplemented from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a110dba01dc5166a14e596089bccf5a3b">fireworks::graphics::Renderer2D</a>.</p>
-
-</div>
-</div>
-<a id="aa61c582ccbcec2a32fd37565b9ca4efc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa61c582ccbcec2a32fd37565b9ca4efc">&#9670;&nbsp;</a></span>drawString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fireworks::graphics::BatchRenderer2D::drawString </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfireworks_1_1maths_1_1vec3.html">maths::vec3</a> &amp;&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfireworks_1_1maths_1_1vec4.html">maths::vec4</a> &amp;&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a793375ec5aeafd6ab5f2780f00e81f1e">fireworks::graphics::Renderer2D</a>.</p>
 
 </div>
 </div>
@@ -286,6 +271,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Ends the submission and prepares the renderer to start drawing. </p>
 
 <p>Reimplemented from <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a02251b87e275e319b765716effe8d371">fireworks::graphics::Renderer2D</a>.</p>
 
@@ -313,6 +300,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Draws the data processed onto the screen. </p>
 
 <p>Implements <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#afd603a33e19e926fcf2c3dd6329f8531">fireworks::graphics::Renderer2D</a>.</p>
 
@@ -342,6 +331,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Begins to submit the renderables to render queue. </p>
+
 <p>Implements <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a7221cf336452c1fdeac6cc7f1b0ca9e5">fireworks::graphics::Renderer2D</a>.</p>
 
 </div>
@@ -358,6 +349,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The shader with which the batch will be rendered with. </p>
 
 </div>
 </div>
