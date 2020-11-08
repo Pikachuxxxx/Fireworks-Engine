@@ -39,6 +39,7 @@ public:
 		window = createWindow("Zapper", 600, 900);
 		window->backgroundColor = vec4((float)243 / 255, (float)146 / 255, (float)51 / 255, 1.0f);
 		camera = new Camera2D(mat4::orthographic(-12.0f, 12.0f, -18.0f, 18.0f, -1.0f, 1.0f));
+		// Loading game resources
 #if(_WIN32)
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 
@@ -55,6 +56,7 @@ public:
 		Texture* shipTex	= new Texture(".\\resources\\spaceship.png");
 		bulletTex			= new Texture(".\\resources\\test3.png");
 		rocksTex			= new Texture(".\\resources\\asteroid.png");
+
 #elif(__APPLE__)
         Shader* basicShader = new Shader("shaders/basic.vert", "shaders/basic.frag");
 
@@ -119,7 +121,6 @@ public:
 		spaceShipMovement();
 		spaceShipShoot();
 		moveRocks();
-
 	}
 
 	// Runs as fast as possible
@@ -233,7 +234,6 @@ public:
 				}
 				rocks.erase(rocks.begin() + i);
 			}
-
 		}
 	}
 
@@ -250,22 +250,29 @@ public:
 				if (OnCollisionEnter(*bullets[b], *rocks[r]))
 				{
 					rockDestroy->Play();
+					std::uint32_t flag = 0;
+					std::uint32_t bullet = 0;
+					std::uint32_t rock = 0;
 					// erase that bullet and rock upon collision
 					for (int j = 0; j < defaultLayer->m_Renderables.size(); j++)
 					{
+						if (flag == 2)
+							break;
+
 						if (bullets[b] == defaultLayer->m_Renderables[j])
 						{
-							defaultLayer->m_Renderables.erase(defaultLayer->m_Renderables.begin() + j);
+							flag++;
+							bullet = j;
 						}
-					}
-					for (int j = 0; j < defaultLayer->m_Renderables.size(); j++)
-					{
 						if (rocks[r] == defaultLayer->m_Renderables[j])
 						{
-							defaultLayer->m_Renderables.erase(defaultLayer->m_Renderables.begin() + j);
+							flag++;
+							rock = j;
 						}
 					}
 
+					defaultLayer->m_Renderables.erase(defaultLayer->m_Renderables.begin() + bullet);
+					defaultLayer->m_Renderables.erase(defaultLayer->m_Renderables.begin() + rock);
 					bullets.erase(bullets.begin() + b);
 					rocks.erase(rocks.begin() + r);
 

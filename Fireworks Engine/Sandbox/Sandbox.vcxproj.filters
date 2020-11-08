@@ -956,6 +956,15 @@
     <ClInclude Include="examples\Zapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\phyTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="examples\RockyDocky.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\EditorGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Test Dependencies\glm\detail\func_common.inl">
@@ -1366,5 +1375,6 @@
     <None Include="Test Dependencies\glm\gtx\wrap.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="shaders\fade.frag" />
   </ItemGroup>
 </Project>

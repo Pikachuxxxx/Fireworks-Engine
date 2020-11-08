@@ -72,7 +72,7 @@ CMAKE_BINARY_DIR = /Users/phanisrikar/Desktop/Fireworks-Engine/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Fireworks.dir/all
+all: CMakeFiles/SandBox.dir/all
 
 .PHONY : all
 
@@ -82,36 +82,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Fireworks.dir/clean
+clean: CMakeFiles/SandBox.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Fireworks.dir
+# Target rules for target CMakeFiles/SandBox.dir
 
 # All Build rule for target.
-CMakeFiles/Fireworks.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=1,2 "Built target Fireworks"
-.PHONY : CMakeFiles/Fireworks.dir/all
+CMakeFiles/SandBox.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SandBox.dir/build.make CMakeFiles/SandBox.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SandBox.dir/build.make CMakeFiles/SandBox.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target SandBox"
+.PHONY : CMakeFiles/SandBox.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Fireworks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Fireworks.dir/all
+CMakeFiles/SandBox.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SandBox.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/phanisrikar/Desktop/Fireworks-Engine/build/CMakeFiles 0
-.PHONY : CMakeFiles/Fireworks.dir/rule
+.PHONY : CMakeFiles/SandBox.dir/rule
 
 # Convenience name for target.
-Fireworks: CMakeFiles/Fireworks.dir/rule
+SandBox: CMakeFiles/SandBox.dir/rule
 
-.PHONY : Fireworks
+.PHONY : SandBox
 
 # clean rule for target.
-CMakeFiles/Fireworks.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks.dir/build.make CMakeFiles/Fireworks.dir/clean
-.PHONY : CMakeFiles/Fireworks.dir/clean
+CMakeFiles/SandBox.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SandBox.dir/build.make CMakeFiles/SandBox.dir/clean
+.PHONY : CMakeFiles/SandBox.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -19,6 +19,7 @@ mutable std::uint32_t       frame;
 		maths::vec3&        position;
 		maths::vec4&        color;
         maths::vec2&        size;
+        float&              rotation;
 	private:
 		maths::vec2         m_SpriteSheetDimension;
 		utils::Timer*       m_AnimTimer;
@@ -34,6 +35,8 @@ mutable std::uint32_t       frame;
 		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader, Primitive2D primitive2d = Primitive2D::Quad);
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
+
+		void addedRigidBody2D() override;
 
         void animateSprite(uint32_t frameRate, SpriteAnimationType animType);
 

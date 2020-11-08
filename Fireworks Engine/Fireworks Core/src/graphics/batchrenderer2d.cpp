@@ -99,11 +99,18 @@ namespace fireworks { namespace graphics {
     {
 
         const maths::vec3& position = renderable->getPosition();
+		const float& rotation = renderable->getRotation();
         const maths::vec2& size = renderable->getSize();
         const maths::vec4& color = renderable->getColor();
 		const Primitive2D primitive = renderable->getPrimitive();
         const std::vector<maths::vec2>& uv = renderable->getUV();
         const GLuint tid = renderable->getTID();
+		const std::vector<components::Component*> components = renderable->components;
+
+		
+		maths::mat4 model(1.0f);
+		model = maths::mat4::translation(position);
+		model *= maths::mat4::rotation(maths::toDegrees(rotation), maths::vec3(0, 0, 1));
 
         float ts = 0.0f;
         if(tid > 0)
@@ -143,29 +150,29 @@ namespace fireworks { namespace graphics {
         
         if (primitive == Primitive2D::Quad)
         {
-            m_Buffer->vertex = *m_TransformationBack * position;
-            m_Buffer->uv = uv[0];
-            m_Buffer->tid = ts;
-            m_Buffer->color = color;
-            m_Buffer++;
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( - (size.x / 2), - (size.y / 2), position.z);
+			m_Buffer->uv = uv[0];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-            m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x, position.y + size.y, position.z);
-            m_Buffer->uv = uv[1];
-            m_Buffer->tid = ts;
-            m_Buffer->color = color;
-            m_Buffer++;
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( - (size.x / 2), -(size.y / 2) + size.y, position.z);
+			m_Buffer->uv = uv[1];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-            m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
-            m_Buffer->uv = uv[2];
-            m_Buffer->tid = ts;
-            m_Buffer->color = color;
-            m_Buffer++;
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, -(size.y / 2) + size.y, position.z);
+			m_Buffer->uv = uv[2];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
-            m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
-            m_Buffer->uv = uv[3];
-            m_Buffer->tid = ts;
-            m_Buffer->color = color;
-            m_Buffer++;
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, -(size.y / 2), position.z);
+			m_Buffer->uv = uv[3];
+			m_Buffer->tid = ts;
+			m_Buffer->color = color;
+			m_Buffer++;
 
             m_IndicesCount += 6;
         }

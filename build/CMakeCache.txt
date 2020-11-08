@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a library.
+BOX2D_LIBRARY:FILEPATH=/Users/phanisrikar/Desktop/Fireworks-Engine/Dependencies/Box2D/lib/libbox2d.a
+
 //No help, variable specified on the command line.
 BUILD_SANDBOX_EXEC:UNINITIALIZED=true
 

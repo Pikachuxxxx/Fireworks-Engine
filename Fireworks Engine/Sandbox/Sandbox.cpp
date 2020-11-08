@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "examples/HungryBox.h"
+#include "examples/RockyDocky.h"
 
 int main()
 {
-    HungryBox game;
+    RockyDocky game;
     game.start();
     return 0;
 }

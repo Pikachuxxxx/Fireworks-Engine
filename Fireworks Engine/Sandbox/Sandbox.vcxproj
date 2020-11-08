@@ -116,13 +116,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Fireworks Core/;$(PROJECT_DIR)Test Dependencies</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/Box2D/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Fireworks Core/;$(PROJECT_DIR)Test Dependencies</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;fireworks.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;fireworks.lib;OpenAL32.lib;box2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/Box2D/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -159,6 +159,7 @@
     <ClInclude Include="examples\HungryBox.h" />
     <ClInclude Include="examples\LightSaber.h" />
     <ClInclude Include="examples\BunnysJourney.h" />
+    <ClInclude Include="examples\RockyDocky.h" />
     <ClInclude Include="examples\SimpleBox.h" />
     <ClInclude Include="examples\TextGuru.h" />
     <ClInclude Include="examples\textureImages.h" />
@@ -457,11 +458,14 @@
     <ClInclude Include="test\audiotest.h" />
     <ClInclude Include="test\camImplementation.h" />
     <ClInclude Include="test\fontTest.h" />
+    <ClInclude Include="test\EditorGUI.h" />
     <ClInclude Include="test\instantspritedraw.h" />
+    <ClInclude Include="test\phyTest.h" />
     <ClInclude Include="test\testFBO.h" />
     <ClInclude Include="test\testGUI.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\fade.frag" />
     <None Include="Test Dependencies\glm\detail\func_common.inl" />
     <None Include="Test Dependencies\glm\detail\func_common_simd.inl" />
     <None Include="Test Dependencies\glm\detail\func_exponential.inl" />
