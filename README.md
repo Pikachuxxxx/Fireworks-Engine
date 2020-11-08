@@ -44,6 +44,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 ### Features
 
 - 2D rendering pipeline
+- 2D Physics Engine (Box2D backend)
 - Can render upto 60, 000 Sprites, textures using batch rendering
 - Sprite Sheet Animations (can change frame or frame rate manually, supports 2 types of in-built animation modes [LOOP, PING_PONG])
 - Simple and customisable math library
@@ -55,6 +56,7 @@ Find the latest features list and updates about the engine at : [Fireworks Engin
 - Render textures and Frame Buffer objects
 - 2D orthographic camera 
 - Suppports 2D and 3D Audio with an extensive API (OpenAL backend) (currenlty only reads .wav files)
+- Component System (currently only has Rigidbody2D component)
 
 #
 ### Building
@@ -151,7 +153,7 @@ int main()
 - [x] Sprite Sheet Animations
 - [x] TTF Font Rendering and font properties(position, color etc.)
 - [x] 2D Audio (OpenAL backend)
-- Physics2D component (box2d physics engine integration)
+- [x] Physics2D component (box2d physics engine integration)
 - Better and customisable font rendering 
 - Audio system
 - Materials and Lights (2D and 3D)
