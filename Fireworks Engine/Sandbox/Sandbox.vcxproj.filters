@@ -1375,5 +1375,6 @@
     <None Include="Test Dependencies\glm\gtx\wrap.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="shaders\fade.frag" />
   </ItemGroup>
 </Project>
