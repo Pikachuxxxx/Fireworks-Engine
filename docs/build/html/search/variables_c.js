@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_483',['z',['../structfireworks_1_1maths_1_1vec3.html#a62e3713df38445bbfb19d77f00676f33',1,'fireworks::maths::vec3::z()'],['../structfireworks_1_1maths_1_1vec4.html#a41c6c45b6384a3b9f4f8a723ece31a39',1,'fireworks::maths::vec4::z()']]]
+  ['shader_792',['shader',['../classfireworks_1_1graphics_1_1_renderable2_d.html#a7b903ca75086c3a9c0973e22eff8195d',1,'fireworks::graphics::Renderable2D']]],
+  ['size_793',['Size',['../structfireworks_1_1graphics_1_1_character.html#a51dccccc94aa2db6bf13d11bdd745e19',1,'fireworks::graphics::Character::Size()'],['../classfireworks_1_1graphics_1_1_sprite.html#a82f840082ae431a75bd4ab39fd4381a0',1,'fireworks::graphics::Sprite::size()']]]
 ];

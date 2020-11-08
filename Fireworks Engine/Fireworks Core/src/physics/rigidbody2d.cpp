@@ -1,6 +1,6 @@
 #include "rigidbody2d.h"
 
-fireworks::physics::RigidBody2D::RigidBody2D(float density, float friction, RigidBodyType bodytype, b2World& world) : components::Component("RigidBody2D", components::Components::RB2D), bodyType(bodytype), density(1.0f), friction(0.3f), gravityScale(1), fixedRotation(false), resitution(0), m_World(world), m_DidGenerateRB(false), m_Body(nullptr)
+fireworks::physics::RigidBody2D::RigidBody2D(float density, float friction, RigidBodyType bodytype, b2World& world) : components::Component("RigidBody2D", components::ComponentsList::RB2D), bodyType(bodytype), density(1.0f), friction(0.3f), gravityScale(1), fixedRotation(false), resitution(0), m_World(world), m_DidGenerateRB(false), m_Body(nullptr)
 {											
 
 }

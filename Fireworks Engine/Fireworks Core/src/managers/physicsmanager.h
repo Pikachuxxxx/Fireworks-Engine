@@ -10,7 +10,9 @@
 	class PhysicsManager
 	{
 	public:
+		/// The worlds gravity
 		b2Vec2		Gravity;
+		/// The Physics world object
 		b2World*	PhysicsWorld;
 	private:
 		static PhysicsManager* m_PhysicsManager;
