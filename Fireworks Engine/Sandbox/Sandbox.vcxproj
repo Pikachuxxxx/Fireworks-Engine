@@ -465,6 +465,7 @@
     <ClInclude Include="test\testGUI.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\fade.frag" />
     <None Include="Test Dependencies\glm\detail\func_common.inl" />
     <None Include="Test Dependencies\glm\detail\func_common_simd.inl" />
     <None Include="Test Dependencies\glm\detail\func_exponential.inl" />

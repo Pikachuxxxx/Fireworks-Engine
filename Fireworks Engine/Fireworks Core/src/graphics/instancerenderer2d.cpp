@@ -61,7 +61,8 @@ namespace fireworks { namespace graphics {
 	{
 		// This position is used to set the initial position of the RigidBody 
 		// except for this we have no use of it
-		maths::vec3 position = renderable->getPosition();
+		const maths::vec3& position =renderable->getPosition();
+		const float& rotation = renderable->getRotation();
 		const maths::vec2& size = renderable->getSize();
 		const maths::vec4& color = renderable->getColor();
 		const Primitive2D primitive = renderable->getPrimitive();
@@ -75,21 +76,10 @@ namespace fireworks { namespace graphics {
 		renderable->shader->setUniform1i("flipX", renderable->flippedX);
 		renderable->shader->setUniform1i("flipY", renderable->flippedY);
 
-		 maths::vec3 RBPosition;
-		 float RBRotation = 0.0f;
-
-		for (int i = 0; i < components.size(); i++)
-		{
-			if (physics::RigidBody2D* rb = (dynamic_cast<physics::RigidBody2D*>(components[i])))
-			{
-				RBPosition = rb->GetPositionInPixels();
-				RBRotation = rb->GetRotation();
-				position = maths::vec3(0, 0, position.z);
-			}
-		}
+		
 		maths::mat4 model(1.0f);
-		model = maths::mat4::translation(RBPosition);
-		model *= maths::mat4::rotation(maths::toDegrees(RBRotation), maths::vec3(0, 0, 1));
+		model = maths::mat4::translation(position);
+		model *= maths::mat4::rotation(maths::toDegrees(rotation), maths::vec3(0, 0, 1));
 
 		m_Texture = renderable->getTID(); // Redundant (IDK if the renderer should cache the current texture as well)
 		float ts = 0;
@@ -98,25 +88,25 @@ namespace fireworks { namespace graphics {
 
 		if (primitive == Primitive2D::Quad)
 		{
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2), position.y - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(- (size.x / 2),- (size.y / 2), position.z);
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2), position.y -(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(- (size.x / 2),-(size.y / 2) + size.y, position.z);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2) + size.x, position.y -(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, - (size.y / 2) + size.y, position.z);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2) + size.x, position.y - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, - (size.y / 2), position.z);
 			m_Buffer->uv = uv[3];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
@@ -126,19 +116,19 @@ namespace fireworks { namespace graphics {
 		}
 		else if (primitive == Primitive2D::Triangle)
 		{
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x - (size.x / 2), position.y - (size.y / 2), 0);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( - (size.x / 2), - (size.y / 2), 0);
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x + (size.x / 2.0f) - (size.x / 2), position.y + size.y - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( + (size.x / 2.0f) - (size.x / 2),  + size.y - (size.y / 2), position.z);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(position.x + size.x - (size.x / 2), position.y - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( + size.x - (size.x / 2), - (size.y / 2), position.z);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;

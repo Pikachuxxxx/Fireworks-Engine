@@ -3,43 +3,43 @@
 namespace fireworks { namespace graphics {
 
 	Sprite::Sprite()
-		: Renderable2D(), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(maths::vec2(0,0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+		: Renderable2D(), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
 	{
 
 	}
 
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Primitive2D primitive2d)
-		: Renderable2D(position, size, color, primitive2d), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+		: Renderable2D(position, size, color, primitive2d), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
 	{
 
 	}
 
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, Primitive2D primitive2d)
-		: Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+		: Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
 	{
 		m_Texture = texture;
 	}
 
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d)
-		: Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(sheetDimension), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(new utils::Timer())
+		: Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(sheetDimension), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(new utils::Timer())
 	{
 		m_Texture = texture;
 	}
 
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader, Primitive2D primitive2d)
-        : Renderable2D(position, size, color, primitive2d, shader), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+        : Renderable2D(position, size, color, primitive2d, shader), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
     {
 
     }
 
     Sprite::Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d)
-        : Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d, shader), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
+        : Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d, shader), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(maths::vec2(0, 0)), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(nullptr)
     {
         m_Texture = texture;     
 	}
 
 	Sprite::Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d)
-        : Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d, shader), position(m_Position), color(m_Color), size(m_Size), m_SpriteSheetDimension(sheetDimension), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(new utils::Timer())
+        : Renderable2D(position, size, maths::vec4(1, 0, 1, 1), primitive2d, shader), position(m_Position), color(m_Color), size(m_Size), rotation(m_Rotation), m_SpriteSheetDimension(sheetDimension), frame(1), frameRate(0), m_CurrentFrameRate(0), m_AnimTimer(new utils::Timer())
 	{
 		m_Texture = texture;
 	}

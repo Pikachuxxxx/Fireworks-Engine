@@ -19,6 +19,7 @@ mutable std::uint32_t       frame;
 		maths::vec3&        position;
 		maths::vec4&        color;
         maths::vec2&        size;
+        float&              rotation;
 	private:
 		maths::vec2         m_SpriteSheetDimension;
 		utils::Timer*       m_AnimTimer;
