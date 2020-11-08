@@ -3,6 +3,8 @@ var namespacefireworks_1_1graphics =
     [ "BatchRenderer2D", "classfireworks_1_1graphics_1_1_batch_renderer2_d.html", "classfireworks_1_1graphics_1_1_batch_renderer2_d" ],
     [ "Buffer", "classfireworks_1_1graphics_1_1_buffer.html", "classfireworks_1_1graphics_1_1_buffer" ],
     [ "Camera2D", "classfireworks_1_1graphics_1_1_camera2_d.html", "classfireworks_1_1graphics_1_1_camera2_d" ],
+    [ "Character", "structfireworks_1_1graphics_1_1_character.html", "structfireworks_1_1graphics_1_1_character" ],
+    [ "Font", "structfireworks_1_1graphics_1_1_font.html", "structfireworks_1_1graphics_1_1_font" ],
     [ "FrameBuffer", "classfireworks_1_1graphics_1_1_frame_buffer.html", "classfireworks_1_1graphics_1_1_frame_buffer" ],
     [ "Group", "classfireworks_1_1graphics_1_1_group.html", "classfireworks_1_1graphics_1_1_group" ],
     [ "IndexBuffer", "classfireworks_1_1graphics_1_1_index_buffer.html", "classfireworks_1_1graphics_1_1_index_buffer" ],

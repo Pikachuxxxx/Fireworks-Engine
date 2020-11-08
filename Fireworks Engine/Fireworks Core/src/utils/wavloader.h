@@ -7,6 +7,8 @@
 #include <bit>
 
 namespace fireworks { namespace utils {
+
+	/// A class to load WAVE (.wav) audio files
 	class WavLoader
 	{
 	public:
@@ -28,6 +30,7 @@ namespace fireworks { namespace utils {
 			return a;
 		}
 
+		/// Loads the wav file 
 		char* loadWAV(const char* fn, std::uint32_t& format, std::uint32_t& samplerate, std::uint32_t& bps, std::uint32_t& size)
 		{
 			std::uint32_t channels;

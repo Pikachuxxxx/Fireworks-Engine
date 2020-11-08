@@ -13,13 +13,21 @@
 
 namespace fireworks { namespace graphics {
 
+    /// The class responsible for creating amazing shaders
     class Shader
     {
     public:
+        /// The ID of the shader
         GLuint m_ShaderID;
+        /// Path to the vertex shader file
         const char* m_VertPath;
+        /// Path to the fragment shader file
         const char* m_FragPath;
     public:
+        /// Creates the shader by taking in the vertex and fragment shader files
+        /// 
+        /// @param vertexPath The path to the vertex shader file
+		/// @param fragmentPath The path to the fragment shader file
         Shader(const char* vertexPath, const char* fragmentPath);
         ~Shader();
 
@@ -33,9 +41,12 @@ namespace fireworks { namespace graphics {
         void setUniformMat4(const GLchar* name, const maths::mat4& matrix);
 		void setUniformglmMat4(const GLchar* name, const glm::mat4& matrix);
 
+        /// Enables the shader
         void enable();
+		/// Disables the shader 
         void disable();
 
+        /// Gets the shaders Program
         inline GLint getShaderProgram() const { return m_ShaderID; }
     private:
         GLuint load();

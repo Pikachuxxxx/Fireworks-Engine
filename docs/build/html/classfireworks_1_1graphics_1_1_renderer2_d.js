@@ -3,7 +3,6 @@ var classfireworks_1_1graphics_1_1_renderer2_d =
     [ "Renderer2D", "classfireworks_1_1graphics_1_1_renderer2_d.html#acbe8a8af27cdf1325664bc74bab20ebe", null ],
     [ "~Renderer2D", "classfireworks_1_1graphics_1_1_renderer2_d.html#a91f67f4d61e409971e7ab39e73a29e69", null ],
     [ "begin", "classfireworks_1_1graphics_1_1_renderer2_d.html#a110dba01dc5166a14e596089bccf5a3b", null ],
-    [ "drawString", "classfireworks_1_1graphics_1_1_renderer2_d.html#a793375ec5aeafd6ab5f2780f00e81f1e", null ],
     [ "end", "classfireworks_1_1graphics_1_1_renderer2_d.html#a02251b87e275e319b765716effe8d371", null ],
     [ "flush", "classfireworks_1_1graphics_1_1_renderer2_d.html#afd603a33e19e926fcf2c3dd6329f8531", null ],
     [ "pop", "classfireworks_1_1graphics_1_1_renderer2_d.html#a3102889e452bb575b91aef7b10a7332f", null ],
