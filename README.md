@@ -170,3 +170,6 @@ int main()
 ### Dependencies
 - [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG, Zlib2, stb_image, OpenAL
 
+#### Supporting
+
+If you like this project, please consider starring it on GitHub and Contribute code for the development.
