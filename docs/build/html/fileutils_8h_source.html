@@ -94,37 +94,37 @@ $(document).ready(function(){initNavTree('fileutils_8h_source.html',''); initRes
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacefireworks_1_1utils.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefireworks.html">fireworks</a> { <span class="keyword">namespace </span>utils {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classfireworks_1_1utils_1_1_file_utils.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classfireworks_1_1utils_1_1_file_utils.html">FileUtils</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classfireworks_1_1utils_1_1_file_utils.html#a0d78be4fb0438cde3f39168f6750dde9">   11</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classfireworks_1_1utils_1_1_file_utils.html#a0d78be4fb0438cde3f39168f6750dde9">read_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filepath)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            FILE* file = fopen(filepath, <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">if</span> (file == NULL)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="comment">// Log this!</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                std::cerr &lt;&lt; <span class="stringliteral">&quot;ERROR::FILE::Cannot read the file - Please check the file path or permissions &quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            fseek(file, 0, SEEK_END);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> length = ftell(file);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">char</span>* data  = <span class="keyword">new</span> <span class="keywordtype">char</span>[length + 1];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            memset(data, 0, length + 1);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            fseek(file, 0, SEEK_SET);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            fread(data, 1, length, file);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            fclose(file);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            std::string result(data);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">delete</span>[] data;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} }</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classfireworks_1_1utils_1_1_file_utils.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classfireworks_1_1utils_1_1_file_utils.html">FileUtils</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classfireworks_1_1utils_1_1_file_utils.html#a0d78be4fb0438cde3f39168f6750dde9">   15</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classfireworks_1_1utils_1_1_file_utils.html#a0d78be4fb0438cde3f39168f6750dde9">read_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filepath)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            FILE* file = fopen(filepath, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (file == NULL)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="comment">// Log this!</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                std::cerr &lt;&lt; <span class="stringliteral">&quot;ERROR::FILE::Cannot read the file - Please check the file path or permissions &quot;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            fseek(file, 0, SEEK_END);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> length = ftell(file);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordtype">char</span>* data  = <span class="keyword">new</span> <span class="keywordtype">char</span>[length + 1];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            memset(data, 0, length + 1);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            fseek(file, 0, SEEK_SET);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            fread(data, 1, length, file);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            fclose(file);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            std::string result(data);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">delete</span>[] data;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} }</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassfireworks_1_1utils_1_1_file_utils_html_a0d78be4fb0438cde3f39168f6750dde9"><div class="ttname"><a href="classfireworks_1_1utils_1_1_file_utils.html#a0d78be4fb0438cde3f39168f6750dde9">fireworks::utils::FileUtils::read_file</a></div><div class="ttdeci">static std::string read_file(const char *filepath)</div><div class="ttdef"><b>Definition:</b> fileutils.h:11</div></div>
-<div class="ttc" id="aclassfireworks_1_1utils_1_1_file_utils_html"><div class="ttname"><a href="classfireworks_1_1utils_1_1_file_utils.html">fireworks::utils::FileUtils</a></div><div class="ttdef"><b>Definition:</b> fileutils.h:9</div></div>
-<div class="ttc" id="anamespacefireworks_html"><div class="ttname"><a href="namespacefireworks.html">fireworks</a></div><div class="ttdef"><b>Definition:</b> batchrenderer2d.cpp:3</div></div>
+<div class="ttc" id="aclassfireworks_1_1utils_1_1_file_utils_html_a0d78be4fb0438cde3f39168f6750dde9"><div class="ttname"><a href="classfireworks_1_1utils_1_1_file_utils.html#a0d78be4fb0438cde3f39168f6750dde9">fireworks::utils::FileUtils::read_file</a></div><div class="ttdeci">static std::string read_file(const char *filepath)</div><div class="ttdoc">Reads the contents of the file and converts into stream of bytes.</div><div class="ttdef"><b>Definition:</b> fileutils.h:15</div></div>
+<div class="ttc" id="aclassfireworks_1_1utils_1_1_file_utils_html"><div class="ttname"><a href="classfireworks_1_1utils_1_1_file_utils.html">fireworks::utils::FileUtils</a></div><div class="ttdoc">A utility class to load various types of files.</div><div class="ttdef"><b>Definition:</b> fileutils.h:10</div></div>
+<div class="ttc" id="anamespacefireworks_html"><div class="ttname"><a href="namespacefireworks.html">fireworks</a></div><div class="ttdef"><b>Definition:</b> audioclip.cpp:3</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

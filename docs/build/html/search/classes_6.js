@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mat4_252',['mat4',['../structfireworks_1_1maths_1_1mat4.html',1,'fireworks::maths']]]
+  ['label_482',['Label',['../classfireworks_1_1graphics_1_1_label.html',1,'fireworks::graphics']]],
+  ['layer_483',['Layer',['../classfireworks_1_1graphics_1_1_layer.html',1,'fireworks::graphics']]]
 ];

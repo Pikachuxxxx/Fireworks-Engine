@@ -7,7 +7,7 @@ namespace fireworks { namespace audio {
 	ALCcontext* AudioClip::m_Context = alcCreateContext(m_Device, NULL);
 
 	AudioClip::AudioClip(const std::string& filePath)
-		: enableLooping(false), gain(0), pitch(0), m_FilePath(filePath), m_DidPlayOnce(false)
+		: gain(0), pitch(0), m_FilePath(filePath), m_DidPlayOnce(false)
 	{
 		init();
 		load();
@@ -25,7 +25,7 @@ namespace fireworks { namespace audio {
 
 	void AudioClip::Play()
 	{
-		if (enableLooping)
+		if (m_EnableLooping)
 			alSourcei(m_Source, AL_LOOPING, AL_TRUE);
 		else
 			alSourcei(m_Source, AL_LOOPING, AL_FALSE);
@@ -62,7 +62,7 @@ namespace fireworks { namespace audio {
 
 	void AudioClip::Loop()
 	{
-		this->enableLooping = true;
+		this->m_EnableLooping = true;
 		if (!this->isPlaying())
 			this->Play();
 	}
