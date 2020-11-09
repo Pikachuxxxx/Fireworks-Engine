@@ -36,9 +36,11 @@ Basically a HelloWorld but this time it's for an entire game engine.
 
 ### Updates
 
-Currently Event system and adding more diversity to the existing API.
+Follow the public [Trello Board](https://trello.com/b/IhA33t9V/fireworks-engine) for reature request and current development status.
 
-Find the latest features list and updates about the engine at : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
+Currently working on Event system and adding more diversity to the existing API.
+
+Also see : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
 
 #
 ### Features
