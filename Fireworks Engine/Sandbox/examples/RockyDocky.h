@@ -72,8 +72,8 @@ public:
         Shader* sickShader = new Shader("./shaders/basic.vert", "./shaders/sick.frag");
 
 		Texture* bgTex = new Texture("./resources/rockydocky/bg.png");
-		Texture* bgTex = new Texture("./resources/rockydocky/bg2.png");
-		Texture* bgTex = new Texture("./resources/rockydocky/bg3.png");
+		Texture* bg2Tex = new Texture("./resources/rockydocky/bg2.png");
+		Texture* bg3Tex = new Texture("./resources/rockydocky/bg3.png");
 		Texture* idleTex = new Texture("./resources/rockydocky/idle.png");
 		Texture* jumpTex = new Texture("./resources/rockydocky/jump.png");
 		Texture* rockyTex = new Texture("./resources/rockydocky/Rocky.png");
@@ -150,6 +150,8 @@ public:
 
 
 		defaultLayer->add(bg);
+
+
 		defaultLayer->add(bg2);
 		defaultLayer->add(bg3);
 		playerLayer->add(rocky);
@@ -193,7 +195,7 @@ public:
 		if (window->isKeyPressed(Keys::P))
 			isGamePaused = !isGamePaused;
 
-		if (isGamePaused) 
+		if (isGamePaused)
 		{
 			gameStatusLbl->renderText();
 			gameStatusLbl->text = "Paused";
@@ -235,7 +237,7 @@ public:
 		{
 			if (window->isKeyHeld(Keys::RIGHT))
 			{
-				camera_position += 0.5f; 
+				camera_position += 0.5f;
 				camera->setPosition(vec3(camera_position, 0, 0));
 			}
 			else if (window->isKeyHeld(Keys::LEFT))
