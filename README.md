@@ -31,6 +31,12 @@
 ### About
 Basically a HelloWorld but this time it's for an entire game engine.
 
+### Supporting
+
+[![Stargazers repo roster for @Pikachuxxxx/Fireworks-Engine](https://reporoster.com/stars/Pikachuxxxx/Fireworks-Engine)](https://github.com/Pikachuxxxx/Fireworks-Engine/stargazers)
+
+If you like this project, please consider starring it on GitHub and Contribute code for the development.
+
 ### Ludum Dare 47
 - Checkout branch [LD47](https://github.com/Pikachuxxxx/Fireworks-Engine/tree/LD47/Fireworks%20Engine/LD47) for my [ludum dare submissoin](https://ldjam.com/events/ludum-dare/47/one-for-an-era) using fireworks engine, a lot of experimental features were added during the jam that will soon be integrated into the engine.
 
@@ -172,6 +178,3 @@ int main()
 ### Dependencies
 - [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG, Zlib2, stb_image, OpenAL
 
-#### Supporting
-
-If you like this project, please consider starring it on GitHub and Contribute code for the development.
