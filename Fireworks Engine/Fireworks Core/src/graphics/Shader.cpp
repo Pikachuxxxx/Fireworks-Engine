@@ -65,13 +65,16 @@ namespace fireworks { namespace graphics {
         return program;
     }
 
-    GLint Shader::getUniformLocation(const GLchar* name)
+    GLint Shader::getUniformLocation(const std::string& name)
     {
-        Shader::enable();
-        // TODO: Cache this!
-        return glGetUniformLocation(m_ShaderID, name);
-    }
+        enable();
+        if(m_ShaderLocationCache.find(name) != m_ShaderLocationCache.end())
+            return m_ShaderLocationCache[name];
 
+        GLint location = glGetUniformLocation(m_ShaderID, name.c_str());
+        m_ShaderLocationCache[name] = location;
+        return location;
+    }
 
     void Shader::setUniform1f(const GLchar* name, float value)
     {
