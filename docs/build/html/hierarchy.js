@@ -24,7 +24,7 @@ var hierarchy =
     [ "fireworks::graphics::RenderBuffer", "classfireworks_1_1graphics_1_1_render_buffer.html", null ],
     [ "fireworks::graphics::Renderer2D", "classfireworks_1_1graphics_1_1_renderer2_d.html", [
       [ "fireworks::graphics::BatchRenderer2D", "classfireworks_1_1graphics_1_1_batch_renderer2_d.html", null ],
-      [ "fireworks::graphics::InstanceRenderer2D", "classfireworks_1_1graphics_1_1_instance_renderer2_d.html", null ]
+      [ "fireworks::graphics::ShotRenderer2D", "classfireworks_1_1graphics_1_1_shot_renderer2_d.html", null ]
     ] ],
     [ "fireworks::graphics::Shader", "classfireworks_1_1graphics_1_1_shader.html", null ],
     [ "fireworks::graphics::Texture", "classfireworks_1_1graphics_1_1_texture.html", null ],

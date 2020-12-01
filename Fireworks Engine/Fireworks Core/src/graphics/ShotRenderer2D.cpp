@@ -1,41 +1,41 @@
-#include "instancerenderer2d.h"
+#include "ShotRenderer2D.h"
 
 namespace fireworks { namespace graphics {
 
 	
-	InstanceRenderer2D::InstanceRenderer2D(Camera2D* camera2D)
+	ShotRenderer2D::ShotRenderer2D(Camera2D* camera2D)
 		: Renderer2D(camera2D)
 	{
 		init();
 	}
 
-	InstanceRenderer2D::~InstanceRenderer2D()
+	ShotRenderer2D::~ShotRenderer2D()
 	{
 		delete m_IBO;
 		glDeleteBuffers(1, &m_VBO);
 	}
 
-	void InstanceRenderer2D::init()
+	void ShotRenderer2D::init()
 	{
 		glGenVertexArrays(1, &m_VAO);
 		glGenBuffers(1, &m_VBO);
 
 		glBindVertexArray(m_VAO);
 		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-		glBufferData(GL_ARRAY_BUFFER, INSTANCE_RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, SHOT_RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
 		glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
 		glEnableVertexAttribArray(SHADER_UV_INDEX);
 		glEnableVertexAttribArray(SHADER_TID_INDEX);
 		glEnableVertexAttribArray(SHADER_COLOR_INDEX);
-		glVertexAttribPointer(SHADER_VERTEX_INDEX,	3, GL_FLOAT, GL_FALSE, INSTANCE_RENDERER_VERTEX_SIZE, (const GLvoid*)0);
-		glVertexAttribPointer(SHADER_UV_INDEX,		2, GL_FLOAT, GL_FALSE, INSTANCE_RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
-		glVertexAttribPointer(SHADER_TID_INDEX,		1, GL_FLOAT, GL_FALSE, INSTANCE_RENDERER_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat)));
-		glVertexAttribPointer(SHADER_COLOR_INDEX,	4, GL_FLOAT, GL_FALSE, INSTANCE_RENDERER_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat)));
+		glVertexAttribPointer(SHADER_VERTEX_INDEX,	3, GL_FLOAT, GL_FALSE, SHOT_RENDERER_VERTEX_SIZE, (const GLvoid*)0);
+		glVertexAttribPointer(SHADER_UV_INDEX,		2, GL_FLOAT, GL_FALSE, SHOT_RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
+		glVertexAttribPointer(SHADER_TID_INDEX,		1, GL_FLOAT, GL_FALSE, SHOT_RENDERER_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat)));
+		glVertexAttribPointer(SHADER_COLOR_INDEX,	4, GL_FLOAT, GL_FALSE, SHOT_RENDERER_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat)));
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		GLushort indices[INSTANCE_RENDERER_INDICES_SIZE];
+		GLushort indices[SHOT_RENDERER_INDICES_SIZE];
 
-		for (int i = 0; i < INSTANCE_RENDERER_INDICES_SIZE; i += 6)
+		for (int i = 0; i < SHOT_RENDERER_INDICES_SIZE; i += 6)
 		{
 			indices[  i  ] = 0;
 			indices[i + 1] = 1;
@@ -46,18 +46,18 @@ namespace fireworks { namespace graphics {
 			indices[i + 5] = 0;
 		}
 
-		m_IBO = new IndexBuffer(indices, INSTANCE_RENDERER_INDICES_SIZE);
+		m_IBO = new IndexBuffer(indices, SHOT_RENDERER_INDICES_SIZE);
 
 		glBindVertexArray(0);
 	}
 
-	void InstanceRenderer2D::begin()
+	void ShotRenderer2D::begin()
 	{
 		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 		m_Buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 	}
 
-	void InstanceRenderer2D::submit(const Renderable2D* renderable)
+	void ShotRenderer2D::submit(const Renderable2D* renderable)
 	{
 		// This position is used to set the initial position of the RigidBody 
 		// except for this we have no use of it
@@ -138,13 +138,13 @@ namespace fireworks { namespace graphics {
 		}
 	}
 
-	void InstanceRenderer2D::end()
+	void ShotRenderer2D::end()
 	{
 		glUnmapBuffer(GL_ARRAY_BUFFER);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-	void InstanceRenderer2D::flush()
+	void ShotRenderer2D::flush()
 	{
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, m_Texture);

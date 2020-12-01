@@ -11,7 +11,7 @@ static b2World World(gravity);
 namespace fireworks { namespace physics { 
 
 	/// Box2D scaling factors (set these up dynamically using the projections matrix's **Aspect Ratio** and Screen coordinate range)
-	const double M2PX = 16.0, M2PY = 12.0;
+	const double M2PX = 250, M2PY = 150;
 	const double P2MX = (double)1.0 / M2PX, P2MY = (double)1.0 / M2PY;
 
 	/// The type of the rigid body

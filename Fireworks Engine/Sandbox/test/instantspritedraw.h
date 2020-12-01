@@ -27,7 +27,7 @@ public:
 		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
 
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
-		InstanceRenderer2D* instanceRenderer = new InstanceRenderer2D(camera);
+		ShotRenderer2D* instanceRenderer = new ShotRenderer2D(camera);
 		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);
 
 		layer = new Layer(instanceRenderer);

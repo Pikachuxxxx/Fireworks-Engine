@@ -3,7 +3,7 @@
 #include "../renderer2d.h"
 #include "../renderables/renderable2d.h"
 #include "../batchrenderer2d.h"
-#include "../instancerenderer2d.h"
+#include "../ShotRenderer2D.h"
 
 namespace fireworks { namespace graphics {
 
