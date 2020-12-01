@@ -84,7 +84,7 @@ public:
 		Font* fontBig = new Font("./resources/fonts/SpaceQuest.ttf", 36);
 #endif
 
-		InstanceRenderer2D* instancer = new InstanceRenderer2D(camera);
+		ShotRenderer2D* instancer = new ShotRenderer2D(camera);
 		BatchRenderer2D* batcher = new BatchRenderer2D(camera, basicShader);
 		BatchRenderer2D* platform_batcher = new BatchRenderer2D(camera, sickShader);
 

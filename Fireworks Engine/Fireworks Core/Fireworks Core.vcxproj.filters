@@ -93,9 +93,6 @@
     <ClInclude Include="src\graphics\camera2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\instancerenderer2d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -115,6 +112,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\managers\physicsmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\ShotRenderer2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -173,9 +173,6 @@
     <ClCompile Include="src\graphics\camera2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\instancerenderer2d.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\audio\audioclip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -183,6 +180,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\physics\rigidbody2d.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\ShotRenderer2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

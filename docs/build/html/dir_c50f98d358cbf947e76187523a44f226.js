@@ -9,11 +9,11 @@ var dir_c50f98d358cbf947e76187523a44f226 =
     [ "camera2d.h", "camera2d_8h.html", [
       [ "Camera2D", "classfireworks_1_1graphics_1_1_camera2_d.html", "classfireworks_1_1graphics_1_1_camera2_d" ]
     ] ],
-    [ "instancerenderer2d.cpp", "instancerenderer2d_8cpp.html", null ],
-    [ "instancerenderer2d.h", "instancerenderer2d_8h.html", "instancerenderer2d_8h" ],
     [ "renderer2d.h", "renderer2d_8h.html", "renderer2d_8h" ],
     [ "Shader.cpp", "_shader_8cpp.html", null ],
     [ "Shader.h", "_shader_8h.html", "_shader_8h" ],
+    [ "ShotRenderer2D.cpp", "_shot_renderer2_d_8cpp.html", null ],
+    [ "ShotRenderer2D.h", "_shot_renderer2_d_8h.html", "_shot_renderer2_d_8h" ],
     [ "texture.cpp", "texture_8cpp.html", "texture_8cpp" ],
     [ "texture.h", "texture_8h.html", "texture_8h" ],
     [ "Window.cpp", "_window_8cpp.html", "_window_8cpp" ],

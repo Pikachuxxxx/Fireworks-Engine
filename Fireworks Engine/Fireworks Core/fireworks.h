@@ -6,7 +6,7 @@
 
 #include "src/graphics/batchrenderer2d.h"
 #include "src/graphics/camera2d.h"
-#include "src/graphics/instancerenderer2d.h"
+#include "src/graphics/ShotRenderer2D.h"
 #include "src/graphics/renderer2d.h"
 #include "src/graphics/shader.h"
 #include "src/graphics/texture.h"

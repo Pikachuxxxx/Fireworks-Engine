@@ -6,16 +6,16 @@
 
 namespace fireworks { namespace graphics {
 
-#define INSTANCE_RENDERER_MAX_SPRITES    1
-#define INSTANCE_RENDERER_VERTEX_SIZE    sizeof(VertexData)
-#define INSTANCE_RENDERER_SPRITE_SIZE    INSTANCE_RENDERER_VERTEX_SIZE * 4
-#define INSTANCE_RENDERER_BUFFER_SIZE    INSTANCE_RENDERER_SPRITE_SIZE * INSTANCE_RENDERER_MAX_SPRITES
-#define INSTANCE_RENDERER_INDICES_SIZE   INSTANCE_RENDERER_MAX_SPRITES * 6
+#define SHOT_RENDERER_MAX_SPRITES    1
+#define SHOT_RENDERER_VERTEX_SIZE    sizeof(VertexData)
+#define SHOT_RENDERER_SPRITE_SIZE    SHOT_RENDERER_VERTEX_SIZE * 4
+#define SHOT_RENDERER_BUFFER_SIZE    SHOT_RENDERER_SPRITE_SIZE * SHOT_RENDERER_MAX_SPRITES
+#define SHOT_RENDERER_INDICES_SIZE   SHOT_RENDERER_MAX_SPRITES * 6
 
 	/// Renders the renderables on a per draw call basis.
 	/// 
 	/// Uses one draw call per renderable given to the renderer
-	class InstanceRenderer2D : public Renderer2D
+	class ShotRenderer2D : public Renderer2D
 	{
 	private:
 		GLuint          m_VAO;
@@ -28,8 +28,8 @@ namespace fireworks { namespace graphics {
 		/// Creates the renderer from the camera
 		/// 
 		/// @param The camera to which the renderers output will be displayed to
-		InstanceRenderer2D(Camera2D* camera);
-		~InstanceRenderer2D();
+		ShotRenderer2D(Camera2D* camera);
+		~ShotRenderer2D();
 
 		/// Begins the rendering process
 		void begin() override;
