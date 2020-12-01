@@ -2,9 +2,9 @@
 
 namespace fireworks { namespace audio {
 
-	ALboolean AudioClip::m_g_bEAX = alIsExtensionPresent("EAX2.0");
-	ALCdevice* AudioClip::m_Device = alcOpenDevice(NULL);
-	ALCcontext* AudioClip::m_Context = alcCreateContext(m_Device, NULL);
+	ALboolean AudioClip::s_g_bEAX = alIsExtensionPresent("EAX2.0");
+	ALCdevice* AudioClip::s_Device = alcOpenDevice(NULL);
+	ALCcontext* AudioClip::s_Context = alcCreateContext(m_Device, NULL);
 
 	AudioClip::AudioClip(const std::string& filePath)
 		: gain(0), pitch(0), m_FilePath(filePath), m_DidPlayOnce(false)

@@ -20,6 +20,10 @@ namespace fireworks { namespace audio {
 		/// Sets the pitch of the audio source.
 		int					pitch;
 	private:
+        static ALboolean	s_g_bEAX;
+        static ALCdevice*	s_Device;
+        static ALCcontext*	s_Context;
+        
 		std::string			m_FilePath;
 		const char*			m_Data;
 		utils::WavLoader	m_WavLoader;
@@ -29,18 +33,15 @@ namespace fireworks { namespace audio {
 		std::uint32_t		m_BitsPerSecond;
 		std::uint32_t		m_Size;
 
-		static ALboolean	m_g_bEAX;
-		static ALCdevice*	m_Device;
-		static ALCcontext*	m_Context;
 		ALuint				m_BufferID;
 		ALuint				m_Source;
 		ALint				m_SourceState;
-		
+
 		bool				m_EnableLooping;
 		bool				m_DidPlayOnce;
 	public:
 		/// Creates a audio clip to play in your application.
-		/// 
+		///
 		/// @param filePath The file path of the audio clip
 		/// @note currently only supports .WAV files
 		AudioClip(const std::string& filePath);
@@ -52,7 +53,7 @@ namespace fireworks { namespace audio {
 		void Pause();
 		/// Stop a Source
 		void Stop();
-		/// Rewind a Source (set playback position to beginning) 
+		/// Rewind a Source (set playback position to beginning)
 		void Replay();
 		/// Play the Source Once in any loop
 		void PlayOnce();
@@ -62,7 +63,7 @@ namespace fireworks { namespace audio {
 		void Loop();
 
 		/// Gets the audio format of the audio clip
-		/// 
+		///
 		/// @note formats include 8-bit mono/stereo or 16-bit mono/stereo
 		inline std::uint32_t getAudioFormat() const { return m_AudioFormat; }
 		/// Gets the sample rate of the audio clip
