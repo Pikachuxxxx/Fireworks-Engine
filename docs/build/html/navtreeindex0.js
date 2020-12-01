@@ -1,9 +1,17 @@
 var NAVTREEINDEX0 =
 {
-"_shader_8cpp.html":[2,0,1,0,0,2,10],
-"_shader_8h.html":[2,0,1,0,0,2,11],
-"_shader_8h.html#abcde84ea0ef5f934384e4620f092c85a":[2,0,1,0,0,2,11,1],
-"_shader_8h_source.html":[2,0,1,0,0,2,11],
+"_shader_8cpp.html":[2,0,1,0,0,2,8],
+"_shader_8h.html":[2,0,1,0,0,2,9],
+"_shader_8h.html#abcde84ea0ef5f934384e4620f092c85a":[2,0,1,0,0,2,9,1],
+"_shader_8h_source.html":[2,0,1,0,0,2,9],
+"_shot_renderer2_d_8cpp.html":[2,0,1,0,0,2,10],
+"_shot_renderer2_d_8h.html":[2,0,1,0,0,2,11],
+"_shot_renderer2_d_8h.html#a0b8a7cbd3fd98be025a0cde4ba46161d":[2,0,1,0,0,2,11,3],
+"_shot_renderer2_d_8h.html#a0bf22fa9307d41aaa61ba5ddccddd7a1":[2,0,1,0,0,2,11,4],
+"_shot_renderer2_d_8h.html#a1f7a710397b069fe86649a1e0378428b":[2,0,1,0,0,2,11,2],
+"_shot_renderer2_d_8h.html#ac72e85d678b5b66510734509072cdc98":[2,0,1,0,0,2,11,1],
+"_shot_renderer2_d_8h.html#af449303af17fa5a87add6a9e7b8a1d45":[2,0,1,0,0,2,11,5],
+"_shot_renderer2_d_8h_source.html":[2,0,1,0,0,2,11],
 "_window_8cpp.html":[2,0,1,0,0,2,14],
 "_window_8cpp.html#a566eae26792cacc900d69c0f4e59b79d":[2,0,1,0,0,2,14,0],
 "_window_8cpp.html#a722dfb8f14773ffacee894d165f904b0":[2,0,1,0,0,2,14,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX0 =
 "classfireworks_1_1graphics_1_1_camera2_d.html#a54021e83cf81dc60cb9b6170e31b525a":[1,0,0,2,2,4],
 "classfireworks_1_1graphics_1_1_camera2_d.html#ace70073012a79c2a8c981036c3163ffe":[1,0,0,2,2,8],
 "classfireworks_1_1graphics_1_1_camera2_d.html#ae946dcbfdffa576cfa971a2d20e36abf":[1,0,0,2,2,3],
-"classfireworks_1_1graphics_1_1_camera2_d.html#aeaac0e7ffdc5114f49f4d811db3cbc94":[1,0,0,2,2,6],
-"classfireworks_1_1graphics_1_1_camera2_d.html#aec5197251e64a846387e1f3a049950c0":[1,0,0,2,2,5],
-"classfireworks_1_1graphics_1_1_frame_buffer.html":[1,0,0,2,5],
-"classfireworks_1_1graphics_1_1_frame_buffer.html#a2a4de9c8ebcb289fd2d895b947727f78":[1,0,0,2,5,1],
-"classfireworks_1_1graphics_1_1_frame_buffer.html#a840ee8917a9a25b6bc5d2a058773e220":[1,0,0,2,5,2],
-"classfireworks_1_1graphics_1_1_frame_buffer.html#a86d5b12b5751c7cc4252887ef57b6399":[1,0,0,2,5,4],
-"classfireworks_1_1graphics_1_1_frame_buffer.html#ab773593ee720138d4b78fc45ee25d694":[1,0,0,2,5,0],
-"classfireworks_1_1graphics_1_1_frame_buffer.html#af6b93a50831f12ce4ee45efa01866ed6":[1,0,0,2,5,3],
-"classfireworks_1_1graphics_1_1_group.html":[1,0,0,2,6]
+"classfireworks_1_1graphics_1_1_camera2_d.html#aeaac0e7ffdc5114f49f4d811db3cbc94":[1,0,0,2,2,6]
 };
