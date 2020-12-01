@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <unordered_map>
 // GLEW
 #define GLEW_STATIC
 #include <GL/glew.h>
@@ -23,9 +24,11 @@ namespace fireworks { namespace graphics {
         const char* m_VertPath;
         /// Path to the fragment shader file
         const char* m_FragPath;
+    private:
+        std::unordered_map<std::string, GLint> m_ShaderLocationCache;
     public:
         /// Creates the shader by taking in the vertex and fragment shader files
-        /// 
+        ///
         /// @param vertexPath The path to the vertex shader file
 		/// @param fragmentPath The path to the fragment shader file
         Shader(const char* vertexPath, const char* fragmentPath);
@@ -43,14 +46,14 @@ namespace fireworks { namespace graphics {
 
         /// Enables the shader
         void enable();
-		/// Disables the shader 
+		/// Disables the shader
         void disable();
 
         /// Gets the shaders Program
         inline GLint getShaderProgram() const { return m_ShaderID; }
     private:
         GLuint load();
-        GLint getUniformLocation(const GLchar* name);
+        GLint getUniformLocation(const std::string& name);
     };
 
 } }
