@@ -35,7 +35,12 @@ Basically a HelloWorld but this time it's for an entire game engine.
 
 [![Stargazers repo roster for @Pikachuxxxx/Fireworks-Engine](https://reporoster.com/stars/Pikachuxxxx/Fireworks-Engine)](https://github.com/Pikachuxxxx/Fireworks-Engine/stargazers)
 
-If you like this project, please consider starring it on GitHub and Contribute code for the development.
+#### If you like this project, please consider starring it on GitHub and Contribute code for the development.
+
+<p>
+<h4>Do you love me even more ? </h4> <a href="https://ko-fi.com/pikachuxxx"> <img src="https://github.com/Pikachuxxxx/Pikachuxxxx/blob/master/kofi1.png" width="200">
+</a>
+</p>
 
 ### Ludum Dare 47
 - Checkout branch [LD47](https://github.com/Pikachuxxxx/Fireworks-Engine/tree/LD47/Fireworks%20Engine/LD47) for my [ludum dare submissoin](https://ldjam.com/events/ludum-dare/47/one-for-an-era) using fireworks engine, a lot of experimental features were added during the jam that will soon be integrated into the engine.
