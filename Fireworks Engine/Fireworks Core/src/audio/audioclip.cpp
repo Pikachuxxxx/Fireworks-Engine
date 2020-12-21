@@ -4,7 +4,7 @@ namespace fireworks { namespace audio {
 
 	ALboolean AudioClip::s_g_bEAX = alIsExtensionPresent("EAX2.0");
 	ALCdevice* AudioClip::s_Device = alcOpenDevice(NULL);
-	ALCcontext* AudioClip::s_Context = alcCreateContext(m_Device, NULL);
+	ALCcontext* AudioClip::s_Context = alcCreateContext(s_Device, NULL);
 
 	AudioClip::AudioClip(const std::string& filePath)
 		: gain(0), pitch(0), m_FilePath(filePath), m_DidPlayOnce(false)
@@ -18,8 +18,8 @@ namespace fireworks { namespace audio {
 		alDeleteSources(1, &m_Source);
 		alDeleteBuffers(1, &m_BufferID);
 
-		alcDestroyContext(m_Context);
-		alcCloseDevice(m_Device);
+		alcDestroyContext(s_Context);
+		alcCloseDevice(s_Device);
 		delete[] m_Data;
 	}
 
@@ -74,9 +74,9 @@ namespace fireworks { namespace audio {
 
 	void AudioClip::init()
 	{
-		if (m_Device)
+		if (s_Device)
 		{
-			alcMakeContextCurrent(m_Context);
+			alcMakeContextCurrent(s_Context);
 		}
 		else
 		{

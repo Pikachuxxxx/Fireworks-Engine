@@ -461,11 +461,14 @@
     <ClInclude Include="test\EditorGUI.h" />
     <ClInclude Include="test\instantspritedraw.h" />
     <ClInclude Include="test\phyTest.h" />
+    <ClInclude Include="test\scene3DTest.h" />
     <ClInclude Include="test\testFBO.h" />
     <ClInclude Include="test\testGUI.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\fade.frag" />
+    <None Include="shaders\mesh.frag" />
+    <None Include="shaders\mesh.vert" />
     <None Include="Test Dependencies\glm\detail\func_common.inl" />
     <None Include="Test Dependencies\glm\detail\func_common_simd.inl" />
     <None Include="Test Dependencies\glm\detail\func_exponential.inl" />

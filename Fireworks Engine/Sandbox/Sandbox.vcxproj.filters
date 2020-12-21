@@ -965,6 +965,9 @@
     <ClInclude Include="test\EditorGUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\scene3DTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Test Dependencies\glm\detail\func_common.inl">
@@ -1376,5 +1379,7 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="shaders\fade.frag" />
+    <None Include="shaders\mesh.vert" />
+    <None Include="shaders\mesh.frag" />
   </ItemGroup>
 </Project>

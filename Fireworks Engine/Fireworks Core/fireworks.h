@@ -5,9 +5,12 @@
 #include "src/components/component.h"
 
 #include "src/graphics/batchrenderer2d.h"
+#include "src/graphics/batchrenderer3d.h"
 #include "src/graphics/camera2d.h"
 #include "src/graphics/ShotRenderer2D.h"
 #include "src/graphics/renderer2d.h"
+#include "src/graphics/renderer3d.h"
+#include "src/graphics/scene.h"
 #include "src/graphics/shader.h"
 #include "src/graphics/texture.h"
 #include "src/graphics/window.h"
@@ -23,6 +26,7 @@
 #include "src/graphics/renderables/label.h"
 #include "src/graphics/renderables/sprite.h"
 #include "src/graphics/renderables/renderable2d.h"
+#include "src/graphics/renderables/renderable3d.h"
 
 #include "src/managers/physicsmanager.h"
 
@@ -37,11 +41,11 @@
 namespace fireworks {
 
 	using namespace audio;
+	using namespace components;
     using namespace graphics;
     using namespace maths;
-    using namespace utils;
-	using namespace components;
 	using namespace physics;
+    using namespace utils;
 
     /// The Game class to use the Fireworks Engine.
     /// 
