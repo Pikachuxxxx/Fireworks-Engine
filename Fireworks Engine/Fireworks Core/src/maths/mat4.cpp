@@ -224,22 +224,24 @@ namespace fireworks { namespace maths {
         return result;
     }
 
+    // https://solarianprogrammer.com/2013/05/22/opengl-101-matrices-projection-view-model/
     mat4 mat4::perspective(float fov, float aspectRatio, float near , float far)
     {
         mat4 result(1.0f);
 
-        float q = 1.0f / tan(toRadians(fov * 0.5f));
-        float a = q / aspectRatio;
+        float top = near * tan((M_PI / 180.0f) * (fov / 2.0f));
+        float bottom = -top;
+        float right = top * aspectRatio;
+        float left = -right;
 
-        float b = (near + far) / (near - far);
-        float c = (2.0f * near * far) / (near - far);
-
-        result.elements[0 + 0 * 4] = a;
-        result.elements[1 + 1 * 4] = q;
-        result.elements[2 + 2 * 4] = b;
-        result.elements[3 + 2 * 4] = -1.0f;
-        result.elements[2 + 3 * 4] = c;
+        result.elements[0 + 0 * 4] = (2.0f * near) / (right - left);    // Wrong value in contrast to GLM::projection matrix
+        result.elements[1 + 1 * 4] = (2.0f * near) / (top - bottom);    // Wrong value in contrast to GLM::projection matrix
+        result.elements[2 + 2 * 4] = -(far + near) / (far - near);
         result.elements[3 + 3 * 4] = 0.0f;
+
+        result.elements[0 + 2 * 4] = (right + left) / (right - left);
+        result.elements[2 + 3 * 4] = -(2.0f * far * near) / (far - near);
+        result.elements[3 + 2 * 4] = -1.0f;
 
         return result;
     }
