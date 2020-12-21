@@ -318,7 +318,7 @@ public:
 				idx = i;
 				break;
 			}
-		}
+		}\ 
 		if (idx >= 0)
 		{
 			slurps.erase(slurps.begin() + idx);

@@ -167,6 +167,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\scene.h" />
+    <ClInclude Include="src\graphics\batchrenderer3d.h" />
+    <ClInclude Include="src\graphics\perspectivecamera.h" />
     <ClInclude Include="ext\gltext.h" />
     <ClInclude Include="fireworks.h" />
     <ClInclude Include="src\audio\audioclip.h" />
@@ -179,6 +182,8 @@
     <ClInclude Include="src\graphics\buffers\renderbuffer.h" />
     <ClInclude Include="src\graphics\buffers\vertexarray.h" />
     <ClInclude Include="src\graphics\camera2d.h" />
+    <ClInclude Include="src\graphics\renderables\renderable3d.h" />
+    <ClInclude Include="src\graphics\renderer3d.h" />
     <ClInclude Include="src\graphics\ShotRenderer2D.h" />
     <ClInclude Include="src\graphics\layers\group.h" />
     <ClInclude Include="src\graphics\layers\layer.h" />
@@ -203,6 +208,9 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\scene.cpp" />
+    <ClCompile Include="src\graphics\batchrenderer3d.cpp" />
+    <ClCompile Include="src\graphics\perspectivecamera.cpp" />
     <ClCompile Include="src\audio\audioclip.cpp" />
     <ClCompile Include="src\components\component.cpp" />
     <ClCompile Include="src\graphics\batchrenderer2d.cpp" />

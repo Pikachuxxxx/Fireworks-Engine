@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "test\phyTest.h"
+#include "test/scene3DTest.h"
 
 int main()
 {
-    PhyTest game;
+    Scene3DTest game;
     game.start();
     return 0;
 }

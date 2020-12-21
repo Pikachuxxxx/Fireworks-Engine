@@ -7,12 +7,12 @@
 
 namespace fireworks { namespace maths {
 
-	inline float toRadians(float degrees) {
-		return degrees * M_PI / 180.0f;
+	inline double toRadians(float degrees) {
+		return (double)degrees * M_PI / 180.0f;
 	}
 
-	inline float toDegrees(float radians) {
-		return (float)radians * 180.0f / M_PI;
+	inline double toDegrees(float radians) {
+		return (double)radians * 180.0f / M_PI;
 	}
 
     template <class T>

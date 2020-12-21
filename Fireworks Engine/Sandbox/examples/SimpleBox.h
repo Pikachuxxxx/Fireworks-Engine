@@ -26,6 +26,7 @@ public:
         window = createWindow("Simple Box Example : Fireworks Engine", 800, 600);
         // Initialize the Camera and set the Projection Matrix
         camera = new Camera2D(mat4::orthographic(-16.0f, 16.0f, -12.0f, 12.0f, -1.0f, 1.0f));
+        //camera = new Camera2D(mat4::perspective(45.0f, 1.33f, 0.1f, 100.0f));
 
         // Create the Renderer using a shader and pass the cam onto which you wish to render
         Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
