@@ -49,7 +49,7 @@ Basically a HelloWorld but this time it's for an entire game engine.
 
 Follow the public [Trello Board](https://trello.com/b/IhA33t9V/fireworks-engine) for reature request and current development status.
 
-Currently working on Event system and adding more diversity to the existing API.
+Currently working on Core 3D rendering and extending the API.
 
 Also see : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/status/1300449455733239808)
 
@@ -70,6 +70,7 @@ Also see : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/
 - 2D orthographic camera 
 - Suppports 2D and 3D Audio with an extensive API (OpenAL backend) (currenlty only reads .wav files)
 - Component System (currently only has Rigidbody2D component)
+- Basic primitive 3D Rendering using Batch rendering.
 
 #
 ### Building
@@ -167,13 +168,13 @@ int main()
 - [x] TTF Font Rendering and font properties(position, color etc.)
 - [x] 2D Audio (OpenAL backend)
 - [x] Physics2D component (box2d physics engine integration)
-- Better and customisable font rendering 
-- Audio system
+- [x] Better and customisable font rendering 
+- [x] Audio system
+- [x] 3D rendering + BatchRenderer3D
+- [x] Camera 3D (Freefly, FPS, perspective etc.)
 - Materials and Lights (2D and 3D)
-- Event system
-- 3D rendering + BatchRenderer3D
-- Camera 3D
 - 2D + 3D primitive drawing utility function 
+- Event system
 - 3D Physics 
 - ECS - entity component system 
 - Occlusion Culling
