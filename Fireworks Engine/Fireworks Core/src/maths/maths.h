@@ -5,6 +5,12 @@
 #include "vec4.h"
 #include "mat4.h"
 
+// GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/string_cast.hpp>
+
 namespace fireworks { namespace maths {
 
 	inline double toRadians(float degrees) {

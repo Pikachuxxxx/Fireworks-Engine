@@ -35,8 +35,10 @@ namespace fireworks { namespace graphics {
 
     enum class Primitive3D
     {
+        Plane,
         Cube,
         UVSphere,   /* UV sphere procedurally generated using rings count on the CPU side */
+        Torus,       /* UV Torus procedurally generated using preferences on the CPU side */
         None        /* If the primitive is none, then use the 3D Model for rendering the renderable*/
     };
 
@@ -62,8 +64,16 @@ namespace fireworks { namespace graphics {
             objectID = ++m_UniqueID;
             setUVDefaults();
         }
-        Renderable3D(Transform transform, maths::vec2 size, maths::vec4 color, Primitive3D primitive3d, Shader* shader)
+
+        Renderable3D(Transform transform, maths::vec4 color, Primitive3D primitive3d, Shader* shader)
             : m_Transform(transform), m_Color(color), m_Primitive3D(primitive3d), shader(shader), m_Texture(nullptr)
+        {
+            objectID = ++m_UniqueID;
+            setUVDefaults();
+        }
+
+        Renderable3D(Transform transform, maths::vec4 color, Primitive3D primitive3d, Shader* shader, Texture* texture)
+            : m_Transform(transform), m_Color(color), m_Primitive3D(primitive3d), shader(shader), m_Texture(texture)
         {
             objectID = ++m_UniqueID;
             shader->enable();
@@ -100,7 +110,19 @@ namespace fireworks { namespace graphics {
         void setUVDefaults()
         {
             int faces;
-            if (m_Primitive3D == Primitive3D::Cube)
+            if (m_Primitive3D == Primitive3D::Plane) /* Same as a Sprite */
+            {
+                faces = 1;
+                // Iterating over each face
+                for (int i = 0; i < faces; i++)
+                {
+                    m_UV.push_back(maths::vec2(0, 0));  // Bottom Left
+                    m_UV.push_back(maths::vec2(0, 4));  // Top Left
+                    m_UV.push_back(maths::vec2(4, 4));  // Top Right
+                    m_UV.push_back(maths::vec2(4, 0));  // Bottom Right
+                }
+            }
+            else if(m_Primitive3D == Primitive3D::Cube)
             {
                 faces = 6;
                 // Iterating over each face
