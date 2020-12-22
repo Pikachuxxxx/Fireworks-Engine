@@ -10,8 +10,8 @@ namespace fireworks { namespace graphics {
         init();
         this->shader->enable();
         glm::mat4 proj = glm::perspective(camera3D->FOV, camera3D->aspectRatio, camera3D->nearClipping, camera3D->farClipping); 
-        std::cout << "GLM Projections matrix is : " << (glm::to_string(proj)) << std::endl;
-        std::cout << "custom projections matrix is : " << camera3D->getProjectionMatrix() << std::endl;
+        //std::cout << "GLM Projections matrix is : " << (glm::to_string(proj)) << std::endl;
+        //std::cout << "custom projections matrix is : " << camera3D->getProjectionMatrix() << std::endl;
         this->shader->setUniformglmMat4("projection", proj);
 
         GLint texIDs[] =
@@ -114,8 +114,47 @@ namespace fireworks { namespace graphics {
         }
 
         // TODO: Query for the primitive and fill the buffer or use the Model<--Mesh to fill the buffer.
+        // TODO: Make sure the vertices are Clockwise generated in case we use front face culling.
         // Here primitive denotes the shape of the renderable to be rendered onto the screen not the actual rendering primitives of the 3D renderable.
-        if(primitive3d == Primitive3D::Cube)
+
+        if (primitive3d == Primitive3D::Plane)
+        {
+             /* 
+              * 3D Plane vs Quad primitive :-
+              * Same as that of a sprite but plane doesn't have any kind of face culling.
+              * A Quad on the other hand would have face culling enabled by default in
+              * contrast to a 3D Plane, which is visible from all sides.
+              * A quad is nothing but a sprite viewed in 3D space with front face culling ON.
+              * It is also a Cube's bottom face.
+              */
+            glDisable(GL_CULL_FACE);
+            m_Buffer->vertex = model * maths::vec3(-(transform.scale.x / 2), 0, (transform.scale.y / 2));
+            m_Buffer->uv = uv[0];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
+
+            m_Buffer->vertex = model * maths::vec3(-(transform.scale.x / 2), 0, -(transform.scale.y / 2));
+            m_Buffer->uv = uv[1];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
+
+            m_Buffer->vertex = model * maths::vec3(-(transform.scale.x / 2) + transform.scale.x, 0, -(transform.scale.y / 2));
+            m_Buffer->uv = uv[2];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
+
+            m_Buffer->vertex = model * maths::vec3(-(transform.scale.x / 2) + transform.scale.x, 0, (transform.scale.y / 2));
+            m_Buffer->uv = uv[3];
+            m_Buffer->tid = ts;
+            m_Buffer->color = color;
+            m_Buffer++;
+
+            m_IndicesCount += 6;
+        }
+        else if(primitive3d == Primitive3D::Cube)
         {            
             // Face 1 : Front face
             m_Buffer->vertex = model * maths::vec3(-(transform.scale.x / 2), -(transform.scale.y / 2),  (transform.scale.z / 2));

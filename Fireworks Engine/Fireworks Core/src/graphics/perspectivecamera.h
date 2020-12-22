@@ -30,7 +30,7 @@ namespace fireworks { namespace graphics {
         const maths::mat4& getViewMatrix() const { return m_ViewMatrix; }
         const maths::mat4& getProjectionMatrix() const { return m_ProjectionsMatrix;}
         const maths::mat4& getViewProjectionsMatrix() const { return m_ViewProjectionMatrix;}
-    private:
+    protected:
         void updateCameraVectors();
         void updateViewMatrix();
         void updateProjectionMatrix();

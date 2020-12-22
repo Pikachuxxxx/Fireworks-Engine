@@ -167,6 +167,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\freeflycamera.h" />
     <ClInclude Include="src\graphics\scene.h" />
     <ClInclude Include="src\graphics\batchrenderer3d.h" />
     <ClInclude Include="src\graphics\perspectivecamera.h" />
@@ -208,6 +209,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\freeflycamera.cpp" />
     <ClCompile Include="src\graphics\scene.cpp" />
     <ClCompile Include="src\graphics\batchrenderer3d.cpp" />
     <ClCompile Include="src\graphics\perspectivecamera.cpp" />
