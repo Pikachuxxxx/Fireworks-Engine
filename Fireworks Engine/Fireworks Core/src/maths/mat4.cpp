@@ -298,13 +298,27 @@ namespace fireworks { namespace maths {
 
 	mat4 mat4::LookAt(const vec3& eye, const vec3& target, const vec3& worldUp)
 	{
-		//vec3 forward    = vec3::normalize(from - to);
-		//vec3 right      = vec3::crossProduct(vec3::normalize(worldUp), forward);
-		//vec3 up         = vec3::crossProduct(forward, right);
+        vec3 forward = vec3::normalize(eye - target);
+        vec3 right = vec3::crossProduct(vec3::normalize(worldUp), forward);
+        vec3 up = vec3::crossProduct(forward, right);
 
         mat4 camToWorld(1.0f);
 
-    
+        camToWorld.elements[0 + 0 * 4] = right.x;
+        camToWorld.elements[1 + 0 * 4] = right.y;
+        camToWorld.elements[2 + 0 * 4] = right.z;
+
+        camToWorld.elements[0 + 1 * 4] = up.x;
+        camToWorld.elements[1 + 1 * 4] = up.y;
+        camToWorld.elements[2 + 1 * 4] = up.z;
+
+        camToWorld.elements[0 + 2 * 4] = forward.x;
+        camToWorld.elements[1 + 2 * 4] = forward.y;
+        camToWorld.elements[2 + 2 * 4] = forward.z;
+
+        camToWorld.elements[0 + 3 * 4] = eye.x;
+        camToWorld.elements[1 + 3 * 4] = eye.y;
+        camToWorld.elements[2 + 3 * 4] = eye.z;
 
         return camToWorld;
 	}

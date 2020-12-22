@@ -24,10 +24,8 @@ namespace fireworks { namespace utils {
             m_Start = HighResolutionClock::now();
         }
 
-		/// The completion time in milli seconds since the last frame was renderer.
-		/// 
-		/// Basically gives the time taken in between rendering two frames in milliseconds
-        float deltaTime()
+		/// The completion time in milli seconds since the first frame was renderer.
+        float elapsedTime()
         {
             return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now() - m_Start).count() / 1000.0f;
         }

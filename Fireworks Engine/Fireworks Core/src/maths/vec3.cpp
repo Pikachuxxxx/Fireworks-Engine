@@ -84,6 +84,29 @@ namespace fireworks { namespace maths {
         return left.divide(right);
     }
 
+    // TODO: Template these overloads
+    /*****************************************************/
+    vec3 operator+(vec3 left, const float& right)
+    {
+        return left.add(vec3(right, right, right));
+    }
+
+    vec3 operator-(vec3 left, const float& right)
+    {
+        return left.subtract(vec3(right, right, right));
+    }
+
+    vec3 operator*(vec3 left, const float& right)
+    {
+        return left.mutiply(vec3(right, right, right));
+    }
+
+    vec3 operator/(vec3 left, const float& right)
+    {
+        return left.divide(vec3(right, right, right));
+    }
+    /*****************************************************/
+
     bool vec3::operator==(const vec3& other)
     {
         return x == other.x && y == other.y && z == other.z;

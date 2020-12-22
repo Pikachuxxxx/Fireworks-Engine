@@ -2,7 +2,7 @@
 
 namespace fireworks { namespace graphics {
 
-    PerspectiveCamera::PerspectiveCamera(maths::vec3 position /*= maths::vec3(0.0f, 0.0f, 0.0f)*/, maths::vec3 worldUp /*= maths::vec3(0.0f, 1.0f, 0.0f)*/, float aspectRatio /*= 1.0f*/, float fov /*= 60.0f*/)
+    PerspectiveCamera::PerspectiveCamera(maths::vec3 position /*= maths::vec3(0.0f, 0.0f, 0.0f)*/, maths::vec3 worldUp /*= maths::vec3(0.0f, 1.0f, 0.0f)*/, float aspectRatio /*= 1.0f*/, float fov /*= 45.0f*/)
         : camFront(maths::vec3(0.0f, 0.0f, -1.0f)), nearClipping(0.1f), farClipping(100.0f), FOV(fov), aspectRatio(aspectRatio)
     {
         this->position = position;
@@ -27,6 +27,7 @@ namespace fireworks { namespace graphics {
         // TODO: Re-calculate camFront vector using additional factors or update it in the derived camera  types.
         camRight = maths::vec3::normalize(maths::vec3::crossProduct(camFront, worldUp));
         camUp = maths::vec3::normalize(maths::vec3::crossProduct(camRight, camFront));
+        updateViewMatrix();
     }
 
     void PerspectiveCamera::updateViewMatrix()

@@ -7,11 +7,12 @@
 #include "src/graphics/batchrenderer2d.h"
 #include "src/graphics/batchrenderer3d.h"
 #include "src/graphics/camera2d.h"
-#include "src/graphics/ShotRenderer2D.h"
+#include "src/graphics/freeflycamera.h"
 #include "src/graphics/renderer2d.h"
 #include "src/graphics/renderer3d.h"
 #include "src/graphics/scene.h"
 #include "src/graphics/shader.h"
+#include "src/graphics/ShotRenderer2D.h"
 #include "src/graphics/texture.h"
 #include "src/graphics/window.h"
 
@@ -127,7 +128,7 @@ namespace fireworks {
                 m_Window->clear();
                 World.Step(physicsTick, velocityIterations, positionIterations);
 
-				if (m_Timer->deltaTime() - updateTimer > updateTick)
+				if (m_Timer->elapsedTime() - updateTimer > updateTick)
 				{
 					update();
 					updates++;
@@ -136,7 +137,7 @@ namespace fireworks {
                 frames++;
 				render();
                 m_Window->update();
-                if(m_Timer->deltaTime() - timer > 1.0f)
+                if(m_Timer->elapsedTime() - timer > 1.0f)
                 {
                     timer += 1.0f;
                     m_FramesPerSecond = frames;

@@ -79,7 +79,7 @@ namespace fireworks { namespace graphics {
 				m_CurrentFrameRate = 0.0;
 				m_AnimTimer->reset();
 			}
-			m_CurrentFrameRate += m_AnimTimer->deltaTime();
+			m_CurrentFrameRate += m_AnimTimer->elapsedTime();
 		}
 		else if (animType == SpriteAnimationType::REVERSE)
 		{
@@ -93,7 +93,7 @@ namespace fireworks { namespace graphics {
 				m_CurrentFrameRate = 0.0;
 				m_AnimTimer->reset();
 			}
-			m_CurrentFrameRate += m_AnimTimer->deltaTime();
+			m_CurrentFrameRate += m_AnimTimer->elapsedTime();
 		}
 		else if (animType == SpriteAnimationType::PING_PONG)
 		{
@@ -120,7 +120,7 @@ namespace fireworks { namespace graphics {
 				m_CurrentFrameRate = 0.0;
 				m_AnimTimer->reset();
 			}
-			m_CurrentFrameRate += m_AnimTimer->deltaTime();
+			m_CurrentFrameRate += m_AnimTimer->elapsedTime();
 		}
 	}
 

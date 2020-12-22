@@ -5,6 +5,7 @@
 
 namespace fireworks { namespace maths {
 
+    // TODO: Template the vec3 to take any data type and also it's operators
     struct vec3
     {
         float x, y, z;
@@ -37,6 +38,12 @@ namespace fireworks { namespace maths {
         vec3& operator-=(const vec3& other);
         vec3& operator*=(const vec3& other);
         vec3& operator/=(const vec3& other);
+
+        // TODO: Template these to work with integers as well
+        friend vec3 operator+(vec3 left, const float& right);
+        friend vec3 operator-(vec3 left, const float& right);
+        friend vec3 operator*(vec3 left, const float& right);
+        friend vec3 operator/(vec3 left, const float& right);
 
         friend std::ostream& operator<<(std::ostream& stream, const vec3& vector);
     };
