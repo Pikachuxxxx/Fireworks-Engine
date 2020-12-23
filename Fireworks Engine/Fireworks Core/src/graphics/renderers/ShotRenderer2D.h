@@ -1,8 +1,8 @@
 #pragma once
 
-#include "renderables/renderable2d.h"
+#include "../renderables/renderable2d.h"
 #include "renderer2d.h"
-#include "../components/component.h"
+#include "../../components/component.h"
 
 namespace fireworks { namespace graphics {
 

@@ -27,6 +27,7 @@ namespace fireworks { namespace graphics {
         updateCameraVectors();
     }
 
+    // TODO: Fix this
     void FreeFlyCamera::processMouseMovement(float Xoffset, float Yoffset, bool constrainPitch /*= true*/)
     {
         Xoffset *= this->MouseSensitivity;

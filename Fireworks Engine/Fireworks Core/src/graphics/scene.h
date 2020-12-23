@@ -1,8 +1,9 @@
 #pragma once
 
 #include "renderables/renderable3d.h"
-#include "renderer3d.h"
-#include "batchrenderer3d.h"
+#include "renderers/renderer3d.h"
+#include "renderers/batchrenderer3d.h"
+#include "renderers/shotrenderer3d.h"
 
 namespace fireworks { namespace graphics {
 

@@ -225,6 +225,7 @@ namespace fireworks { namespace maths {
     }
 
     // https://solarianprogrammer.com/2013/05/22/opengl-101-matrices-projection-view-model/
+    // TODO: Fix the calculation of perspective matrix values
     mat4 mat4::perspective(float fov, float aspectRatio, float near , float far)
     {
         mat4 result(1.0f);

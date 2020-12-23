@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../renderer2d.h"
+#include "../renderers/renderer2d.h"
+#include "../renderers/batchrenderer2d.h"
+#include "../renderers/ShotRenderer2D.h"
 #include "../renderables/renderable2d.h"
-#include "../batchrenderer2d.h"
-#include "../ShotRenderer2D.h"
 
 namespace fireworks { namespace graphics {
 

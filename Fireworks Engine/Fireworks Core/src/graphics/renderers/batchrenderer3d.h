@@ -1,7 +1,7 @@
 #pragma once
 
 #include "renderer3d.h"
-#include "renderables/renderable3d.h"
+#include "../renderables/renderable3d.h"
 
 // GLM
 #include <glm/glm.hpp>
@@ -10,13 +10,14 @@
 #include <glm/gtx/string_cast.hpp>
 
 namespace fireworks { namespace graphics {
-   
-#define RENDERER3D_MAX_PRIMITIVES       10000
+
+// TODO: Rename these to more understandable and meaningful names
+#define RENDERER3D_MAX_PRIMITIVES       200
 #define RENDERER3D_VERTEX_SIZE          sizeof(VertexData3D)
 #define RENDERER3D_DEFAULT_FACES        6
-#define RENDERER3D_PRIMITIVE_SIZE       RENDERER3D_VERTEX_SIZE      * RENDERER3D_DEFAULT_FACES * 4
-#define RENDERER3D_BUFFER_SIZE          RENDERER3D_PRIMITIVE_SIZE   * RENDERER3D_MAX_PRIMITIVES
-#define RENDERER3D_INDICES_SIZE         RENDERER3D_MAX_PRIMITIVES   * RENDERER3D_DEFAULT_FACES * 6
+#define RENDERER3D_PRIMITIVE_SIZE       RENDERER3D_VERTEX_SIZE    * RENDERER3D_DEFAULT_FACES * 4
+#define RENDERER3D_BUFFER_SIZE          RENDERER3D_PRIMITIVE_SIZE * RENDERER3D_MAX_PRIMITIVES
+#define RENDERER3D_INDICES_SIZE         RENDERER3D_MAX_PRIMITIVES * RENDERER3D_DEFAULT_FACES * 6
 
     class BatchRenderer3D : public Renderer3D
     {
