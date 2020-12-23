@@ -2,12 +2,12 @@
 
 #include <cstddef>
 
-#include "renderables/renderable2d.h"
+#include "../renderables/renderable2d.h"
 #include "renderer2d.h"
 
 // #include <FTGL/ftgl.h>
 #define GLT_IMPLEMENTATION
-#include "../../ext/gltext.h"
+#include "../../../ext/gltext.h"
 
 namespace fireworks { namespace graphics {
 

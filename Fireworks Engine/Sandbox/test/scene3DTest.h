@@ -27,13 +27,16 @@ public:
         Texture* testTex = new Texture(".\\resources\\box.jpg");
         Texture* planeTexture = new Texture(".\\resources\\orange_grid_512.png");
         Renderable3D* cube = new Renderable3D(cubeTransform, vec4(1, 0, 0, 1), Primitive3D::Cube, meshShader, testTex);
-        Renderable3D* plane = new Renderable3D(planeTransfrom, vec4(1, 0, 1, 1), Primitive3D::Plane, meshShader, planeTexture);
+        //Renderable3D* plane = new Renderable3D(planeTransfrom, vec4(1, 0, 1, 1), Primitive3D::Plane, meshShader, planeTexture);
+
+        Mesh* planeMesh = new Mesh(cubeTransform, Primitive3D::Plane, meshShader, planeTexture);
+        Mesh* planeMesh2 = new Mesh(planeTransfrom, Primitive3D::Plane, meshShader, planeTexture);
         Font font(".\\resources\\fonts\\FiraCode-Light.ttf", 20);
 
         fpsLabel = new Label("FPS : ", vec3(25, 525, 0), vec3(1, 1, 1), font);
 
-        scene->add(cube);
-        scene->add(plane);
+        scene->add(planeMesh);
+        scene->add(planeMesh2);
     }
 
     ~Scene3DTest()
@@ -65,7 +68,7 @@ public:
         deltaTime = (1.0 / getFPS());
         fpsLabel->text = "FPS : " + std::to_string(getFPS());
         fpsLabel->renderText();
-        glEnable(GL_DEPTH_TEST);
+
         window->backgroundColor = vec4(0.101f, 0.101f, 0.101f, 1.0f);
         if (window->isKeyHeld(Keys::UP))
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::FORWARD, deltaTime);
