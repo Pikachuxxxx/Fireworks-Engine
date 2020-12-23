@@ -4,15 +4,11 @@
 
 #include "src/components/component.h"
 
-#include "src/graphics/batchrenderer2d.h"
-#include "src/graphics/batchrenderer3d.h"
 #include "src/graphics/camera2d.h"
 #include "src/graphics/freeflycamera.h"
-#include "src/graphics/renderer2d.h"
-#include "src/graphics/renderer3d.h"
+#include "src/graphics/mesh.h"
 #include "src/graphics/scene.h"
 #include "src/graphics/shader.h"
-#include "src/graphics/ShotRenderer2D.h"
 #include "src/graphics/texture.h"
 #include "src/graphics/window.h"
 
@@ -28,6 +24,12 @@
 #include "src/graphics/renderables/sprite.h"
 #include "src/graphics/renderables/renderable2d.h"
 #include "src/graphics/renderables/renderable3d.h"
+
+#include "src/graphics/renderers/batchrenderer2d.h"
+#include "src/graphics/renderers/batchrenderer3d.h"
+#include "src/graphics/renderers/renderer2d.h"
+#include "src/graphics/renderers/renderer3d.h"
+#include "src/graphics/renderers/ShotRenderer2D.h"
 
 #include "src/managers/physicsmanager.h"
 

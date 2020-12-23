@@ -167,16 +167,18 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\mesh.h" />
+    <ClInclude Include="src\graphics\renderers\shotrenderer3d.h" />
     <ClInclude Include="src\graphics\freeflycamera.h" />
     <ClInclude Include="src\graphics\scene.h" />
-    <ClInclude Include="src\graphics\batchrenderer3d.h" />
+    <ClInclude Include="src\graphics\renderers\batchrenderer3d.h" />
     <ClInclude Include="src\graphics\perspectivecamera.h" />
     <ClInclude Include="ext\gltext.h" />
     <ClInclude Include="fireworks.h" />
     <ClInclude Include="src\audio\audioclip.h" />
     <ClInclude Include="src\components\component.h" />
     <ClInclude Include="src\components\components.h" />
-    <ClInclude Include="src\graphics\batchrenderer2d.h" />
+    <ClInclude Include="src\graphics\renderers\batchrenderer2d.h" />
     <ClInclude Include="src\graphics\buffers\buffer.h" />
     <ClInclude Include="src\graphics\buffers\framebuffer.h" />
     <ClInclude Include="src\graphics\buffers\indexbuffer.h" />
@@ -184,14 +186,14 @@
     <ClInclude Include="src\graphics\buffers\vertexarray.h" />
     <ClInclude Include="src\graphics\camera2d.h" />
     <ClInclude Include="src\graphics\renderables\renderable3d.h" />
-    <ClInclude Include="src\graphics\renderer3d.h" />
-    <ClInclude Include="src\graphics\ShotRenderer2D.h" />
+    <ClInclude Include="src\graphics\renderers\renderer3d.h" />
+    <ClInclude Include="src\graphics\renderers\ShotRenderer2D.h" />
     <ClInclude Include="src\graphics\layers\group.h" />
     <ClInclude Include="src\graphics\layers\layer.h" />
     <ClInclude Include="src\graphics\renderables\label.h" />
     <ClInclude Include="src\graphics\renderables\renderable2d.h" />
     <ClInclude Include="src\graphics\renderables\sprite.h" />
-    <ClInclude Include="src\graphics\renderer2d.h" />
+    <ClInclude Include="src\graphics\renderers\renderer2d.h" />
     <ClInclude Include="src\graphics\Shader.h" />
     <ClInclude Include="src\graphics\texture.h" />
     <ClInclude Include="src\graphics\Window.h" />
@@ -209,20 +211,22 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\mesh.cpp" />
+    <ClCompile Include="src\graphics\renderers\shotrenderer3d.cpp" />
     <ClCompile Include="src\graphics\freeflycamera.cpp" />
     <ClCompile Include="src\graphics\scene.cpp" />
-    <ClCompile Include="src\graphics\batchrenderer3d.cpp" />
+    <ClCompile Include="src\graphics\renderers\batchrenderer3d.cpp" />
     <ClCompile Include="src\graphics\perspectivecamera.cpp" />
     <ClCompile Include="src\audio\audioclip.cpp" />
     <ClCompile Include="src\components\component.cpp" />
-    <ClCompile Include="src\graphics\batchrenderer2d.cpp" />
+    <ClCompile Include="src\graphics\renderers\batchrenderer2d.cpp" />
     <ClCompile Include="src\graphics\buffers\buffer.cpp" />
     <ClCompile Include="src\graphics\buffers\framebuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\indexbuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\renderbuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexarray.cpp" />
     <ClCompile Include="src\graphics\camera2d.cpp" />
-    <ClCompile Include="src\graphics\ShotRenderer2D.cpp" />
+    <ClCompile Include="src\graphics\renderers\ShotRenderer2D.cpp" />
     <ClCompile Include="src\graphics\layers\group.cpp" />
     <ClCompile Include="src\graphics\layers\layer.cpp" />
     <ClCompile Include="src\graphics\renderables\label.cpp" />

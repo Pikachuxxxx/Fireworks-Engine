@@ -5,9 +5,9 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 
-#include "Shader.h"
-#include "../maths/maths.h"
-#include "perspectivecamera.h"
+#include "../Shader.h"
+#include "../../maths/maths.h"
+#include "../perspectivecamera.h"
 
 namespace fireworks { namespace graphics {
 

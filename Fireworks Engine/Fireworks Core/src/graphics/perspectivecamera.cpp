@@ -24,7 +24,6 @@ namespace fireworks { namespace graphics {
 
     void PerspectiveCamera::updateCameraVectors()
     {
-        // TODO: Re-calculate camFront vector using additional factors or update it in the derived camera  types.
         camRight = maths::vec3::normalize(maths::vec3::crossProduct(camFront, worldUp));
         camUp = maths::vec3::normalize(maths::vec3::crossProduct(camRight, camFront));
         updateViewMatrix();
