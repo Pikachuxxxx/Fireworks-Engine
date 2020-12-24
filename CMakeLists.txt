@@ -69,6 +69,10 @@ find_library(BOX2D_LIBRARY
    NAMES box2d
    HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
    )
+find_library(ASSIMP_LIBRARY
+   NAMES assimp assimp-vc142-mtd
+   HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
+   )
 # Adding library include paths
 include_directories(
 	"${CMAKE_SOURCE_DIR}/Dependencies/SOIL/include"
@@ -78,6 +82,7 @@ include_directories(
     "${CMAKE_SOURCE_DIR}/Dependencies/PNG/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/BZIP2"
     "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/include"
+    "${CMAKE_SOURCE_DIR}/Dependencies/Assimp/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/OpenAL/include"
     "${CMAKE_SOURCE_DIR}/Fireworks Engine/Sandbox/Test Dependencies"
     "${CMAKE_SOURCE_DIR}/Fireworks Engine/Fireworks Core/"
@@ -87,7 +92,7 @@ if (APPLE)
 
 # use this for building sandbox
 if(BUILD_SANDBOX_EXEC)
-set(LIBS ${FIREWORKS_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${BOX2D_LIBRARY})
+set(LIBS ${FIREWORKS_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${BOX2D_LIBRARY} ${ASSIMP_LIBRARY})
 endif()
 
 set(FRAMEWORKS ${OPENGL_LIBRARIES} ${PNG_LIBRARIES} ${BZIP2_LIBRARIES})

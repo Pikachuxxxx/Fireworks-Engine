@@ -16,10 +16,17 @@ namespace fireworks { namespace graphics {
     struct VertexData3D
     {
         maths::vec3 vertex;
+        // TODO: Use normals!
         //maths::vec3 normal;
         maths::vec2 uv;
         float       tid;
         maths::vec4 color;
+
+        VertexData3D()
+            : vertex(maths::vec3(0, 0, 0)), uv(maths::vec2(0, 0)), tid(0.0f), color(maths::vec4(1, 0, 1, 1))
+        {
+
+        }
 
         VertexData3D(maths::vec3 vertex, maths::vec2 uv, float texID, maths::vec4 color)
             : vertex(vertex), uv(uv), tid(texID), color(color)
@@ -55,14 +62,14 @@ namespace fireworks { namespace graphics {
     public:
         std::uint32_t                       objectID;
         Shader*                             shader;
+        Texture*                            m_Texture;
     protected:
         Transform                           m_Transform;
         maths::vec4                         m_Color;
         Primitive3D                         m_Primitive3D;
         mutable std::vector<maths::vec2>    m_UV;
-        Texture*                            m_Texture;
-        std::vector<VertexData3D>           vertices;
-        std::vector<GLsizei>                indices;
+        std::vector<VertexData3D>           m_Vertices;
+        std::vector<GLushort>               m_Indices;
     private:
         static std::uint32_t                m_UniqueID;
     public:
@@ -108,15 +115,20 @@ namespace fireworks { namespace graphics {
             renderer->submit(this);
         }
 
+        virtual void flush(Renderer3D* renderer, IndexBuffer* ibo = nullptr) const
+        {
+            renderer->flush(ibo);
+        }
+
         inline const Transform& getTransform() const { return m_Transform; }
         inline const maths::vec4& getColor() const { return m_Color; }
         inline const std::vector<maths::vec2>& getUV() const { return m_UV; }
         inline const GLuint getTID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
         inline const Primitive3D& gerPrimitive() const { return m_Primitive3D; }
-        inline std::vector<VertexData3D> getVerts() const { return vertices; }
-        inline GLuint getVertsSize() const { return vertices.size(); }
-        inline GLsizei getIndicesSize() const { return indices.size(); }
-
+        inline std::vector<VertexData3D> getVerts() const { return m_Vertices; }
+        inline GLuint getVertsSize() const { return m_Vertices.size(); }
+        inline std::vector<GLushort> getInidces() const { return m_Indices; }
+        inline GLsizei getIndicesSize() const { return m_Indices.size(); }
     private:
         void setUVDefaults()
         {

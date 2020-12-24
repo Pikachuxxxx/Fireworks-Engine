@@ -8,12 +8,15 @@ namespace fireworks { namespace graphics {
 
     class Mesh : public Renderable3D
     {
-    public:
-        Mesh(Transform transform, Primitive3D primitive, Shader* shader, Texture* texture = nullptr);
-    protected:
-        Mesh(std::vector<VertexData3D> verts, std::vector<GLuint>normals, std::vector<Texture> texs);
     private:
-        void setupMesh();
+        std::vector<Texture> m_MeshTextures;
+    public:
+        Mesh() {}
+        Mesh(Transform transform, Primitive3D primitive, Shader* shader, Texture* texture = nullptr);
+        Mesh(std::vector<VertexData3D> verts, std::vector<GLushort>indices, std::vector<Texture> texs, Transform transform, Shader* shader);
+    private:
+        void generatePlane();
+        void generateCube();
     };
 
 } }

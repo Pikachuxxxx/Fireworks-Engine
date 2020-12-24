@@ -7,9 +7,10 @@ namespace fireworks { namespace graphics {
     IndexBuffer::IndexBuffer(GLushort* data, GLsizei count)
     : m_Count(count)
     {
+        // TODO!: Fix unexpected crashing (suspected reason: improper dereferencing of IndexBuffer pointer(s))
         glGenBuffers(1, &m_BufferID);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_BufferID);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(GLushort), data, GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(GLushort), data, GL_DYNAMIC_DRAW);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     }
 

@@ -114,9 +114,6 @@
     <ClInclude Include="src\graphics\perspectivecamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\graphics\freeflycamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -135,10 +132,16 @@
     <ClInclude Include="src\graphics\renderers\ShotRenderer2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\renderers\shotrenderer3d.h">
+    <ClInclude Include="src\graphics\mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\mesh.h">
+    <ClInclude Include="src\graphics\model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\scene3d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderers\shotrenderer3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -206,9 +209,6 @@
     <ClCompile Include="src\graphics\perspectivecamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\freeflycamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -221,10 +221,16 @@
     <ClCompile Include="src\graphics\renderers\ShotRenderer2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\renderers\shotrenderer3d.cpp">
+    <ClCompile Include="src\graphics\mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\mesh.cpp">
+    <ClCompile Include="src\graphics\model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\scene3d.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderers\shotrenderer3d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
