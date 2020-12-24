@@ -52,11 +52,6 @@ public:
         Model* model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
         model->getMasterMesh().m_Texture = stTex;
 
-        cubeTransform.position = vec3(4, 0, 0);
-        Model* model_2 = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
-        model_2->getMasterMesh().m_Texture = stTex;
-
-        scene->add(model_2);
         scene->add(model);
     }
 
