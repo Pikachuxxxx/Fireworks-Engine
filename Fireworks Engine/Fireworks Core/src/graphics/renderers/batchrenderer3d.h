@@ -12,7 +12,7 @@
 namespace fireworks { namespace graphics {
 
 // TODO: Rename these to more understandable and meaningful names
-#define RENDERER3D_MAX_PRIMITIVES       200
+#define RENDERER3D_MAX_PRIMITIVES       2000
 #define RENDERER3D_VERTEX_SIZE          sizeof(VertexData3D)
 #define RENDERER3D_DEFAULT_FACES        6
 #define RENDERER3D_PRIMITIVE_SIZE       RENDERER3D_VERTEX_SIZE    * RENDERER3D_DEFAULT_FACES * 4
@@ -32,7 +32,6 @@ namespace fireworks { namespace graphics {
         std::vector<GLuint>     m_TextureSlots;
 
         GLushort cube_indices[RENDERER3D_INDICES_SIZE];
-
     public:
         BatchRenderer3D(PerspectiveCamera* camera3D, Shader* shader);
         ~BatchRenderer3D();
@@ -40,8 +39,8 @@ namespace fireworks { namespace graphics {
         void begin() override;
         void submit(const Renderable3D* renderable) override;
         void end() override;
-        void flush() override;
-    private:
+        void flush(const IndexBuffer* ibo = nullptr) override;
+    protected:
         void init();
     };
 

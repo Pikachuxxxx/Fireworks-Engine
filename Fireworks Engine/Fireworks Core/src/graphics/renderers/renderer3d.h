@@ -8,6 +8,7 @@
 #include "../Shader.h"
 #include "../../maths/maths.h"
 #include "../perspectivecamera.h"
+#include "../buffers/indexbuffer.h"
 
 namespace fireworks { namespace graphics {
 
@@ -19,7 +20,7 @@ namespace fireworks { namespace graphics {
     public:
         /// The camera to which the renderers out will be displayed to
         PerspectiveCamera* m_Camera3D;
-    protected:
+    protected: 
         /// Creates the renderer using the camera
         /// 
         /// @param camera3D The camera to be used with the renderer
@@ -33,7 +34,7 @@ namespace fireworks { namespace graphics {
         /// Ends the submission and prepares the renderer to start drawing 
         virtual void end() {}
         /// Draws the data processed onto the screen
-        virtual void flush() = 0;
+        virtual void flush(const IndexBuffer* ibo = nullptr) = 0;
     };
 
 } }

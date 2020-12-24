@@ -6,7 +6,7 @@ class Scene3DTest : public Fireworks
 {
 private:
     Window* window;
-    Scene* scene;
+    Scene3D* scene;
     FreeFlyCamera* camera3D;
     Shader* meshShader;
     Label* fpsLabel;
@@ -19,24 +19,45 @@ public:
         window = createWindow("3D Scene Testing", 800, 600);
         camera3D = new FreeFlyCamera(vec3(0, 0, -5));
         meshShader = new Shader(".\\shaders\\mesh.vert", ".\\shaders\\mesh.frag");
+        ShotRenderer3D* shot3d = new ShotRenderer3D(camera3D);
         BatchRenderer3D* batch3d = new BatchRenderer3D(camera3D, meshShader);
-        scene = new Scene(batch3d);
-
-        Transform cubeTransform(vec3(0, 0, 0), vec3(0, 45, -20), vec3(2, 2, 2));
-        Transform planeTransfrom(vec3(0, -2, 0), vec3(0, 0, 0), vec3(15, 15, 2));
-        Texture* testTex = new Texture(".\\resources\\box.jpg");
+        scene = new Scene3D(batch3d);
+       
+        Transform cubeTransform(vec3(0, 0, 0), vec3(0, 0, 0), vec3(2, 2, 2));
+        Transform planeTransfrom(vec3(0, -2, 0), vec3(0, 0, 0), vec3(20, 20, 2));
+        Transform anotherTransform(vec3(1, 2, 3), vec3(20, 0, 0));
+        Texture* testTex = new Texture(".\\resources\\texture_01_red.png");
         Texture* planeTexture = new Texture(".\\resources\\orange_grid_512.png");
         Renderable3D* cube = new Renderable3D(cubeTransform, vec4(1, 0, 0, 1), Primitive3D::Cube, meshShader, testTex);
-        //Renderable3D* plane = new Renderable3D(planeTransfrom, vec4(1, 0, 1, 1), Primitive3D::Plane, meshShader, planeTexture);
 
-        Mesh* planeMesh = new Mesh(cubeTransform, Primitive3D::Plane, meshShader, planeTexture);
-        Mesh* planeMesh2 = new Mesh(planeTransfrom, Primitive3D::Plane, meshShader, planeTexture);
+        Mesh* cubeMesh = new Mesh(cubeTransform, Primitive3D::Cube, meshShader, testTex);
+        Mesh* cube_2_Mesh = new Mesh(anotherTransform, Primitive3D::Cube, meshShader, testTex);
+        Mesh* planeMesh = new Mesh(planeTransfrom, Primitive3D::Plane, meshShader, planeTexture);
         Font font(".\\resources\\fonts\\FiraCode-Light.ttf", 20);
 
         fpsLabel = new Label("FPS : ", vec3(25, 525, 0), vec3(1, 1, 1), font);
 
         scene->add(planeMesh);
-        scene->add(planeMesh2);
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::Cube, meshShader, testTex));
+            }
+        }
+
+        Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png");
+
+        Model* model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
+        model->getMasterMesh().m_Texture = stTex;
+
+        cubeTransform.position = vec3(4, 0, 0);
+        Model* model_2 = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
+        model_2->getMasterMesh().m_Texture = stTex;
+
+        scene->add(model_2);
+        scene->add(model);
     }
 
     ~Scene3DTest()

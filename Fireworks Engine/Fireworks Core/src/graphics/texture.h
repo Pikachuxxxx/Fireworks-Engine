@@ -11,8 +11,10 @@ namespace fireworks { namespace graphics {
     /// The class responsible for loading Textures
     class Texture
     {
+    public:
     private:
         std::string m_FileName; // Path to the texture source image
+        std::string m_TypeName;
         GLuint m_TID; // OpenGL Texture ID
         GLsizei m_Width;
         GLsizei m_Height;
@@ -22,7 +24,7 @@ namespace fireworks { namespace graphics {
         /// 
         /// @param path The file path to the image/texture
         /// @warning Currently only supports .png files
-        Texture(const std::string& path);
+        Texture(const std::string& path, const std::string& typeName = "texture_diffuse");
         ~Texture();
 
         /// Binds the texture
@@ -36,6 +38,10 @@ namespace fireworks { namespace graphics {
         inline const unsigned int getHeight() const { return m_Height; }
         /// Gets the ID of the texture
         inline const unsigned int getID() const { return m_TID; }
+        /// Gets the path of the texture
+        inline const std::string getPath() const { return m_FileName; }
+        /// Return the name of the texture's type
+        inline const std::string getTypeName() const { return m_TypeName; }
     private:
         GLuint load();
     };

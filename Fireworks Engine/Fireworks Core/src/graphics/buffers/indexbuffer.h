@@ -27,6 +27,7 @@ namespace fireworks { namespace graphics {
 
         /// Gets the indices count
         inline GLuint getCount() const { return m_Count; }
+        inline GLuint getBuffer() const { return m_BufferID; }
     };
 
 } }

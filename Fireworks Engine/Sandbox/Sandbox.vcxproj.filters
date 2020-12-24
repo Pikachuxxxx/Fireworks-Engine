@@ -39,9 +39,6 @@
     <ClCompile Include="Test Dependencies\glm\detail\glm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\scene3DTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="examples\SimpleBox.h">
