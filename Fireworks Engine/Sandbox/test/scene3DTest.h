@@ -10,6 +10,7 @@ private:
     FreeFlyCamera* camera3D;
     Shader* meshShader;
     Label* fpsLabel;
+    Model* model;
     double deltaTime;
     bool firstMouse = true;
     double lastX = 400.0, lastY = 300.0;
@@ -49,7 +50,7 @@ public:
 
         Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png");
 
-        Model* model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
+        model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
         model->getMasterMesh().m_Texture = stTex;
 
         scene->add(model);
@@ -57,7 +58,7 @@ public:
 
     ~Scene3DTest()
     {
-
+        delete model;
     }
 
     // Runs once per initialization
@@ -96,10 +97,15 @@ public:
         else if (window->isKeyHeld(Keys::S))
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::DOWN, deltaTime);
 
-        if (window->isKeyHeld(Keys::LEFT) || window->isKeyHeld(Keys::A))
+        if (window->isKeyHeld(Keys::A))
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::RIGHT, deltaTime);
-        else if (window->isKeyHeld(Keys::RIGHT) || window->isKeyHeld(Keys::D))
+        else if (window->isKeyHeld(Keys::D))
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::LEFT, deltaTime);
+
+        if (window->isKeyHeld(Keys::RIGHT))
+            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_RIGHT, deltaTime);
+        else if (window->isKeyHeld(Keys::LEFT))
+            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_LEFT, deltaTime);
  
 
         scene->render();

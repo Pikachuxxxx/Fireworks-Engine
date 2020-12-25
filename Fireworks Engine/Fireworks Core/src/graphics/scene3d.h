@@ -22,6 +22,9 @@ namespace fireworks { namespace graphics {
         virtual void render();
 
         inline const std::vector<Renderable3D*>& getRendetables() const { return renderables; }
+    private:
+        void sortOnIBOSimilarity(Renderable3D* renderable);
+
     };
 
 } }

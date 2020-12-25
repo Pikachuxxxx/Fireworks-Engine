@@ -11,7 +11,7 @@ namespace fireworks { namespace graphics {
 
     Model::~Model()
     {
-        //delete modelIBO;
+        delete modelIBO;
     }
 
     void Model::submit(Renderer3D* renderer) const
