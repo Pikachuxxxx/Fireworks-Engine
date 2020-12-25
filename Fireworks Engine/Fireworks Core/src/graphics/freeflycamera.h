@@ -10,7 +10,9 @@ namespace fireworks { namespace graphics {
         LEFT, 
         RIGHT,
         UP, 
-        DOWN
+        DOWN,
+        YAW_LEFT, 
+        YAW_RIGHT
     };
 
     class FreeFlyCamera : public PerspectiveCamera

@@ -11,18 +11,26 @@ namespace fireworks { namespace graphics {
     void FreeFlyCamera::processKeyboardMovement(FreeFlyCameraMoveDirection direction, float deltaTime)
     {
         float velocity = this->MovementSpeed * deltaTime;
+
         if (direction == FreeFlyCameraMoveDirection::FORWARD)
             this->position -= this->camFront * velocity;
         if (direction == FreeFlyCameraMoveDirection::BACKWARD)
             this->position += this->camFront* velocity;
+
         if (direction == FreeFlyCameraMoveDirection::LEFT)
             this->position -= this->camRight * velocity;
         if (direction == FreeFlyCameraMoveDirection::RIGHT)
             this->position += this->camRight * velocity;
+
         if (direction == FreeFlyCameraMoveDirection::UP)
             this->position += this->camUp * velocity;
         if (direction == FreeFlyCameraMoveDirection::DOWN)
             this->position -= this->camUp * velocity;
+
+        if (direction == FreeFlyCameraMoveDirection::YAW_LEFT)
+            processMouseMovement(-1.0f, 0.0f);
+        if(direction == FreeFlyCameraMoveDirection::YAW_RIGHT)
+            processMouseMovement(1.0f, 0.0f);
 
         updateCameraVectors();
     }
@@ -51,7 +59,6 @@ namespace fireworks { namespace graphics {
         front.y = sin(maths::toRadians(this->pitch));
         front.z = sin(maths::toRadians(this->yaw)) * cos(maths::toRadians(this->pitch));
         this->camFront = maths::vec3::normalize(front);
-        std::cout << front << std::endl;
         updateCameraVectors();
     }
 
