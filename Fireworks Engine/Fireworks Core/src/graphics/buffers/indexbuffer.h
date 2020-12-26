@@ -4,6 +4,8 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 
+#include "../../utils/glassert.h"
+
 namespace fireworks { namespace graphics {
 
 	///	Creates Index Buffers.
@@ -27,6 +29,7 @@ namespace fireworks { namespace graphics {
 
         /// Gets the indices count
         inline GLuint getCount() const { return m_Count; }
+        /// Gets the index buffer gl instance
         inline GLuint getBuffer() const { return m_BufferID; }
     };
 

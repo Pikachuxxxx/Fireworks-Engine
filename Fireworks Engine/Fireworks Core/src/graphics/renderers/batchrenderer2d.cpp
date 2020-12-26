@@ -23,36 +23,26 @@ namespace fireworks { namespace graphics {
     {
         delete m_IBO;
         glDeleteBuffers(1, &m_VBO);
-        // TODO: Delete all the textures here (IDK if this works)
-        //const int textures_size = m_TextureSlots.size();
-        //GLuint textures[textures_size];
-        //for(int i = 0; i < textures_size; i++)
-        //{
-        //    textures[i] = m_TextureSlots[i];
-        //}
-        //glDeleteTextures(textures_size, textures);
-
-        // Deleting text
-        // gltDeleteText(m_Text);
+        glDeleteTextures(m_TextureSlots.size(), &(m_TextureSlots)[0]);
     }
 
     void BatchRenderer2D::init()
     {
-        glGenVertexArrays(1, &m_VAO);
-        glGenBuffers(1, &m_VBO);
+        GLCall(glGenVertexArrays(1, &m_VAO));
+        GLCall(glGenBuffers(1, &m_VBO));
 
-        glBindVertexArray(m_VAO);
-        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-        glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
-        glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
-        glEnableVertexAttribArray(SHADER_UV_INDEX);
-        glEnableVertexAttribArray(SHADER_TID_INDEX);
-        glEnableVertexAttribArray(SHADER_COLOR_INDEX);
-        glVertexAttribPointer(SHADER_VERTEX_INDEX,  3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
-        glVertexAttribPointer(SHADER_UV_INDEX,      2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
-        glVertexAttribPointer(SHADER_TID_INDEX,     1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat)));
-        glVertexAttribPointer(SHADER_COLOR_INDEX,   4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat)));
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        GLCall(glBindVertexArray(m_VAO));
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_VBO));
+        GLCall(glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW));
+        GLCall(glEnableVertexAttribArray(SHADER_VERTEX_INDEX));
+        GLCall(glEnableVertexAttribArray(SHADER_UV_INDEX));
+        GLCall(glEnableVertexAttribArray(SHADER_TID_INDEX));
+        GLCall(glEnableVertexAttribArray(SHADER_COLOR_INDEX));
+        GLCall(glVertexAttribPointer(SHADER_VERTEX_INDEX,  3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0));
+        GLCall(glVertexAttribPointer(SHADER_UV_INDEX,      2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat))));
+        GLCall(glVertexAttribPointer(SHADER_TID_INDEX,     1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat))));
+        GLCall(glVertexAttribPointer(SHADER_COLOR_INDEX,   4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat))));
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 
         int offset = 0;
         for(int i = 0; i < RENDERER_INDICES_SIZE; i += 6)
@@ -68,30 +58,14 @@ namespace fireworks { namespace graphics {
             offset += 4; // because each sprite has 4 indices and 6 vertices
         }
 
-		//for (int i = 0; i < RENDERER_INDICES_SIZE; i += 3)
-		//{
-		//	tris_indices[i] = offset + 0;
-		//	tris_indices[i + 1] = offset + 1;
-		//	tris_indices[i + 2] = offset + 2;
-
-		//	offset += 3; // because each tris has 3 indices and 3 vertices
-		//}
-
         m_IBO = new IndexBuffer(quad_indices, RENDERER_INDICES_SIZE);
-		//m_TIBO = new IndexBuffer(tris_indices, RENDERER_INDICES_SIZE);
 
-        glBindVertexArray(0);
-
-        // Initialize glText
-        gltInit();
-
-        // Creating text
-        m_Text = gltCreateText();
+        GLCall(glBindVertexArray(0));
     }
 
     void BatchRenderer2D::begin()
     {
-        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_VBO));
         m_Buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
     }
 
@@ -140,6 +114,7 @@ namespace fireworks { namespace graphics {
         }
         else
         {
+            // TODO: use hex for vertex colors
             // int r = color.x * 255.0f;
             // int g = color.y * 255.0f;
             // int b = color.z * 255.0f;
@@ -179,33 +154,13 @@ namespace fireworks { namespace graphics {
 		else if (primitive == Primitive2D::Triangle)
 		{
             std::cerr << "ERROR::BATCH_RENDERER_2D::Batch Renderer 2D does not support triangle primitive" << std::endl;
-
-			//m_Buffer->vertex = *m_TransformationBack * position;
-			//m_Buffer->uv = uv[0];
-			//m_Buffer->tid = ts;
-			//m_Buffer->color = color;
-			//m_Buffer++;
-
-			//m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + (size.x / 2.0f), position.y + size.y, position.z);
-			//m_Buffer->uv = uv[1];
-			//m_Buffer->tid = ts;
-			//m_Buffer->color = color;
-			//m_Buffer++;
-
-			//m_Buffer->vertex = *m_TransformationBack * maths::vec3(position.x + size.x, position.y, position.z);
-			//m_Buffer->uv = uv[2];
-			//m_Buffer->tid = ts;
-			//m_Buffer->color = color;
-			//m_Buffer++;
-
-			//m_IndicesCount += 3;
 		}
     }
 
     void BatchRenderer2D::end()
     {
-        glUnmapBuffer(GL_ARRAY_BUFFER);
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        GLCall(glUnmapBuffer(GL_ARRAY_BUFFER));
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
     }
 
     void BatchRenderer2D::flush()
@@ -214,16 +169,16 @@ namespace fireworks { namespace graphics {
         m_Shader->setUniformMat4("view", m_Camera2D->getViewMatrix());
         for(int i = 0; i < m_TextureSlots.size(); i++)
         {
-            glActiveTexture(GL_TEXTURE0 + i);
-            glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
+            GLCall(glActiveTexture(GL_TEXTURE0 + i));
+            GLCall(glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]));
         }
-        glBindVertexArray(m_VAO);
+        GLCall(glBindVertexArray(m_VAO));
         m_IBO->bind();
 
-        glDrawElements(GL_TRIANGLES, m_IndicesCount, GL_UNSIGNED_SHORT, NULL);
+        GLCall(glDrawElements(GL_TRIANGLES, m_IndicesCount, GL_UNSIGNED_SHORT, NULL));
 
         m_IBO->unbind();
-        glBindVertexArray(0);
+        GLCall(glBindVertexArray(0));
 
         m_IndicesCount = 0;
         m_TextureSlots.clear();

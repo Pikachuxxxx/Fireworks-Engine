@@ -91,6 +91,7 @@
     <ClInclude Include="src\maths\vec4.h" />
     <ClInclude Include="src\physics\rigidbody2d.h" />
     <ClInclude Include="src\utils\fileutils.h" />
+    <ClInclude Include="src\utils\glassert.h" />
     <ClInclude Include="src\utils\imageloader.h" />
     <ClInclude Include="src\utils\timer.h" />
     <ClInclude Include="src\utils\wavloader.h" />

@@ -4,6 +4,8 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 
+#include "../../utils/glassert.h"
+
 namespace fireworks { namespace graphics {
 
 	/// Creates Vertex Buffers.
@@ -26,7 +28,7 @@ namespace fireworks { namespace graphics {
 		/// Unbind the buffer
 		void unbind() const;
 
-		/// Gets the types of componets in the vertex data.
+		/// Gets the types of components in the vertex data.
 		inline GLuint getComponentCount() const { return m_ComponentCount; }
 	};
 } }

@@ -21,6 +21,7 @@ public:
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 		ImGui::StyleColorsDark();
 	}
 
@@ -44,6 +45,8 @@ public:
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
+		//ImGui::ShowDemoWindow(nullptr);
+
 		if(enableDocking)
 			ImGuiEnableDocking(&enableDocking);
 		
@@ -51,6 +54,9 @@ public:
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		// Multi-view port rendering is not working
+        //ImGui::UpdatePlatformWindows();
+        //ImGui::RenderPlatformWindowsDefault();
 	}
 	virtual void RenderGUI() = 0;
 private:

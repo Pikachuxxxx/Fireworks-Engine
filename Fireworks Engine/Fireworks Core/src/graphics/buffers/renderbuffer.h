@@ -4,6 +4,8 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 
+#include "../../utils/glassert.h"
+
 namespace fireworks { namespace graphics {
 
 	/// Class to generate Render Buffers.

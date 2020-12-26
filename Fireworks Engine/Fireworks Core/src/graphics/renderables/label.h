@@ -8,6 +8,8 @@
 
 #include "renderable2d.h"
 
+#include "../../utils/glassert.h"
+
 namespace fireworks { namespace graphics {
 
 	struct Character

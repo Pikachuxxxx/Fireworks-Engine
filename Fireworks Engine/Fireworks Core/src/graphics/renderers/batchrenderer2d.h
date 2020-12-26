@@ -5,9 +5,7 @@
 #include "../renderables/renderable2d.h"
 #include "renderer2d.h"
 
-// #include <FTGL/ftgl.h>
-#define GLT_IMPLEMENTATION
-#include "../../../ext/gltext.h"
+#include "../../utils/glassert.h"
 
 namespace fireworks { namespace graphics {
 
@@ -28,14 +26,9 @@ namespace fireworks { namespace graphics {
         GLuint                  m_VBO;
         VertexData*             m_Buffer;
 		IndexBuffer*            m_IBO;
-		//IndexBuffer* m_TIBO;
         GLsizei                 m_IndicesCount;
         std::vector<GLuint>     m_TextureSlots;
-
-		GLushort quad_indices[RENDERER_INDICES_SIZE];
-		//GLushort tris_indices[RENDERER_INDICES_SIZE];
-
-        GLTtext*                m_Text;
+		GLushort                quad_indices[RENDERER_INDICES_SIZE];
     public:
         /// Creates the batch renderer 
         /// 

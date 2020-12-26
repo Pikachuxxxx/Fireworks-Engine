@@ -61,9 +61,9 @@ namespace fireworks { namespace graphics {
             return false;
         }
 
-        glEnable(GL_BLEND);
-        glEnable(GL_DEPTH_TEST);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        GLCall(glEnable(GL_BLEND));
+        GLCall(glEnable(GL_DEPTH_TEST));
+        GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
         return true;
     }
 
@@ -137,17 +137,18 @@ namespace fireworks { namespace graphics {
 
     void Window::clear() const
     {
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glClearColor(backgroundColor.x, backgroundColor.y, backgroundColor.z, backgroundColor.w);
+		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
+        GLCall(glClearColor(backgroundColor.x, backgroundColor.y, backgroundColor.z, backgroundColor.w));
     }
 
     void Window::update() const
     {
-        GLenum error = glGetError();
-        if(error != GL_NO_ERROR)
-        {
-            std::cout << "ERROR::OpenGL::" << error << std::endl;
-        }
+        // Replaced with GLCall assert macro
+        /*   GLenum error = glGetError();
+           if(error != GL_NO_ERROR)
+           {
+               std::cout << "ERROR::OpenGL::" << error << std::endl;
+           }*/
         glfwPollEvents();
         glfwSwapBuffers(m_Window);
     }
@@ -181,7 +182,7 @@ namespace fireworks { namespace graphics {
 
     void window_resize_callback(GLFWwindow* window, int width, int height)
     {
-        glViewport(0, 0, width, height);
+        GLCall(glViewport(0, 0, width, height));
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
         wind->m_Width = width;
         wind->m_Height = height;

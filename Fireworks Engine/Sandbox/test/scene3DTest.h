@@ -1,8 +1,9 @@
 #include <fireworks.h>
+#include "EditorGUI.h"
 
 using namespace fireworks;
 
-class Scene3DTest : public Fireworks
+class Scene3DTest : public Fireworks, public EditorGUI
 {
 private:
     Window* window;
@@ -15,9 +16,10 @@ private:
     bool firstMouse = true;
     double lastX = 400.0, lastY = 300.0;
 public:
-    Scene3DTest()
+    Scene3DTest() : EditorGUI()
     {
-        window = createWindow("3D Scene Testing", 800, 600);
+        window = createWindow("3D Scene Testing", 1600, 1200);
+        InitGUI(window);
         camera3D = new FreeFlyCamera(vec3(0, 0, -5));
         meshShader = new Shader(".\\shaders\\mesh.vert", ".\\shaders\\mesh.frag");
         ShotRenderer3D* shot3d = new ShotRenderer3D(camera3D);
@@ -79,6 +81,16 @@ public:
 
     }
 
+    void RenderGUI()
+    {
+        ImGui::Begin("Stats");
+        {
+            ImGui::Text("FPS : %d", getFPS());
+            ImGui::Text("Camera Positions : [%2.2f, %2.2f, %2.2f]", camera3D->position.x, camera3D->position.y, camera3D->position.z);
+        }
+        ImGui::End();
+    }
+
     // Runs as fast as possible
     void render() override
     {
@@ -107,7 +119,7 @@ public:
         else if (window->isKeyHeld(Keys::LEFT))
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_LEFT, deltaTime);
  
-
         scene->render();
+        InitRenderingGUI();
     }
 };
