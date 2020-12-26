@@ -6,6 +6,8 @@
 #include <GL/glew.h>
 #include "buffer.h"
 
+#include "../../utils/glassert.h"
+
 namespace fireworks { namespace graphics {
 
     /// Creates Vertex Array Object (VAOs).

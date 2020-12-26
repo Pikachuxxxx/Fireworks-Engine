@@ -10,6 +10,8 @@
 #include <GLFW/glfw3.h>
 #include "../maths/maths.h"
 
+#include "../utils/glassert.h"
+
 namespace fireworks { namespace graphics {
 
 #define MAX_KEYS     1024

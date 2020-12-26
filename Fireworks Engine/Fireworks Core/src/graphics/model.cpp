@@ -44,7 +44,6 @@ namespace fireworks { namespace graphics {
         this->m_Directory = path.substr(0, path.find_last_of('/')); // WTF! happened here?
         size_t lastindex = path.find_last_of(".");
         std::string rawname = path.substr(0, lastindex);
-        std::cout << "Path is : " << rawname << std::endl;
         m_Directory = rawname;
         m_RootMesh = this->processNode(scene->mRootNode, scene);
     }
@@ -68,7 +67,7 @@ namespace fireworks { namespace graphics {
             masterSubMesh.indices.insert(masterSubMesh.indices.begin(), subMeshes[i].indices.begin(), subMeshes[i].indices.end());
             masterSubMesh.material_textures.insert(masterSubMesh.material_textures.begin(), subMeshes[i].material_textures.begin(), subMeshes[i].material_textures.end());
         }
-        modelIBO = new IndexBuffer(&(masterSubMesh.indices[0]), masterSubMesh.indices.size() * sizeof(GLushort));
+        modelIBO = new IndexBuffer(&(masterSubMesh.indices[0]), masterSubMesh.indices.size());
         return Mesh(masterSubMesh.vertices, masterSubMesh.indices, masterSubMesh.material_textures, m_Transform, m_Shader);
     }
 
@@ -123,7 +122,7 @@ namespace fireworks { namespace graphics {
              * Diffuse  : texture_diffuseN
              * Specular : texture_specularN
              * Normal   : texture_normalN
-            */
+             */
 
             std::vector<Texture> diffuseMaps = this->loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
             submesh.material_textures.insert(submesh.material_textures.end(), diffuseMaps.begin(), diffuseMaps.end());
