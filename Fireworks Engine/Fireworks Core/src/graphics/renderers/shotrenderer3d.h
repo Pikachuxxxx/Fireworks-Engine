@@ -38,7 +38,7 @@ namespace fireworks { namespace graphics {
         /// Ends the submission and prepares the renderer to start drawing 
         void end() override;
         /// Draws the data processed onto the screen
-        void flush(const IndexBuffer* ibo = nullptr) override;
+        void flush() override;
     private:
         void init();
     };

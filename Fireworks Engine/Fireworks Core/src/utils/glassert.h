@@ -8,12 +8,12 @@
 
 namespace fireworks {
 
-    //#ifdef ((_WIN32) || (_WIN64)) // This OS Macro isn't working why?
-    #define ASSERT(x) if (!(x)) __debugbreak(); // Break the debugger from executing 
-    #define GLCall(x)   GLClearError();\
-                        (x);\
-                        ASSERT(GLLogCall(#x, __FILE__, __LINE__))
-    //#endif
+    #if ((_WIN32) || (_WIN64)) // This OS Macro isn't working why?
+        #define ASSERT(x) if (!(x)) __debugbreak(); // Break the debugger from executing 
+        #define GLCall(x)   GLClearError();\
+                            (x);\
+                            ASSERT(GLLogCall(#x, __FILE__, __LINE__))
+    #endif
             
     static void GLClearError()
     {

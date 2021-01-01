@@ -17,6 +17,8 @@ namespace fireworks { namespace graphics {
     private:
         void generatePlane();
         void generateCube();
+        void generateSphere(int radius, int latitudes, int longitudes);
+        void generateCylinder(int topRadius, int bottomRadius, int height, int sectors);
     };
 
 } }

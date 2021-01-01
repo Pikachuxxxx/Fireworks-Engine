@@ -94,7 +94,7 @@ namespace fireworks { namespace graphics {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
-    void ShotRenderer3D::flush(const IndexBuffer* ibo /*= nullptr*/)
+    void ShotRenderer3D::flush()
     {
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, m_Texture);

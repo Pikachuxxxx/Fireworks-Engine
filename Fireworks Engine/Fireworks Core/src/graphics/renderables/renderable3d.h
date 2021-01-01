@@ -115,11 +115,6 @@ namespace fireworks { namespace graphics {
             renderer->submit(this);
         }
 
-        virtual void flush(Renderer3D* renderer, IndexBuffer* ibo = nullptr) const
-        {
-            renderer->flush(ibo);
-        }
-
         inline const Transform& getTransform() const { return m_Transform; }
         inline const maths::vec4& getColor() const { return m_Color; }
         inline const std::vector<maths::vec2>& getUV() const { return m_UV; }
