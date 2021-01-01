@@ -1,5 +1,5 @@
 #include "batchrenderer3d.h"
-
+#include <algorithm>
 namespace fireworks { namespace graphics {
     
     std::uint32_t Renderable3D::m_UniqueID = 0;
@@ -23,38 +23,24 @@ namespace fireworks { namespace graphics {
 
     void BatchRenderer3D::init()
     {
-        glGenVertexArrays(1, &m_VAO);
-        glGenBuffers(1, &m_VBO);
+        GLCall(glGenVertexArrays(1, &m_VAO));
+        GLCall(glGenBuffers(1, &m_VBO));
 
-        glBindVertexArray(m_VAO);
-        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-        glBufferData(GL_ARRAY_BUFFER, RENDERER3D_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
-        glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
-        glEnableVertexAttribArray(SHADER_UV_INDEX);
-        glEnableVertexAttribArray(SHADER_TID_INDEX);
-        glEnableVertexAttribArray(SHADER_COLOR_INDEX);
-        glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)0);
-        glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
-        glVertexAttribPointer(SHADER_TID_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat)));
-        glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat)));
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        GLCall(glBindVertexArray(m_VAO));
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_VBO));
+        GLCall(glBufferData(GL_ARRAY_BUFFER, RENDERER3D_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW));
+        GLCall(glEnableVertexAttribArray(SHADER_VERTEX_INDEX));
+        GLCall(glEnableVertexAttribArray(SHADER_UV_INDEX));
+        GLCall(glEnableVertexAttribArray(SHADER_TID_INDEX));
+        GLCall(glEnableVertexAttribArray(SHADER_COLOR_INDEX));
+        GLCall(glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)0));
+        GLCall(glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat))));
+        GLCall(glVertexAttribPointer(SHADER_TID_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)(5 * sizeof(GLfloat))));
+        GLCall(glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER3D_VERTEX_SIZE, (const GLvoid*)(6 * sizeof(GLfloat))));
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 
-        int offset = 0;
-        for (int i = 0; i < RENDERER3D_INDICES_SIZE; i += 6)
-        {
-            cube_indices[  i  ] = offset + 0;
-            cube_indices[i + 1] = offset + 1;
-            cube_indices[i + 2] = offset + 2;
-        
-            cube_indices[i + 3] = offset + 2;
-            cube_indices[i + 4] = offset + 3;
-            cube_indices[i + 5] = offset + 0;
-        
-            offset += 4; // because each face has 4 vertices corresponding 6 indices
-        }
-
-        m_IBO = new IndexBuffer(cube_indices, RENDERER3D_INDICES_SIZE);
-        glBindVertexArray(0);
+        m_IBO = new IndexBuffer(nullptr, RENDERER3D_INDICES_SIZE);
+        GLCall(glBindVertexArray(0));
     }
 
     BatchRenderer3D::~BatchRenderer3D()
@@ -65,8 +51,8 @@ namespace fireworks { namespace graphics {
 
     void BatchRenderer3D::begin()
     {
-        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-        m_Buffer = (VertexData3D*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_VBO));
+        m_Buffer = (VertexData3D*)glMapBuffer(GL_ARRAY_BUFFER, GL_READ_WRITE);
     }
 
     void BatchRenderer3D::submit(const Renderable3D* renderable)
@@ -77,6 +63,9 @@ namespace fireworks { namespace graphics {
         const unsigned int tid = renderable->getTID();
         const Primitive3D& primitive3d = renderable->gerPrimitive();
         std::vector<VertexData3D> vertices = renderable->getVerts();
+        std::vector<GLushort> indices = renderable->getInidces();
+
+        indexOffset += renderable->getVertsSize();
 
         maths::mat4 model(1.0f);
         model = maths::mat4::translation(transform.position);
@@ -121,41 +110,87 @@ namespace fireworks { namespace graphics {
             m_Buffer->color = vertices[i].color;
             m_Buffer++;
         }
+
+        /*
+         * Test and fix this problem, that to every new index added into the pool
+         * a pool offset must be added because now all the vertices are pooled together
+         * so the Indices must also start from the nth vertex and not from 0 in the pool.
+         * We add the previous renderables maxVertexCounts + 1.
+         * TODO: Fix this by pre querying the offset, do not do this every frame, we will deal
+         * with dynamic render queue changes later.
+         */
+  
+        if (m_IndicesPool.size())
+        {
+            int largest_element = m_IndicesPool[0];
+            for (int i = 1; i < m_IndicesPool.size(); i++)  //start iterating from the second element
+            {
+                if (m_IndicesPool[i] > largest_element)
+                {
+                    largest_element = m_IndicesPool[i];
+                }
+            }
+            //std::cout << "Max Element in the pool is : " << largest_element << std::endl;
+
+            for (int i = 0; i < indices.size(); i++)
+            {
+                indices[i] += largest_element + 1;
+            }   
+        }
+
+        m_IndicesPool.insert(m_IndicesPool.end(), indices.begin(), indices.end());
         m_IndicesCount += renderable->getIndicesSize();
-    }
+    } 
 
     void BatchRenderer3D::end()
     {
-        glUnmapBuffer(GL_ARRAY_BUFFER);
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        GLCall(glUnmapBuffer(GL_ARRAY_BUFFER));
+        GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+
+        m_IBO->bind();
+        GLushort* m_IndexBuffer = (GLushort*)glMapBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_READ_WRITE);
+
+        if (m_IndexBuffer == nullptr)
+        {
+            std::cout << "ERROR::OPENGL:: Index Buffer mappping cannot be done propoerly" << std::endl;
+            return;
+        }
+
+        for (int i = 0; i < m_IndicesPool.size(); i++)
+        {
+            //std::cout << i << " th Index is : " << m_IndicesPool[i] << std::endl;
+            *m_IndexBuffer = m_IndicesPool[i];
+            m_IndexBuffer++;
+        }
+
+        GLCall(glUnmapBuffer(GL_ELEMENT_ARRAY_BUFFER));
+        m_IBO->unbind();
     }
 
-    void BatchRenderer3D::flush(const IndexBuffer* ibo /*= nullptr*/)
+    void BatchRenderer3D::flush()
     {
+        m_IndicesPool.clear();
         shader->enable();
         shader->setUniformMat4("view", m_Camera3D->getViewMatrix());
 
         for (int i = 0; i < m_TextureSlots.size(); i++)
         {
-            glActiveTexture(GL_TEXTURE0 + i);
-            glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
+            GLCall(glActiveTexture(GL_TEXTURE0 + i));
+            GLCall(glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]));
         }
-        glBindVertexArray(m_VAO);
-        if (ibo == nullptr)
-            m_IBO->bind();
-        else
-            ibo->bind();
 
-        glDrawElements(GL_TRIANGLES, m_IndicesCount, GL_UNSIGNED_SHORT, NULL);
+        GLCall(glBindVertexArray(m_VAO)); 
+        m_IBO->bind();
 
-        if(ibo != nullptr)
-            ibo->unbind();
-        else
-            m_IBO->unbind();
+        GLCall(glDrawElements(GL_TRIANGLES, m_IndicesCount, GL_UNSIGNED_SHORT, NULL));
+        //GLCall(glDrawArrays(GL_POINTS, 0, 10000));
 
-        glBindVertexArray(0);
+        m_IBO->unbind();
+
+        GLCall(glBindVertexArray(0));
 
         m_IndicesCount = 0;
+        indexOffset = 0;
         m_TextureSlots.clear();
         shader->disable();
     }

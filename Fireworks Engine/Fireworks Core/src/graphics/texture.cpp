@@ -5,8 +5,8 @@
 
 namespace fireworks { namespace graphics {
 
-    Texture::Texture(const std::string& filename, const std::string& typeName /*= "texture_diffuse"*/)
-        : m_FileName(filename), m_TID(0), m_Width(0), m_Height(0), m_BPP(0)
+    Texture::Texture(const std::string& filename, bool flip /*= true*/, const std::string& typeName /*= "texture_diffuse"*/)
+        : m_FileName(filename), m_TID(0), m_Width(0), m_Height(0), m_BPP(0), m_FlipTexture(flip)
     {
         m_TID = load();
     }
@@ -19,7 +19,7 @@ namespace fireworks { namespace graphics {
     GLuint Texture::load()
     {
 
-        stbi_set_flip_vertically_on_load(0);
+        stbi_set_flip_vertically_on_load(m_FlipTexture);
         unsigned char* image = stbi_load(m_FileName.c_str(), &m_Width, &m_Height, &m_BPP, 4);
       
         if (!image)

@@ -34,7 +34,7 @@ namespace fireworks { namespace graphics {
         /// Ends the submission and prepares the renderer to start drawing 
         virtual void end() {}
         /// Draws the data processed onto the screen
-        virtual void flush(const IndexBuffer* ibo = nullptr) = 0;
+        virtual void flush() = 0;
     };
 
 } }

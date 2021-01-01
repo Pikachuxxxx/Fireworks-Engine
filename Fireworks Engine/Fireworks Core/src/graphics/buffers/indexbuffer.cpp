@@ -9,7 +9,7 @@ namespace fireworks { namespace graphics {
         // TODO!: Fix unexpected crashing (suspected reason: improper dereferencing of IndexBuffer pointer(s))
         GLCall(glGenBuffers(1, &m_BufferID));
         GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_BufferID));
-        GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(GLushort), data, GL_STATIC_DRAW));
+        GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(GLushort), data, GL_DYNAMIC_DRAW));
         GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
     }
 

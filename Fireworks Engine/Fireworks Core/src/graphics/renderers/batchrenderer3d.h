@@ -3,6 +3,8 @@
 #include "renderer3d.h"
 #include "../renderables/renderable3d.h"
 
+#include "../../utils/glassert.h"
+
 // GLM
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -26,12 +28,14 @@ namespace fireworks { namespace graphics {
     private:
         GLuint                  m_VAO;
         GLuint                  m_VBO;
-        VertexData3D*           m_Buffer;
         IndexBuffer*            m_IBO;
         GLsizei                 m_IndicesCount;
         std::vector<GLuint>     m_TextureSlots;
 
-        GLushort cube_indices[RENDERER3D_INDICES_SIZE];
+        std::vector<unsigned int> m_IndicesPool;
+        VertexData3D*           m_Buffer;
+
+        unsigned int indexOffset;
     public:
         BatchRenderer3D(PerspectiveCamera* camera3D, Shader* shader);
         ~BatchRenderer3D();
@@ -39,7 +43,7 @@ namespace fireworks { namespace graphics {
         void begin() override;
         void submit(const Renderable3D* renderable) override;
         void end() override;
-        void flush(const IndexBuffer* ibo = nullptr) override;
+        void flush() override;
     protected:
         void init();
     };

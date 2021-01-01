@@ -36,7 +36,6 @@ namespace fireworks { namespace graphics {
         inline Mesh& getMasterMesh() { return m_RootMesh; }
     private:
         void submit(Renderer3D* renderer) const override;
-        void flush(Renderer3D* renderer, IndexBuffer* ibo = nullptr) const override;
         void loadModel(std::string path);
         Mesh processNode(aiNode* node, const aiScene* scene);
         SubMesh processMesh(aiMesh* mesh, const aiScene* scene);

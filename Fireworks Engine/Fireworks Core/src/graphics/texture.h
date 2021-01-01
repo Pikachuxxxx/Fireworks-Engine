@@ -19,12 +19,13 @@ namespace fireworks { namespace graphics {
         GLsizei m_Width;
         GLsizei m_Height;
         GLsizei m_BPP;
+        bool m_FlipTexture;
     public:
         /// Creates Textures from images
         /// 
         /// @param path The file path to the image/texture
         /// @warning Currently only supports .png files
-        Texture(const std::string& path, const std::string& typeName = "texture_diffuse");
+        Texture(const std::string& path, bool flip = true, const std::string& typeName = "texture_diffuse");
         ~Texture();
 
         /// Binds the texture

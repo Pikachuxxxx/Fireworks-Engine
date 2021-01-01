@@ -17,12 +17,8 @@ namespace fireworks { namespace graphics {
     void Model::submit(Renderer3D* renderer) const
     {
         // TODO: Make m_RootMesh Heap allocated
-        renderer->submit(new Renderable3D(m_RootMesh));
-    }
-
-    void Model::flush(Renderer3D* renderer, IndexBuffer* ibo /*= nullptr*/) const
-    {
-        renderer->flush(ibo);
+        /*renderer->submit(new Renderable3D(m_RootMesh));*/
+        renderer->submit(&m_RootMesh);
     }
 
     void Model::loadModel(std::string path)
@@ -157,7 +153,7 @@ namespace fireworks { namespace graphics {
                 if (!skip)
                 {
                     // If the texture hasn't been loaded, load it 
-                    Texture tex(m_Directory + std::string("\\") + std::string(str.C_Str()), typeName);
+                    Texture tex(m_Directory + std::string("\\") + std::string(str.C_Str()), false,typeName);
                     textures.push_back(tex);
                     m_LoadedTextures.push_back(tex);
                 }

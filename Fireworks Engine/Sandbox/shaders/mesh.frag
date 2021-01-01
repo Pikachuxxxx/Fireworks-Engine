@@ -19,4 +19,5 @@ void main()
         texColor = texture(textures[tid], uvCoords);
     }
     color = texColor;
+    //color = vec4(0, 0, 0, 1);
 }
