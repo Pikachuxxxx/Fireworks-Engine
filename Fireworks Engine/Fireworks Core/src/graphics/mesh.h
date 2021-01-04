@@ -15,10 +15,10 @@ namespace fireworks { namespace graphics {
         Mesh(Transform transform, Primitive3D primitive, Shader* shader, Texture* texture = nullptr);
         Mesh(std::vector<VertexData3D> verts, std::vector<GLushort>indices, std::vector<Texture> texs, Transform transform, Shader* shader);
     private:
+        void generateSphere(int radius, int latitudes, int longitudes);
+        void generateCylinder(int topRadius, int baseRadius, int height, int sectorCount);
         void generatePlane();
         void generateCube();
-        void generateSphere(int radius, int latitudes, int longitudes);
-        void generateCylinder(int topRadius, int bottomRadius, int height, int sectors);
     };
 
 } }

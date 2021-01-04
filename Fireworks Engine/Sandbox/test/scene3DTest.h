@@ -43,20 +43,23 @@ public:
 
         scene->add(planeMesh);
 
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 10; j++)
+        /*    for (int i = 0; i < 1; i++)
             {
-                scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::Cube, meshShader, testTex));
-            }
-        }
+                for (int j = 0; j < 1; j++)
+                {
+                    scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::UVSphere, meshShader, testTex));
+                }
+            }*/
+
+        //scene->add(new Mesh(Transform(vec3(0, 0, 0)), Primitive3D::UVSphere, meshShader, testTex));
+        scene->add(new Mesh(Transform(vec3(4, 0, 0)), Primitive3D::Cylinder, meshShader, testTex));
 
         Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png");
 
-        model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
-        model->getMasterMesh().m_Texture = stTex;
+        //model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
+        //model->getMasterMesh().m_Texture = stTex;
 
-        scene->add(model);
+        //scene->add(model);
      
     }
 
