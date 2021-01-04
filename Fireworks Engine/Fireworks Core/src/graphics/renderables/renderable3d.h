@@ -51,6 +51,7 @@ namespace fireworks { namespace graphics {
         Plane,
         Cube,
         UVSphere,   /* UV sphere procedurally generated using rings count on the CPU side */
+        Cylinder,  
         Torus,      /* UV Torus procedurally generated using preferences on the CPU side */
         None        /* If the primitive is none, then use the 3D Model for rendering the renderable*/
     };
