@@ -1,0 +1,11 @@
+digraph "C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/audio/audioclip.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="C:/Dev/Game Engines\l/Fireworks-Engine/Fireworks\l Engine/Fireworks Core/src\l/audio/audioclip.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="C:/Dev/Game Engines\l/Fireworks-Engine/Fireworks\l Engine/Fireworks Core/src\l/audio/audioclip.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$audioclip_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="C:/Dev/Game Engines\l/Fireworks-Engine/Fireworks\l Engine/Fireworks Core/fireworks.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fireworks_8h.html",tooltip=" "];
+}

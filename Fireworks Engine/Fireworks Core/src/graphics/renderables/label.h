@@ -12,6 +12,7 @@
 
 namespace fireworks { namespace graphics {
 
+	/// Struct denoting the text character of the font
 	struct Character
 	{
 		unsigned int	TextureID;
@@ -20,6 +21,7 @@ namespace fireworks { namespace graphics {
 		unsigned int	Advance;
 	};
 
+	/// Engine specific font data type
 	struct Font
 	{
 		const char*		fontPath;

@@ -13,6 +13,7 @@
 
 namespace fireworks { namespace graphics {
 
+    /// The vertex structure of a 3D primitive.
     struct VertexData3D
     {
         maths::vec3 vertex;
@@ -34,6 +35,7 @@ namespace fireworks { namespace graphics {
         }
     };
 
+    /// The spacial orientation of an object in 3D space denoted by it's position, rotation and scale.
     struct Transform
     {
         maths::vec3 position;
@@ -46,6 +48,7 @@ namespace fireworks { namespace graphics {
         }
     };
 
+    /// Different types of 3D renderable primitive objects.
     enum class Primitive3D
     {
         Plane,
@@ -58,22 +61,40 @@ namespace fireworks { namespace graphics {
 
     class Mesh;
 
+    /// The Class responsible for drawing the basic 3D Renderable objects onto the screen.
+    ///
+    /// Every 3D renderable object is derived from this class
     class Renderable3D
     {
     public:
+        /// The unique object ID of renderable object
         std::uint32_t                       objectID;
+        /// The shader used to draw the renderable object 
         Shader*                             shader;
+        /// The texture used to draw the renderable object
         Texture*                            m_Texture;
     protected:
+        /// The transform of the object in 3D space
         Transform                           m_Transform;
+        /// Vertex color of the renderable 
         maths::vec4                         m_Color;
+        /// The basic primitive that is being rendered, (Does not denote the primitive used to render the 3d object)
         Primitive3D                         m_Primitive3D;
+        /// The texture coordinates of the 3d renderable
         mutable std::vector<maths::vec2>    m_UV;
+        /// The vertices pool of the 3d object
         std::vector<VertexData3D>           m_Vertices;
+        /// The indices pool of the 3d object
         std::vector<GLushort>               m_Indices;
     private:
         static std::uint32_t                m_UniqueID;
     public:
+        /// Creates the renderable. 
+        /// 
+        /// @param transform The Transform of the renderable
+        /// @param color The color of the renderable
+        /// @primitive3d The primitive shape of the renderable
+        /// @note This overload is to be used with graphics::BatchRenderer3D
         Renderable3D(Transform transform, maths::vec4 color, Primitive3D primitive3d)
             : m_Transform(transform), m_Color(color), m_Primitive3D(primitive3d), shader(nullptr), m_Texture(nullptr)
         {
@@ -81,6 +102,12 @@ namespace fireworks { namespace graphics {
             setUVDefaults();
         }
 
+        /// Creates the renderable. 
+        /// 
+        /// @param transform The Transform of the renderable
+        /// @param color The color of the renderable
+        /// @primitive3d The primitive shape of the renderable
+        /// @note This overload is to be used with graphics::ShotRenderer3D
         Renderable3D(Transform transform, maths::vec4 color, Primitive3D primitive3d, Shader* shader)
             : m_Transform(transform), m_Color(color), m_Primitive3D(primitive3d), shader(shader), m_Texture(nullptr)
         {
@@ -88,6 +115,12 @@ namespace fireworks { namespace graphics {
             setUVDefaults();
         }
 
+        /// Creates the renderable. 
+        /// 
+        /// @param transform The Transform of the renderable
+        /// @param color The color of the renderable
+        /// @primitive3d The primitive shape of the renderable
+        /// @note This overload is to be used with graphics::ShotRenderer3D
         Renderable3D(Transform transform, maths::vec4 color, Primitive3D primitive3d, Shader* shader, Texture* texture)
             : m_Transform(transform), m_Color(color), m_Primitive3D(primitive3d), shader(shader), m_Texture(texture)
         {
@@ -104,6 +137,7 @@ namespace fireworks { namespace graphics {
             setUVDefaults();
         }
 
+        /// Create a empty renderable.
         Renderable3D() : m_Texture(nullptr)
         {
             objectID = ++m_UniqueID;
@@ -111,19 +145,29 @@ namespace fireworks { namespace graphics {
 
         virtual ~Renderable3D() { }
 
+        /// Virtual overload of the submit function, customize the way you can submit the renderable to the renderer
         virtual void submit(Renderer3D* renderer) const
         {
             renderer->submit(this);
         }
 
+        /// Gets the reference to the transform of the renderable object.
         inline const Transform& getTransform() const { return m_Transform; }
+        /// Gets the reference to the color of the renderable object.
         inline const maths::vec4& getColor() const { return m_Color; }
+        /// Gets the reference to the texture coordinates of the renderable.
         inline const std::vector<maths::vec2>& getUV() const { return m_UV; }
+        /// Gets the texture ID of the texture being used by the renderable.
         inline const GLuint getTID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
+        /// Gets the 3D primitive that is being rendered.
         inline const Primitive3D& gerPrimitive() const { return m_Primitive3D; }
+        /// Gets vertices of the 3d renderable.
         inline std::vector<VertexData3D> getVerts() const { return m_Vertices; }
+        /// Gets the vertices count of the 3d renderable.
         inline GLuint getVertsSize() const { return m_Vertices.size(); }
+        /// Gets the indices of the 3d renderable
         inline std::vector<GLushort> getInidces() const { return m_Indices; }
+        /// Gets the indices count of the 3d renderable
         inline GLsizei getIndicesSize() const { return m_Indices.size(); }
     private:
         void setUVDefaults()

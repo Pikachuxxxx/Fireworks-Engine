@@ -1,0 +1,10 @@
+digraph "C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b101c9f01d2a3bc7c151e8bebdefd747 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_b101c9f01d2a3bc7c151e8bebdefd747.html"];
+    dir_b101c9f01d2a3bc7c151e8bebdefd747 [shape=plaintext label="Fireworks Engine"];
+    dir_360fb4b8ad1d9103c039bb2bf3033376 [shape=box label="Fireworks Core" color="red" fillcolor="white" style="filled" URL="dir_360fb4b8ad1d9103c039bb2bf3033376.html"];
+  }
+}

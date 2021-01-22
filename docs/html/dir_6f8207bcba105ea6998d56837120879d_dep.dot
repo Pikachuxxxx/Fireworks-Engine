@@ -1,0 +1,15 @@
+digraph "C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/layers" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_c50f98d358cbf947e76187523a44f226 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="graphics" fontname="Helvetica", fontsize="10", URL="dir_c50f98d358cbf947e76187523a44f226.html"]
+  dir_6f8207bcba105ea6998d56837120879d [shape=box, label="layers", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6f8207bcba105ea6998d56837120879d.html"];
+  }
+  dir_2391ac95875f8f8acbac330c82e85a99 [shape=box label="renderables" URL="dir_2391ac95875f8f8acbac330c82e85a99.html"];
+  dir_cdbbfb6d3b4edcbb4596a33c4a9f2b9b [shape=box label="renderers" URL="dir_cdbbfb6d3b4edcbb4596a33c4a9f2b9b.html"];
+  dir_6f8207bcba105ea6998d56837120879d->dir_2391ac95875f8f8acbac330c82e85a99 [headlabel="2", labeldistance=1.5 headhref="dir_000008_000009.html"];
+  dir_6f8207bcba105ea6998d56837120879d->dir_cdbbfb6d3b4edcbb4596a33c4a9f2b9b [headlabel="3", labeldistance=1.5 headhref="dir_000008_000010.html"];
+  dir_2391ac95875f8f8acbac330c82e85a99->dir_cdbbfb6d3b4edcbb4596a33c4a9f2b9b [headlabel="2", labeldistance=1.5 headhref="dir_000009_000010.html"];
+  dir_cdbbfb6d3b4edcbb4596a33c4a9f2b9b->dir_2391ac95875f8f8acbac330c82e85a99 [headlabel="4", labeldistance=1.5 headhref="dir_000010_000009.html"];
+}
