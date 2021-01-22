@@ -1,0 +1,12 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="fireworks::graphics\l::Renderable3D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_renderable3_d.html",tooltip="The Class responsible for drawing the basic 3D Renderable objects onto the screen."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="fireworks::graphics\l::Mesh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_mesh.html",tooltip="The 3D mesh of a 3d renderable object."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="fireworks::graphics\l::Model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_model.html",tooltip="A 3D model object loaded externally."];
+}

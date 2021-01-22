@@ -1,0 +1,22 @@
+digraph "fireworks::graphics::Model"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="fireworks::graphics\l::Model",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A 3D model object loaded externally."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="fireworks::graphics\l::Renderable3D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_renderable3_d.html",tooltip="The Class responsible for drawing the basic 3D Renderable objects onto the screen."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Color" ,fontname="Helvetica"];
+  Node3 [label="fireworks::maths::vec4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1maths_1_1vec4.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Texture" ,fontname="Helvetica"];
+  Node4 [label="fireworks::graphics\l::Texture",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_texture.html",tooltip="The class responsible for loading Textures."];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Transform" ,fontname="Helvetica"];
+  Node5 [label="fireworks::graphics\l::Transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1graphics_1_1_transform.html",tooltip="The spacial orientation of an object in 3D space denoted by it's position, rotation and scale."];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" position\nrotation\nscale" ,fontname="Helvetica"];
+  Node6 [label="fireworks::maths::vec3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1maths_1_1vec3.html",tooltip=" "];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" shader" ,fontname="Helvetica"];
+  Node7 [label="fireworks::graphics\l::Shader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_shader.html",tooltip="The class responsible for creating amazing shaders."];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" modelIBO" ,fontname="Helvetica"];
+  Node8 [label="fireworks::graphics\l::IndexBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_index_buffer.html",tooltip="Creates Index Buffers."];
+}

@@ -1,0 +1,11 @@
+digraph "fireworks::physics::RigidBody2D"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="fireworks::physics\l::RigidBody2D",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="RigidBody 2D Physics component to simulate real time physics."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="fireworks::components\l::Component",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1components_1_1_component.html",tooltip="Class for creating components."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" componentType" ,fontname="Helvetica"];
+  Node3 [label="fireworks::components\l::ComponentType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1components_1_1_component_type.html",tooltip="To uniquely identify the component."];
+}

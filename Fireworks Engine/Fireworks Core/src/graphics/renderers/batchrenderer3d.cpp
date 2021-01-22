@@ -158,7 +158,6 @@ namespace fireworks { namespace graphics {
 
         for (int i = 0; i < m_IndicesPool.size(); i++)
         {
-            //std::cout << i << " th Index is : " << m_IndicesPool[i] << std::endl;
             *m_IndexBuffer = m_IndicesPool[i];
             m_IndexBuffer++;
         }

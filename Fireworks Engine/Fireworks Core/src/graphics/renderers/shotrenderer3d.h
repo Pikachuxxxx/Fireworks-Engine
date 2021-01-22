@@ -18,6 +18,9 @@ namespace fireworks { namespace graphics {
 #define SHOT_RENDERER3D_BUFFER_SIZE         SHOT_RENDERER3D_PRIMITIVE_SIZE * SHOT_RENDERER3D_MAX_PRIMITIVES
 #define SHOT_RENDERER3D_INDICES_SIZE        SHOT_RENDERER3D_MAX_PRIMITIVES * SHOT_RENDERER3D_DEFAULT_FACES * 6
 
+    /// Renders the 3D renderables on a per draw call basis.
+    /// 
+    /// Uses one draw call per renderable given to the renderer
     class ShotRenderer3D : public Renderer3D
     {
     private: 
@@ -28,6 +31,9 @@ namespace fireworks { namespace graphics {
         GLsizei         m_IndicesCount;
         GLuint			m_Texture;
     public:
+        /// Creates the ShotRenderer with a camera target to render to.
+        ///
+        /// @param camera The camera target to which the scene will be rendered to
         ShotRenderer3D(PerspectiveCamera* camera);
         ~ShotRenderer3D();
 

@@ -1,0 +1,17 @@
+digraph "fireworks::graphics::BatchRenderer2D"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="fireworks::graphics\l::BatchRenderer2D",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Renders the renderables in a single draw call using batching."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="fireworks::graphics\l::Renderer2D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_renderer2_d.html",tooltip="Forward declaration of the graphics::Renderable2D."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_TransformationBack" ,fontname="Helvetica"];
+  Node3 [label="fireworks::maths::mat4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1maths_1_1mat4.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" columns" ,fontname="Helvetica"];
+  Node4 [label="fireworks::maths::vec4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1maths_1_1vec4.html",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Camera2D" ,fontname="Helvetica"];
+  Node5 [label="fireworks::graphics\l::Camera2D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_camera2_d.html",tooltip="The eye of the 2D world."];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_Shader" ,fontname="Helvetica"];
+  Node6 [label="fireworks::graphics\l::Shader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfireworks_1_1graphics_1_1_shader.html",tooltip="The class responsible for creating amazing shaders."];
+}

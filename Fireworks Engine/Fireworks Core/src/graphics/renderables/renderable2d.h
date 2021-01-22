@@ -14,7 +14,7 @@
 
 namespace fireworks { namespace graphics {
 
-    /// The structure of the Vertex Data
+    /// The structure of the Vertex Data.
     struct VertexData
     {
         maths::vec3 vertex;
@@ -23,7 +23,7 @@ namespace fireworks { namespace graphics {
         maths::vec4 color;
     };
 
-    /// Different variations of primitives
+    /// Different variations of primitives.
     enum class Primitive2D
     {
         Circle,

@@ -1,0 +1,11 @@
+digraph "fireworks::graphics::Label"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="fireworks::graphics\l::Label",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The label class to render text onto the screen."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" color\nposition" ,fontname="Helvetica"];
+  Node2 [label="fireworks::maths::vec3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1maths_1_1vec3.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" font" ,fontname="Helvetica"];
+  Node3 [label="fireworks::graphics\l::Font",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfireworks_1_1graphics_1_1_font.html",tooltip="Engine specific font data type."];
+}
