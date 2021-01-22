@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fireworks Engine
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
    <div id="projectbrief">Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping</div>
   </td>
@@ -86,8 +86,12 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_s"></a>- s -</h3><ul>
-<li>scale()
-: <a class="el" href="structfireworks_1_1maths_1_1mat4.html#a5741db15e6fe3806a71f195d850f6af5">fireworks::maths::mat4</a>
+<li>scale
+: <a class="el" href="structfireworks_1_1graphics_1_1_transform.html#ae7a794c90f4c3d74030124611ae5b298">fireworks::graphics::Transform</a>
+, <a class="el" href="structfireworks_1_1maths_1_1mat4.html#a5741db15e6fe3806a71f195d850f6af5">fireworks::maths::mat4</a>
+</li>
+<li>Scene3D()
+: <a class="el" href="classfireworks_1_1graphics_1_1_scene3_d.html#aadd432dc47b90756a01ed23d5a4174b8">fireworks::graphics::Scene3D</a>
 </li>
 <li>setPosition()
 : <a class="el" href="classfireworks_1_1graphics_1_1_camera2_d.html#aeaac0e7ffdc5114f49f4d811db3cbc94">fireworks::graphics::Camera2D</a>
@@ -132,13 +136,18 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classfireworks_1_1physics_1_1_rigid_body2_d.html#a1f6004688ada68ba402f1f74645b7fbb">fireworks::physics::RigidBody2D</a>
 </li>
 <li>shader
-: <a class="el" href="classfireworks_1_1graphics_1_1_renderable2_d.html#a7b903ca75086c3a9c0973e22eff8195d">fireworks::graphics::Renderable2D</a>
+: <a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer3_d.html#ac1f8c0e6e294f8ba166ac34cfbf6a61f">fireworks::graphics::BatchRenderer3D</a>
+, <a class="el" href="classfireworks_1_1graphics_1_1_renderable2_d.html#a7b903ca75086c3a9c0973e22eff8195d">fireworks::graphics::Renderable2D</a>
+, <a class="el" href="classfireworks_1_1graphics_1_1_renderable3_d.html#a3f5aa9f92bb25c40f3b3f09612e7e0b0">fireworks::graphics::Renderable3D</a>
 </li>
 <li>Shader()
 : <a class="el" href="classfireworks_1_1graphics_1_1_shader.html#a35247e836444def211552d2c677e78f1">fireworks::graphics::Shader</a>
 </li>
 <li>ShotRenderer2D()
 : <a class="el" href="classfireworks_1_1graphics_1_1_shot_renderer2_d.html#ab95a2cae76377dbc1f9036ca66051116">fireworks::graphics::ShotRenderer2D</a>
+</li>
+<li>ShotRenderer3D()
+: <a class="el" href="classfireworks_1_1graphics_1_1_shot_renderer3_d.html#a3d47bccb037f51b39891a9e5354c6126">fireworks::graphics::ShotRenderer3D</a>
 </li>
 <li>Size
 : <a class="el" href="structfireworks_1_1graphics_1_1_character.html#a51dccccc94aa2db6bf13d11bdd745e19">fireworks::graphics::Character</a>
@@ -147,7 +156,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classfireworks_1_1graphics_1_1_sprite.html#a82f840082ae431a75bd4ab39fd4381a0">fireworks::graphics::Sprite</a>
 </li>
 <li>Sprite()
-: <a class="el" href="classfireworks_1_1graphics_1_1_sprite.html#a4b439052e3550a191b5cdc326ef1aef7">fireworks::graphics::Sprite</a>
+: <a class="el" href="classfireworks_1_1graphics_1_1_sprite.html#a2dc346c18f5f569502ae75ffae38b371">fireworks::graphics::Sprite</a>
 </li>
 <li>start()
 : <a class="el" href="classfireworks_1_1_fireworks.html#a83534f499f882e391b40bb6ec0137fd1">fireworks::Fireworks</a>
@@ -155,12 +164,19 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <li>Stop()
 : <a class="el" href="classfireworks_1_1audio_1_1_audio_clip.html#af9380539597872ee90802e1f95f71528">fireworks::audio::AudioClip</a>
 </li>
+<li>subMeshes
+: <a class="el" href="classfireworks_1_1graphics_1_1_model.html#a311473a78401b4be4c4a11d767770ac2">fireworks::graphics::Model</a>
+</li>
 <li>submit()
 : <a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer2_d.html#ac8907f05d90f9d4f7e9825bb687aee71">fireworks::graphics::BatchRenderer2D</a>
+, <a class="el" href="classfireworks_1_1graphics_1_1_batch_renderer3_d.html#a6b89c3ab6579aac42e5a43ddb9f8337f">fireworks::graphics::BatchRenderer3D</a>
 , <a class="el" href="classfireworks_1_1graphics_1_1_group.html#a8fce8c6bb9dad3f58bf9591fca474060">fireworks::graphics::Group</a>
 , <a class="el" href="classfireworks_1_1graphics_1_1_renderable2_d.html#aa19773bf5fc1a6cbf8dbf4e4d7b8e3be">fireworks::graphics::Renderable2D</a>
+, <a class="el" href="classfireworks_1_1graphics_1_1_renderable3_d.html#acaaa90516cd75c919d9c6e9c4e0631c8">fireworks::graphics::Renderable3D</a>
 , <a class="el" href="classfireworks_1_1graphics_1_1_renderer2_d.html#a7221cf336452c1fdeac6cc7f1b0ca9e5">fireworks::graphics::Renderer2D</a>
+, <a class="el" href="classfireworks_1_1graphics_1_1_renderer3_d.html#a734af2cd50b96e0ce0f3ebc58fc8205f">fireworks::graphics::Renderer3D</a>
 , <a class="el" href="classfireworks_1_1graphics_1_1_shot_renderer2_d.html#a0146474832ff2812994e30183f3ec85e">fireworks::graphics::ShotRenderer2D</a>
+, <a class="el" href="classfireworks_1_1graphics_1_1_shot_renderer3_d.html#ad50d4e19beab52a87f7075acac83da1d">fireworks::graphics::ShotRenderer3D</a>
 </li>
 <li>subtract()
 : <a class="el" href="structfireworks_1_1maths_1_1vec2.html#a19c22297e4cf2f562d66b763529b408f">fireworks::maths::vec2</a>

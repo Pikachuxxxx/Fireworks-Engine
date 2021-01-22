@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fireworks Engine: C:/Dev/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/maths/maths.h File Reference</title>
+<title>Fireworks Engine: C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/maths/maths.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fireworks Engine
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
    <div id="projectbrief">Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping</div>
   </td>
@@ -94,6 +94,20 @@ $(document).ready(function(){initNavTree('maths_8h.html',''); initResizable(); }
 <code>#include &quot;<a class="el" href="vec3_8h_source.html">vec3.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="vec4_8h_source.html">vec4.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mat4_8h_source.html">mat4.h</a>&quot;</code><br />
+<code>#include &lt;glm/glm.hpp&gt;</code><br />
+<code>#include &lt;glm/gtc/matrix_transform.hpp&gt;</code><br />
+<code>#include &lt;glm/gtc/type_ptr.hpp&gt;</code><br />
+<code>#include &lt;glm/gtx/string_cast.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for maths.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="maths_8h__incl.png" border="0" usemap="#a_c_1_2_dev_2_game_01_engines_2_fireworks-_engine_2_fireworks_01_engine_2_fireworks_01_core_2src_2maths_2maths_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="maths_8h__dep__incl.png" border="0" usemap="#a_c_1_2_dev_2_game_01_engines_2_fireworks-_engine_2_fireworks_01_engine_2_fireworks_01_core_2src_2maths_2maths_8hdep" alt=""/></div>
+</div>
 </div>
 <p><a href="maths_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,10 +120,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a86f10f8ffeb54739ff9fe01ffd19f42c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefireworks_1_1maths.html#a86f10f8ffeb54739ff9fe01ffd19f42c">fireworks::maths::toRadians</a> (float degrees)</td></tr>
-<tr class="separator:a86f10f8ffeb54739ff9fe01ffd19f42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a659789bd7b0af0741e2805a6eb984f97"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefireworks_1_1maths.html#a659789bd7b0af0741e2805a6eb984f97">fireworks::maths::toDegrees</a> (float radians)</td></tr>
-<tr class="separator:a659789bd7b0af0741e2805a6eb984f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20cd69198f710afc8155fb0cddc081d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefireworks_1_1maths.html#a20cd69198f710afc8155fb0cddc081d6">fireworks::maths::toRadians</a> (float degrees)</td></tr>
+<tr class="separator:a20cd69198f710afc8155fb0cddc081d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e31b8df10e05178580b8465fcb89486"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefireworks_1_1maths.html#a7e31b8df10e05178580b8465fcb89486">fireworks::maths::toDegrees</a> (float radians)</td></tr>
+<tr class="separator:a7e31b8df10e05178580b8465fcb89486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afddff32c501cfda760b59a32aafc34c5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:afddff32c501cfda760b59a32aafc34c5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefireworks_1_1maths.html#afddff32c501cfda760b59a32aafc34c5">fireworks::maths::clamp</a> (T number, T min, T max, T maxX, T minX)</td></tr>
 <tr class="separator:afddff32c501cfda760b59a32aafc34c5"><td class="memSeparator" colspan="2">&#160;</td></tr>

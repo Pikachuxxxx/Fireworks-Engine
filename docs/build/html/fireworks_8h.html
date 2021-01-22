@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fireworks Engine: C:/Dev/Fireworks-Engine/Fireworks Engine/Fireworks Core/fireworks.h File Reference</title>
+<title>Fireworks Engine: C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/fireworks.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fireworks Engine
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
    <div id="projectbrief">Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping</div>
   </td>
@@ -92,10 +92,11 @@ $(document).ready(function(){initNavTree('fireworks_8h.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="audioclip_8h_source.html">src/audio/audioclip.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="component_8h_source.html">src/components/component.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="batchrenderer2d_8h_source.html">src/graphics/batchrenderer2d.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera2d_8h_source.html">src/graphics/camera2d.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_shot_renderer2_d_8h_source.html">src/graphics/ShotRenderer2D.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="renderer2d_8h_source.html">src/graphics/renderer2d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="freeflycamera_8h_source.html">src/graphics/freeflycamera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mesh_8h_source.html">src/graphics/mesh.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="model_8h_source.html">src/graphics/model.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scene3d_8h_source.html">src/graphics/scene3d.h</a>&quot;</code><br />
 <code>#include &quot;src/graphics/shader.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="texture_8h_source.html">src/graphics/texture.h</a>&quot;</code><br />
 <code>#include &quot;src/graphics/window.h&quot;</code><br />
@@ -108,12 +109,23 @@ $(document).ready(function(){initNavTree('fireworks_8h.html',''); initResizable(
 <code>#include &quot;<a class="el" href="label_8h_source.html">src/graphics/renderables/label.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sprite_8h_source.html">src/graphics/renderables/sprite.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="renderable2d_8h_source.html">src/graphics/renderables/renderable2d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="renderable3d_8h_source.html">src/graphics/renderables/renderable3d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="batchrenderer2d_8h_source.html">src/graphics/renderers/batchrenderer2d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="batchrenderer3d_8h_source.html">src/graphics/renderers/batchrenderer3d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="renderer2d_8h_source.html">src/graphics/renderers/renderer2d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="renderer3d_8h_source.html">src/graphics/renderers/renderer3d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_shot_renderer2_d_8h_source.html">src/graphics/renderers/ShotRenderer2D.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="physicsmanager_8h_source.html">src/managers/physicsmanager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="maths_8h_source.html">src/maths/maths.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="rigidbody2d_8h_source.html">src/physics/rigidbody2d.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="fileutils_8h_source.html">src/utils/fileutils.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="timer_8h_source.html">src/utils/timer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="wavloader_8h_source.html">src/utils/wavloader.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for fireworks.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="fireworks_8h__incl.png" border="0" usemap="#a_c_1_2_dev_2_game_01_engines_2_fireworks-_engine_2_fireworks_01_engine_2_fireworks_01_core_2fireworks_8h" alt=""/></div>
+</div>
 </div>
 <p><a href="fireworks_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
