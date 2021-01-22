@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spriteanimationtype_808',['SpriteAnimationType',['../namespacefireworks_1_1graphics.html#a176a641bd37ad74c68cda5154ca3f438',1,'fireworks::graphics']]]
+  ['rigidbodytype_994',['RigidBodyType',['../namespacefireworks_1_1physics.html#a7828780b2366ec2fc7da81ec0a8f0d41',1,'fireworks::physics']]]
 ];

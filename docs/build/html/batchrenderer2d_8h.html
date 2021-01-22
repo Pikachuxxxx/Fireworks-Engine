@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fireworks Engine: C:/Dev/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/batchrenderer2d.h File Reference</title>
+<title>Fireworks Engine: C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/renderers/batchrenderer2d.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fireworks Engine
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
    <div id="projectbrief">Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping</div>
   </td>
@@ -92,9 +92,19 @@ $(document).ready(function(){initNavTree('batchrenderer2d_8h.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
-<code>#include &quot;<a class="el" href="renderable2d_8h_source.html">renderables/renderable2d.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="renderable2d_8h_source.html">../renderables/renderable2d.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="renderer2d_8h_source.html">renderer2d.h</a>&quot;</code><br />
-<code>#include &quot;../../ext/gltext.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="glassert_8h_source.html">../../utils/glassert.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for batchrenderer2d.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="batchrenderer2d_8h__incl.png" border="0" usemap="#a_c_1_2_dev_2_game_01_engines_2_fireworks-_engine_2_fireworks_01_engine_2_fireworks_01_core_2src_2graphics_2renderers_2batchrenderer2d_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="batchrenderer2d_8h__dep__incl.png" border="0" usemap="#a_c_1_2_dev_2_game_01_engines_2_fireworks-_engine_2_fireworks_01_engine_2_fireworks_01_core_2src_2graphics_2renderers_2batchrenderer2d_8hdep" alt=""/></div>
+</div>
 </div>
 <p><a href="batchrenderer2d_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -113,8 +123,6 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a130dd386f7fab5c3bab2042b5b4e1c50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="batchrenderer2d_8h.html#a130dd386f7fab5c3bab2042b5b4e1c50">GLT_IMPLEMENTATION</a></td></tr>
-<tr class="separator:a130dd386f7fab5c3bab2042b5b4e1c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefd07068452cd59987563d08561fc508"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="batchrenderer2d_8h.html#aefd07068452cd59987563d08561fc508">RENDERER_MAX_SPRITES</a>&#160;&#160;&#160;60000</td></tr>
 <tr class="separator:aefd07068452cd59987563d08561fc508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a375bc2b5e56843340229bba7e8d79612"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="batchrenderer2d_8h.html#a375bc2b5e56843340229bba7e8d79612">RENDERER_VERTEX_SIZE</a>&#160;&#160;&#160;sizeof(VertexData)</td></tr>
@@ -127,20 +135,6 @@ Macros</h2></td></tr>
 <tr class="separator:a4950cf15c52226f8df9153ab5e38e4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a130dd386f7fab5c3bab2042b5b4e1c50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a130dd386f7fab5c3bab2042b5b4e1c50">&#9670;&nbsp;</a></span>GLT_IMPLEMENTATION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define GLT_IMPLEMENTATION</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3e407ddfe07d2e281044fd0bec91b416"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e407ddfe07d2e281044fd0bec91b416">&#9670;&nbsp;</a></span>RENDERER_BUFFER_SIZE</h2>
 
@@ -216,7 +210,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b101c9f01d2a3bc7c151e8bebdefd747.html">Fireworks Engine</a></li><li class="navelem"><a class="el" href="dir_360fb4b8ad1d9103c039bb2bf3033376.html">Fireworks Core</a></li><li class="navelem"><a class="el" href="dir_4d48ce3c5715d4f1afcc4ad5ed71a1db.html">src</a></li><li class="navelem"><a class="el" href="dir_c50f98d358cbf947e76187523a44f226.html">graphics</a></li><li class="navelem"><a class="el" href="batchrenderer2d_8h.html">batchrenderer2d.h</a></li>
+    <li class="navelem"><a class="el" href="dir_b101c9f01d2a3bc7c151e8bebdefd747.html">Fireworks Engine</a></li><li class="navelem"><a class="el" href="dir_360fb4b8ad1d9103c039bb2bf3033376.html">Fireworks Core</a></li><li class="navelem"><a class="el" href="dir_4d48ce3c5715d4f1afcc4ad5ed71a1db.html">src</a></li><li class="navelem"><a class="el" href="dir_c50f98d358cbf947e76187523a44f226.html">graphics</a></li><li class="navelem"><a class="el" href="dir_cdbbfb6d3b4edcbb4596a33c4a9f2b9b.html">renderers</a></li><li class="navelem"><a class="el" href="batchrenderer2d_8h.html">batchrenderer2d.h</a></li>
     <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fireworks Engine
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
    <div id="projectbrief">Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping</div>
   </td>
@@ -97,18 +97,17 @@ $(document).ready(function(){initNavTree('globals_defs.html',''); initResizable(
 : <a class="el" href="_window_8h.html#a1ce7c516538704e5b04a99450edc572f">Window.h</a>
 </li>
 <li>GLEW_STATIC
-: <a class="el" href="buffer_8h.html#abcde84ea0ef5f934384e4620f092c85a">buffer.h</a>
+: <a class="el" href="glassert_8h.html#abcde84ea0ef5f934384e4620f092c85a">glassert.h</a>
 , <a class="el" href="_window_8h.html#abcde84ea0ef5f934384e4620f092c85a">Window.h</a>
 , <a class="el" href="texture_8h.html#abcde84ea0ef5f934384e4620f092c85a">texture.h</a>
-, <a class="el" href="indexbuffer_8h.html#abcde84ea0ef5f934384e4620f092c85a">indexbuffer.h</a>
+, <a class="el" href="_shader_8h.html#abcde84ea0ef5f934384e4620f092c85a">Shader.h</a>
+, <a class="el" href="renderer3d_8h.html#abcde84ea0ef5f934384e4620f092c85a">renderer3d.h</a>
 , <a class="el" href="renderer2d_8h.html#abcde84ea0ef5f934384e4620f092c85a">renderer2d.h</a>
 , <a class="el" href="vertexarray_8h.html#abcde84ea0ef5f934384e4620f092c85a">vertexarray.h</a>
 , <a class="el" href="renderbuffer_8h.html#abcde84ea0ef5f934384e4620f092c85a">renderbuffer.h</a>
-, <a class="el" href="_shader_8h.html#abcde84ea0ef5f934384e4620f092c85a">Shader.h</a>
+, <a class="el" href="indexbuffer_8h.html#abcde84ea0ef5f934384e4620f092c85a">indexbuffer.h</a>
 , <a class="el" href="framebuffer_8h.html#abcde84ea0ef5f934384e4620f092c85a">framebuffer.h</a>
-</li>
-<li>GLT_IMPLEMENTATION
-: <a class="el" href="batchrenderer2d_8h.html#a130dd386f7fab5c3bab2042b5b4e1c50">batchrenderer2d.h</a>
+, <a class="el" href="buffer_8h.html#abcde84ea0ef5f934384e4620f092c85a">buffer.h</a>
 </li>
 </ul>
 
@@ -124,6 +123,24 @@ $(document).ready(function(){initNavTree('globals_defs.html',''); initResizable(
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
+<li>RENDERER3D_BUFFER_SIZE
+: <a class="el" href="batchrenderer3d_8h.html#abbdb039f4996ea32d7b2df0715c870e1">batchrenderer3d.h</a>
+</li>
+<li>RENDERER3D_DEFAULT_FACES
+: <a class="el" href="batchrenderer3d_8h.html#a44cc06edf321301f481bc4f967089ced">batchrenderer3d.h</a>
+</li>
+<li>RENDERER3D_INDICES_SIZE
+: <a class="el" href="batchrenderer3d_8h.html#ad3d45adee05a42a759e97297f0dae2bf">batchrenderer3d.h</a>
+</li>
+<li>RENDERER3D_MAX_PRIMITIVES
+: <a class="el" href="batchrenderer3d_8h.html#af945ed2a46f705c22c9dd91131a43c4b">batchrenderer3d.h</a>
+</li>
+<li>RENDERER3D_PRIMITIVE_SIZE
+: <a class="el" href="batchrenderer3d_8h.html#ace6de773bc650b04fec268cb64e063d3">batchrenderer3d.h</a>
+</li>
+<li>RENDERER3D_VERTEX_SIZE
+: <a class="el" href="batchrenderer3d_8h.html#a5ac55d93987df2ea9674328ed51e62c9">batchrenderer3d.h</a>
+</li>
 <li>RENDERER_BUFFER_SIZE
 : <a class="el" href="batchrenderer2d_8h.html#a3e407ddfe07d2e281044fd0bec91b416">batchrenderer2d.h</a>
 </li>
@@ -144,16 +161,34 @@ $(document).ready(function(){initNavTree('globals_defs.html',''); initResizable(
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>SHADER_COLOR_INDEX
-: <a class="el" href="renderer2d_8h.html#aee3d6b98abb95550cbb1e7a87aa49aec">renderer2d.h</a>
+: <a class="el" href="_shader_8h.html#aee3d6b98abb95550cbb1e7a87aa49aec">Shader.h</a>
 </li>
 <li>SHADER_TID_INDEX
-: <a class="el" href="renderer2d_8h.html#aa09bf09088286f8db34d833e78bee3bf">renderer2d.h</a>
+: <a class="el" href="_shader_8h.html#aa09bf09088286f8db34d833e78bee3bf">Shader.h</a>
 </li>
 <li>SHADER_UV_INDEX
-: <a class="el" href="renderer2d_8h.html#a5565b2751f1287382306c964efb99198">renderer2d.h</a>
+: <a class="el" href="_shader_8h.html#a5565b2751f1287382306c964efb99198">Shader.h</a>
 </li>
 <li>SHADER_VERTEX_INDEX
-: <a class="el" href="renderer2d_8h.html#af1102727472ef989d5164481a4a79787">renderer2d.h</a>
+: <a class="el" href="_shader_8h.html#af1102727472ef989d5164481a4a79787">Shader.h</a>
+</li>
+<li>SHOT_RENDERER3D_BUFFER_SIZE
+: <a class="el" href="shotrenderer3d_8h.html#adef78a813bc86a8a835f78406801c0c8">shotrenderer3d.h</a>
+</li>
+<li>SHOT_RENDERER3D_DEFAULT_FACES
+: <a class="el" href="shotrenderer3d_8h.html#a6a40c99ca5502461ee8e707a453c07b6">shotrenderer3d.h</a>
+</li>
+<li>SHOT_RENDERER3D_INDICES_SIZE
+: <a class="el" href="shotrenderer3d_8h.html#ac288f6a5ad96d012145744cceb2fed45">shotrenderer3d.h</a>
+</li>
+<li>SHOT_RENDERER3D_MAX_PRIMITIVES
+: <a class="el" href="shotrenderer3d_8h.html#afd347f7a0e6c6734899845db068ef90a">shotrenderer3d.h</a>
+</li>
+<li>SHOT_RENDERER3D_PRIMITIVE_SIZE
+: <a class="el" href="shotrenderer3d_8h.html#ae7691d5f478e8e0cc746c81c01b79691">shotrenderer3d.h</a>
+</li>
+<li>SHOT_RENDERER3D_VERTEX_SIZE
+: <a class="el" href="shotrenderer3d_8h.html#a1f89d7592333517942140f07c5821870">shotrenderer3d.h</a>
 </li>
 <li>SHOT_RENDERER_BUFFER_SIZE
 : <a class="el" href="_shot_renderer2_d_8h.html#ac72e85d678b5b66510734509072cdc98">ShotRenderer2D.h</a>

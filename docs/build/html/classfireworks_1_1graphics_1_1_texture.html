@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Fireworks Engine
-   &#160;<span id="projectnumber">v1.5</span>
+   &#160;<span id="projectnumber">v2.0</span>
    </div>
    <div id="projectbrief">Lightweight Sandbox Game Engine using OpenGL for additional Customisation and Quick Prototyping</div>
   </td>
@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('classfireworks_1_1graphics_1_1_texture
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9490d5bbca8e3ee5024c14d1399c3cc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#a9490d5bbca8e3ee5024c14d1399c3cc1">Texture</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:a9490d5bbca8e3ee5024c14d1399c3cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates Textures from images.  <a href="classfireworks_1_1graphics_1_1_texture.html#a9490d5bbca8e3ee5024c14d1399c3cc1">More...</a><br /></td></tr>
-<tr class="separator:a9490d5bbca8e3ee5024c14d1399c3cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35773d343a95c8c9a73ed11df4050a45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#a35773d343a95c8c9a73ed11df4050a45">Texture</a> (const std::string &amp;path, bool flip=true, const std::string &amp;typeName=&quot;texture_diffuse&quot;)</td></tr>
+<tr class="memdesc:a35773d343a95c8c9a73ed11df4050a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates Textures from images.  <a href="classfireworks_1_1graphics_1_1_texture.html#a35773d343a95c8c9a73ed11df4050a45">More...</a><br /></td></tr>
+<tr class="separator:a35773d343a95c8c9a73ed11df4050a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f4c423d478686e37ee48af93a189369"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#a3f4c423d478686e37ee48af93a189369">~Texture</a> ()</td></tr>
 <tr class="separator:a3f4c423d478686e37ee48af93a189369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf5ffc91643fc6d28cc5c646a342e88c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#adf5ffc91643fc6d28cc5c646a342e88c">bind</a> () const</td></tr>
@@ -118,12 +118,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc68d71f227b63100017dffbb267b4d5"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#abc68d71f227b63100017dffbb267b4d5">getID</a> () const</td></tr>
 <tr class="memdesc:abc68d71f227b63100017dffbb267b4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the ID of the texture.  <a href="classfireworks_1_1graphics_1_1_texture.html#abc68d71f227b63100017dffbb267b4d5">More...</a><br /></td></tr>
 <tr class="separator:abc68d71f227b63100017dffbb267b4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f44109d2b334c14036df27ad0c5fb2"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#a81f44109d2b334c14036df27ad0c5fb2">getPath</a> () const</td></tr>
+<tr class="memdesc:a81f44109d2b334c14036df27ad0c5fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path of the texture.  <a href="classfireworks_1_1graphics_1_1_texture.html#a81f44109d2b334c14036df27ad0c5fb2">More...</a><br /></td></tr>
+<tr class="separator:a81f44109d2b334c14036df27ad0c5fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b8eeaa74c2242ba107fe4be7b71d70"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfireworks_1_1graphics_1_1_texture.html#ae8b8eeaa74c2242ba107fe4be7b71d70">getTypeName</a> () const</td></tr>
+<tr class="memdesc:ae8b8eeaa74c2242ba107fe4be7b71d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of the texture's type.  <a href="classfireworks_1_1graphics_1_1_texture.html#ae8b8eeaa74c2242ba107fe4be7b71d70">More...</a><br /></td></tr>
+<tr class="separator:ae8b8eeaa74c2242ba107fe4be7b71d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class responsible for loading Textures. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9490d5bbca8e3ee5024c14d1399c3cc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9490d5bbca8e3ee5024c14d1399c3cc1">&#9670;&nbsp;</a></span>Texture()</h2>
+<a id="a35773d343a95c8c9a73ed11df4050a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35773d343a95c8c9a73ed11df4050a45">&#9670;&nbsp;</a></span>Texture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,8 +138,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">fireworks::graphics::Texture::Texture </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flip</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>typeName</em> = <code>&quot;texture_diffuse&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -240,6 +262,60 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a81f44109d2b334c14036df27ad0c5fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81f44109d2b334c14036df27ad0c5fb2">&#9670;&nbsp;</a></span>getPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string fireworks::graphics::Texture::getPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the path of the texture. </p>
+
+</div>
+</div>
+<a id="ae8b8eeaa74c2242ba107fe4be7b71d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b8eeaa74c2242ba107fe4be7b71d70">&#9670;&nbsp;</a></span>getTypeName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string fireworks::graphics::Texture::getTypeName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the name of the texture's type. </p>
+
+</div>
+</div>
 <a id="a528b078d50bc2e7b3abddb9081122340"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a528b078d50bc2e7b3abddb9081122340">&#9670;&nbsp;</a></span>getWidth()</h2>
 
@@ -287,8 +363,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Dev/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/<a class="el" href="texture_8h_source.html">texture.h</a></li>
-<li>C:/Dev/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/<a class="el" href="texture_8cpp.html">texture.cpp</a></li>
+<li>C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/<a class="el" href="texture_8h_source.html">texture.h</a></li>
+<li>C:/Dev/Game Engines/Fireworks-Engine/Fireworks Engine/Fireworks Core/src/graphics/<a class="el" href="texture_8cpp.html">texture.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

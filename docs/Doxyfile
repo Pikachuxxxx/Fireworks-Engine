@@ -58,7 +58,7 @@ PROJECT_LOGO           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = .
+OUTPUT_DIRECTORY       = build
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -845,8 +845,6 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = "../Fireworks Engine/Fireworks Core/src" \
-                         "C:\Dev\Fireworks-Engine\Fireworks Engine\Fireworks Core\fireworks.h" \
-                         "C:\Dev\Fireworks-Engine\docs_pages\FIreworks Intro.md" \
                          "../docs_pages/FIreworks Intro.md" \
                          "../Fireworks Engine/Fireworks Core/fireworks.h"
 
