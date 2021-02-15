@@ -24,20 +24,28 @@ namespace fireworks { namespace maths {
          return mat4(1.0f);
     }
 
+    float getVal(const float arr[], int idx1, int idx2)
+    {
+        return arr[idx1 * 4 + idx2];
+    }
     mat4& mat4::multiply(const mat4& other)
     {
         float data[16];
+        float temp_mat[4][4];
         for(int y = 0; y < 4; y++)
         {
             for(int x = 0; x < 4; x++)
             {
-                float sum = 0.0f;
+                temp_mat[y][x] = 0;
                 for(int e = 0; e < 4; e++)
                 {
-                    sum += elements[x + e * 4] * other.elements[e + y * 4];
+                    temp_mat[y][x] += getVal(elements, y, e) * getVal(other.elements, e, x);
                 }
-                data[x + y * 4] = sum;
             }
+        }
+        for(int i = 0;i < 4;i++)
+        {
+            for(int j = 0;j < 4;j++) data[i*4 + j] = temp_mat[i][j];
         }
         memcpy(elements, data, 16 * 4);
 
