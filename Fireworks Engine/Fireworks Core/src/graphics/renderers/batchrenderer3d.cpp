@@ -9,8 +9,8 @@ namespace fireworks { namespace graphics {
     {
         init();
         this->shader->enable();
-//        glm::mat4 proj = glm::perspective(camera3D->FOV, camera3D->aspectRatio, camera3D->nearClipping, camera3D->farClipping);
-        this->shader->setUniformglmMat4("projection", camera3D->getProjectionMatrix());
+        glm::mat4 proj = glm::perspective(camera3D->FOV, camera3D->aspectRatio, camera3D->nearClipping, camera3D->farClipping);
+        this->shader->setUniformglmMat4("projection", proj);
 
         GLint texIDs[] =
         {

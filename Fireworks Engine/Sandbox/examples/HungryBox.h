@@ -30,7 +30,7 @@ public:
 		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
 
         #if(_WIN32)
-		    basicShader = new Shader(".\\src\\shaders\\basic.vert", ".\\src\\shaders\\basic.frag");
+		    basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
         #elif(__APPLE__)
             basicShader = new Shader("shaders/basic.vert", "shaders/basic.frag");
         #endif
