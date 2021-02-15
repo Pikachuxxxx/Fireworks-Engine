@@ -56,33 +56,31 @@ public:
 
         scene->add(planeMesh);
 
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 10; j++)
-            {
-                scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::UVSphere, meshShader, testTex));
-            }
-        }
+        /*      for (int i = 0; i < 10; i++)
+              {
+                  for (int j = 0; j < 10; j++)
+                  {
+                      scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::UVSphere, meshShader, testTex));
+                  }
+              }*/
 
         //scene->add(new Mesh(Transform(vec3(0, 0, 0)), Primitive3D::UVSphere, meshShader, testTex));
-        // scene->add(new Mesh(Transform(vec3(4, 0, 0)), Primitive3D::Cylinder, meshShader, testTex));
+        //scene->add(new Mesh(Transform(vec3(4, 0, 0)), Primitive3D::Cylinder, meshShader, testTex));
 
-        // #if (_WIN32)
-        // Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png");
-        // #elif (__APPLE__)
-        // Texture* stTex = new Texture("./resources/models/stormtrooper/source/stormtrooper_D.png");
-        // #endif
-
-
-        // #if (_WIN32)
-        // model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
-        // #elif (__APPLE__)
-        // model = new Model(std::string("./resources/models/stormtrooper/source/stormtrooper.obj"), cubeTransform, meshShader);
-        // #endif
-        // model->getMasterMesh().m_Texture = stTex;
-        // scene->add(model);
+         #if (_WIN32)
+         Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png", false);
+         #elif (__APPLE__)
+         Texture* stTex = new Texture("./resources/models/stormtrooper/source/stormtrooper_D.png", false);
+         #endif
 
 
+         #if (_WIN32)
+         model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
+         #elif (__APPLE__)
+         model = new Model(std::string("./resources/models/stormtrooper/source/stormtrooper.obj"), cubeTransform, meshShader);
+         #endif
+         model->getMasterMesh().m_Texture = stTex;
+         scene->add(model);
     }
 
     ~Scene3DTest()

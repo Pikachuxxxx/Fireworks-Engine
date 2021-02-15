@@ -103,7 +103,7 @@ mutable std::uint32_t       frame;
         /// @warning This overload is to be used with the graphics::InstanceRenderer2D if you want the shader to be used
 		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
 
-        /// The overridden callback function that confirms the addition of physics:;RigidBody2D component to the Sprite
+        /// The overridden callback function that confirms the addition of physics::RigidBody2D component to the Sprite
 		void addedRigidBody2D() override;
 
         /// Animate the sprite by setting the framerate and the type of animation style
