@@ -11,7 +11,7 @@ namespace fireworks {
     #if ((_WIN32) || (_WIN64)) // This OS Macro isn't working why?
         /// Asserts a function for errors triggering the debugger if it encounters an error
         #define ASSERT(x) if (!(x)) __debugbreak(); // Break the debugger from executing
-    #elif
+    #else
         #define ASSERT(x) if (!(x)) // For other platforms we don't trigger any debug functions we just record the assetion failure and report it
     #endif
     /// Check the OpenGL functions for any errors and reports them
