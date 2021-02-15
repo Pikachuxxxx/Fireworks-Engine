@@ -66,8 +66,8 @@ find_library(BOX2D_LIBRARY
    HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
    )
 find_library(ASSIMP_LIBRARY
-   NAMES assimp assimp-vc142-mtd libassimp.dylib libassimp
-   HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
+   NAMES assimp
+   HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Assimp/lib"
    )
    find_library(ZLIB_LIBRARY
   NAMES zlib libz z

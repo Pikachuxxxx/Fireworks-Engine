@@ -75,8 +75,8 @@ public:
 
         if (squaredDistance <= 0.6f)
         {
-            vec3 randPos = vec3(getRandomValue(-7, 7), getRandomValue(-5, 5), 0.0f);
-            vec4 randColor = vec4(getRandomValue(0, 255) / 255.0f, getRandomValue(0, 255) / 255.0f, getRandomValue(0, 255) / 255.0f, 1.0f);
+            vec3 randPos = vec3(getRandomValue<float>(-7, 7), getRandomValue<float>(-5, 5), 0.0f);
+            vec4 randColor = vec4(getRandomValue<float>(0.0f, 1.0f), getRandomValue<float>(0.0f, 1.0f), getRandomValue<float>(0.0f, 1.0f), 1.0f);
             food->position = randPos;
             food->color = randColor;
             playerBox->color = prevColor;
