@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 # Project Description
-project(Fireworks   VERSION 1.0
+project(Fireworks   VERSION 2.0
                     DESCRIPTION "Fireworks Engine"
                     )
 # specify the C++ standard
@@ -35,8 +35,6 @@ file(GLOB_RECURSE EXT_HEADER_FILES
 
 # Adding Frameworks
 find_package(OpenGL REQUIRED)
-find_package(PNG REQUIRED)
-find_package(BZip2 REQUIRED)
 
 # Adding custom libraries
 find_library(GLEW_LIBRARY
