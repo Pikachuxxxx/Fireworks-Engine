@@ -22,45 +22,67 @@ public:
         window = createWindow("3D Scene Testing", 1600, 1200);
         InitGUI(window);
         camera3D = new FreeFlyCamera(vec3(-1.46, -1.34, -15));
+        #if (_WIN32)
         meshShader = new Shader(".\\shaders\\mesh.vert", ".\\shaders\\mesh.frag");
+        #elif (__APPLE__)
+        meshShader = new Shader("./shaders/mesh.vert", "./shaders/mesh.frag");
+        #endif
         ShotRenderer3D* shot3d = new ShotRenderer3D(camera3D);
         BatchRenderer3D* batch3d = new BatchRenderer3D(camera3D, meshShader);
         scene = new Scene3D(batch3d);
-       
+
         Transform cubeTransform(vec3(0, 0, 0), vec3(0, 0, 0), vec3(2, 2, 2));
         Transform planeTransfrom(vec3(0, -2, 0), vec3(0, 0, 0), vec3(20, 20, 2));
         Transform anotherTransform(vec3(1, 2, 3), vec3(20, 0, 0));
+        #if (_WIN32)
         Texture* testTex = new Texture(".\\resources\\texture_01_red.png");
         Texture* planeTexture = new Texture(".\\resources\\orange_grid_512.png");
+        #elif (__APPLE__)
+        Texture* testTex = new Texture("./resources/texture_01_red.png");
+        Texture* planeTexture = new Texture("./resources/orange_grid_512.png");
+        #endif
         Renderable3D* cube = new Renderable3D(cubeTransform, vec4(1, 0, 0, 1), Primitive3D::Cube, meshShader, testTex);
 
         Mesh* cubeMesh = new Mesh(cubeTransform, Primitive3D::Cube, meshShader, testTex);
         Mesh* cube_2_Mesh = new Mesh(anotherTransform, Primitive3D::Cube, meshShader, testTex);
         Mesh* planeMesh = new Mesh(planeTransfrom, Primitive3D::Plane, meshShader, planeTexture);
+        #if (_WIN32)
         Font font(".\\resources\\fonts\\SpaceQuest.ttf", 32);
+        #elif (__APPLE__)
+        Font font("./resources/fonts/SpaceQuest.ttf", 32);
+        #endif
 
         fpsLabel = new Label("FPS : ", vec3(25, 525, 0), vec3(0.8, 0.5, 0), font);
 
         scene->add(planeMesh);
 
-        /*    for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
             {
-                for (int j = 0; j < 1; j++)
-                {
-                    scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::UVSphere, meshShader, testTex));
-                }
-            }*/
+                scene->add(new Mesh(Transform(vec3(-10 + i * 2, 0, -10 + j * 2)), Primitive3D::UVSphere, meshShader, testTex));
+            }
+        }
 
         //scene->add(new Mesh(Transform(vec3(0, 0, 0)), Primitive3D::UVSphere, meshShader, testTex));
-        scene->add(new Mesh(Transform(vec3(4, 0, 0)), Primitive3D::Cylinder, meshShader, testTex));
+        // scene->add(new Mesh(Transform(vec3(4, 0, 0)), Primitive3D::Cylinder, meshShader, testTex));
 
-        Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png");
+        // #if (_WIN32)
+        // Texture* stTex = new Texture(".\\resources\\models\\stormtrooper\\source\\stormtrooper_D.png");
+        // #elif (__APPLE__)
+        // Texture* stTex = new Texture("./resources/models/stormtrooper/source/stormtrooper_D.png");
+        // #endif
 
-        //model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
-        //model->getMasterMesh().m_Texture = stTex;
 
-        //scene->add(model);
-     
+        // #if (_WIN32)
+        // model = new Model(std::string(".\\resources\\models\\stormtrooper\\source\\stormtrooper.obj"), cubeTransform, meshShader);
+        // #elif (__APPLE__)
+        // model = new Model(std::string("./resources/models/stormtrooper/source/stormtrooper.obj"), cubeTransform, meshShader);
+        // #endif
+        // model->getMasterMesh().m_Texture = stTex;
+        // scene->add(model);
+
+
     }
 
     ~Scene3DTest()
@@ -132,7 +154,7 @@ public:
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_RIGHT, deltaTime);
         else if (window->isKeyHeld(Keys::LEFT))
             camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_LEFT, deltaTime);
- 
+
          scene->render();
         InitRenderingGUI();
     }

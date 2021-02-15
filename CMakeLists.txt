@@ -45,18 +45,16 @@ find_library(GLFW_LIBRARY
     NAMES glfw3 libglfw3
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/GLFW/lib"
     )
-if(APPLE)
 find_library(FreeType_LIBRARY
     NAMES freetype libfreetype
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/FreeType/lib"
     )
-endif(APPLE)
 find_library(PNG_LIBRARY
     NAMES png libpng
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/PNG/lib"
     )
 find_library(BZIP2_LIBRARY
-    NAMES bzip2
+    NAMES bzip2 libbz2 bz2
     HINTS "${CMAKE_SOURCE_DIR}/Dependencies/BZIP2/lib"
     )
 find_library(FIREWORKS_LIBRARY
@@ -68,9 +66,13 @@ find_library(BOX2D_LIBRARY
    HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
    )
 find_library(ASSIMP_LIBRARY
-   NAMES assimp assimp-vc142-mtd
+   NAMES assimp assimp-vc142-mtd libassimp.dylib libassimp
    HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/lib"
    )
+   find_library(ZLIB_LIBRARY
+  NAMES zlib libz z
+  HINTS "${CMAKE_SOURCE_DIR}/Dependencies/Zlib/lib"
+  )
 # Adding library include paths
 include_directories(
 	"${CMAKE_SOURCE_DIR}/Dependencies/SOIL/include"
@@ -79,6 +81,7 @@ include_directories(
     "${CMAKE_SOURCE_DIR}/Dependencies/FreeType/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/PNG/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/BZIP2"
+    "${CMAKE_SOURCE_DIR}/Dependencies/Zlib/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/Box2D/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/Assimp/include"
     "${CMAKE_SOURCE_DIR}/Dependencies/OpenAL/include"
@@ -90,10 +93,10 @@ if (APPLE)
 
 # use this for building sandbox
 if(BUILD_SANDBOX_EXEC)
-set(LIBS ${FIREWORKS_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${BOX2D_LIBRARY} ${ASSIMP_LIBRARY})
+set(LIBS ${FIREWORKS_LIBRARY} ${GLEW_LIBRARY} ${GLFW_LIBRARY} ${FreeType_LIBRARY} ${BOX2D_LIBRARY} ${ASSIMP_LIBRARY} ${PNG_LIBRARY} ${BZIP2_LIBRARY} ${ZLIB_LIBRARY})
 endif()
 
-set(FRAMEWORKS ${OPENGL_LIBRARIES} ${PNG_LIBRARIES} ${BZIP2_LIBRARIES})
+set(FRAMEWORKS ${OPENGL_LIBRARIES})
 
 #use this to build the library
 if(BUILD_STATIC_LIBRARY)
