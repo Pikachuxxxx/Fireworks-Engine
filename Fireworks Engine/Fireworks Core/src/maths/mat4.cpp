@@ -39,7 +39,7 @@ namespace fireworks { namespace maths {
                 temp_mat[y][x] = 0;
                 for(int e = 0; e < 4; e++)
                 {
-                    temp_mat[y][x] += getVal(this.elements, y, e) * getVal(other.elements, e, x);
+                    temp_mat[y][x] += getVal(elements, y, e) * getVal(other.elements, e, x);
                 }
             }
         }

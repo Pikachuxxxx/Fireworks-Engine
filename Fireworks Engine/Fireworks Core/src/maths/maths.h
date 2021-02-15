@@ -29,9 +29,10 @@ namespace fireworks { namespace maths {
 
     // FIXME: Only works for non-floating types
     template <class T>
-    T inline getRandomValue(T min, T max)
+    T inline getRandomValue(T startRange, T endRange)
     {
-        return (T(min) + (std::rand() % (max - min + 1)));
+        T var = startRange + (T(rand()) / T(RAND_MAX) * (endRange - startRange));
+        return var;
     }
 
 
