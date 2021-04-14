@@ -24,12 +24,17 @@ namespace fireworks { namespace graphics {
         ///
         /// @param renderer The 3DRenderer to use to render the 3d objects
         Scene3D(Renderer3D* renderer);
+
+        /// <summary>
+        /// Destructor of the scene
+        /// </summary>
         virtual ~Scene3D();
 
-        /// Adds 3d renderables to the scene
+        /// Adds 3D renderables to the scene
         ///
         /// @param renderable The renderable object to be rendered in the scene
         virtual void add(Renderable3D* renderable);
+
         /// Renders the scene by submitting it's renderables to the renderer's render queue
         virtual void render();
 

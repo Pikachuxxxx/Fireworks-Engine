@@ -3,36 +3,55 @@
 namespace fireworks { namespace graphics {
 
     FreeFlyCamera::FreeFlyCamera(maths::vec3 position, float flySpeed /*= 3.0f*/, float lookSensitivity /*= 0.25f*/)
-        : PerspectiveCamera(position), MovementSpeed(flySpeed), MouseSensitivity(lookSensitivity), yaw(-90.0f), pitch(0.0f)
+        : PerspectiveCamera(position), MovementSpeed(flySpeed), MouseSensitivity(lookSensitivity)
     {
 
     }
 
-    void FreeFlyCamera::processKeyboardMovement(FreeFlyCameraMoveDirection direction, float deltaTime)
+	void FreeFlyCamera::update(Window* window, float deltaTime)
+	{
+        // Move the camera using the keyboard in the world space
+		if (window->isKeyHeld(Keys::Q))
+			this->processKeyboardMovement(FFCamDirection::UP, deltaTime);
+		else if (window->isKeyHeld(Keys::E))
+			this->processKeyboardMovement(FFCamDirection::DOWN, deltaTime);
+
+		if (window->isKeyHeld(Keys::W) || window->isKeyHeld(Keys::UP))
+			this->processKeyboardMovement(FFCamDirection::FORWARD, deltaTime);
+		else if (window->isKeyHeld(Keys::S) || window->isKeyHeld(Keys::DOWN))
+			this->processKeyboardMovement(FFCamDirection::BACKWARD, deltaTime);
+
+		if (window->isKeyHeld(Keys::A) || window->isKeyHeld(Keys::RIGHT))
+			this->processKeyboardMovement(FFCamDirection::RIGHT, deltaTime);
+		else if (window->isKeyHeld(Keys::D) || window->isKeyHeld(Keys::LEFT))
+			this->processKeyboardMovement(FFCamDirection::LEFT, deltaTime);
+
+        if (window->isMouseButtonHeld(Keys::MOUSE_BUTTON_RIGHT))
+        {
+			this->processMouseMovement(-window->deltaMouseX, -window->deltaMouseY);
+            window->deltaMouseX = 0.0f;
+            window->deltaMouseY = 0.0f;
+        }
+	}
+
+	void FreeFlyCamera::processKeyboardMovement(FFCamDirection direction, float deltaTime)
     {
         float velocity = this->MovementSpeed * deltaTime;
 
-        if (direction == FreeFlyCameraMoveDirection::FORWARD)
+        if (direction == FFCamDirection::FORWARD)
             this->position -= this->camFront * velocity;
-        if (direction == FreeFlyCameraMoveDirection::BACKWARD)
+        if (direction == FFCamDirection::BACKWARD)
             this->position += this->camFront* velocity;
 
-        if (direction == FreeFlyCameraMoveDirection::LEFT)
+        if (direction == FFCamDirection::LEFT)
             this->position -= this->camRight * velocity;
-        if (direction == FreeFlyCameraMoveDirection::RIGHT)
+        if (direction == FFCamDirection::RIGHT)
             this->position += this->camRight * velocity;
 
-        if (direction == FreeFlyCameraMoveDirection::UP)
+        if (direction == FFCamDirection::UP)
             this->position += this->camUp * velocity;
-        if (direction == FreeFlyCameraMoveDirection::DOWN)
+        if (direction == FFCamDirection::DOWN)
             this->position -= this->camUp * velocity;
-
-        if (direction == FreeFlyCameraMoveDirection::YAW_LEFT)
-            processMouseMovement(-1.0f, 0.0f);
-        if(direction == FreeFlyCameraMoveDirection::YAW_RIGHT)
-            processMouseMovement(1.0f, 0.0f);
-
-        updateCameraVectors();
     }
 
     // TODO: Fix this
@@ -53,13 +72,7 @@ namespace fireworks { namespace graphics {
                 this->pitch = -89.0f;
         }
 
-        // Updating the camFront vector based on mouse input (Converting to Cartesian screen space coordinates from Polar world space coordinates)
-        maths::vec3 front;
-        front.x = cos(maths::toRadians(this->yaw)) * cos(maths::toRadians(this->pitch));
-        front.y = sin(maths::toRadians(this->pitch));
-        front.z = sin(maths::toRadians(this->yaw)) * cos(maths::toRadians(this->pitch));
-        this->camFront = maths::vec3::normalize(front);
+		// Update Front, Right and Up Vectors using the updated Euler angles
         updateCameraVectors();
     }
-
 } }

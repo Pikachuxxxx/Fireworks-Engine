@@ -16,6 +16,8 @@ private:
     bool            firstMouse = true;
     double          lastX = 400.0, lastY = 300.0;
     bool            enableWireFrameMode;
+    float           timeScale = 1.0f;
+    double          x, y;
 public:
     Scene3DTest() : EditorGUI()
     {
@@ -103,7 +105,7 @@ public:
     // Runs 60 times per second
     void update() override
     {
-
+        camera3D->update(window, deltaTime);
     }
 
     void RenderGUI()
@@ -112,7 +114,9 @@ public:
         {
             ImGui::Text("FPS : %d", getFPS());
             ImGui::Text("Camera Positions : [%2.2f, %2.2f, %2.2f]", camera3D->position.x, camera3D->position.y, camera3D->position.z);
+            ImGui::Text("Camera Front : [%2.2f, %2.2f, %2.2f]", camera3D->camFront.x, camera3D->camFront.y, camera3D->camFront.z);
             ImGui::Checkbox("WireFrame mode", &enableWireFrameMode);
+            ImGui::DragFloat("Time Scale", &timeScale, 0.01f);
         }
         ImGui::End();
     }
@@ -120,6 +124,7 @@ public:
     // Runs as fast as possible
     void render() override
     {
+        SetTimeScale(timeScale);
 
         glPointSize(10.0f);
         deltaTime = (1.0 / getFPS());
@@ -133,27 +138,8 @@ public:
 
 
         window->backgroundColor = vec4(0.9f, 0.9f, 0.9f, 1.0f);
-        if (window->isKeyHeld(Keys::UP))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::UP, deltaTime);
-        else if (window->isKeyHeld(Keys::DOWN))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::DOWN, deltaTime);
 
-        if (window->isKeyHeld(Keys::W))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::FORWARD, deltaTime);
-        else if (window->isKeyHeld(Keys::S))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::BACKWARD, deltaTime);
-
-        if (window->isKeyHeld(Keys::A))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::RIGHT, deltaTime);
-        else if (window->isKeyHeld(Keys::D))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::LEFT, deltaTime);
-
-        if (window->isKeyHeld(Keys::RIGHT))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_RIGHT, deltaTime);
-        else if (window->isKeyHeld(Keys::LEFT))
-            camera3D->processKeyboardMovement(FreeFlyCameraMoveDirection::YAW_LEFT, deltaTime);
-
-         scene->render();
+        scene->render();
         InitRenderingGUI();
     }
 };

@@ -9,8 +9,8 @@ namespace fireworks { namespace graphics {
     {
         init();
         this->shader->enable();
-        glm::mat4 proj = glm::perspective(camera3D->FOV, camera3D->aspectRatio, camera3D->nearClipping, camera3D->farClipping);
-        this->shader->setUniformglmMat4("projection", proj);
+//        glm::mat4 proj = glm::perspective(camera3D->FOV, camera3D->aspectRatio, camera3D->nearClipping, camera3D->farClipping);
+        this->shader->setUniformglmMat4("projection", camera3D->getProjectionMatrix());
 
         GLint texIDs[] =
         {
@@ -118,6 +118,7 @@ namespace fireworks { namespace graphics {
          * We add the previous renderables maxVertexCounts + 1.
          * TODO: Fix this by pre querying the offset, do not do this every frame, we will deal
          * with dynamic render queue changes later.
+         * Use static and dynamic batch dispatching design to resolve this issue
          */
   
         if (m_IndicesPool.size())
@@ -193,5 +194,4 @@ namespace fireworks { namespace graphics {
         m_TextureSlots.clear();
         shader->disable();
     }
-
 } }

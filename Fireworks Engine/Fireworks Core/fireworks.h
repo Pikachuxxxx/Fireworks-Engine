@@ -57,9 +57,16 @@ namespace fireworks {
     class Fireworks
     {
     private:
-        graphics::Window* m_Window;
-        Timer* m_Timer;
-        unsigned int m_FramesPerSecond, m_UpdatePerSecond;        
+        /// The main window of the engine's game
+        graphics::Window*   m_Window;
+        /// Timer object to keep track of the game loop time
+        Timer*              m_Timer;
+        /// The total Frames per second (FPS)
+        unsigned int        m_FramesPerSecond;
+        /// The total Updates happening per second (UPS)
+        unsigned int        m_UpdatePerSecond;
+        /// The Time Scale of the engine update loop
+        float               m_TimeScale = 1.0f;
     protected:
         Fireworks()
             : m_FramesPerSecond(0), m_UpdatePerSecond(0)
@@ -114,42 +121,9 @@ namespace fireworks {
         /// We usually want the number of updates to be around 60 per second
         /// @returns Returns the current UPS of type unsigned int 
 		inline const unsigned int getUPS() { return m_UpdatePerSecond; }
-    private:
-        void run()
-        {
-            m_Timer = new Timer();
-            float timer = 0.0f;
-            float updateTick = 1.0f / 60.0f;
-            float updateTimer = 0.0f;
-			float physicsTick = 1.0f / 60.0f;
-			int velocityIterations = 6;
-			int positionIterations = 2;
-            unsigned int frames = 0;
-            unsigned int updates = 0;
-            while(!m_Window->closed())
-            {
-                m_Window->clear();
-                World.Step(physicsTick, velocityIterations, positionIterations);
 
-				if (m_Timer->elapsedTime() - updateTimer > updateTick)
-				{
-					update();
-					updates++;
-					updateTimer += updateTick;
-				}
-                frames++;
-				render();
-                m_Window->update();
-                if(m_Timer->elapsedTime() - timer > 1.0f)
-                {
-                    timer += 1.0f;
-                    m_FramesPerSecond = frames;
-                    m_UpdatePerSecond = updates;
-                    frames = 0;
-                    updates = 0;
-                    tick();
-                }
-            }
-        }
+        inline void SetTimeScale(float ts) { m_TimeScale = ts; }
+    private:
+        void run();
     };
 }

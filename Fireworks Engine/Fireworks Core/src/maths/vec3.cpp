@@ -20,7 +20,7 @@ namespace fireworks { namespace maths {
 	vec3 vec3::crossProduct(const vec3& a, const vec3& b)
 	{
         return vec3(a.y * b.z - a.z * b.y,
-			        a.x * b.z - a.z * b.x,
+			        a.z * b.x - a.x * b.z,
 			        a.x * b.y - a.y * b.x);
 	}
 
@@ -142,5 +142,4 @@ namespace fireworks { namespace maths {
         stream << "vec3: (" << vector.x << ", " << vector.y << ", " << vector.z << ")";
         return stream;
     }
-
 } }

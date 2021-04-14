@@ -3,6 +3,11 @@
 // Std. Includes
 #include <vector>
 
+// GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/string_cast.hpp>
+
 #include "../maths/maths.h"
 
 namespace fireworks { namespace graphics {
@@ -29,6 +34,10 @@ namespace fireworks { namespace graphics {
         float       nearClipping;
         /// far clipping distance of the camera
         float       farClipping;
+        /// The yaw angle of the camera in world space 
+		float       yaw;
+        /// The pitch angle of the camera in world space
+		float       pitch;
     private:
         maths::mat4 m_ViewMatrix;
         maths::mat4 m_ProjectionsMatrix;
@@ -52,7 +61,7 @@ namespace fireworks { namespace graphics {
         PerspectiveCamera(float posX, float posY, float posZ, float upX, float upY, float upZ);
 
         /// Gets the reference to the camera's view matrix
-        const maths::mat4& getViewMatrix() const { return m_ViewMatrix; }
+        const maths::mat4& getViewMatrix() { updateViewMatrix(); return m_ViewMatrix; }
         /// Gets the reference to the camera's projection matrix
         const maths::mat4& getProjectionMatrix() const { return m_ProjectionsMatrix;}
         /// Gets the reference to the camera's ViewProjections matrix
