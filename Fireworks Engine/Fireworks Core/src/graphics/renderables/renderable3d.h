@@ -93,7 +93,7 @@ namespace fireworks { namespace graphics {
         /// 
         /// @param transform The Transform of the renderable
         /// @param color The color of the renderable
-        /// @primitive3d The primitive shape of the renderable
+        /// @param primitive3d The primitive shape of the renderable
         /// @note This overload is to be used with graphics::BatchRenderer3D
         Renderable3D(Transform transform, maths::vec4 color, Primitive3D primitive3d)
             : m_Transform(transform), m_Color(color), m_Primitive3D(primitive3d), shader(nullptr), m_Texture(nullptr)

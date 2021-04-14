@@ -173,20 +173,25 @@ namespace fireworks { namespace graphics {
         /// 
         /// @note This sets the color in the GL_COLOR_BUFFER_BIT
         maths::vec4 backgroundColor;
+        float deltaMouseX;
+        float deltaMouseY;
     private:
         // FIXME: probably use a custom string class later instead of std::string or char*(character pointer)'s
         const char*		m_Title;
         int m_Width,	m_Height;
         GLFWwindow*		m_Window;
         bool			m_Closed;
-
-        bool m_HeldKeys[MAX_KEYS];
-        bool m_PressedKeys[MAX_KEYS];
-        bool m_ReleasedKeys[MAX_KEYS];
-        bool m_HeldMouseButtons[MAX_BUTTONS];
-        bool m_PressedMouseButtons[MAX_BUTTONS];
-        bool m_ReleasedMouseButtons[MAX_BUTTONS];
-        double m_MouseX, m_MouseY;
+		bool            m_HeldKeys[MAX_KEYS];
+		bool            m_PressedKeys[MAX_KEYS];
+		bool            m_ReleasedKeys[MAX_KEYS];
+		bool            m_HeldMouseButtons[MAX_BUTTONS];
+		bool            m_PressedMouseButtons[MAX_BUTTONS];
+		bool            m_ReleasedMouseButtons[MAX_BUTTONS];
+        double          m_MouseX = 0;
+        double          m_MouseY = 0;
+        bool            firstMouse;
+        float           lastMouseX;
+        float           lastMouseY;
     public:
         /// Creates a Window by initializing GLFW.
         /// @param title The title of the window

@@ -118,6 +118,7 @@ namespace fireworks { namespace graphics {
          * We add the previous renderables maxVertexCounts + 1.
          * TODO: Fix this by pre querying the offset, do not do this every frame, we will deal
          * with dynamic render queue changes later.
+         * Use static and dynamic batch dispatching design to resolve this issue
          */
   
         if (m_IndicesPool.size())
@@ -193,5 +194,4 @@ namespace fireworks { namespace graphics {
         m_TextureSlots.clear();
         shader->disable();
     }
-
 } }

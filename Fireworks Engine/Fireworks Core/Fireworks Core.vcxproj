@@ -84,11 +84,6 @@
     <ClInclude Include="src\graphics\texture.h" />
     <ClInclude Include="src\graphics\Window.h" />
     <ClInclude Include="src\managers\physicsmanager.h" />
-    <ClInclude Include="src\maths\mat4.h" />
-    <ClInclude Include="src\maths\maths.h" />
-    <ClInclude Include="src\maths\vec2.h" />
-    <ClInclude Include="src\maths\vec3.h" />
-    <ClInclude Include="src\maths\vec4.h" />
     <ClInclude Include="src\physics\rigidbody2d.h" />
     <ClInclude Include="src\utils\fileutils.h" />
     <ClInclude Include="src\utils\glassert.h" />
@@ -98,6 +93,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="fireworks.cpp" />
     <ClCompile Include="src\graphics\model.cpp" />
     <ClCompile Include="src\graphics\mesh.cpp" />
     <ClCompile Include="src\graphics\freeflycamera.cpp" />
@@ -122,10 +118,6 @@
     <ClCompile Include="src\graphics\Shader.cpp" />
     <ClCompile Include="src\graphics\texture.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />
-    <ClCompile Include="src\maths\mat4.cpp" />
-    <ClCompile Include="src\maths\vec2.cpp" />
-    <ClCompile Include="src\maths\vec3.cpp" />
-    <ClCompile Include="src\maths\vec4.cpp" />
     <ClCompile Include="src\physics\rigidbody2d.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

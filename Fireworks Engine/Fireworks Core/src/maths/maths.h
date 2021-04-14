@@ -35,5 +35,15 @@ namespace fireworks { namespace maths {
         return var;
     }
 
+	static maths::vec3 fromGLMVec3(const glm::vec3& v) { return maths::vec3(v.x, v.y, v.z); }
+	static maths::vec4 fromGLMVec4(const glm::vec4& v) { return maths::vec4(v.x, v.y, v.z, v.w); }
+    // TODO: Implement this!
+	//static maths::vec3 fromGLMat3(const glm::vec3& v) { return maths::vec3(v.x, v.y, v.z); }
+	//static maths::vec3 fromGLMat4(const glm::vec3& v) { return maths::vec3(v.x, v.y, v.z); }
 
+	static glm::vec3 toGLMVec3(const maths::vec3& v) { return glm::vec3(v.x, v.y, v.z); }
+	static glm::vec4 toGLMVec4(const maths::vec4& v) { return glm::vec4(v.x, v.y, v.z, v.w); }
+	// TODO: Implement this!
+	//static maths::vec3 toGLMat3(const glm::vec3& v) { return maths::vec3(v.x, v.y, v.z); }
+	//static maths::vec3 toGLMat4(const glm::vec3& v) { return maths::vec3(v.x, v.y, v.z); } 
 } }
