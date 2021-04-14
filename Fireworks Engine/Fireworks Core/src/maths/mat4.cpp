@@ -28,6 +28,7 @@ namespace fireworks { namespace maths {
     {
         return arr[idx1 * 4 + idx2];
     }
+
     mat4& mat4::multiply(const mat4& other)
     {
         float data[16];
@@ -305,7 +306,7 @@ namespace fireworks { namespace maths {
         return result;
     }
 
-	mat4 mat4::LookAt(const vec3& eye, const vec3& target, const vec3& worldUp)
+	mat4 mat4::lookAt(const vec3& eye, const vec3& target, const vec3& worldUp)
 	{
         vec3 forward = vec3::normalize(eye - target);
         vec3 right = vec3::crossProduct(vec3::normalize(worldUp), forward);
@@ -345,5 +346,4 @@ namespace fireworks { namespace maths {
         }
         return stream;
     }
-
 } }

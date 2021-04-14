@@ -2,8 +2,8 @@
 
 namespace fireworks { namespace graphics {
 
-    PerspectiveCamera::PerspectiveCamera(maths::vec3 position /*= maths::vec3(0.0f, 0.0f, 0.0f)*/, maths::vec3 worldUp /*= maths::vec3(0.0f, 1.0f, 0.0f)*/, float aspectRatio /*= 1.0f*/, float fov /*= 45.0f*/)
-        : camFront(maths::vec3(0.0f, 0.0f, -1.0f)), nearClipping(0.1f), farClipping(100.0f), FOV(fov), aspectRatio(aspectRatio)
+    PerspectiveCamera::PerspectiveCamera(glm::vec3 position /*= glm::vec3(0.0f, 0.0f, 0.0f)*/, glm::vec3 worldUp /*= glm::vec3(0.0f, 1.0f, 0.0f)*/, float aspectRatio /*= 1.0f*/, float fov /*= 45.0f*/)
+        : camFront(glm::vec3(0.0f, 0.0f, -1.0f)), nearClipping(0.1f), farClipping(100.0f), FOV(fov), aspectRatio(aspectRatio), yaw(-90.0f), pitch(0.0f)
     {
         this->position = position;
         this->worldUp = worldUp;
@@ -13,10 +13,10 @@ namespace fireworks { namespace graphics {
     }
 
     PerspectiveCamera::PerspectiveCamera(float posX, float posY, float posZ, float upX, float upY, float upZ)
-        : camFront(maths::vec3(0.0f, 0.0f, -1.0f))
+        : camFront(glm::vec3(0.0f, 0.0f, -1.0f)), yaw(-90.0f), pitch(0.0f)
     {
-        position = maths::vec3(posX, posY, posZ);
-        worldUp = maths::vec3(upX, upY, upZ);
+        position = glm::vec3(posX, posY, posZ);
+        worldUp = glm::vec3(upX, upY, upZ);
         updateCameraVectors();
         updateViewMatrix();
         updateProjectionMatrix();
@@ -24,26 +24,26 @@ namespace fireworks { namespace graphics {
 
     void PerspectiveCamera::updateCameraVectors()
     {
-        camRight = maths::vec3::normalize(maths::vec3::crossProduct(camFront, worldUp));
-        camUp = maths::vec3::normalize(maths::vec3::crossProduct(camRight, camFront));
+	    // Updating the camFront vector based on mouse input (Converting to Cartesian screen space coordinates from Polar world space coordinates)
+		glm::vec3 front;
+		front.x = cos(glm::radians(this->yaw)) * cos(glm::radians(this->pitch));
+		front.y = sin(glm::radians(this->pitch));
+		front.z = sin(glm::radians(this->yaw)) * cos(glm::radians(this->pitch));
+		this->camFront = glm::normalize(front);
+		// Also re-calculate the Right and Up vector
+		camRight = glm::normalize(glm::cross(camFront, worldUp));
+		camUp = glm::normalize(glm::cross(camRight, camFront));
+
         updateViewMatrix();
     }
 
     void PerspectiveCamera::updateViewMatrix()
     {
-        m_ViewMatrix = maths::mat4::LookAt(position, position + camFront, camUp);
+        m_ViewMatrix = glm::lookAt(position, position + camFront, camUp);
     }
 
     void PerspectiveCamera::updateProjectionMatrix()
     {   
-        // TODO: Fix the maths::perspetive matrix  calculation.
-        /*
-         * Currently this Projection matrix doesn't work, we are calculating it again
-         * in the BatchRenderer3D using glm::perspetive. The (0, 0) and (1, 1) elements are calculated
-         * wrong by the maths::perspective. Hence Querying for the perspetive matrix using this 
-         * method may result in unexpected behavior.
-         */
-        m_ProjectionsMatrix = maths::mat4::perspective(FOV, aspectRatio, nearClipping, farClipping);
+        m_ProjectionsMatrix = glm::perspective(FOV, aspectRatio, nearClipping, farClipping);
     }
-
 } }

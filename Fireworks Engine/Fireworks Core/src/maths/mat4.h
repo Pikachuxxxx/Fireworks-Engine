@@ -48,7 +48,7 @@ namespace fireworks { namespace maths {
         static mat4 scale(const vec3& scale);
 
         // LookAt Matrix
-        static mat4 LookAt(const vec3& eye, const vec3& target, const vec3& worldUp = vec3(0, 1, 0));
+        static mat4 lookAt(const vec3& eye, const vec3& target, const vec3& worldUp = vec3(0, 1, 0));
 
         // Right Shift operator overload to print the matrix to the (character output : cout) or any output stream
         friend std::ostream& operator<<(std::ostream& stream, const mat4& matrix);

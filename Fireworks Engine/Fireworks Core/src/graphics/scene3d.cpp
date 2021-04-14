@@ -21,9 +21,10 @@ namespace fireworks { namespace graphics {
     {
         if (dynamic_cast<ShotRenderer3D*>(renderer))
         {
+            // Is this redundant?
             glm::mat4 proj = glm::perspective(renderer->m_Camera3D->FOV, renderer->m_Camera3D->aspectRatio, renderer->m_Camera3D->nearClipping, renderer->m_Camera3D->farClipping);
 
-            renderable->shader->setUniformglmMat4("projection", proj);
+            renderable->shader->setUniformMat4("projection", proj);
         }
         renderables.push_back(renderable);
     }

@@ -4,6 +4,9 @@
 #include "renderers/batchrenderer3d.h"
 #include "renderers/shotrenderer3d.h"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 namespace fireworks { namespace graphics {
 
     /// The 3D mesh of a 3d renderable object.

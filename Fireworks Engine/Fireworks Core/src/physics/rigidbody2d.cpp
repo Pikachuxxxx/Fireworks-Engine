@@ -10,16 +10,16 @@ fireworks::physics::RigidBody2D::~RigidBody2D()
 	m_World.DestroyBody(m_Body);
 }
 
-fireworks::maths::vec3 fireworks::physics::RigidBody2D::GetPositionInMeters()
+glm::vec3 fireworks::physics::RigidBody2D::GetPositionInMeters()
 {
 	b2Vec2 pos = m_Body->GetPosition();
-	return maths::vec3(pos.x, pos.y, 0.0f);
+	return glm::vec3(pos.x, pos.y, 0.0f);
 }
 
-fireworks::maths::vec3 fireworks::physics::RigidBody2D::GetPositionInPixels()
+glm::vec3 fireworks::physics::RigidBody2D::GetPositionInPixels()
 {
 	b2Vec2 pos = m_Body->GetPosition();
-	return maths::vec3(pos.x * M2PX, pos.y * M2PY, 0.0f);
+	return glm::vec3(pos.x * M2PX, pos.y * M2PY, 0.0f);
 }
 
 float fireworks::physics::RigidBody2D::GetRotation()
@@ -27,30 +27,30 @@ float fireworks::physics::RigidBody2D::GetRotation()
 	return m_Body->GetAngle();
 }
 
-void fireworks::physics::RigidBody2D::AddForce(maths::vec2 direction, float force)
+void fireworks::physics::RigidBody2D::AddForce(glm::vec2 direction, float force)
 {
 	m_Body->ApplyForce(b2Vec2(direction.x * force, direction.y * force), m_Body->GetWorldCenter(), true);
 }
 
-void fireworks::physics::RigidBody2D::SetVelocity(maths::vec2 velocity)
+void fireworks::physics::RigidBody2D::SetVelocity(glm::vec2 velocity)
 {
 	m_Body->SetLinearVelocity(b2Vec2(velocity.x, velocity.y));
 }
 
 // FIXME: Set position is not working
-void fireworks::physics::RigidBody2D::SetPosition(const maths::vec3& position)
+void fireworks::physics::RigidBody2D::SetPosition(const glm::vec3& position)
 {
 	m_BodyDef.position.Set(position.x * P2MX / 2, position.y * P2MY / 2);
 }
 
 // FIXME: Set size is not working
-void fireworks::physics::RigidBody2D::SetSize(maths::vec2& size)
+void fireworks::physics::RigidBody2D::SetSize(glm::vec2& size)
 {
 	m_Shape.SetAsBox(size.x * P2MX / 2, size.y * P2MY / 2);
 }
 
 // FIXME: Though this is safe from outside tampering this method should not be exposed
-void fireworks::physics::RigidBody2D::GenerateRigidBody(maths::vec3 pos, maths::vec2 dim)
+void fireworks::physics::RigidBody2D::GenerateRigidBody(glm::vec3 pos, glm::vec2 dim)
 {
 	if (m_DidGenerateRB)
 		return;

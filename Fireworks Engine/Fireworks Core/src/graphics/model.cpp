@@ -77,10 +77,10 @@ namespace fireworks { namespace graphics {
             VertexData3D vertex;
 
             // Vertex positions
-            vertex.vertex = maths::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z);
+            vertex.vertex = glm::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z);
 
             // TODO: Add normals to VertexData3D struct
-            //vertex.normal = maths::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
+            //vertex.normal = glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
 
             // UV Coordinates
             if (mesh->mTextureCoords[0]) // Does the mesh contain texture coordinates?
@@ -90,12 +90,12 @@ namespace fireworks { namespace graphics {
                  * the assumption that we won't use models where a vertex can have multiple
                  * texture coordinates so we always take the first set (0).
                  */
-                vertex.uv = maths::vec2(mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y);
+                vertex.uv = glm::vec2(mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y);
             }
             else
-                vertex.uv = maths::vec2(0.0f, 0.0f);
+                vertex.uv = glm::vec2(0.0f, 0.0f);
 
-            vertex.color = maths::vec4(1, 0, 1, 1);
+            vertex.color = glm::vec4(1, 0, 1, 1);
             submesh.vertices.push_back(vertex);
         }
         // Now walk through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.

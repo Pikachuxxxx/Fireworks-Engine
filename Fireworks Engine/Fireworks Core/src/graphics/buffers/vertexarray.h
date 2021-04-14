@@ -2,11 +2,10 @@
 
 #include <vector>
 // GLEW
-#define GLEW_STATIC
 #include <GL/glew.h>
-#include "buffer.h"
+#include <src/graphics/buffers/buffer.h>
 
-#include "../../utils/glassert.h"
+#include <src/utils/glassert.h>
 
 namespace fireworks { namespace graphics {
 

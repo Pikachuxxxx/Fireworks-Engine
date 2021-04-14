@@ -3,7 +3,6 @@
 #include <iostream>
 
 // GLEW
-#define GLEW_STATIC
 #include <GL/glew.h>
 
 namespace fireworks {
@@ -12,7 +11,7 @@ namespace fireworks {
         /// Asserts a function for errors triggering the debugger if it encounters an error
         #define ASSERT(x) if (!(x)) __debugbreak(); // Break the debugger from executing
     #else
-        #define ASSERT(x) if (!(x)) // For other platforms we don't trigger any debug functions we just record the assetion failure and report it
+        #define ASSERT(x) if (!(x)) // For other platforms we don't trigger any debug functions we just record the assertion failure and report it
     #endif
     /// Check the OpenGL functions for any errors and reports them
     #define GLCall(x)   GLClearError();\
@@ -29,7 +28,7 @@ namespace fireworks {
     ///
     /// @param functionsName The name of the functions that caused the error
     /// @param file The file in which the function is
-    /// @param line The line of the funciton
+    /// @param line The line of the function
     static bool GLLogCall(const char* functionName, const char* file, int line)
     {
         while (GLenum error = glGetError())

@@ -72,19 +72,19 @@ namespace fireworks { namespace graphics {
     void BatchRenderer2D::submit(const Renderable2D* renderable)
     {
 
-        const maths::vec3& position = renderable->getPosition();
+        const glm::vec3& position = renderable->getPosition();
 		const float& rotation = renderable->getRotation();
-        const maths::vec2& size = renderable->getSize();
-        const maths::vec4& color = renderable->getColor();
+        const glm::vec2& size = renderable->getSize();
+        const glm::vec4& color = renderable->getColor();
 		const Primitive2D primitive = renderable->getPrimitive();
-        const std::vector<maths::vec2>& uv = renderable->getUV();
+        const std::vector<glm::vec2>& uv = renderable->getUV();
         const GLuint tid = renderable->getTID();
 		const std::vector<components::Component*> components = renderable->components;
 
 		
-		maths::mat4 model(1.0f);
-		model = maths::mat4::translation(position);
-		model *= maths::mat4::rotation(maths::toDegrees(rotation), maths::vec3(0, 0, 1));
+		glm::mat4 model(1.0f);
+		model = glm::translate(model, position);
+		model *= glm::rotate(model, glm::degrees(rotation), glm::vec3(0, 0, 1));
 
         float ts = 0.0f;
         if(tid > 0)
@@ -125,25 +125,25 @@ namespace fireworks { namespace graphics {
         
         if (primitive == Primitive2D::Quad)
         {
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( - (size.x / 2), - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2), -(size.y / 2), position.z, 1.0f);
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( - (size.x / 2), -(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2), -(size.y / 2) + size.y, position.z, 1.0f);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, -(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2) + size.x, -(size.y / 2) + size.y, position.z, 1.0f);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, -(size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2) + size.x, -(size.y / 2), position.z, 1.0f);
 			m_Buffer->uv = uv[3];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
@@ -153,7 +153,7 @@ namespace fireworks { namespace graphics {
         }
 		else if (primitive == Primitive2D::Triangle)
 		{
-            std::cerr << "ERROR::BATCH_RENDERER_2D::Batch Renderer 2D does not support triangle primitive" << std::endl;
+            std::cerr << "ERROR::BATCH_RENDERER_2D::Batch Renderer 2D does not support triangle primitives, yet!" << std::endl;
 		}
     }
 

@@ -2,8 +2,8 @@
 
 namespace fireworks { namespace graphics {
 	
-	Camera2D::Camera2D(maths::mat4 projection)
-		: m_ProjectionMatrix(projection), m_ViewMatrix(maths::mat4(1.0f))
+	Camera2D::Camera2D(glm::mat4 projection)
+		: m_ProjectionMatrix(projection), m_ViewMatrix(glm::mat4(1.0f))
 	{
 
 	}
@@ -15,13 +15,15 @@ namespace fireworks { namespace graphics {
 
 	void Camera2D::updateViewMatrix()
 	{
-		using namespace maths;
+		using namespace glm;
 
-		mat4 transform = mat4::translation(m_Position) * mat4::rotation(m_Rotation, maths::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 transform(1.0f);
+		transform = glm::translate(transform, m_Position);
+		transform *= glm::rotate(transform, m_Rotation, glm::vec3(0.0f, 0.0f, 1.0f));
 
-		m_ViewMatrix = transform.invert();
+		m_ViewMatrix = glm::inverse(transform);
 
-		//m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
+		m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
 	}
 
 } }

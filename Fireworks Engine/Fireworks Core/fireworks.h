@@ -34,22 +34,25 @@
 
 #include "src/managers/physicsmanager.h"
 
-#include "src/maths/maths.h"
-
 #include "src/physics/rigidbody2d.h"
 
 #include "src/utils/fileutils.h"
 #include "src/utils/timer.h"
 #include "src/utils/wavloader.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/string_cast.hpp>
+
 namespace fireworks {
 
 	using namespace audio;
 	using namespace components;
     using namespace graphics;
-    using namespace maths;
 	using namespace physics;
     using namespace utils;
+    // External namespaces
+    using namespace glm;
 
     /// The Game class to use the Fireworks Engine.
     /// 
@@ -57,15 +60,16 @@ namespace fireworks {
     class Fireworks
     {
     private:
-        graphics::Window* m_Window;
-        Timer* m_Timer;
-        unsigned int m_FramesPerSecond, m_UpdatePerSecond;        
+        /// The main window of the engine's game
+        graphics::Window*   m_Window;
+        /// Timer object to keep track of the game loop time
+        Timer*              m_Timer;
+        /// The total Frames per second (FPS)
+        unsigned int        m_FramesPerSecond;
+        /// The total Updates happening per second (UPS)
+        unsigned int        m_UpdatePerSecond;
     protected:
-        Fireworks()
-            : m_FramesPerSecond(0), m_UpdatePerSecond(0)
-        {
-
-        }
+        Fireworks() : m_FramesPerSecond(0), m_UpdatePerSecond(0) { }
 
         virtual ~Fireworks()
         {
@@ -115,41 +119,6 @@ namespace fireworks {
         /// @returns Returns the current UPS of type unsigned int 
 		inline const unsigned int getUPS() { return m_UpdatePerSecond; }
     private:
-        void run()
-        {
-            m_Timer = new Timer();
-            float timer = 0.0f;
-            float updateTick = 1.0f / 60.0f;
-            float updateTimer = 0.0f;
-			float physicsTick = 1.0f / 60.0f;
-			int velocityIterations = 6;
-			int positionIterations = 2;
-            unsigned int frames = 0;
-            unsigned int updates = 0;
-            while(!m_Window->closed())
-            {
-                m_Window->clear();
-                World.Step(physicsTick, velocityIterations, positionIterations);
-
-				if (m_Timer->elapsedTime() - updateTimer > updateTick)
-				{
-					update();
-					updates++;
-					updateTimer += updateTick;
-				}
-                frames++;
-				render();
-                m_Window->update();
-                if(m_Timer->elapsedTime() - timer > 1.0f)
-                {
-                    timer += 1.0f;
-                    m_FramesPerSecond = frames;
-                    m_UpdatePerSecond = updates;
-                    frames = 0;
-                    updates = 0;
-                    tick();
-                }
-            }
-        }
+        void run();
     };
 }

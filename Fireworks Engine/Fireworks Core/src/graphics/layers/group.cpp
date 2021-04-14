@@ -2,7 +2,7 @@
 
 namespace fireworks { namespace graphics {
 
-    Group::Group(const maths::mat4& transform)
+    Group::Group(const glm::mat4& transform)
         : m_TransformationMatrix(transform)
     {
 

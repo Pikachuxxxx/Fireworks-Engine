@@ -8,7 +8,7 @@
 
 #include "renderable2d.h"
 
-#include "../../utils/glassert.h"
+#include <src/utils/glassert.h>
 
 namespace fireworks { namespace graphics {
 
@@ -16,8 +16,8 @@ namespace fireworks { namespace graphics {
 	struct Character
 	{
 		unsigned int	TextureID;
-		maths::vec2		Size;
-		maths::vec2		Bearing;
+		glm::vec2		Size;
+		glm::vec2		Bearing;
 		unsigned int	Advance;
 	};
 
@@ -34,6 +34,7 @@ namespace fireworks { namespace graphics {
 		}
 	};
 
+	// TODO: The projection matrix dimensions should be updated for the label
 	/// The label class to render text onto the screen.
 	class Label
 	{
@@ -41,9 +42,9 @@ namespace fireworks { namespace graphics {
 		/// The text of the label
 		std::string							text;
 		/// The position of the label
-		maths::vec3							position;
+		glm::vec3							position;
 		/// The color of the label
-		maths::vec3							color;
+		glm::vec3							color;
 		/// The font used to render the label
 		Font								font;
 	private:
@@ -61,7 +62,7 @@ namespace fireworks { namespace graphics {
 		/// 
 		/// @warning The position to render the text on the screen is in the limits X : (0, 800) and Y : (0, 600)
 		/// This will be later updates to use the camera's orthogonal matrix to make things simpler
-		Label(const char* text, maths::vec3 position, maths::vec3 color, Font& font);
+		Label(const char* text, glm::vec3 position, glm::vec3 color, Font& font);
 
 		/// Renders the text onto the screen
 		void renderText() const;

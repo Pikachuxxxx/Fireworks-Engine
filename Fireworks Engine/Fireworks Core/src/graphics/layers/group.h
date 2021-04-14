@@ -11,13 +11,13 @@ namespace fireworks { namespace graphics {
     {
     private:
         std::vector<Renderable2D*> m_Renderables;
-        maths::mat4 m_TransformationMatrix;
+        glm::mat4 m_TransformationMatrix;
     public:
         /// Creates a group to position renderables relatively.
         /// 
         /// @param transform The relative position of the group relative to the parent group/layer
         /// @note Using this transform matrix we can add renderables relative to one another
-        Group(const maths::mat4& transform);
+        Group(const glm::mat4& transform);
         ~Group();
         /// Adds renderables to this group
         /// 

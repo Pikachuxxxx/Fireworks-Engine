@@ -2,7 +2,7 @@
 
 namespace fireworks { namespace graphics {
 
-    Window::Window(const char *title, int width, int height) : backgroundColor(maths::vec4(0, 0, 0, 1))
+    Window::Window(const char *title, int width, int height) : backgroundColor(glm::vec4(0, 0, 0, 1))
     {
         m_Title = title;
         m_Width = width;
@@ -20,6 +20,10 @@ namespace fireworks { namespace graphics {
         {
             m_HeldMouseButtons[i] = false;
         }
+
+		firstMouse = true;
+		lastMouseX = width / 2;
+		lastMouseY = height / 2;
     }
 
     Window::~Window()
@@ -202,6 +206,18 @@ namespace fireworks { namespace graphics {
         Window* wind = (Window *) glfwGetWindowUserPointer(window);
         wind->m_MouseX = xpos;
         wind->m_MouseY = ypos;
+
+		if (wind->firstMouse)
+		{
+			wind->lastMouseX = xpos;
+			wind->lastMouseY = ypos;
+			wind->firstMouse = false;
+		}
+		wind->deltaMouseX = xpos - wind->lastMouseX;
+		wind->deltaMouseY = wind->lastMouseY - ypos;
+
+		wind->lastMouseX = xpos;
+		wind->lastMouseY = ypos;
     }
 
 } }
