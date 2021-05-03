@@ -104,7 +104,6 @@ public:
     // Runs as fast as possible
     void render() override
     {
-        //SetTimeScale(timeScale);
 
         glPointSize(10.0f);
         deltaTime = (1.0 / getFPS());

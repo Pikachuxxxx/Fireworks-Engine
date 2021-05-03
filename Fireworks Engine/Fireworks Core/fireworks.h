@@ -118,6 +118,8 @@ namespace fireworks {
         /// We usually want the number of updates to be around 60 per second
         /// @returns Returns the current UPS of type unsigned int 
 		inline const unsigned int getUPS() { return m_UpdatePerSecond; }
+
+        inline void SetTimeScale(float ts) { m_TimeScale = ts; }
     private:
         void run();
     };
