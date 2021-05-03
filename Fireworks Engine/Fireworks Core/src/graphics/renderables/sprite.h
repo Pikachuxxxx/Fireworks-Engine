@@ -26,15 +26,15 @@ mutable std::uint32_t       frame;
         /// @note low frameRate means frames change faster
         std::uint32_t       frameRate;
         /// The position of the Sprite.
-		maths::vec3&        position;
+		glm::vec3&        position;
         /// The color of the Sprite.
-		maths::vec4&        color;
+		glm::vec4&        color;
         /// The size of the Sprite.
-        maths::vec2&        size;
+        glm::vec2&        size;
         /// The rotation of the Sprite.
         float&              rotation;
 	private:
-		maths::vec2         m_SpriteSheetDimension;
+		glm::vec2           m_SpriteSheetDimension;
 		utils::Timer*       m_AnimTimer;
         double              m_CurrentFrameRate;
     public:
@@ -48,7 +48,7 @@ mutable std::uint32_t       frame;
         /// @parma color The color of the sprite
         /// @param primitive2d The primitive shape with which the Sprite should be rendered with
         /// @warning This overload is to be used with the graphics::BatchRenderer2D because it doesn't not accept any shader
-        Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Primitive2D primitive2d = Primitive2D::Quad);
+        Sprite(glm::vec3 position, glm::vec2 size, glm::vec4 color, Primitive2D primitive2d = Primitive2D::Quad);
 		/// Create Sprite renderable.
         /// 
         /// @param position The position at which the sprite should be rendered at
@@ -57,7 +57,7 @@ mutable std::uint32_t       frame;
         /// @param primitive2d The primitive shape with which the Sprite should be rendered with
         /// @warning This overload is to be used with the graphics::BatchRenderer2D because it doesn't not accept any shader
         /// @see Texture for more information on how to Textures
-		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(glm::vec3 position, glm::vec2 size, Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);
 		/// Create Sprite renderable.
         /// 
         /// @param position The position at which the sprite should be rendered at
@@ -65,10 +65,10 @@ mutable std::uint32_t       frame;
         /// @parma texture The Texture with which the sprite should be rendered with
         /// @param sheetDimension The dimensions of the sprite sheet i.e. no of sprites in the sheet not the actual dimensions of the sheet
         /// @param primitive2d The primitive shape with which the Sprite should be rendered with
-        /// @attention sheetDimension requires the the number of sprites in the (row, column) count maths::vec2 and not that actual dimensions of the sheet itself
+        /// @attention sheetDimension requires the the number of sprites in the (row, column) count glm::vec2 and not that actual dimensions of the sheet itself
         /// @warning This overload is to be used with the graphics::BatchRenderer2D because it doesn't not accept any shader
         /// @see Texture for more information on how to Textures
-		Sprite(maths::vec3 position, maths::vec2 size, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(glm::vec3 position, glm::vec2 size, Texture* texture, glm::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
 
         // To use with a SimpleRenderer aka Instance Renderer
 		/// Create Sprite renderable.
@@ -79,7 +79,7 @@ mutable std::uint32_t       frame;
         /// @param shader The shader with which you want the sprite to be rendered with
 		/// @param primitive2d The primitive shape with which the Sprite should be rendered with
 		/// @warning This overload is to be used with the graphics::InstanceRenderer2D if you want the shader to be used
-		Sprite(maths::vec3 position, maths::vec2 size, maths::vec4 color, Shader* shader, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(glm::vec3 position, glm::vec2 size, glm::vec4 color, Shader* shader, Primitive2D primitive2d = Primitive2D::Quad);
 		/// Create Sprite renderable.
         /// 
         /// @param position The position at which the sprite should be rendered at
@@ -89,7 +89,7 @@ mutable std::uint32_t       frame;
         /// @parma texture The Texture with which the sprite should be rendered with
         /// @param primitive2d The primitive shape with which the Sprite should be rendered with
         /// @warning This overload is to be used with the graphics::InstanceRenderer2D if you want the shader to be used
-		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);\
+		Sprite(glm::vec3 position, glm::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);\
 		/// Create Sprite renderable.
         /// 
         /// @param position The position at which the sprite should be rendered at
@@ -99,9 +99,9 @@ mutable std::uint32_t       frame;
         /// @parma texture The Texture with which the sprite should be rendered with
         /// @param sheetDimension The dimensions of the sprite sheet i.e. no of sprites in the sheet not the actual dimensions of the sheet
         /// @param primitive2d The primitive shape with which the Sprite should be rendered with
-        /// @attention sheetDimension requires the the number of sprites in the (row, column) count maths::vec2 and not that actual dimensions of the sheet itself
+        /// @attention sheetDimension requires the the number of sprites in the (row, column) count glm::vec2 and not that actual dimensions of the sheet itself
         /// @warning This overload is to be used with the graphics::InstanceRenderer2D if you want the shader to be used
-		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader, Texture* texture, maths::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
+		Sprite(glm::vec3 position, glm::vec2 size, Shader* shader, Texture* texture, glm::vec2 sheetDimension, Primitive2D primitive2d = Primitive2D::Quad);
 
         /// The overridden callback function that confirms the addition of physics::RigidBody2D component to the Sprite
 		void addedRigidBody2D() override;
@@ -114,7 +114,7 @@ mutable std::uint32_t       frame;
         void animateSprite(uint32_t frameRate, SpriteAnimationType animType);
 
         /// Gets the total frames in the sprite sheet
-		inline const uint32_t getTotalFrames() const { return (m_SpriteSheetDimension.x * m_SpriteSheetDimension.y); }
+		inline const float getTotalFrames() const { return (m_SpriteSheetDimension.x * m_SpriteSheetDimension.y); }
     private:    
         void submit(Renderer2D* renderer) const override;
         void setSpriteSheetUV() const;

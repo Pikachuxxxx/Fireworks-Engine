@@ -1,7 +1,7 @@
 #pragma once
 #include <al.h>
 #include <alc.h>
-#include "../utils/wavloader.h"
+#include <src/utils/wavloader.h>
 
 
 namespace fireworks { namespace audio {
@@ -15,30 +15,10 @@ namespace fireworks { namespace audio {
 	class AudioClip
 	{
 	public:
-		/// Sets the gain of the audio source.
-		int					gain;
-		/// Sets the pitch of the audio source.
+		/// Sets the gain of the audio source
+		int					gain;	
+		/// Sets the pitch of the audio source
 		int					pitch;
-	private:
-        static ALboolean	s_g_bEAX;
-        static ALCdevice*	s_Device;
-        static ALCcontext*	s_Context;
-        
-		std::string			m_FilePath;
-		const char*			m_Data;
-		utils::WavLoader	m_WavLoader;
-
-		std::uint32_t		m_AudioFormat;
-		std::uint32_t		m_SampleRate;
-		std::uint32_t		m_BitsPerSecond;
-		std::uint32_t		m_Size;
-
-		ALuint				m_BufferID;
-		ALuint				m_Source;
-		ALint				m_SourceState;
-
-		bool				m_EnableLooping;
-		bool				m_DidPlayOnce;
 	public:
 		/// Creates a audio clip to play in your application.
 		///
@@ -89,10 +69,29 @@ namespace fireworks { namespace audio {
 		/// Gets the Source ID of the audio source that plays the clip
 		inline ALuint getSource() const { return m_Source; }
 	private:
+		static ALboolean	s_g_bEAX;
+		static ALCdevice*	s_Device;
+		static ALCcontext*	s_Context;
+
+		std::string			m_FilePath;
+		const char* m_Data;
+		utils::WavLoader	m_WavLoader;
+
+		std::uint32_t		m_AudioFormat;
+		std::uint32_t		m_SampleRate;
+		std::uint32_t		m_BitsPerSecond;
+		std::uint32_t		m_Size;
+
+		ALuint				m_BufferID;
+		ALuint				m_Source;
+		ALint				m_SourceState;
+
+		bool				m_EnableLooping;
+		bool				m_DidPlayOnce;
+	private:
 		inline void getSourceState() { alGetSourcei(m_Source, AL_SOURCE_STATE, &m_SourceState); }
 		void init();
 		void load();
 		void enableStreamingMode();
 	};
-
 } }

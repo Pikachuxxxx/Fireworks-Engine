@@ -2,7 +2,7 @@
 
 namespace fireworks { namespace graphics {
 
-    Window::Window(const char *title, int width, int height) : backgroundColor(maths::vec4(0, 0, 0, 1))
+    Window::Window(const char *title, int width, int height) : backgroundColor(glm::vec4(0, 0, 0, 1))
     {
         m_Title = title;
         m_Width = width;

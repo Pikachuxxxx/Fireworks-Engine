@@ -34,22 +34,25 @@
 
 #include "src/managers/physicsmanager.h"
 
-#include "src/maths/maths.h"
-
 #include "src/physics/rigidbody2d.h"
 
 #include "src/utils/fileutils.h"
 #include "src/utils/timer.h"
 #include "src/utils/wavloader.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/string_cast.hpp>
+
 namespace fireworks {
 
 	using namespace audio;
 	using namespace components;
     using namespace graphics;
-    using namespace maths;
 	using namespace physics;
     using namespace utils;
+    // External namespaces
+    using namespace glm;
 
     /// The Game class to use the Fireworks Engine.
     /// 
@@ -65,14 +68,8 @@ namespace fireworks {
         unsigned int        m_FramesPerSecond;
         /// The total Updates happening per second (UPS)
         unsigned int        m_UpdatePerSecond;
-        /// The Time Scale of the engine update loop
-        float               m_TimeScale = 1.0f;
     protected:
-        Fireworks()
-            : m_FramesPerSecond(0), m_UpdatePerSecond(0)
-        {
-
-        }
+        Fireworks() : m_FramesPerSecond(0), m_UpdatePerSecond(0) { }
 
         virtual ~Fireworks()
         {

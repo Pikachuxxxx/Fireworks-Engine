@@ -61,12 +61,12 @@ namespace fireworks { namespace graphics {
 	{
 		// This position is used to set the initial position of the RigidBody 
 		// except for this we have no use of it
-		const maths::vec3& position =renderable->getPosition();
+		const glm::vec3& position =renderable->getPosition();
 		const float& rotation = renderable->getRotation();
-		const maths::vec2& size = renderable->getSize();
-		const maths::vec4& color = renderable->getColor();
+		const glm::vec2& size = renderable->getSize();
+		const glm::vec4& color = renderable->getColor();
 		const Primitive2D primitive = renderable->getPrimitive();
-		const std::vector<maths::vec2>& uv = renderable->getUV();
+		const std::vector<glm::vec2>& uv = renderable->getUV();
 		const GLuint tid = renderable->getTID();
 		const std::vector<components::Component*> components = renderable->components;
 
@@ -77,9 +77,9 @@ namespace fireworks { namespace graphics {
 		renderable->shader->setUniform1i("flipY", renderable->flippedY);
 
 		
-		maths::mat4 model(1.0f);
-		model = maths::mat4::translation(position);
-		model *= maths::mat4::rotation(maths::toDegrees(rotation), maths::vec3(0, 0, 1));
+		glm::mat4 model(1.0f);
+		model = glm::translate(model, position);
+		model *= glm::rotate(model, glm::degrees(rotation), glm::vec3(0, 0, 1));
 
 		m_Texture = renderable->getTID(); // Redundant (IDK if the renderer should cache the current texture as well)
 		float ts = 0;
@@ -88,25 +88,25 @@ namespace fireworks { namespace graphics {
 
 		if (primitive == Primitive2D::Quad)
 		{
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(- (size.x / 2),- (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2), -(size.y / 2), position.z, 1.0f);
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(- (size.x / 2),-(size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2), -(size.y / 2) + size.y, position.z, 1.0f);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, - (size.y / 2) + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2) + size.x, -(size.y / 2) + size.y, position.z, 1.0f);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3(-(size.x / 2) + size.x, - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2) + size.x, -(size.y / 2), position.z, 1.0f);
 			m_Buffer->uv = uv[3];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
@@ -116,19 +116,19 @@ namespace fireworks { namespace graphics {
 		}
 		else if (primitive == Primitive2D::Triangle)
 		{
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( - (size.x / 2), - (size.y / 2), 0);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4(-(size.x / 2), -(size.y / 2), 0, 1.0f);
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( + (size.x / 2.0f) - (size.x / 2),  + size.y - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4( + (size.x / 2.0f) - (size.x / 2),  + size.y - (size.y / 2), position.z, 1.0f);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * model * maths::vec3( + size.x - (size.x / 2), - (size.y / 2), position.z);
+			m_Buffer->vertex = *m_TransformationBack * model * glm::vec4( + size.x - (size.x / 2), - (size.y / 2), position.z, 1.0f);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = ts;
 			m_Buffer->color = color;

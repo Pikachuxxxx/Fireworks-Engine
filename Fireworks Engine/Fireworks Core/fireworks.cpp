@@ -18,18 +18,18 @@ namespace fireworks {
 			m_Window->clear();
 			World.Step(physicsTick, velocityIterations, positionIterations);
 
-			if (m_Timer->elapsedTime() - updateTimer > (updateTick * m_TimeScale))
+			if (m_Timer->elapsedTime() - updateTimer > updateTick)
 			{
 				update();
 				updates++;
-				updateTimer += updateTick * m_TimeScale;
+				updateTimer += updateTick;
 			}
 			frames++;
 			render();
 			m_Window->update();
-			if (m_Timer->elapsedTime() - timer > (1.0f * m_TimeScale))
+			if (m_Timer->elapsedTime() - timer > 1.0f )
 			{
-				timer += (1.0f * m_TimeScale);
+				timer += 1.0f;
 				m_FramesPerSecond = frames;
 				m_UpdatePerSecond = updates;
 				frames = 0;

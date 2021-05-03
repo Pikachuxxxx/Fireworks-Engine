@@ -37,7 +37,7 @@ namespace fireworks { namespace graphics {
         /// @param position The starting position of the camera in 3d space
         /// @param flySpeed The movement speed of the camera
         /// @param lookSensitivity The look speed of the camera
-        FreeFlyCamera(maths::vec3 position, float flySpeed = 3.0f, float lookSensitivity = 0.25f);
+        FreeFlyCamera(glm::vec3 position, float flySpeed = 30.0f, float lookSensitivity = 0.25f);
 
         void update(Window* window, float deltaTime);
     private:

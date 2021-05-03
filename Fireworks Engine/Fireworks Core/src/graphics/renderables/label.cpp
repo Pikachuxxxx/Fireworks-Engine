@@ -2,17 +2,13 @@
 
 namespace fireworks { namespace graphics {
 
-	Label::Label(const char* text, maths::vec3 position, maths::vec3 color, Font& font) : text(text), position(position), color(color), font(font)
+	Label::Label(const char* text, glm::vec3 position, glm::vec3 color, Font& font) : text(text), position(position), color(color), font(font)
 	{
-        #if(_WIN32)
-		    m_FontShader = new Shader(".\\shaders\\font.vert", ".\\shaders\\font.frag");
-        #elif(__APPLE__)
-            m_FontShader = new Shader("shaders/font.vert", "shaders/font.frag");
-        #endif
+        m_FontShader = new Shader("./shaders/font.vert", "./shaders/font.frag");
 		load();
 		m_FontShader->enable();
-		maths::mat4 projection = maths::mat4::orthographic(0.0f, 800.0f, 0.0f, 600.0f, -1.0f, 1.0f);
-		glUniformMatrix4fv(glGetUniformLocation(m_FontShader->getShaderProgram(), "projection"), 1, GL_FALSE, projection.elements);
+		glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, -1.0f, 1.0f);
+		glUniformMatrix4fv(glGetUniformLocation(m_FontShader->getShaderProgram(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		GLCall(glEnable(GL_BLEND));
 		GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 	}
@@ -97,8 +93,8 @@ namespace fireworks { namespace graphics {
 
 			Character character = {
 				font_texture,
-				maths::vec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
-				maths::vec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
+				glm::vec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
+				glm::vec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
 				static_cast<unsigned int>(face->glyph->advance.x)
 			};
 

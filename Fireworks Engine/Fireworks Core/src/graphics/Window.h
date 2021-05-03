@@ -4,13 +4,12 @@
 #include <iostream>
 #define GL_SILENCE_DEPRECATION
 // GLEW
-#define GLEW_STATIC
 #include <GL/glew.h>
 // GLFW
 #include <GLFW/glfw3.h>
-#include "../maths/maths.h"
+#include <glm/glm.hpp>
 
-#include "../utils/glassert.h"
+#include <src/utils/glassert.h>
 
 namespace fireworks { namespace graphics {
 
@@ -172,7 +171,7 @@ namespace fireworks { namespace graphics {
         /// The background color of the Window.
         /// 
         /// @note This sets the color in the GL_COLOR_BUFFER_BIT
-        maths::vec4 backgroundColor;
+        glm::vec4 backgroundColor;
         float deltaMouseX;
         float deltaMouseY;
     private:

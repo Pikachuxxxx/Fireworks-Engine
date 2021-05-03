@@ -2,7 +2,7 @@
 
 namespace fireworks { namespace graphics {
 
-    FreeFlyCamera::FreeFlyCamera(maths::vec3 position, float flySpeed /*= 3.0f*/, float lookSensitivity /*= 0.25f*/)
+    FreeFlyCamera::FreeFlyCamera(glm::vec3 position, float flySpeed /*= 3.0f*/, float lookSensitivity /*= 0.25f*/)
         : PerspectiveCamera(position), MovementSpeed(flySpeed), MouseSensitivity(lookSensitivity)
     {
 
@@ -11,24 +11,27 @@ namespace fireworks { namespace graphics {
 	void FreeFlyCamera::update(Window* window, float deltaTime)
 	{
         // Move the camera using the keyboard in the world space
+        // Up and down
 		if (window->isKeyHeld(Keys::Q))
 			this->processKeyboardMovement(FFCamDirection::UP, deltaTime);
 		else if (window->isKeyHeld(Keys::E))
 			this->processKeyboardMovement(FFCamDirection::DOWN, deltaTime);
 
+        // Front and back
 		if (window->isKeyHeld(Keys::W) || window->isKeyHeld(Keys::UP))
-			this->processKeyboardMovement(FFCamDirection::FORWARD, deltaTime);
-		else if (window->isKeyHeld(Keys::S) || window->isKeyHeld(Keys::DOWN))
 			this->processKeyboardMovement(FFCamDirection::BACKWARD, deltaTime);
+		else if (window->isKeyHeld(Keys::S) || window->isKeyHeld(Keys::DOWN))
+			this->processKeyboardMovement(FFCamDirection::FORWARD, deltaTime);
 
+        // Left and right
 		if (window->isKeyHeld(Keys::A) || window->isKeyHeld(Keys::RIGHT))
-			this->processKeyboardMovement(FFCamDirection::RIGHT, deltaTime);
-		else if (window->isKeyHeld(Keys::D) || window->isKeyHeld(Keys::LEFT))
 			this->processKeyboardMovement(FFCamDirection::LEFT, deltaTime);
+		else if (window->isKeyHeld(Keys::D) || window->isKeyHeld(Keys::LEFT))
+			this->processKeyboardMovement(FFCamDirection::RIGHT, deltaTime);
 
         if (window->isMouseButtonHeld(Keys::MOUSE_BUTTON_RIGHT))
         {
-			this->processMouseMovement(-window->deltaMouseX, -window->deltaMouseY);
+			this->processMouseMovement(window->deltaMouseX, window->deltaMouseY);
             window->deltaMouseX = 0.0f;
             window->deltaMouseY = 0.0f;
         }

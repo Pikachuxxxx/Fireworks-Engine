@@ -2,12 +2,10 @@
 
 #include <vector>
 // GLEW
-#define GLEW_STATIC
 #include <GL/glew.h>
 
 #include "../camera2d.h"
 #include "../Shader.h"
-#include "../../maths/maths.h"
 
 namespace fireworks { namespace graphics {
 
@@ -21,9 +19,9 @@ namespace fireworks { namespace graphics {
         Camera2D*                   m_Camera2D; 
     protected:
         /// The transformation matrix stack that keeps track of relative transformation matrix of the groups
-        std::vector<maths::mat4>    m_TransformationStack;
+        std::vector<glm::mat4>    m_TransformationStack;
         /// The transformation matrix to renders stuff relative to one another aka if using groups
-  const maths::mat4*                m_TransformationBack;
+  const glm::mat4*                m_TransformationBack;
         // GLuint                   m_FontTexture;
     protected:
         /// Creates the renderer using the camera
@@ -32,12 +30,12 @@ namespace fireworks { namespace graphics {
         Renderer2D(Camera2D* camera2D)
             : m_Camera2D(camera2D)
         {
-            m_TransformationStack.push_back(maths::mat4::identity());
+            m_TransformationStack.push_back(glm::mat4(1.0f));
             m_TransformationBack = &m_TransformationStack.back();
         }
     public:
         /// Pushes the transformation matrix to transform the renderables if using groups
-        void push(const maths::mat4& matrix, bool override = false)
+        void push(const glm::mat4& matrix, bool override = false)
         {
             if(override)
                 m_TransformationStack.push_back(matrix);

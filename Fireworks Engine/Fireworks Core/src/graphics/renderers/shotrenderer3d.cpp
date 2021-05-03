@@ -59,18 +59,18 @@ namespace fireworks { namespace graphics {
     void ShotRenderer3D::submit(const Renderable3D* renderable)
     {
         const Transform& transform = renderable->getTransform();
-        const maths::vec4& color = renderable->getColor();
-        const std::vector<maths::vec2>& uv = renderable->getUV();
+        const glm::vec4& color = renderable->getColor();
+        const std::vector<glm::vec2>& uv = renderable->getUV();
         const unsigned int tid = renderable->getTID();
         const Primitive3D& primitive3d = renderable->gerPrimitive();
         std::vector<VertexData3D> vertices = renderable->getVerts();
 
-        maths::mat4 model(1.0f);
-        model = maths::mat4::translation(transform.position);
-        // TODO: Use Quaternions to rotate the 3D primitive 
-        model *= maths::mat4::rotation(transform.rotation.x, maths::vec3(1, 0, 0));
-        model *= maths::mat4::rotation(transform.rotation.y, maths::vec3(0, 1, 0));
-        model *= maths::mat4::rotation(transform.rotation.z, maths::vec3(0, 0, 1));
+		glm::mat4 model(1.0f);
+		model = glm::translate(model, transform.position);
+		// TODO: Use Quaternions to rotate the 3D primitive 
+		model *= glm::rotate(model, transform.rotation.x, glm::vec3(1, 0, 0));
+		model *= glm::rotate(model, transform.rotation.y, glm::vec3(0, 1, 0));
+		model *= glm::rotate(model, transform.rotation.z, glm::vec3(0, 0, 1));
 
         float ts = 0.0f;
         if (tid > 0)
@@ -79,7 +79,7 @@ namespace fireworks { namespace graphics {
         for (int i = 0; i < renderable->getVertsSize(); i++)
         {
             // TODO: Make sure the vertices are Clockwise generated in case we use front face culling.
-            m_Buffer->vertex = (model * vertices[i].vertex);
+			m_Buffer->vertex = (model * glm::vec4(vertices[i].vertex.x, vertices[i].vertex.y, vertices[i].vertex.z, 1.0f));
             m_Buffer->uv = vertices[i].uv;
             m_Buffer->tid = ts;
             m_Buffer->color = vertices[i].color;

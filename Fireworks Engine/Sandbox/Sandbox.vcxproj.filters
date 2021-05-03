@@ -36,9 +36,6 @@
     <ClCompile Include="Test Dependencies\imgui-docking\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Test Dependencies\glm\detail\glm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="examples\SimpleBox.h">
