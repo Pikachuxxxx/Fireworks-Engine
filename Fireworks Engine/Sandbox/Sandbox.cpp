@@ -4,11 +4,11 @@
 
 // TODO: Update the examples as per the new updated API for Sprite component
 #include <iostream>
-#include "test/scene3DTest.h"
+#include "examples/RockyDocky.h"
 
 int main()
 {
-    Scene3DTest game;
+    RockyDocky game;
     game.start();
     return 0;
 }
