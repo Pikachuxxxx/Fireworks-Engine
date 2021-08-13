@@ -358,6 +358,7 @@
     <ClInclude Include="Test Dependencies\imgui-docking\imstb_truetype.h" />
     <ClInclude Include="test\animatedSpritesTest.h" />
     <ClInclude Include="test\audiotest.h" />
+    <ClInclude Include="test\batch2dTest.h" />
     <ClInclude Include="test\camImplementation.h" />
     <ClInclude Include="test\fontTest.h" />
     <ClInclude Include="test\EditorGUI.h" />

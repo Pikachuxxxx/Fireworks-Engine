@@ -24,7 +24,7 @@ public:
 	void init() override
 	{
 		window = createWindow("Testing Instance rendering", 800, 600);
-		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
+		camera = new Camera2D(ortho(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
 
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 		ShotRenderer2D* instanceRenderer = new ShotRenderer2D(camera);

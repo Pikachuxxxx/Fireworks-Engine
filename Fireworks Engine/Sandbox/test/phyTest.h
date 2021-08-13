@@ -14,7 +14,7 @@ public:
 	PhyTest()
 	{
 		window = createWindow("Physics Test", 1000, 600);
-		camera = new Camera2D(mat4::orthographic(-125.0f, 125.0f, -75.0f, 75.0f, -1.0f, 1.0f));
+		camera = new Camera2D(ortho(-125.0f, 125.0f, -75.0f, 75.0f, -1.0f, 1.0f));
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 		ShotRenderer2D* instancer = new ShotRenderer2D(camera);
 

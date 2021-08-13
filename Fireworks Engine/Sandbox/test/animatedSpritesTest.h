@@ -17,8 +17,8 @@ public:
 	AnimSprites()
 		:currentTime(0.0), targetTime(4.0)
 	{
-		window = createWindow("Animated Sprites Test", 800, 600);
-		camera = new Camera2D(mat4::orthographic(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
+		window = createWindow("Animated Sprites Test", 200, 360);
+		camera = new Camera2D(ortho(-8.0f, 8.0f, -6.0f, 6.0f, -1.0f, 1.0f));
 
 		Shader* basicShader = new Shader(".\\shaders\\basic.vert", ".\\shaders\\basic.frag");
 		BatchRenderer2D* batchRenderer = new BatchRenderer2D(camera, basicShader);

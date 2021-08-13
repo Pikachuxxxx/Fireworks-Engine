@@ -27,9 +27,9 @@ public:
 		Font font(".\\resources\\fonts\\FiraCode-Light.ttf", 20);
 		Font chinese_font(".\\resources\\fonts\\chinese-font-light.TTF", 20);
 
-		lbl = new Label("中", vec3(25, 25, 0), vec3(1, 0, 0), chinese_font);
+		lbl = new Label("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", vec3(25, 25, 0), vec3(1, 0, 0), chinese_font);
 		fpsLabel = new Label("FPS : ", vec3(25, 500, 0), vec3(1, 1, 1), font);
-		randomText = new Label("Random Text!! @@ ## $$ ^^ && () ** 9823692863410", vec3(20, 200, 0), vec3(0, 1, 1), font);
+		randomText = new Label("Random Text!! @@ ## $$ ^^ && () ** 9823692863410", vec3(20, 400, 0), vec3(0.0), font);
 	}
 
 	// Runs once per second

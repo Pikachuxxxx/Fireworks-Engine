@@ -57,20 +57,27 @@ Also see : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/
 ### Features
 
 - 2D rendering pipeline
-- 2D Physics Engine (Box2D backend)
+![](demo/batchrendering.gif)
 - Can render upto 60, 000 Sprites, textures using batch rendering
+![](demo/freefall.gif)
+- 2D Physics Engine (Box2D backend)
+![](demo/animation2d.gif)
 - Sprite Sheet Animations (can change frame or frame rate manually, supports 2 types of in-built animation modes [LOOP, PING_PONG])
 - Simple and customisable math library
+![](demo/fontdemo.png)
 - TrueType Font Rendering (currently only supports (.TTF) UTF-8 characters)
-- Easy to manage and customisable native scripting 
+- Easy to manage and customisable native scripting
 - Simple API for faster development and customisation
-- Simple Window and Input management System 
+- Simple Window and Input management System
 - Huge custom Maths Library and a lot of utility functions
 - Render textures and Frame Buffer objects
-- 2D orthographic camera 
+- 2D orthographic camera
 - Suppports 2D and 3D Audio with an extensive API (OpenAL backend) (currenlty only reads .wav files)
 - Component System (currently only has Rigidbody2D component)
+![](demo/batch3d.png)
 - Basic primitive 3D Rendering using Batch rendering.
+![](demo/animation.gif)
+- Experimental skeletal skin animation
 
 #
 ### Building
@@ -81,10 +88,10 @@ Also see : [Fireworks Engine update thread](https://twitter.com/GameGraphicsGuy/
   change to the build folder and use the CMakeFile to generate the MakeFile and build the library using the Make command. (Make sure your resources and shaders folders are in the same direcotry as that of the executable)
 ```bash
   mkdir build
-  cd build 
+  cd build
   #use this to build the library
   cmake .. -DBUILD_STATIC_LIBRARY=true
-  make 
+  make
   #now remove the CMakeChache to generate the sandbox executable
   rm -rf CMakeCache.txt
   cmake .. -DBUILD_SANDBOX_EXEC=true
@@ -147,7 +154,7 @@ public:
     void update() override { }
 
     // Runs as fast as possible
-    void render() override 
+    void render() override
     {
         // Render the Layer
         layer->render();
@@ -168,19 +175,26 @@ int main()
 - [x] TTF Font Rendering and font properties(position, color etc.)
 - [x] 2D Audio (OpenAL backend)
 - [x] Physics2D component (box2d physics engine integration)
-- [x] Better and customisable font rendering 
+- [x] Better and customisable font rendering
 - [x] Audio system
 - [x] 3D rendering + BatchRenderer3D
 - [x] Camera 3D (Freefly, FPS, perspective etc.)
 - Materials and Lights (2D and 3D)
-- 2D + 3D primitive drawing utility function 
+- 2D + 3D primitive drawing utility function
 - Event system
-- 3D Physics 
-- ECS - entity component system 
+- 3D Physics
+- ECS - entity component system
 - Occlusion Culling
 - Editor UI using ImGui
+
+### Demo of some games made using Fireworks Engine
+
+#### Zapper
+![](demo/zapper.gif)
+
+#### Rocky Docky
+![](demo/rockydocky.png)
 
 #
 ### Dependencies
 - [SOIL](https://github.com/Pikachuxxxx/SOIL), Freetype and [glText](https://github.com/vallentin/glText), GLEW, GLFW, PNG, Zlib2, stb_image, OpenAL
-

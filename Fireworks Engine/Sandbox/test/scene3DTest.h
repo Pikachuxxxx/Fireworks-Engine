@@ -57,7 +57,7 @@ public:
 	    //scene->add(new Mesh(Transform(vec3(0, 0, 0)), Primitive3D::UVSphere, meshShader, testTex));
 	    //scene->add(new Mesh(Transform(vec3(4, 0, 0)), Primitive3D::Cylinder, meshShader, testTex));
 
-         Texture* stTex = new Texture("./resources/models/stormtrooper/source/stormtrooper_D.png", false);
+        Texture* stTex = new Texture("./resources/models/stormtrooper/source/stormtrooper_D.png", false);
 
 		model = new Model(std::string("./resources/models/stormtrooper/source/stormtrooper.obj"), cubeTransform, meshShader);
 
@@ -116,7 +116,7 @@ public:
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 
-        window->backgroundColor = vec4(0.9f, 0.9f, 0.9f, 1.0f);
+        window->backgroundColor = vec4(0.7f, 0.7f, 0.7f, 1.0f);
 
         scene->render();
         InitRenderingGUI();

@@ -49,7 +49,7 @@ public:
     {
         window = createWindow("Physics Example", 800, 600);
         window->backgroundColor = vec4(0.2, 0.2, 0.2, 1.0);
-        camera = new Camera2D(mat4::orthographic(-160.0f, 160.0f, -120.0f, 120.0f, -1.0f, 1.0f));
+        camera = new Camera2D(ortho(-160.0f, 160.0f, -120.0f, 120.0f, -1.0f, 1.0f));
         InitGUI(window);
 
 #if(_WIN32)
@@ -182,7 +182,7 @@ public:
     void tick() override
     {
         if(!isGamePaused || !gameOver)
-            colorLeft -= 5.0f;
+            colorLeft -= 2.0f;
     }
 
     // Runs 60 times per second
@@ -287,12 +287,12 @@ public:
     {
         if (window->isKeyHeld(Keys::RIGHT))
         {
-            rockyRB->SetVelocity(maths::vec2(playerVelocity, rockyRB->GetBody()->GetLinearVelocity().y));
+            rockyRB->SetVelocity(vec2(playerVelocity, rockyRB->GetBody()->GetLinearVelocity().y));
             rocky->unflipX();
         }
         else if (window->isKeyHeld(Keys::LEFT))
         {
-            rockyRB->SetVelocity(maths::vec2(-playerVelocity, rockyRB->GetBody()->GetLinearVelocity().y));
+            rockyRB->SetVelocity(vec2(-playerVelocity, rockyRB->GetBody()->GetLinearVelocity().y));
             rocky->flipX();
         }
     }
@@ -301,7 +301,7 @@ public:
     {
         if (window->isKeyHeld(Keys::SPACE) && currentJumpTime < jumpTime)
         {
-            rockyRB->SetVelocity(maths::vec2(0, jumpImpulse));
+            rockyRB->SetVelocity(vec2(0, jumpImpulse));
             currentJumpTime += timer->elapsedTime() * 0.5;
         }
         if (rockyRB->GetBody()->GetLinearVelocity().y == 0 && window->isKeyReleased(Keys::SPACE))
