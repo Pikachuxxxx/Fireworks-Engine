@@ -968,6 +968,9 @@
     <ClInclude Include="test\batch2dTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\falken_test_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Test Dependencies\glm\detail\func_common.inl">
