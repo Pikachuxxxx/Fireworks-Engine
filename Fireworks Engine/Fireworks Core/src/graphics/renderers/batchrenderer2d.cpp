@@ -83,8 +83,8 @@ namespace fireworks { namespace graphics {
 
 		
 		maths::mat4 model(1.0f);
-		model = maths::mat4::translation(position);
-		model *= maths::mat4::rotation(maths::toDegrees(rotation), maths::vec3(0, 0, 1));
+		model = maths::mat4::rotation(maths::toDegrees(rotation), maths::vec3(0, 0, 1));
+		model *= maths::mat4::translation(position);
 
         float ts = 0.0f;
         if(tid > 0)

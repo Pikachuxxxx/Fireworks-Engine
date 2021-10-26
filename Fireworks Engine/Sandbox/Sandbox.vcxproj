@@ -38,13 +38,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/Box2D/include;$(PROJECT_DIR)../../Dependencies/Assimp/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Fireworks Core/;$(PROJECT_DIR)Test Dependencies</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/Box2D/include;$(PROJECT_DIR)../../Dependencies/Assimp/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Fireworks Core/;$(PROJECT_DIR)Test Dependencies;$(PROJECT_DIR)../../Dependencies/falken/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;fireworks.lib;OpenAL32.lib;box2d.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/Assimp/lib;$(PROJECT_DIR)../../Dependencies/Box2D/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;fireworks.lib;OpenAL32.lib;box2d.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;falken_cpp_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/Assimp/lib;$(PROJECT_DIR)../../Dependencies/Box2D/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../x64\Debug;$(PROJECT_DIR)../../Dependencies/falken/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -58,6 +58,7 @@
     <ClCompile Include="Test Dependencies\imgui-docking\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="examples\falkengame\ship.h" />
     <ClInclude Include="examples\groupsdemo.h" />
     <ClInclude Include="examples\HungryBox.h" />
     <ClInclude Include="examples\LightSaber.h" />

@@ -39,15 +39,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/Assimp/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/Box2D/include;$(PROJECT_DIR)../../Dependencies/Assimp/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/;$(PROJECT_DIR)vendor/stb_image</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(PROJECT_DIR)../../Dependencies/PNG/include;$(PROJECT_DIR)../../Dependencies/SOIL/include;$(PROJECT_DIR)../../Dependencies/GLFW/include;$(PROJECT_DIR)../../Dependencies/Assimp/include;$(PROJECT_DIR)../../Dependencies/GLEW/include;$(PROJECT_DIR)../../Dependencies/Box2D/include;$(PROJECT_DIR)../../Dependencies/FreeType/include;$(PROJECT_DIR)../../Dependencies/OpenAL/include;$(PROJECT_DIR)../Sandbox/Test Dependencies/;$(PROJECT_DIR)vendor/stb_image;$(PROJECT_DIR)../../Dependencies/falken/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;freetype.lib;OpenAL32.lib;box2d.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../../Dependencies/Box2D/lib;$(PROJECT_DIR)../../Dependencies/FreeType/win64;$(PROJECT_DIR)../../Dependencies/Assimp/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32s.lib;glfw3.lib;soil.lib;libpng.lib;freetype.lib;OpenAL32.lib;box2d.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;falken_cpp_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(PROJECT_DIR)../../Dependencies/GLFW/lib;$(PROJECT_DIR)../../Dependencies/GLEW/lib;$(PROJECT_DIR)../../Dependencies/SOIL/lib;$(PROJECT_DIR)../../Dependencies/PNG/lib;$(PROJECT_DIR)../../Dependencies/OpenAL/lib/Win64;$(PROJECT_DIR)../../Dependencies/Box2D/lib;$(PROJECT_DIR)../../Dependencies/FreeType/win64;$(PROJECT_DIR)../../Dependencies/Assimp/lib;$(PROJECT_DIR)../../Dependencies/falken/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)fireworks$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>

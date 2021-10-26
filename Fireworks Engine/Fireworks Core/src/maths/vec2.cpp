@@ -45,6 +45,11 @@ namespace fireworks { namespace maths {
         return *this;
     }
 
+    float vec2::magSquared()
+    {
+        return (x * x) + (y * y);
+    }
+
     vec2 operator+(vec2 left, const vec2& right)
     {
         return left.add(right);
@@ -63,6 +68,11 @@ namespace fireworks { namespace maths {
     vec2 operator/(vec2 left, const vec2& right)
     {
         return left.divide(right);
+    }
+
+    vec2 operator*(vec2 left, const float& right)
+    {
+        return vec2(left.x * right, left.y * right);
     }
 
     bool vec2::operator==(const vec2& other)
@@ -88,6 +98,11 @@ namespace fireworks { namespace maths {
     vec2& vec2::operator*=(const vec2& other)
     {
         return mutiply(other);
+    }
+
+    vec2& vec2::operator*=(const float& other)
+    {
+        return mutiply(vec2(other, other));
     }
 
     vec2& vec2::operator/=(const vec2& other)

@@ -89,7 +89,7 @@ mutable std::uint32_t       frame;
         /// @parma texture The Texture with which the sprite should be rendered with
         /// @param primitive2d The primitive shape with which the Sprite should be rendered with
         /// @warning This overload is to be used with the graphics::InstanceRenderer2D if you want the shader to be used
-		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);\
+		Sprite(maths::vec3 position, maths::vec2 size, Shader* shader,Texture* texture, Primitive2D primitive2d = Primitive2D::Quad);
 		/// Create Sprite renderable.
         /// 
         /// @param position The position at which the sprite should be rendered at
